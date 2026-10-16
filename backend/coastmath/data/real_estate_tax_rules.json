@@ -1,0 +1,144 @@
+{
+  "depreciation": {
+    "recovery_years": {
+      "residential": 27.5,
+      "nonresidential": 39
+    }
+  },
+  "passive_loss": {
+    "special_allowance": 25000,
+    "phaseout_start": 100000,
+    "phaseout_rate": 0.5,
+    "separate_lived_apart_allowance": 12500,
+    "separate_lived_apart_phaseout_start": 50000
+  },
+  "unrecaptured_section_1250_rate": 0.25,
+  "home_sale_exclusion": {
+    "single": 250000,
+    "married_filing_jointly": 500000,
+    "ownership_months": 24,
+    "use_months": 24,
+    "lookback_months": 60,
+    "nonqualified_use_start_year": 2009
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Checked on October 10, 2026 against the Internal Revenue Code and IRS publications. None of these amounts is indexed for inflation by statute, so the engine never scales them."
+        },
+        {
+          "rule": "Recovery period, residential rental property",
+          "value": "27.5 years",
+          "source": "IRC 168(c); IRC 168(e)(2)(A); IRS Pub. 527 (2025), ch. 2; https://www.irs.gov/publications/p527; https://www.law.cornell.edu/uscode/text/26/168"
+        },
+        {
+          "rule": "Recovery period, nonresidential real property",
+          "value": "39 years",
+          "source": "IRC 168(c); IRC 168(e)(2)(B); IRS Pub. 946 (2025), ch. 4; https://www.irs.gov/publications/p946; https://www.law.cornell.edu/uscode/text/26/168"
+        },
+        {
+          "rule": "Method and convention",
+          "value": "Straight line (IRC 168(b)(3)(A)-(B)); mid-month convention in the placed-in-service and disposition years (IRC 168(d)(2), (d)(4)(B))",
+          "source": "IRS Pub. 946, ch. 4 \"Mid-month convention\"; Pub. 527 Table 2-2d; https://www.law.cornell.edu/uscode/text/26/168; https://www.irs.gov/publications/p946"
+        },
+        {
+          "rule": "Land",
+          "value": "Not depreciable; only the building portion of the basis is recovered",
+          "source": "IRS Pub. 527, ch. 2 \"Land\"; Treas. Reg. 1.167(a)-2; https://www.irs.gov/publications/p527; https://www.ecfr.gov/current/title-26/section-1.167(a)-2"
+        },
+        {
+          "rule": "Depreciation reduces basis",
+          "value": "Adjusted basis is reduced by depreciation allowed or allowable",
+          "source": "IRC 1016(a)(2); https://www.law.cornell.edu/uscode/text/26/1016"
+        },
+        {
+          "rule": "Rental real estate special allowance",
+          "value": "Up to $25,000 of passive losses from rental real estate with active participation",
+          "source": "IRC 469(i)(1)-(2), (i)(6); IRS Pub. 925 (2025); https://www.irs.gov/publications/p925; https://www.law.cornell.edu/uscode/text/26/469"
+        },
+        {
+          "rule": "Allowance phase-out",
+          "value": "Reduced by 50% of modified AGI above $100,000 (fully phased out at $150,000)",
+          "source": "IRC 469(i)(3)(A); https://www.law.cornell.edu/uscode/text/26/469"
+        },
+        {
+          "rule": "Married filing separately",
+          "value": "$12,500 and a $50,000 phase-out start when the spouses lived apart all year; no allowance otherwise",
+          "source": "IRC 469(i)(5)(A)-(B); https://www.law.cornell.edu/uscode/text/26/469"
+        },
+        {
+          "rule": "Modified AGI for the allowance",
+          "value": "AGI without taxable Social Security, IRA deductions or passive activity losses",
+          "source": "IRC 469(i)(3)(F); https://www.law.cornell.edu/uscode/text/26/469"
+        },
+        {
+          "rule": "Suspended losses",
+          "value": "Disallowed passive losses carry forward to the next year; released in full on a fully taxable disposition of the entire interest",
+          "source": "IRC 469(b), 469(g)(1)(A); ratable allocation among loss activities, Treas. Reg. 1.469-1T(f)(2); https://www.law.cornell.edu/uscode/text/26/469; https://www.ecfr.gov/current/title-26/section-1.469-1T"
+        },
+        {
+          "rule": "Unrecaptured section 1250 gain",
+          "value": "Gain attributable to straight-line depreciation on real property, taxed at a maximum 25% rate",
+          "source": "IRC 1(h)(1)(E), 1(h)(6); IRS Pub. 544 (2025), ch. 3; Schedule D Tax Worksheet; https://www.law.cornell.edu/uscode/text/26/1; https://www.irs.gov/publications/p544"
+        },
+        {
+          "rule": "Net section 1231 loss",
+          "value": "A net loss on business or rental real property held more than one year is an ordinary loss",
+          "source": "IRC 1231(a)(2); IRS Pub. 544, ch. 3; https://www.law.cornell.edu/uscode/text/26/1231; https://www.irs.gov/publications/p544"
+        },
+        {
+          "rule": "Rental income and self-employment tax",
+          "value": "Rentals from real estate are excluded from net earnings from self-employment",
+          "source": "IRC 1402(a)(1); IRS Pub. 527, ch. 1; https://www.law.cornell.edu/uscode/text/26/1402; https://www.irs.gov/publications/p527"
+        },
+        {
+          "rule": "Rental income and NIIT",
+          "value": "Rents and gains from property not held in a trade or business are net investment income",
+          "source": "IRC 1411(c)(1)(A)(i), (iii); Treas. Reg. 1.1411-4; https://www.law.cornell.edu/uscode/text/26/1411; https://www.ecfr.gov/current/title-26/section-1.1411-4"
+        },
+        {
+          "rule": "Rental QBI",
+          "value": "Only a rental activity that rises to a trade or business qualifies for the section 199A deduction",
+          "source": "IRC 199A(c)(3); Treas. Reg. 1.199A-1(b)(14); Rev. Proc. 2019-38 safe harbor; https://www.law.cornell.edu/uscode/text/26/199A; https://www.ecfr.gov/current/title-26/section-1.199A-1; https://www.irs.gov/pub/irs-drop/rp-19-38.pdf"
+        },
+        {
+          "rule": "Home sale exclusion",
+          "value": "$250,000; $500,000 on a joint return",
+          "source": "IRC 121(b)(1)-(2); IRS Pub. 523 (2025); https://www.irs.gov/publications/p523; https://www.law.cornell.edu/uscode/text/26/121"
+        },
+        {
+          "rule": "Ownership and use test",
+          "value": "Owned and used as the main home for periods totaling at least 2 years during the 5 years ending on the date of sale",
+          "source": "IRC 121(a); Pub. 523 \"Eligibility test\"; https://www.law.cornell.edu/uscode/text/26/121; https://www.irs.gov/publications/p523"
+        },
+        {
+          "rule": "Nonqualified use",
+          "value": "Gain allocated to periods after 2008 when the home was not the main home is not excluded; the allocation is those periods over the whole ownership period. Periods before January 1, 2009 are not nonqualified use",
+          "source": "IRC 121(b)(5)(A)-(C); Pub. 523 \"Nonqualified use\"; https://www.law.cornell.edu/uscode/text/26/121; https://www.irs.gov/publications/p523"
+        },
+        {
+          "rule": "Depreciation on a home",
+          "value": "The exclusion never covers gain equal to depreciation allowed after May 6, 1997",
+          "source": "IRC 121(d)(6); Pub. 523 \"Business or rental use of home\"; https://www.law.cornell.edu/uscode/text/26/121; https://www.irs.gov/publications/p523"
+        },
+        {
+          "rule": "Mixed-use property",
+          "value": "Expenses of a dwelling used partly as a residence and partly as a rental are divided between the two uses; only the rental share is a rental expense",
+          "source": "IRC 280A(e); IRS Pub. 527 (2025), ch. 5 \"Personal Use of Dwelling Unit\"; https://www.law.cornell.edu/uscode/text/26/280A; https://www.irs.gov/publications/p527"
+        }
+      ]
+    },
+    {
+      "section": "Implementation boundaries",
+      "content": [
+        "Ownership and use periods are assumed continuous from the entered dates to the sale. Reduced exclusions for a move caused by work, health or unforeseen circumstances (IRC 121(c)) and the once-in-two-years limit (IRC 121(b)(3)) are not modeled.",
+        "Mixed-use property (a rental with a rental-use share below 100%) divides rent, expenses, depreciation, carrying costs and loan interest by the year's rental-use share. On sale, gain up to the depreciation taken is unrecaptured section 1250 gain and always taxed. The rest of the gain is split by the month-weighted average rental share over the ownership period (from the ownership date, else the plan start). For a main home, months before 2009 count as personal use. This use-ratio approximation stands in for both Treas. Reg. 1.121-1(e) (a separate rented unit) and IRC 121(b)(5) (nonqualified use). The exception for periods after the last use as a main home (IRC 121(b)(5)(C)(ii)(I)) is not modeled. The personal share of a main home's gain gets the exclusion when the ownership and use test is met; the rest is taxed. A loss is ordinary only for the rental share.",
+        "The rental share is modeled as a separate rental activity under IRC 469. The IRC 280A(c)(5) limit for a dwelling unit the owner also uses as a residence (rental deductions capped at rental income) is not applied, and the vacation home rules of IRC 280A(d) and (g) are not modeled.",
+        "The five-year lookback for net section 1231 losses (IRC 1231(c)) is not modeled; a net 1231 gain is always taxed as long-term capital gain.",
+        "Passive income from activities other than the plan's rental properties is not modeled. Modified AGI for the special allowance is estimated from the projection's AGI before rental items; IRA deductions are not added back."
+      ]
+    }
+  ]
+}

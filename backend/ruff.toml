@@ -1,0 +1,45 @@
+# Lint configuration for the backend. Run from backend/: python -m ruff check .
+# Python 3.14, as in the Dockerfile and CI.
+target-version = "py314"
+
+[lint]
+# Ruff's defaults (pyflakes plus the pycodestyle errors that do not concern
+# formatting) and a few families that catch real mistakes or dated idioms:
+# bugbear, pyupgrade, simplify, comprehensions, returns, pylint warnings,
+# import sorting and imports at module top (PLC0415). An import that must stay
+# inside a function, to break a cycle or load an optional module, says why in
+# its `# noqa: PLC0415 - reason`. Line length is not enforced.
+select = ["E4", "E7", "E9", "F", "B", "UP", "SIM", "C4", "RET", "PLW", "I", "PLC0415"]
+ignore = [
+    # dict(key=value) is the house style for keyword-shaped payloads.
+    "C408",
+    # Quoted forward references stay quoted: SQLAlchemy and Pydantic resolve
+    # them at runtime, and many name TYPE_CHECKING-only imports.
+    "UP037",
+    # A split string is the readable form of a long code list.
+    "SIM905",
+    # A guard followed by its own condition, and a context wrapping a
+    # `pytest.raises` or a transaction, read better nested than merged.
+    "SIM102",
+    "SIM117",
+    # `item = replace(item, ...)` inside the loop is the frozen-dataclass idiom.
+    "PLW2901",
+]
+
+[lint.isort]
+# The backend's own packages sort as first-party wherever ruff is run from.
+known-first-party = ["app", "coastmath", "business", "tests"]
+
+[lint.flake8-bugbear]
+# FastAPI parameter markers and frozen dataclasses are safe argument defaults.
+extend-immutable-calls = [
+    "fastapi.Body",
+    "fastapi.Depends",
+    "fastapi.Query",
+    "app.ledger.importers.amounts.NumberFormat",
+    "coastmath.engine.estimated_tax.PriorYear",
+]
+
+[lint.per-file-ignores]
+# Committed revisions are never edited; they keep Alembic's template imports.
+"sqlite_migrations/versions/*" = ["UP", "I"]

@@ -1,0 +1,28 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+backend/coverage/
+*.egg-info/
+
+# Frontend
+node_modules
+dist
+tsconfig.tsbuildinfo
+frontend/coverage/
+
+# Build output
+backend/static/
+
+# Local configuration and data
+.env
+*.db
+*.db-shm
+*.db-wal
+*.db.lock
+*.secrets.json
+.DS_Store

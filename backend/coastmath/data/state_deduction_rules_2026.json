@@ -1,0 +1,2319 @@
+{
+  "schema_version": 1,
+  "base_tax_year": 2026,
+  "earliest_tax_year": 2025,
+  "notes": "State standard/itemized deductions, personal exemptions and federal income tax deductions for the pure evaluator in coastmath/engine/state_deduction_rules.py. Sources and the all-state coverage matrix are in `_sources`. Each table lists the tax year of the published law it reproduces; later years scale indexed amounts by the caller's inflation factor.",
+  "federal_salt_cap": {
+    "source": "26 U.S.C. 164(b)(6)-(7) as amended by Pub. L. 119-21",
+    "legacy_cap": 10000,
+    "first_raised_year": 2025,
+    "last_raised_year": 2029,
+    "cap_2025": 40000,
+    "threshold_2025": 500000,
+    "cap_2026": 40400,
+    "threshold_2026": 505000,
+    "annual_increase_after_2026": 0.01,
+    "phasedown_rate": 0.3,
+    "married_filing_separately_share": 0.5
+  },
+  "federal_charitable_limits": {
+    "source": "26 U.S.C. 170(b)(1)(A),(C) and (G)",
+    "cash_agi_share": 0.6,
+    "capital_gain_property_agi_share": 0.3
+  },
+  "repealed_federal_tax_deductions": {
+    "IA": {
+      "last_tax_year": 2022,
+      "source": "2024 IA 1040 instructions: federal tax paid is no longer allowed as a deduction (Iowa taxes federal taxable income from 2023)"
+    },
+    "LA": {
+      "last_tax_year": 2021,
+      "source": "Act 395 of the 2021 Regular Session (HB 278): repealed for taxable periods beginning on or after January 1, 2022"
+    },
+    "MT": {
+      "last_tax_year": 2023,
+      "source": "SB 399 (2021): Montana taxes federal taxable income from tax year 2024 and no longer deducts federal income tax"
+    }
+  },
+  "states": {
+    "AL": {
+      "table_year": 2025,
+      "indexed": false,
+      "itemization": "independent",
+      "standard_deduction": {
+        "single": {
+          "maximum": 3000,
+          "reduction_start": 26000,
+          "band_width": 500,
+          "reduction_per_band": 25,
+          "minimum": 2500
+        },
+        "married_filing_jointly": {
+          "maximum": 8500,
+          "reduction_start": 26000,
+          "band_width": 500,
+          "reduction_per_band": 175,
+          "minimum": 5000
+        },
+        "married_filing_separately": {
+          "maximum": 4250,
+          "reduction_start": 13000,
+          "band_width": 250,
+          "reduction_per_band": 88,
+          "minimum": 2500
+        },
+        "head_of_household": {
+          "maximum": 5200,
+          "reduction_start": 26000,
+          "band_width": 500,
+          "reduction_per_band": 135,
+          "minimum": 2500
+        }
+      },
+      "personal_exemption": {
+        "single": 1500,
+        "married_filing_jointly": 3000,
+        "married_filing_separately": 1500,
+        "head_of_household": 3000
+      },
+      "dependent_exemption_tiers": [
+        {"maximum_state_agi": 50000, "amount": 1000},
+        {"maximum_state_agi": 100000, "amount": 500},
+        {"maximum_state_agi": null, "amount": 300}
+      ],
+      "itemized": {
+        "medical_floor_rate": 0.04,
+        "medical_floor_base": "state_agi",
+        "state_income_tax_deductible": false,
+        "local_income_tax_deductible": true,
+        "property_taxes_salt_capped": true,
+        "salt_cap_income_base": "state_agi",
+        "payroll_taxes_deductible": true,
+        "charitable_limit_base": "state_agi"
+      },
+      "federal_tax_deduction": {
+        "basis": "liability",
+        "cap": null,
+        "adds": ["excess_advance_premium_tax_credit_repayment", "net_investment_income_tax"],
+        "subtracts": [
+          "earned_income_credit",
+          "additional_child_tax_credit",
+          "refundable_american_opportunity_credit",
+          "refundable_adoption_credit"
+        ]
+      }
+    },
+    "AR": {
+      "table_year": 2025,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 2470,
+          "married_filing_jointly": 4940,
+          "married_filing_separately": 2470,
+          "head_of_household": 2470
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.1, "base": "state_agi"},
+        "income_taxes": "local",
+        "salt_cap": "none"
+      },
+      "credits": {"per_filer": 29, "per_dependent": 29, "aged": 29, "head_of_household_extra": 29},
+      "notes": [
+        "AR low-income tax tables, the 65 special credit and the high-income bracket adjustment are not modeled."
+      ]
+    },
+    "AZ": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 16100,
+          "married_filing_jointly": 32200,
+          "married_filing_separately": 16100,
+          "head_of_household": 24150
+        },
+        "indexed": true,
+        "charitable_cap": {
+          "single": 1000,
+          "married_filing_jointly": 2000,
+          "married_filing_separately": 1000,
+          "head_of_household": 1000
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "all",
+        "salt_cap": "federal"
+      },
+      "exemptions": {"aged": [{"amount": 2100, "indexed": false}]},
+      "credits": {
+        "per_child_under_17": 100,
+        "per_dependent_17_or_older": 25,
+        "phaseout": {
+          "income": "federal_agi",
+          "start": {
+            "single": 200000,
+            "married_filing_jointly": 400000,
+            "married_filing_separately": 200000,
+            "head_of_household": 200000
+          },
+          "band": 1000,
+          "rate_per_band": 0.05
+        }
+      },
+      "notes": [
+        "AZ charitable standard deduction increase counts all charitable gifts entered, without separating gifts claimed for Arizona credits."
+      ]
+    },
+    "CT": {
+      "table_year": 2025,
+      "indexed": false,
+      "itemization": "none",
+      "personal_exemption": {
+        "single": {"amount": 15000, "reduction_start": 30000},
+        "married_filing_separately": {"amount": 12000, "reduction_start": 24000},
+        "head_of_household": {"amount": 19000, "reduction_start": 38000},
+        "married_filing_jointly": {"amount": 24000, "reduction_start": 48000}
+      },
+      "exemption_reduction_step": 1000,
+      "exemption_reduction_per_step": 1000,
+      "tax_schedule": {
+        "additions": [
+          {
+            "single": [[56500, 5000, 0, 25, 250]],
+            "married_filing_jointly": [[100500, 5000, 0, 50, 500]],
+            "married_filing_separately": [[50250, 2500, 0, 25, 250]],
+            "head_of_household": [[78500, 4000, 0, 40, 400]]
+          },
+          {
+            "single": [[105000, 5000, 0, 25, 250], [200000, 5000, 250, 90, 2950], [500000, 5000, 2950, 50, 3400]],
+            "married_filing_jointly": [[210000, 10000, 0, 50, 500], [400000, 10000, 500, 180, 5900], [1000000, 10000, 5900, 100, 6800]],
+            "married_filing_separately": [[105000, 5000, 0, 25, 250], [200000, 5000, 250, 90, 2950], [500000, 5000, 2950, 50, 3400]],
+            "head_of_household": [[168000, 8000, 0, 40, 400], [320000, 8000, 400, 140, 4600], [800000, 8000, 4600, 80, 5320]]
+          }
+        ],
+        "credit_decimal": {
+          "single": [
+            [18800, 0.75],
+            [19300, 0.7],
+            [19800, 0.65],
+            [20300, 0.6],
+            [20800, 0.55],
+            [21300, 0.5],
+            [21800, 0.45],
+            [22300, 0.4],
+            [25000, 0.35],
+            [25500, 0.3],
+            [26000, 0.25],
+            [26500, 0.2],
+            [31300, 0.15],
+            [31800, 0.14],
+            [32300, 0.13],
+            [32800, 0.12],
+            [33300, 0.11],
+            [60000, 0.1],
+            [60500, 0.09],
+            [61000, 0.08],
+            [61500, 0.07],
+            [62000, 0.06],
+            [62500, 0.05],
+            [63000, 0.04],
+            [63500, 0.03],
+            [64000, 0.02],
+            [64500, 0.01],
+            [null, 0]
+          ],
+          "married_filing_jointly": [
+            [30000, 0.75],
+            [30500, 0.7],
+            [31000, 0.65],
+            [31500, 0.6],
+            [32000, 0.55],
+            [32500, 0.5],
+            [33000, 0.45],
+            [33500, 0.4],
+            [40000, 0.35],
+            [40500, 0.3],
+            [41000, 0.25],
+            [41500, 0.2],
+            [50000, 0.15],
+            [50500, 0.14],
+            [51000, 0.13],
+            [51500, 0.12],
+            [52000, 0.11],
+            [96000, 0.1],
+            [96500, 0.09],
+            [97000, 0.08],
+            [97500, 0.07],
+            [98000, 0.06],
+            [98500, 0.05],
+            [99000, 0.04],
+            [99500, 0.03],
+            [100000, 0.02],
+            [100500, 0.01],
+            [null, 0]
+          ],
+          "married_filing_separately": [
+            [15000, 0.75],
+            [15500, 0.7],
+            [16000, 0.65],
+            [16500, 0.6],
+            [17000, 0.55],
+            [17500, 0.5],
+            [18000, 0.45],
+            [18500, 0.4],
+            [20000, 0.35],
+            [20500, 0.3],
+            [21000, 0.25],
+            [21500, 0.2],
+            [25000, 0.15],
+            [25500, 0.14],
+            [26000, 0.13],
+            [26500, 0.12],
+            [27000, 0.11],
+            [48000, 0.1],
+            [48500, 0.09],
+            [49000, 0.08],
+            [49500, 0.07],
+            [50000, 0.06],
+            [50500, 0.05],
+            [51000, 0.04],
+            [51500, 0.03],
+            [52000, 0.02],
+            [52500, 0.01],
+            [null, 0]
+          ],
+          "head_of_household": [
+            [24000, 0.75],
+            [24500, 0.7],
+            [25000, 0.65],
+            [25500, 0.6],
+            [26000, 0.55],
+            [26500, 0.5],
+            [27000, 0.45],
+            [27500, 0.4],
+            [34000, 0.35],
+            [34500, 0.3],
+            [35000, 0.25],
+            [35500, 0.2],
+            [44000, 0.15],
+            [44500, 0.14],
+            [45000, 0.13],
+            [45500, 0.12],
+            [46000, 0.11],
+            [74000, 0.1],
+            [74500, 0.09],
+            [75000, 0.08],
+            [75500, 0.07],
+            [76000, 0.06],
+            [76500, 0.05],
+            [77000, 0.04],
+            [77500, 0.03],
+            [78000, 0.02],
+            [78500, 0.01],
+            [null, 0]
+          ]
+        }
+      }
+    },
+    "DC": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 15000,
+          "married_filing_jointly": 30000,
+          "married_filing_separately": 15000,
+          "head_of_household": 22500
+        },
+        "aged": {
+          "single": 2050,
+          "married_filing_jointly": 1650,
+          "married_filing_separately": 1650,
+          "head_of_household": 2050
+        },
+        "indexed": true
+      },
+      "itemized": {
+        "election": "follow_federal",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none",
+        "overall_limitation": {
+          "income": "state_agi",
+          "threshold": {
+            "single": 200000,
+            "married_filing_jointly": 200000,
+            "married_filing_separately": 100000,
+            "head_of_household": 200000
+          },
+          "rate": 0.05,
+          "max_share": 1.0,
+          "indexed": false
+        }
+      },
+      "notes": [
+        "DC 2026 standard deduction follows the District's 2025 decoupling law ($15,000, $30,000 joint, $22,500 head of household, plus the federal age amount); the 2026 estimated tax worksheet lists the higher federal amounts.",
+        "DC blind amounts are not modeled."
+      ]
+    },
+    "DE": {
+      "table_year": 2025,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 3250,
+          "married_filing_jointly": 6500,
+          "married_filing_separately": 3250,
+          "head_of_household": 3250
+        },
+        "aged": 2500
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "local",
+        "salt_cap": "federal"
+      },
+      "credits": {"per_filer": 110, "per_dependent": 110, "aged": 110, "aged_minimum_age": 60}
+    },
+    "GA": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 15000,
+          "married_filing_jointly": 30000,
+          "married_filing_separately": 15000,
+          "head_of_household": 15000
+        }
+      },
+      "itemized": {"election": "follow_federal", "basis": "federal", "remove_income_taxes": "none"},
+      "exemptions": {"dependent": 4000}
+    },
+    "HI": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 8000,
+          "married_filing_jointly": 16000,
+          "married_filing_separately": 8000,
+          "head_of_household": 12000
+        },
+        "by_year": [
+          {
+            "from_year": 2028,
+            "amount": {
+              "single": 9000,
+              "married_filing_jointly": 18000,
+              "married_filing_separately": 9000,
+              "head_of_household": 13500
+            }
+          },
+          {
+            "from_year": 2030,
+            "amount": {
+              "single": 10000,
+              "married_filing_jointly": 20000,
+              "married_filing_separately": 10000,
+              "head_of_household": 15000
+            }
+          },
+          {
+            "from_year": 2031,
+            "amount": {
+              "single": 12000,
+              "married_filing_jointly": 24000,
+              "married_filing_separately": 12000,
+              "head_of_household": 18000
+            }
+          }
+        ]
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "state_agi"},
+        "income_taxes": "all",
+        "income_taxes_federal_agi_below": {
+          "single": 100000,
+          "married_filing_jointly": 200000,
+          "married_filing_separately": 100000,
+          "head_of_household": 150000
+        },
+        "salt_cap": "none",
+        "overall_limitation": {
+          "income": "state_agi",
+          "threshold": {
+            "single": 166800,
+            "married_filing_jointly": 166800,
+            "married_filing_separately": 83400,
+            "head_of_household": 166800
+          },
+          "rate": 0.03,
+          "max_share": 0.8,
+          "indexed": false
+        }
+      },
+      "exemptions": {"per_filer": 1144, "dependent": 1144, "aged": [{"amount": 1144}]}
+    },
+    "IL": {
+      "table_year": 2026,
+      "indexed": true,
+      "exemptions": {
+        "per_filer": 2925,
+        "dependent": 2925,
+        "indexed": true,
+        "aged": [{"amount": 1000, "indexed": false}],
+        "basic_last_tax_year": 2028,
+        "cliff": {
+          "income": "federal_agi",
+          "above": {
+            "single": 250000,
+            "married_filing_jointly": 500000,
+            "married_filing_separately": 250000,
+            "head_of_household": 250000
+          }
+        }
+      }
+    },
+    "IN": {
+      "table_year": 2025,
+      "indexed": false,
+      "exemptions": {
+        "per_filer": 1000,
+        "dependent": 1000,
+        "dependent_child_extra": 1500,
+        "aged": [
+          {"amount": 1000},
+          {
+            "amount": 500,
+            "federal_agi_below": {
+              "single": 40000,
+              "married_filing_jointly": 40000,
+              "married_filing_separately": 20000,
+              "head_of_household": 40000
+            }
+          }
+        ]
+      },
+      "notes": ["IN first-year $3,000 child exemption, renter's and property tax deductions are not modeled."]
+    },
+    "KS": {
+      "table_year": 2025,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 3605,
+          "married_filing_jointly": 8240,
+          "married_filing_separately": 4120,
+          "head_of_household": 6180
+        },
+        "aged": {
+          "single": 850,
+          "married_filing_jointly": 700,
+          "married_filing_separately": 700,
+          "head_of_household": 850
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none"
+      },
+      "exemptions": {
+        "personal": {
+          "single": 9160,
+          "married_filing_jointly": 18320,
+          "married_filing_separately": 9160,
+          "head_of_household": 9160
+        },
+        "dependent": 2320,
+        "head_of_household_extra": 2320
+      }
+    },
+    "KY": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {"amount": 3360, "indexed": true},
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "income_taxes": "none",
+        "property_taxes": false,
+        "salt_cap": "none",
+        "other": false
+      },
+      "credits": {"aged": 40},
+      "notes": ["KY family size tax credit is not modeled."]
+    },
+    "MA": {
+      "table_year": 2026,
+      "indexed": false,
+      "exemptions": {
+        "personal": {
+          "single": 4400,
+          "married_filing_jointly": 8800,
+          "married_filing_separately": 4400,
+          "head_of_household": 6800
+        },
+        "dependent": 1000,
+        "aged": [{"amount": 700}]
+      },
+      "other_deductions": {"medical_floor": {"rate": 0.075, "base": "federal_agi"}, "medical_requires_federal_itemized": true}
+    },
+    "MD": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 3400,
+          "married_filing_jointly": 6850,
+          "married_filing_separately": 3400,
+          "head_of_household": 6850
+        },
+        "indexed": true
+      },
+      "itemized": {
+        "election": "federal_itemizers",
+        "basis": "federal",
+        "remove_income_taxes": "capped_share",
+        "phaseout": {
+          "rate": 0.075,
+          "threshold": {
+            "single": 200000,
+            "married_filing_jointly": 200000,
+            "married_filing_separately": 100000,
+            "head_of_household": 200000
+          }
+        }
+      },
+      "exemptions": {
+        "per_exemption_tiers": {
+          "income": "federal_agi",
+          "single": [[100000, 3200], [125000, 1600], [150000, 800], [null, 0]],
+          "married_filing_separately": [[100000, 3200], [125000, 1600], [150000, 800], [null, 0]],
+          "married_filing_jointly": [[150000, 3200], [175000, 1600], [200000, 800], [null, 0]],
+          "head_of_household": [[150000, 3200], [175000, 1600], [200000, 800], [null, 0]]
+        },
+        "aged": [{"amount": 1000}]
+      },
+      "notes": [
+        {
+          "statuses": ["married_filing_jointly", "head_of_household"],
+          "text": "MD 2026 joint and head-of-household standard deduction ($6,850) is computed from the statute's inflation adjustment; the Comptroller has published only the single amount."
+        }
+      ]
+    },
+    "ME": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 15700,
+          "married_filing_jointly": 31400,
+          "married_filing_separately": 15700,
+          "head_of_household": 23550
+        },
+        "aged": {
+          "single": 2050,
+          "married_filing_jointly": 1650,
+          "married_filing_separately": 1650,
+          "head_of_household": 2050
+        },
+        "indexed": true,
+        "by_year": [{"from_year": 2027, "amount": "federal"}],
+        "linear_phaseout": {
+          "income": "state_agi",
+          "start": {
+            "single": 102250,
+            "married_filing_jointly": 204550,
+            "married_filing_separately": 102250,
+            "head_of_household": 153400
+          },
+          "width": {
+            "single": 75000,
+            "married_filing_jointly": 150000,
+            "married_filing_separately": 75000,
+            "head_of_household": 112500
+          },
+          "indexed": true
+        }
+      },
+      "itemized": {
+        "election": "federal_itemizers",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none",
+        "cap_excluding_medical": 36300,
+        "indexed": true,
+        "linear_phaseout": {
+          "income": "state_agi",
+          "start": {
+            "single": 102250,
+            "married_filing_jointly": 204550,
+            "married_filing_separately": 102250,
+            "head_of_household": 153400
+          },
+          "width": {
+            "single": 75000,
+            "married_filing_jointly": 150000,
+            "married_filing_separately": 75000,
+            "head_of_household": 112500
+          },
+          "indexed": true
+        }
+      },
+      "exemptions": {
+        "per_filer": 5300,
+        "indexed": true,
+        "linear_phaseout": {
+          "income": "state_agi",
+          "start": {
+            "single": 340950,
+            "married_filing_jointly": 409100,
+            "married_filing_separately": 204550,
+            "head_of_household": 375000
+          },
+          "width": {
+            "single": 125000,
+            "married_filing_jointly": 125000,
+            "married_filing_separately": 62500,
+            "head_of_household": 125000
+          },
+          "indexed": true
+        }
+      },
+      "notes": [
+        "ME itemized deduction limit uses the 2025 amount ($36,300); the 2026 amount is not yet published.",
+        "ME dependent exemption tax credit and blind amounts are not modeled."
+      ]
+    },
+    "MI": {
+      "table_year": 2026,
+      "indexed": true,
+      "exemptions": {"per_filer": 5900, "dependent": 5900, "indexed": true, "index_rounding": 100},
+      "notes": ["MI special exemptions and the age-67 deduction election are not modeled."]
+    },
+    "MN": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 15300,
+          "married_filing_jointly": 30600,
+          "married_filing_separately": 15300,
+          "head_of_household": 23000
+        },
+        "aged": {
+          "single": 2000,
+          "married_filing_jointly": 1600,
+          "married_filing_separately": 1600,
+          "head_of_household": 2000
+        },
+        "indexed": true,
+        "graduated_limit": {
+          "income": "federal_agi",
+          "bands": [
+            [{"single": 244400, "married_filing_jointly": 244400, "married_filing_separately": 122200, "head_of_household": 244400}, 0.03],
+            [{"single": 337800, "married_filing_jointly": 337800, "married_filing_separately": 168900, "head_of_household": 337800}, 0.1]
+          ],
+          "max_share": 0.8,
+          "full_above": 1107750,
+          "indexed": true
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.1, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": {
+          "single": 10000,
+          "married_filing_jointly": 10000,
+          "married_filing_separately": 5000,
+          "head_of_household": 10000
+        },
+        "graduated_limit": {
+          "income": "federal_agi",
+          "bands": [
+            [{"single": 244400, "married_filing_jointly": 244400, "married_filing_separately": 122200, "head_of_household": 244400}, 0.03],
+            [{"single": 337800, "married_filing_jointly": 337800, "married_filing_separately": 168900, "head_of_household": 337800}, 0.1]
+          ],
+          "max_share": 0.8,
+          "full_above": 1107750,
+          "indexed": true
+        }
+      },
+      "exemptions": {
+        "dependent": 5300,
+        "indexed": true,
+        "step_phaseout": {
+          "income": "federal_agi",
+          "start": {
+            "single": 244500,
+            "married_filing_jointly": 366700,
+            "married_filing_separately": 183350,
+            "head_of_household": 305600
+          },
+          "step": {
+            "single": 2500,
+            "married_filing_jointly": 2500,
+            "married_filing_separately": 1250,
+            "head_of_household": 2500
+          },
+          "per_step": 0.02,
+          "indexed": true
+        }
+      },
+      "notes": ["MN blind amounts and the separate-return rule that both spouses itemize are not modeled."]
+    },
+    "MO": {
+      "table_year": 2025,
+      "indexed": false,
+      "itemization": "requires_federal_itemized",
+      "standard_deduction": "federal",
+      "head_of_household_exemption": 1400,
+      "itemized": {
+        "starts_from": "federal_itemized_total",
+        "adds_payroll_taxes": true,
+        "subtracts_state_income_tax_share": true
+      },
+      "federal_tax_deduction": {
+        "basis": "liability",
+        "percentage_base": "state_agi_before_retirement_exclusions",
+        "percentage_tiers": [
+          {"maximum_state_agi": 25000, "rate": 0.35},
+          {"maximum_state_agi": 50000, "rate": 0.25},
+          {"maximum_state_agi": 100000, "rate": 0.15},
+          {"maximum_state_agi": 125000, "rate": 0.05},
+          {"maximum_state_agi": null, "rate": 0.0}
+        ],
+        "cap": {
+          "single": 5000,
+          "married_filing_jointly": 10000,
+          "married_filing_separately": 5000,
+          "head_of_household": 5000
+        },
+        "adds": ["excess_advance_premium_tax_credit_repayment", "early_distribution_additional_tax"],
+        "subtracts": ["earned_income_credit", "refundable_american_opportunity_credit", "net_premium_tax_credit"]
+      }
+    },
+    "MS": {
+      "table_year": 2025,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 2300,
+          "married_filing_jointly": 4600,
+          "married_filing_separately": 2300,
+          "head_of_household": 3400
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "local",
+        "salt_cap": "federal"
+      },
+      "exemptions": {
+        "personal": {
+          "single": 6000,
+          "married_filing_jointly": 12000,
+          "married_filing_separately": 6000,
+          "head_of_household": 8000
+        },
+        "dependent": 1500,
+        "aged": [{"amount": 1500}]
+      }
+    },
+    "NC": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 12750,
+          "married_filing_jointly": 25500,
+          "married_filing_separately": 12750,
+          "head_of_household": 19125
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none",
+        "mortgage_and_property_tax_cap": 20000
+      },
+      "child_deduction": {
+        "income": "federal_agi",
+        "tiers": {
+          "married_filing_jointly": [
+            [40000, 3000],
+            [60000, 2500],
+            [80000, 2000],
+            [100000, 1500],
+            [120000, 1000],
+            [140000, 500],
+            [null, 0]
+          ],
+          "head_of_household": [
+            [30000, 3000],
+            [45000, 2500],
+            [60000, 2000],
+            [75000, 1500],
+            [90000, 1000],
+            [105000, 500],
+            [null, 0]
+          ],
+          "single": [[20000, 3000], [30000, 2500], [40000, 2000], [50000, 1500], [60000, 1000], [70000, 500], [null, 0]],
+          "married_filing_separately": [[20000, 3000], [30000, 2500], [40000, 2000], [50000, 1500], [60000, 1000], [70000, 500], [null, 0]]
+        }
+      }
+    },
+    "NE": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 8850,
+          "married_filing_jointly": 17700,
+          "married_filing_separately": 8850,
+          "head_of_household": 12950
+        },
+        "aged": {
+          "single": 2050,
+          "married_filing_jointly": 1700,
+          "married_filing_separately": 1700,
+          "head_of_household": 2050
+        },
+        "indexed": true
+      },
+      "itemized": {"election": "federal_itemizers", "basis": "federal", "remove_income_taxes": "full"},
+      "credits": {"per_filer": 176, "per_dependent": 176, "indexed": true}
+    },
+    "NJ": {
+      "table_year": 2025,
+      "indexed": false,
+      "exemptions": {"per_filer": 1000, "dependent": 1500, "aged": [{"amount": 1000}]},
+      "other_deductions": {
+        "medical_floor": {"rate": 0.02, "base": "state_agi"},
+        "property_tax_cap": {
+          "single": 15000,
+          "married_filing_jointly": 15000,
+          "married_filing_separately": 7500,
+          "head_of_household": 15000
+        }
+      }
+    },
+    "NM": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {"amount": "federal"},
+      "itemized": {
+        "election": "follow_federal",
+        "basis": "federal",
+        "remove_income_taxes": "capped_share",
+        "removal_limited_to_excess_over_federal_standard": true
+      },
+      "exemptions": {
+        "per_exemption_reduction": {
+          "income": "federal_agi",
+          "amount": 2500,
+          "base": {
+            "single": 20000,
+            "married_filing_jointly": 30000,
+            "married_filing_separately": 15000,
+            "head_of_household": 30000
+          },
+          "rate": {
+            "single": 0.15,
+            "married_filing_jointly": 0.1,
+            "married_filing_separately": 0.2,
+            "head_of_household": 0.1
+          }
+        },
+        "dependent_after_first": {"amount": 4000, "statuses": ["married_filing_jointly", "head_of_household"]},
+        "aged_tiers": {
+          "income": "federal_agi",
+          "married_filing_jointly": [[30000, 8000], [33000, 7000], [36000, 6000], [39000, 5000], [42000, 4000], [45000, 3000], [48000, 2000], [51000, 1000], [null, 0]],
+          "head_of_household": [[30000, 8000], [33000, 7000], [36000, 6000], [39000, 5000], [42000, 4000], [45000, 3000], [48000, 2000], [51000, 1000], [null, 0]],
+          "single": [[18000, 8000], [19500, 7000], [21000, 6000], [22500, 5000], [24000, 4000], [25500, 3000], [27000, 2000], [28500, 1000], [null, 0]],
+          "married_filing_separately": [[15000, 8000], [16500, 7000], [18000, 6000], [19500, 5000], [21000, 4000], [22500, 3000], [24000, 2000], [25500, 1000], [null, 0]]
+        }
+      },
+      "notes": ["NM blind exemption and the centenarian exemption are not modeled."]
+    },
+    "NY": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 8000,
+          "married_filing_jointly": 16050,
+          "married_filing_separately": 8000,
+          "head_of_household": 11200
+        }
+      },
+      "itemized": {
+        "election": "independent",
+        "basis": "own",
+        "medical_floor": {"rate": 0.075, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none",
+        "overall_limitation": {
+          "income": "federal_agi",
+          "threshold": {
+            "single": 340700,
+            "married_filing_jointly": 408850,
+            "married_filing_separately": 204400,
+            "head_of_household": 374800
+          },
+          "rate": 0.03,
+          "max_share": 0.8,
+          "indexed": true
+        },
+        "high_income_adjustment": {
+          "start": 100000,
+          "status_base": {
+            "single": 100000,
+            "married_filing_jointly": 200000,
+            "married_filing_separately": 100000,
+            "head_of_household": 150000
+          },
+          "band_width": 50000,
+          "band_share": 0.25,
+          "upper_band_start": 475000,
+          "full_band_end": 525000,
+          "charity_only_above": [1000000, 10000000],
+          "charity_share": [0.5, 0.25]
+        }
+      },
+      "exemptions": {"dependent": 1000}
+    },
+    "OK": {
+      "table_year": 2025,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 6350,
+          "married_filing_jointly": 12700,
+          "married_filing_separately": 6350,
+          "head_of_household": 9350
+        }
+      },
+      "itemized": {
+        "election": "follow_federal",
+        "basis": "federal",
+        "remove_income_taxes": "capped_share",
+        "cap_excluding_medical_and_charity": 17000,
+        "federal_medical_floor_rate": 0.075
+      },
+      "exemptions": {
+        "per_filer": 1000,
+        "dependent": 1000,
+        "aged": [
+          {
+            "amount": 1000,
+            "federal_agi_at_most": {
+              "single": 15000,
+              "married_filing_jointly": 25000,
+              "married_filing_separately": 12500,
+              "head_of_household": 19000
+            }
+          }
+        ]
+      }
+    },
+    "OR": {
+      "table_year": 2026,
+      "indexed": true,
+      "itemization": "independent",
+      "standard_deduction": {
+        "single": 2910,
+        "married_filing_jointly": 5820,
+        "married_filing_separately": 2910,
+        "head_of_household": 4685
+      },
+      "estimated_amounts": [],
+      "inferred_amounts": ["federal_tax_deduction.cap.married_filing_separately"],
+      "aged_additional_deduction": {
+        "single": 1200,
+        "head_of_household": 1200,
+        "married_filing_jointly": 1000,
+        "married_filing_separately": 1000
+      },
+      "aged_additional_deduction_indexed": false,
+      "itemized": {
+        "medical_floor_rate": 0.075,
+        "medical_floor_base": "federal_agi",
+        "state_income_tax_deductible": false,
+        "local_income_tax_deductible": true,
+        "property_taxes_salt_capped": true,
+        "salt_cap_income_base": "federal_agi",
+        "payroll_taxes_deductible": false,
+        "charitable_limit_base": "federal_agi"
+      },
+      "federal_tax_deduction": {
+        "basis": "liability",
+        "cap": {
+          "single": 8750,
+          "married_filing_jointly": 8750,
+          "married_filing_separately": 4375,
+          "head_of_household": 8750
+        },
+        "step_phaseout": {
+          "income_base": "federal_agi",
+          "start": {
+            "single": 125000,
+            "married_filing_jointly": 250000,
+            "married_filing_separately": 125000,
+            "head_of_household": 250000
+          },
+          "step_width": {
+            "single": 5000,
+            "married_filing_jointly": 10000,
+            "married_filing_separately": 5000,
+            "head_of_household": 10000
+          },
+          "reduction_per_step": 0.2,
+          "steps": 5,
+          "thresholds_indexed": false
+        },
+        "adds": ["early_distribution_additional_tax"],
+        "subtracts": ["refundable_american_opportunity_credit", "refundable_adoption_credit", "premium_tax_credit_allowed"]
+      },
+      "exemption_credit": {
+        "amount": 263,
+        "federal_agi_cutoff": {
+          "single": 100000,
+          "married_filing_separately": 100000,
+          "married_filing_jointly": 200000,
+          "head_of_household": 200000
+        },
+        "cutoff_indexed": false
+      }
+    },
+    "RI": {
+      "table_year": 2026,
+      "indexed": true,
+      "standard_deduction": {
+        "amount": {
+          "single": 11200,
+          "married_filing_jointly": 22400,
+          "married_filing_separately": 11200,
+          "head_of_household": 16800
+        },
+        "indexed": true,
+        "step_phaseout": {"income": "state_agi", "start": 261000, "step": 7450, "per_step": 0.2, "indexed": true}
+      },
+      "exemptions": {
+        "per_filer": 5250,
+        "dependent": 5250,
+        "indexed": true,
+        "step_phaseout": {"income": "state_agi", "start": 261000, "step": 7450, "per_step": 0.2, "indexed": true}
+      }
+    },
+    "UT": {
+      "table_year": 2026,
+      "indexed": true,
+      "deduction_credit": {
+        "rate": 0.06,
+        "dependent_exemption": 2167,
+        "phaseout_rate": 0.013,
+        "phaseout_base": {
+          "single": 18696,
+          "married_filing_jointly": 37392,
+          "married_filing_separately": 18696,
+          "head_of_household": 28045
+        },
+        "income": "state_agi",
+        "remove_income_taxes": "after_property",
+        "indexed": true
+      }
+    },
+    "VA": {
+      "table_year": 2026,
+      "indexed": false,
+      "standard_deduction": {
+        "amount": {
+          "single": 8750,
+          "married_filing_jointly": 17500,
+          "married_filing_separately": 8750,
+          "head_of_household": 8750
+        },
+        "by_year": [
+          {
+            "from_year": 2027,
+            "amount": {
+              "single": 9200,
+              "married_filing_jointly": 18400,
+              "married_filing_separately": 9200,
+              "head_of_household": 9200
+            }
+          },
+          {
+            "from_year": 2028,
+            "amount": {
+              "single": 9300,
+              "married_filing_jointly": 18600,
+              "married_filing_separately": 9300,
+              "head_of_household": 9300
+            }
+          },
+          {
+            "from_year": 2030,
+            "amount": {
+              "single": 3000,
+              "married_filing_jointly": 6000,
+              "married_filing_separately": 3000,
+              "head_of_household": 3000
+            }
+          }
+        ]
+      },
+      "itemized": {
+        "election": "follow_federal",
+        "basis": "own",
+        "medical_floor": {"rate": 0.1, "base": "federal_agi"},
+        "income_taxes": "none",
+        "salt_cap": "none",
+        "overall_limitation": {
+          "income": "federal_agi",
+          "threshold": {
+            "single": 332700,
+            "married_filing_jointly": 399200,
+            "married_filing_separately": 199600,
+            "head_of_household": 365950
+          },
+          "rate": 0.03,
+          "max_share": 0.8,
+          "indexed": true
+        }
+      },
+      "exemptions": {"per_filer": 930, "dependent": 930, "aged": [{"amount": 800}]}
+    },
+    "WI": {
+      "table_year": 2026,
+      "indexed": true,
+      "index_rounding": 10,
+      "itemization": "credit",
+      "standard_deduction": {
+        "single": {"maximum": 13960, "threshold": 20120, "rate": 0.12},
+        "head_of_household": {"maximum": 18030, "threshold": 20120, "rate": 0.22515, "floor_status": "single"},
+        "married_filing_jointly": {"maximum": 25840, "threshold": 29040, "rate": 0.19778},
+        "married_filing_separately": {"maximum": 12280, "threshold": 13780, "rate": 0.19778}
+      },
+      "personal_exemption": 700,
+      "dependent_exemption": 700,
+      "aged_exemption": 250,
+      "exemptions_indexed": false,
+      "itemized_deduction_credit": {"rate": 0.05, "medical_floor_rate": 0.075, "income_base": "federal_agi"}
+    },
+    "WV": {"table_year": 2026, "indexed": false, "exemptions": {"per_filer": 2000, "dependent": 2000}}
+  },
+  "coverage": {
+    "AK": "not_applicable",
+    "AL": "supported",
+    "AR": "supported",
+    "AZ": "supported",
+    "CA": "legacy",
+    "CO": "legacy",
+    "CT": "supported",
+    "DC": "supported",
+    "DE": "supported",
+    "FL": "not_applicable",
+    "GA": "supported",
+    "HI": "supported",
+    "IA": "legacy",
+    "ID": "legacy",
+    "IL": "supported",
+    "IN": "supported",
+    "KS": "supported",
+    "KY": "supported",
+    "LA": "legacy",
+    "MA": "supported",
+    "MD": "supported",
+    "ME": "supported",
+    "MI": "supported",
+    "MN": "supported",
+    "MO": "supported",
+    "MS": "supported",
+    "MT": "legacy",
+    "NC": "supported",
+    "ND": "legacy",
+    "NE": "supported",
+    "NH": "not_applicable",
+    "NJ": "supported",
+    "NM": "supported",
+    "NV": "not_applicable",
+    "NY": "supported",
+    "OH": "legacy",
+    "OK": "supported",
+    "OR": "supported",
+    "PA": "not_applicable",
+    "RI": "supported",
+    "SC": "legacy",
+    "SD": "not_applicable",
+    "TN": "not_applicable",
+    "TX": "not_applicable",
+    "UT": "supported",
+    "VA": "supported",
+    "VT": "legacy",
+    "WA": "not_applicable",
+    "WI": "supported",
+    "WV": "supported",
+    "WY": "not_applicable"
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Evaluator: `coastmath/engine/state_deduction_rules.py`."
+        },
+        {
+          "note": "This file records which state deduction rules are implemented, the published year of each figure and what is left out. It is an evidence ledger, not a statement that any state's return is computed exactly. A `supported` state has its standard/itemized deduction, exemptions and federal income tax deduction (where the state allows one) computed from the sources below; other state adjustments and credits outside this module keep their existing treatment."
+        }
+      ]
+    },
+    {
+      "section": "Conventions",
+      "content": [
+        "`table_year` is the tax year of the form or statute reproduced. For a later tax year, amounts flagged `indexed` are multiplied by the caller's state inflation factor (1.0 in 2026); unindexed statutory amounts never change. A tax year before `table_year` is not supported.",
+        "Federal income tax liability means regular tax plus AMT after nonrefundable credits. Each state then adds or removes specific Form 1040 items (`adds`/`subtracts`); see `FederalTaxComponents`.",
+        "All three implemented federal income tax deductions (AL, MO, OR) use the current-year liability (accrual) basis. None uses tax paid or refunds received.",
+        "State itemized deductions use raw categories. The IRC 164(b)(6)-(7) SALT cap (`federal_salt_cap`: $40,000 for 2025, $40,400 for 2026 rising 1% a year through 2029, reduced by 30% of income over $500,000 / $505,000, never below $10,000; halves for married filing separately) is applied only where the state adopts it, on the income measure the state names. Charitable limits are the IRC 170(b) 60% cash / 30% capital-gain-property shares."
+      ]
+    },
+    {
+      "section": "Supported states",
+      "content": [
+        {
+          "state": "AL",
+          "rule": "Standard deduction chart by AL AGI (Form 40 line 10), whole dollars",
+          "figures": "Single $3,000 less $25 per $500 band from $26,000, minimum $2,500; MFJ $8,500 less $175, minimum $5,000; HoH $5,200 less $135, minimum $2,500; MFS $4,250 less $88 per $250 band from $13,000, minimum $2,500. Unindexed. Table year 2025.",
+          "source": "2025 Form 40 booklet (https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40bk.pdf) p.9; Ala. Code 40-18-15(b)"
+        },
+        {
+          "state": "AL",
+          "rule": "Itemized or standard, chosen independently of the federal return",
+          "figures": "Schedule A: medical over 4% of AL AGI; real estate and personal property taxes to the IRC 164 extent with limits computed on AL AGI; state income taxes not deductible; local occupational taxes, FICA/Medicare withheld and self-employment tax deductible; mortgage interest and charity as federal (limits on AL AGI). MFS spouses must make the same choice (assumed).",
+          "source": "2025 Form 40 booklet (https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40bk.pdf) pp.8, 18-20"
+        },
+        {
+          "state": "AL",
+          "rule": "Personal and dependent exemptions",
+          "figures": "$1,500 single/MFS, $3,000 MFJ/HoH; per dependent $1,000 (AL AGI ≤ $50,000), $500 (≤ $100,000), $300 above.",
+          "source": "2025 Form 40 (https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40blk.pdf) lines 1-4; 2025 Form 40 booklet (https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40bk.pdf) p.10"
+        },
+        {
+          "state": "AL",
+          "rule": "Federal income tax deduction, uncapped, liability basis",
+          "figures": "1040 line 22 (includes AMT and excess advance PTC repayment) + net investment income tax − EIC − additional child tax credit − refundable American opportunity and adoption credits (Form 2439 credits not modeled).",
+          "source": "2025 Form 40 booklet (https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40bk.pdf) p.31 worksheet; Ala. Code 40-18-15(a)(2)"
+        },
+        {
+          "state": "MO",
+          "rule": "Standard deduction = federal standard deduction (including aged/blind amounts)",
+          "figures": "Supplied by the caller.",
+          "source": "2025 MO-1040 instructions (https://dor.mo.gov/forms/MO-1040%20Instructions_2025.pdf) p.8 line 14; RSMo 143.131"
+        },
+        {
+          "state": "MO",
+          "rule": "Itemized only when itemized federally; larger of itemized or standard",
+          "figures": "Federal Schedule A line 12e + Social Security, railroad retirement, Medicare and self-employment taxes − state income tax (earnings taxes stay); when the SALT cap binds, the state income tax share of the capped amount.",
+          "source": "2025 Form MO-A (https://dor.mo.gov/forms/MO-A_2025.pdf) Part 2 and worksheet; RSMo 143.141"
+        },
+        {
+          "state": "MO",
+          "rule": "Head-of-household exemption",
+          "figures": "$1,400, unindexed.",
+          "source": "2025 MO-1040 instructions (https://dor.mo.gov/forms/MO-1040%20Instructions_2025.pdf) p.8 line 15"
+        },
+        {
+          "state": "MO",
+          "rule": "Federal income tax deduction",
+          "figures": "Liability × 35% (MO AGI ≤ $25,000), 25% (≤ $50,000), 15% (≤ $100,000), 5% (≤ $125,000), 0% above; capped at $5,000, or $10,000 on a combined (joint) return. Liability adds excess advance PTC repayment and the IRC 72(t) additional tax; subtracts EIC, refundable American opportunity credit and net premium tax credit. Foreign tax credits are added back by statute but not modeled. The percentage is measured on MO AGI line 6, before pension/Social Security exemptions.",
+          "source": "RSMo 143.171 (https://revisor.mo.gov/main/OneSection.aspx?section=143.171).2; 2025 MO-1040 instructions (https://dor.mo.gov/forms/MO-1040%20Instructions_2025.pdf) pp.7-8 lines 9-13"
+        },
+        {
+          "state": "OR",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $2,910 single/MFS, $5,820 MFJ, $4,685 HoH. Plus $1,200 (single/HoH) or $1,000 (married) per individual 65 or older (2026 amounts, unchanged from 2025). MFS standard is zero if the spouse itemizes (spouse assumed to match).",
+          "source": "2026 withholding formulas (https://www.oregon.gov/dor/forms/FormsPubs/withholding-tax-formulas_206-436_2026.pdf) (Rev. 12-31-25); 2026 Combined Payroll Tax Report instructions (https://www.oregon.gov/dor/forms/FormsPubs/combined-payroll_211-155-2_2026.pdf) p.3 (HoH $4,685); 2026 Form OR-W-4 instructions (https://www.oregon.gov/dor/forms/FormsPubs/form-or-W-4-instr_101-402-1_2026.pdf) p.4 (age amounts); 2025 OR-40 instructions (https://www.oregon.gov/dor/forms/FormsPubs/form-or-40-inst_101-040-1_2025.pdf) p.16"
+        },
+        {
+          "state": "OR",
+          "rule": "Itemized or standard, independent of the federal return",
+          "figures": "Schedule OR-A: federal definitions; medical over 7.5% of federal AGI; Oregon income tax not deductible, Oregon local and other-state income taxes deductible; income + property taxes within the federal SALT cap; no payroll taxes.",
+          "source": "2025 OR-A instructions (https://www.oregon.gov/dor/forms/FormsPubs/schedule-or-a-inst_101-007-1_2025.pdf) pp.1-3"
+        },
+        {
+          "state": "OR",
+          "rule": "Federal tax liability subtraction, accrual basis",
+          "figures": "1040 line 22 less excess advance PTC repayment, plus IRA additional tax, less refundable American opportunity and adoption credits and the allowed premium tax credit; EITC never reduces it. Cap 2026 $8,750 ($4,375 MFS, half by statute; 2025 $8,500/$4,250). Federal AGI table, unindexed thresholds: from $125,000 (single/MFS) or $250,000 (MFJ/HoH) the cap falls 20% per $5,000 / $10,000 step and is $0 at $145,000 / $290,000.",
+          "source": "2025 Publication OR-17 (https://www.oregon.gov/dor/forms/FormsPubs/publication-or-17_101-431_2025.pdf) pp.71-72 Table 9; ORS 316.680, 316.695; 2026 withholding formulas (https://www.oregon.gov/dor/forms/FormsPubs/withholding-tax-formulas_206-436_2026.pdf)"
+        },
+        {
+          "state": "OR",
+          "rule": "Exemption credit (nonrefundable)",
+          "figures": "2026 $263 per exemption (filer, joint spouse, dependents); none when federal AGI is more than $100,000 (single/MFS) or $200,000 (others). Severe-disability exemptions not modeled.",
+          "source": "2026 withholding formulas (https://www.oregon.gov/dor/forms/FormsPubs/withholding-tax-formulas_206-436_2026.pdf); 2025 OR-40 instructions (https://www.oregon.gov/dor/forms/FormsPubs/form-or-40-inst_101-040-1_2025.pdf) p.18"
+        },
+        {
+          "state": "CT",
+          "rule": "Personal exemption phaseout by CT AGI",
+          "figures": "$15,000 single over $30,000; $12,000 MFS over $24,000; $19,000 HoH over $38,000; $24,000 MFJ over $48,000; reduced $1,000 for each $1,000 or fraction of excess. Unindexed (law effective 2016). No standard deduction or itemization.",
+          "source": "CGS 12-702 (https://www.cga.ct.gov/current/pub/chap_229.htm)(a)(1),(a)(2)(I),(b),(c)"
+        },
+        {
+          "state": "CT",
+          "rule": "2% rate phase-out add-back (Table C), added to tax",
+          "figures": "By CT AGI, rising per band or part of one: single $25 per $5,000 over $56,500, at most $250; MFJ $50 per $5,000 over $100,500, at most $500; MFS $25 per $2,500 over $50,250, at most $250; HoH $40 per $4,000 over $78,500, at most $400. Unindexed.",
+          "source": "2025 CT-1040 instructions (https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf) p.21 Table C; CGS 12-700(a)(10) (https://www.cga.ct.gov/current/pub/chap_229.htm)"
+        },
+        {
+          "state": "CT",
+          "rule": "Benefit recapture (Table D), added to tax",
+          "figures": "Single/MFS: $25 per $5,000 over $105,000 to $250; $250 + $90 per $5,000 over $200,000 to $2,950; $2,950 + $50 per $5,000 over $500,000 to $3,400. MFJ: $50 per $10,000 over $210,000 to $500; $500 + $180 per $10,000 over $400,000 to $5,900; $5,900 + $100 per $10,000 over $1,000,000 to $6,800. HoH: $40 per $8,000 over $168,000 to $400; $400 + $140 per $8,000 over $320,000 to $4,600; $4,600 + $80 per $8,000 over $800,000 to $5,320. Unindexed.",
+          "source": "2025 CT-1040 instructions (https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf) p.22 Table D; CGS 12-700(a)(10) (https://www.cga.ct.gov/current/pub/chap_229.htm)"
+        },
+        {
+          "state": "CT",
+          "rule": "Personal tax credit (Table E): a decimal of tax plus the Table C and D amounts",
+          "figures": "Single .75 to $18,800 CT AGI, .10 from $33,300 to $60,000, .00 above $64,500; MFJ .75 to $30,000, .10 to $96,000, .00 above $100,500; MFS .75 to $15,000, .10 to $48,000, .00 above $52,500; HoH .75 to $24,000, .10 to $74,000, .00 above $78,500. Every table row is in the data file.",
+          "source": "2025 CT-1040 instructions (https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf) p.23 Table E and Tax Calculation Schedule lines 4-10; CGS 12-703 (https://www.cga.ct.gov/current/pub/chap_229.htm)"
+        },
+        {
+          "state": "WI",
+          "rule": "Sliding standard deduction (indexed)",
+          "figures": "2026: single $13,960 less 12% of WI income over $20,120; HoH $18,030 less 22.515% over $20,120 until it reaches the single amount (from $58,827); MFJ $25,840 less 19.778% over $29,040; MFS $12,280 less 19.778% over $13,780. Zero from $136,453 single, $159,690 MFJ, $75,869 MFS. Later years index the maximum and threshold, rounded to $10.",
+          "source": "2026 Form 1-ES instructions (https://www.revenue.wi.gov/TaxForms2026/2026-Form1-ES-Inst.pdf) p.2 standard deduction schedules; Wis. Stat. 71.05(22)(dp),(dt) (https://docs.legis.wisconsin.gov/statutes/statutes/71/i/05/22)"
+        },
+        {
+          "state": "WI",
+          "rule": "Exemptions",
+          "figures": "$700 per filer, joint spouse and dependent; $250 more per filer 65 or older. Unindexed.",
+          "source": "Wis. Stat. 71.05(23) (https://docs.legis.wisconsin.gov/statutes/statutes/71/i/05/23); 2025 Form 1 instructions (https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf) pp.15-16; 2026 Form 1-ES instructions (https://www.revenue.wi.gov/TaxForms2026/2026-Form1-ES-Inst.pdf) p.2"
+        },
+        {
+          "state": "WI",
+          "rule": "Itemized deduction credit (not a deduction)",
+          "figures": "5% of (medical over 7.5% of federal AGI + qualifying interest + charity + casualty losses − WI standard deduction), computed whether or not itemizing federally; taxes never count. Nonrefundable.",
+          "source": "2025 Form 1 (https://www.revenue.wi.gov/TaxForms2025/2025-Form1.pdf) Schedule 1 lines 1-8; 2025 Form 1 instructions (https://www.revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf) p.16"
+        }
+      ]
+    },
+    {
+      "section": "Spec-driven states",
+      "content": [
+        {
+          "note": "These states are described by data alone (`_generic` in the evaluator): a standard deduction (`standard_deduction`), a state itemized deduction (`itemized`: chosen independently, only by federal itemizers, or following the federal choice; built from the raw categories or from the federal Schedule A total), exemptions, nonrefundable exemption credits and a few named items. Amounts are unindexed unless the row says indexed; an indexed amount of a table year before the tax year is projected with the plan's inflation factor."
+        },
+        {
+          "state": "AR",
+          "rule": "Standard deduction",
+          "figures": "$2,470 single/HoH/MFS, $4,940 MFJ; the same for 2026 (the 2026 withholding formula uses $2,470 and $29 credits). Table year 2025.",
+          "source": "2026 withholding formula (https://www.dfa.arkansas.gov/wp-content/uploads/whformula_2026.pdf) steps 2 and 4; 2025 AR1000F/AR1000NR instructions (https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf) line 27"
+        },
+        {
+          "state": "AR",
+          "rule": "Itemized (Form AR3), independent of the federal return",
+          "figures": "Medical over 10% of AR AGI; real estate and personal property taxes and city income taxes, no federal cap; Arkansas and federal income taxes not deductible; mortgage interest; charity. MFS spouses must match.",
+          "source": "2025 AR1000F/AR1000NR instructions (https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf) pp.17-18 (AR3 lines 1-16)"
+        },
+        {
+          "state": "AR",
+          "rule": "Personal tax credits (nonrefundable)",
+          "figures": "$29 per filer and spouse, one more for head of household, one more per filer 65 or older, $29 per dependent. The \"65 special\" credit (no retirement exemption) is not modeled.",
+          "source": "2025 AR1000F/AR1000NR instructions (https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf) p.12 lines 7A-7C"
+        },
+        {
+          "state": "AZ",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $16,100 single/MFS, $32,200 MFJ, $24,150 HoH (ARS 43-1041(A),(H) index the 2025 $15,750/$31,500/$23,625 like the federal basic amount).",
+          "source": "ARS 43-1041 (https://www.azleg.gov/ars/43/01041.htm); 2025 Form 140 instructions (https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140i.pdf) p.21 line 43"
+        },
+        {
+          "state": "AZ",
+          "rule": "Charitable standard deduction increase",
+          "figures": "From 2026: all charitable contributions (IRC 170(c)) added to the standard deduction, at most $1,000 single/MFS/HoH or $2,000 MFJ, unindexed (the 2019-2025 percentage increase, 34% for 2025, ends). Head of household uses the single cap (\"single person\"). Gifts claimed for Arizona credits are not separated.",
+          "source": "ARS 43-1041 (https://www.azleg.gov/ars/43/01041.htm)(I)(2); SB 1861 (2026) fact sheet as enacted (https://www.azleg.gov/legtext/57leg/2R/summary/S.1861-4168ATT_ASENACTED.DOCX.htm) item 6"
+        },
+        {
+          "state": "AZ",
+          "rule": "Itemized, independent of the federal return",
+          "figures": "Federal Schedule A rules: medical over 7.5% of federal AGI, state/local income and property taxes within the federal SALT cap, mortgage interest, charity. Arizona Schedule A adjustments for credit-claimed donations are not modeled.",
+          "source": "2025 Form 140 instructions (https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140i.pdf) p.21 line 43"
+        },
+        {
+          "state": "AZ",
+          "rule": "Age 65 exemption",
+          "figures": "$2,100 per filer 65 or older, unindexed.",
+          "source": "ARS 43-1023 (https://www.azleg.gov/ars/43/01023.htm)"
+        },
+        {
+          "state": "AZ",
+          "rule": "Dependent tax credit (nonrefundable)",
+          "figures": "$100 per dependent under 17, $25 per dependent 17 or older; reduced 5% for each $1,000 or part of federal AGI over $200,000 ($400,000 MFJ), none from $19,001 over.",
+          "source": "2025 Form 140 instructions (https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140i.pdf) pp.21-22 line 49, Tables I-V"
+        },
+        {
+          "state": "DC",
+          "rule": "Standard deduction (indexed after 2026)",
+          "figures": "2026: basic $15,000 single/MFS, $30,000 MFJ, $22,500 HoH (the 2025 decoupled amounts; the cost-of-living adjustment uses 2025 as its base year, so 2026 is unchanged), plus the IRC 63(c)(3) additional amount: $1,650 per filer 65 or older ($2,050 unmarried). Blind amounts not modeled. OTR's 2026 estimated-tax worksheet prints the federal $16,100/$32,200/$24,150 instead; the statute is followed.",
+          "source": "D.C. Law 26-89 (https://code.dccouncil.gov/us/dc/council/laws/26-89) sec. 2(b) (D.C. Code 47-1801.04(3A), (44)(A)(v)); 2025 D-40 booklet (https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40_Book_082026_v1.pdf) p.2 (\"higher federal basic standard deduction\" not recognized); 2026 D-40ES (https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2026_D40ES_Book_wLinks04012026.pdf) line 2b; Rev. Proc. 2025-32 (https://www.irs.gov/pub/irs-drop/rp-25-32.pdf) (2026 additional amounts)"
+        },
+        {
+          "state": "DC",
+          "rule": "Itemized follows the federal choice",
+          "figures": "Federal itemizers must itemize, others take the standard deduction. Federal Schedule A rules without the SALT cap: medical over 7.5% of federal AGI, real estate taxes in full, no income taxes, mortgage interest, charity. Reduced by 5% of DC AGI over $200,000 ($100,000 MFS), medical excluded from the reduction.",
+          "source": "D.C. Law 26-89 (https://code.dccouncil.gov/us/dc/council/laws/26-89) sec. 2(e) (D.C. Code 47-1803.04(b)-(d)); 2025 D-40 booklet (https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40_Book_082026_v1.pdf) line 18 and Calculation F"
+        },
+        {
+          "state": "DE",
+          "rule": "Standard deduction",
+          "figures": "$3,250 single/HoH/MFS, $6,500 MFJ; $2,500 more per filer 65 or older, only with the standard deduction. Table year 2025. Unindexed amounts; the 2026 return forms are not out before the filing season, so the 2025 table stays.",
+          "source": "2025 PIT-RES instructions (https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-RES_Instructions_2025-01.pdf) p.8 lines 20a, 21"
+        },
+        {
+          "state": "DE",
+          "rule": "Itemized (PIT-RSA), independent of the federal return",
+          "figures": "Medical over 7.5% of federal AGI; local and other-state income taxes (never Delaware tax) and property taxes within the federal SALT cap; mortgage interest; charity.",
+          "source": "2025 PIT-RES instructions (https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-RES_Instructions_2025-01.pdf) pp.7, 12 (PIT-RSA)"
+        },
+        {
+          "state": "DE",
+          "rule": "Personal credits (nonrefundable)",
+          "figures": "$110 per filer, spouse and dependent; $110 more per filer 60 or older.",
+          "source": "2025 PIT-RES instructions (https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-RES_Instructions_2025-01.pdf) pp.8-9 lines 27a-27b"
+        },
+        {
+          "state": "GA",
+          "rule": "Standard deduction",
+          "figures": "2026: $15,000 single/HoH/MFS, $30,000 MFJ; no age addition.",
+          "source": "DOR important tax updates, 2026 changes (https://dor.georgia.gov/taxes/important-tax-updates)"
+        },
+        {
+          "state": "GA",
+          "rule": "Itemized follows the federal choice",
+          "figures": "Federal itemizers must itemize: federal Schedule A total less other states' income taxes (none for a full-year resident; Georgia tax stays). The 2025 eligible itemizer credit is not carried into 2026.",
+          "source": "2025 IT-511 booklet (https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download) pp.16-17 lines 11-12c"
+        },
+        {
+          "state": "GA",
+          "rule": "Dependent exemption",
+          "figures": "$4,000 per dependent.",
+          "source": "2025 IT-511 booklet (https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download) p.17 line 14"
+        },
+        {
+          "state": "HI",
+          "rule": "Standard deduction by year (Act 46, SLH 2024)",
+          "figures": "$8,000 single/MFS, $16,000 MFJ, $12,000 HoH (2026-2027); $9,000/$18,000/$13,500 (2028-2029); $10,000/$20,000/$15,000 (2030); $12,000/$24,000/$18,000 (2031 on). Unindexed. Same figures as the enacted changes.",
+          "source": "DOTAX Announcement 2024-03 (https://files.hawaii.gov/tax/news/announce/ann24-03.pdf) p.3"
+        },
+        {
+          "state": "HI",
+          "rule": "Itemized, independent of the federal return",
+          "figures": "Medical over 7.5% of Hawaii AGI; property taxes with no SALT cap; state and local income taxes only below federal AGI $100,000 single/MFS, $150,000 HoH, $200,000 MFJ; mortgage interest; charity. Overall limitation: the smaller of 3% of Hawaii AGI over $166,800 ($83,400 MFS) or 80% of non-medical deductions; unindexed.",
+          "source": "2025 N-11 instructions (https://files.hawaii.gov/tax/forms/2025/n11ins.pdf) pp.20, 34 (Worksheets A-1 to A-6), Line 21b"
+        },
+        {
+          "state": "HI",
+          "rule": "Exemptions",
+          "figures": "$1,144 per filer, spouse and dependent, and one more per filer 65 or older.",
+          "source": "2025 N-11 instructions (https://files.hawaii.gov/tax/forms/2025/n11ins.pdf) p.20 line 25 and line 6a"
+        },
+        {
+          "state": "IL",
+          "rule": "Exemption allowance (indexed)",
+          "figures": "2026: $2,925 per filer, spouse and dependent; $1,000 more per filer 65 or older (unindexed). None when federal AGI exceeds $250,000 ($500,000 MFJ). The basic amount is set only for tax years ending on or before 2028-12-31, so none is allowed from 2029.",
+          "source": "IDOR Bulletin FY 2026-15 (https://tax.illinois.gov/research/publications/bulletins/fy-2026-15.html); 2025 IL-1040 instructions (https://tax.illinois.gov/content/dam/soi/en/web/tax/forms/incometax/documents/currentyear/individual/il-1040-instr.pdf) p.8 lines 10a-10d; 35 ILCS 5/204 (https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=003500050K204) (b)(7), (d)"
+        },
+        {
+          "state": "IN",
+          "rule": "Exemptions",
+          "figures": "$1,000 per filer, spouse and dependent; $1,500 more per dependent child (under 19, the plan's dependents); $1,000 more per filer 65 or older; $500 more per filer 65 or older with federal AGI under $40,000 ($20,000 MFS). First-year $3,000 child amount, renter's and property tax deductions not modeled. Unindexed amounts; the 2026 return forms are not out before the filing season, so the 2025 table stays.",
+          "source": "2025 IT-40 booklet (https://forms.in.gov/Download.aspx?id=16915) p.25 Schedule 3 lines 4-6"
+        },
+        {
+          "state": "KS",
+          "rule": "Standard deduction",
+          "figures": "$3,605 single, $8,240 MFJ, $6,180 HoH, $4,120 MFS, the same for 2026; $850 more per filer 65 or older (single/HoH), $700 (MFJ/MFS), matching the age worksheet.",
+          "source": "2026 K-40ES (https://www.ksrevenue.gov/pdf/k-40es26.pdf) standard deduction chart; 2025 K-40 instructions (https://www.ksrevenue.gov/pdf/ip25.pdf) p.6 line 4 and worksheet"
+        },
+        {
+          "state": "KS",
+          "rule": "Itemized (Kansas Schedule A), independent of the federal return",
+          "figures": "Medical over 7.5% of federal AGI; real estate and personal property taxes with no federal cap; no income taxes; mortgage interest; charity.",
+          "source": "2025 K-40 instructions (https://www.ksrevenue.gov/pdf/ip25.pdf) pp.7, 14 (Schedule A instructions)"
+        },
+        {
+          "state": "KS",
+          "rule": "Exemption allowance",
+          "figures": "$9,160 single/HoH/MFS, $18,320 MFJ; $2,320 more for head of household; $2,320 per dependent.",
+          "source": "2025 K-40 instructions (https://www.ksrevenue.gov/pdf/ip25.pdf) pp.2, 6"
+        },
+        {
+          "state": "KY",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $3,360, one per return (also for MFJ).",
+          "source": "DOR 2026 standard deduction release (https://revenue.ky.gov/News/Pages/Kentucky-DOR-Announces-2026-Standard-Deduction.aspx); 2025 Form 740 instructions (https://revenue.ky.gov/Forms/740%20Packet%20Instructions.pdf) p.13 line 10"
+        },
+        {
+          "state": "KY",
+          "rule": "Itemized, independent of the federal return",
+          "figures": "Home mortgage interest and charitable contributions only.",
+          "source": "2025 Form 740 instructions (https://revenue.ky.gov/Forms/740%20Packet%20Instructions.pdf) p.31 (Schedule A)"
+        },
+        {
+          "state": "KY",
+          "rule": "Personal tax credits (nonrefundable)",
+          "figures": "$40 per filer 65 or older. Family size tax credit not modeled.",
+          "source": "2025 Schedule ITC (https://revenue.ky.gov/Forms/Schedule%20ITC%20(2025).pdf) Section B lines 1, 5"
+        },
+        {
+          "state": "MA",
+          "rule": "Personal exemptions",
+          "figures": "$4,400 single/MFS, $8,800 MFJ, $6,800 HoH (each at its statutory maximum); $1,000 per dependent; $700 per filer 65 or older.",
+          "source": "M.G.L. c.62 s.3(B)(b)(1)-(3) (https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section3)"
+        },
+        {
+          "state": "MA",
+          "rule": "Medical deduction",
+          "figures": "The IRC 213 amount (over 7.5% of federal AGI), only when itemizing federally.",
+          "source": "M.G.L. c.62 s.3(B)(b)(4) (https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter62/Section3)"
+        },
+        {
+          "state": "MD",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $3,400 single/MFS (published), $6,850 MFJ/HoH (computed: the statute adds the 2025 amounts times the IRC 1(f)(3) chained-CPI adjustment over 2024, 2.42% from BLS C-CPI-U, rounded down to $50; $162 becomes $150). The 2026 payment-voucher worksheet still prints the unindexed $3,350/$6,700.",
+          "source": "Tax-General 10-217 (https://mgaleg.maryland.gov/mgawebsite/laws/StatuteText?article=gtg&section=10-217)(b)-(c); BLS C-CPI-U series SUUR0000SA0 (https://data.bls.gov/timeseries/SUUR0000SA0); 2026 withholding PM330 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/withholding/2026/pm330.pdf); 2025 resident booklet (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf) p.21 instruction 16"
+        },
+        {
+          "state": "MD",
+          "rule": "Itemized only by federal itemizers, larger of the two",
+          "figures": "Federal Schedule A total less the state and local income tax share of the capped SALT, less 7.5% of federal AGI over $200,000 ($100,000 MFS).",
+          "source": "2025 resident booklet (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf) pp.20-21 instruction 14, Worksheet 14A"
+        },
+        {
+          "state": "MD",
+          "rule": "Exemptions",
+          "figures": "$3,200 per filer, spouse and dependent, falling by federal AGI: single/MFS $1,600 over $100,000, $800 over $125,000, $0 over $150,000; MFJ/HoH $1,600 over $150,000, $800 over $175,000, $0 over $200,000. $1,000 more per filer 65 or older (not reduced).",
+          "source": "2025 resident booklet (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf) p.12 Exemption Amount Chart 10A"
+        },
+        {
+          "state": "ME",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $15,700 single/MFS, $31,400 MFJ, $23,550 HoH plus $1,650 per filer 65 or older ($2,050 unmarried; the IRC 63(c)(3) amounts). From 2027 the federal standard deduction.",
+          "source": "36 M.R.S. 5124-C (https://www.legislature.maine.gov/legis/statutes/36/title36sec5124-C.html)(1-C), (1-D); 2026 rate schedule (https://www.maine.gov/revenue/sites/maine.gov.revenue/files/2026-05/ind_tax_rate_sched_2026_rev.pdf)"
+        },
+        {
+          "state": "ME",
+          "rule": "Phase-out of the standard and itemized deductions (indexed)",
+          "figures": "Reduced by the deduction times (Maine AGI − threshold) / width, at most all of it. 2026 thresholds: $102,250 single/MFS, $204,550 MFJ (published); $153,400 HoH, derived from the statutory $120,000 with the adjustment implied by the published amounts (rounded to $50). Widths $75,000 single/MFS, $112,500 HoH, $150,000 MFJ.",
+          "source": "36 M.R.S. 5124-C (https://www.legislature.maine.gov/legis/statutes/36/title36sec5124-C.html)(2); 36 M.R.S. 5125 (https://www.legislature.maine.gov/legis/statutes/36/title36sec5125.html)(7); 2026 withholding tables (https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/26_wh_tab_instr_August2026.pdf) p.1 and Step 3"
+        },
+        {
+          "state": "ME",
+          "rule": "Itemized only by federal itemizers, larger of the two",
+          "figures": "Federal Schedule A rules less income and sales taxes, plus property taxes the federal SALT cap disallowed (property taxes in full): medical over 7.5% of federal AGI, mortgage interest, charity. Everything but medical limited to $36,300 (2025 amount; the 2026 limit is not yet published).",
+          "source": "36 M.R.S. 5125 (https://www.legislature.maine.gov/legis/statutes/36/title36sec5125.html)(1)-(4); 2025 Form 1040ME instructions (https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040me_gen_instr_w_cover_pg.pdf) (2025 limit $36,300)"
+        },
+        {
+          "state": "ME",
+          "rule": "Personal exemption (indexed)",
+          "figures": "2026: $5,300 per filer and joint spouse. Reduced by the exemption times (Maine AGI − threshold) / $125,000 ($62,500 MFS). 2026 thresholds derived like the HoH deduction threshold: $340,950 single, $375,000 HoH, $409,100 MFJ, $204,550 MFS (2025 published: $333,450, $366,750, $400,100, $200,050). The dependent exemption credit is not modeled.",
+          "source": "36 M.R.S. 5126-A (https://www.legislature.maine.gov/legis/statutes/36/title36sec5126-A.html)(1)-(2); 2026 rate schedule (https://www.maine.gov/revenue/sites/maine.gov.revenue/files/2026-05/ind_tax_rate_sched_2026_rev.pdf); 2025 exemption phase-out worksheet (https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/25_1040es_pers_exempt_phaseout_wksht.pdf) lines 2-4"
+        },
+        {
+          "state": "MI",
+          "rule": "Personal exemptions (indexed, rounded to $100)",
+          "figures": "2026: $5,900 per filer, spouse and dependent. Special exemptions and the age-67 deduction election not modeled.",
+          "source": "2026 Form 446 withholding guide (https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/446_Withholding-Guide_2026.pdf) p.1; MCL 206.30(2),(7) (https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-206-30)"
+        },
+        {
+          "state": "MN",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $15,300 single/MFS, $30,600 MFJ, $23,000 HoH; $1,600 more per filer 65 or older ($2,000 unmarried). Blind amounts not modeled.",
+          "source": "Minn. Stat. 290.0123 (https://www.revisor.mn.gov/statutes/cite/290.0123) subds. 1-2, 6; 2026 inflation-adjusted amounts (https://www.revenue.state.mn.us/sites/default/files/2025-12/inflation-adjusted-amounts-2026.pdf)"
+        },
+        {
+          "state": "MN",
+          "rule": "Deduction limitation (indexed), standard and itemized",
+          "figures": "Reduced by the lesser of 3% of federal AGI over $244,400 up to $337,800 plus 10% above $337,800 (MFS $122,200 and $168,900), or 80% of the deduction; by 80% above $1,107,750. Medical expenses are outside the itemized limitation.",
+          "source": "Minn. Stat. 290.0123 (https://www.revisor.mn.gov/statutes/cite/290.0123) subd. 5; Minn. Stat. 290.0122 (https://www.revisor.mn.gov/statutes/cite/290.0122) subd. 2; 2026 inflation-adjusted amounts (https://www.revenue.state.mn.us/sites/default/files/2025-12/inflation-adjusted-amounts-2026.pdf)"
+        },
+        {
+          "state": "MN",
+          "rule": "Itemized, independent of the federal return",
+          "figures": "Medical over 10% of federal AGI; real estate and personal property taxes up to $10,000 ($5,000 MFS); no income taxes; mortgage interest; charity under IRC 170.",
+          "source": "Minn. Stat. 290.0122 (https://www.revisor.mn.gov/statutes/cite/290.0122) subds. 3-6"
+        },
+        {
+          "state": "MN",
+          "rule": "Dependent exemption (indexed)",
+          "figures": "2026: $5,300 per dependent, reduced 2 percentage points for each $2,500 ($1,250 MFS) or part of federal AGI over $244,500 single, $305,600 HoH, $366,700 MFJ, $183,350 MFS.",
+          "source": "Minn. Stat. 290.0121 (https://www.revisor.mn.gov/statutes/cite/290.0121); 2026 inflation-adjusted amounts (https://www.revenue.state.mn.us/sites/default/files/2025-12/inflation-adjusted-amounts-2026.pdf)"
+        },
+        {
+          "state": "MS",
+          "rule": "Standard deduction",
+          "figures": "$2,300 single/MFS, $4,600 MFJ, $3,400 head of family. Unindexed amounts; the 2026 return forms are not out before the filing season, so the 2025 table stays.",
+          "source": "DOR individual tax rates, deductions (https://www.dor.ms.gov/individual/tax-rates)"
+        },
+        {
+          "state": "MS",
+          "rule": "Itemized, larger of the two",
+          "figures": "Federal itemized deductions less Mississippi income tax: medical over 7.5% of federal AGI, property taxes within the federal SALT cap, mortgage interest, charity.",
+          "source": "DOR individual tax rates, deductions (https://www.dor.ms.gov/individual/tax-rates)"
+        },
+        {
+          "state": "MS",
+          "rule": "Exemptions",
+          "figures": "$6,000 single/MFS, $12,000 MFJ, $8,000 head of family; $1,500 per dependent and per filer 65 or older.",
+          "source": "DOR individual tax rates, exemptions (https://www.dor.ms.gov/individual/tax-rates)"
+        },
+        {
+          "state": "NC",
+          "rule": "Standard deduction",
+          "figures": "$12,750 single/MFS, $25,500 MFJ, $19,125 HoH.",
+          "source": "G.S. 105-153.5 (https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html)(a)(1)"
+        },
+        {
+          "state": "NC",
+          "rule": "Itemized, independent of the federal return",
+          "figures": "Charity; mortgage interest plus real estate taxes, at most $20,000 for both spouses; medical over 7.5% of federal AGI. No income taxes.",
+          "source": "G.S. 105-153.5 (https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html)(a)(2)"
+        },
+        {
+          "state": "NC",
+          "rule": "Child deduction per child-tax-credit child (under 17)",
+          "figures": "By federal AGI: MFJ $3,000 to $40,000 falling $500 per $20,000 to $0 over $140,000; HoH $3,000 to $30,000, $500 per $15,000, $0 over $105,000; single/MFS $3,000 to $20,000, $500 per $10,000, $0 over $70,000.",
+          "source": "G.S. 105-153.5 (https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html)(a1)"
+        },
+        {
+          "state": "NE",
+          "rule": "Standard deduction (indexed)",
+          "figures": "2026: $8,850 single/MFS, $17,700 MFJ, $12,950 HoH; $2,050 more per filer 65 or older (single/HoH), $1,700 (MFJ/MFS).",
+          "source": "2026 Form 1040N-ES (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_1040N-ES.pdf) (8-014-2025) worksheet line 5 and the elderly/blind table; 2025 individual income tax booklet (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf) p.13 line 6 chart"
+        },
+        {
+          "state": "NE",
+          "rule": "Itemized only by federal itemizers, larger of the two",
+          "figures": "Federal Schedule A total less all state and local income taxes on Schedule A line 5a, even when the cap applied.",
+          "source": "2025 individual income tax booklet (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf) p.14 lines 7-10"
+        },
+        {
+          "state": "NE",
+          "rule": "Personal exemption credit (nonrefundable, indexed)",
+          "figures": "2026: $176 per filer, spouse and dependent ($171 in 2025).",
+          "source": "2026 Form 1040N-ES (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_1040N-ES.pdf) worksheet instructions; 2025 individual income tax booklet (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_Individual_Income_Tax_Booklet.pdf) p.14 line 18"
+        },
+        {
+          "state": "NJ",
+          "rule": "Exemptions",
+          "figures": "$1,000 per filer and spouse; $1,000 more per filer 65 or older; $1,500 per dependent. College-student and veteran exemptions not modeled. Unindexed amounts; the 2026 return forms are not out before the filing season, so the 2025 table stays.",
+          "source": "2025 NJ-1040 instructions (https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf) pp.6-7 lines 6-13"
+        },
+        {
+          "state": "NJ",
+          "rule": "Medical expenses and property tax deduction",
+          "figures": "Medical over 2% of NJ gross income (state AGI here); property taxes up to $15,000 ($7,500 MFS), assumed on the main home and worth more than the $50 credit.",
+          "source": "2025 NJ-1040 instructions (https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf) p.23 line 31 Worksheet F, pp.28-29 line 41 Worksheet H"
+        },
+        {
+          "state": "NM",
+          "rule": "Federal standard or itemized deduction, following the federal choice",
+          "figures": "The federal standard deduction (including age amounts) or the federal itemized total, less the income tax share of the capped SALT deduction, but at most the excess of the itemized total over the federal standard deduction. Unindexed rules; 2026 uses the 2025 forms.",
+          "source": "2025 PIT-1 instructions (https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf) lines 10 and 12 and the line 10 worksheet"
+        },
+        {
+          "state": "NM",
+          "rule": "Low- and middle-income exemption",
+          "figures": "$2,500 per filer, spouse and dependent, less 15% (single), 10% (MFJ/HoH) or 20% (MFS) of federal AGI over $20,000, $30,000 or $15,000; none above $36,667 single, $55,000 MFJ/HoH, $27,500 MFS.",
+          "source": "2025 PIT-1 instructions (https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf) line 14 worksheet (NMSA 7-2-5.8)"
+        },
+        {
+          "state": "NM",
+          "rule": "Deduction for certain dependents",
+          "figures": "$4,000 for each dependent after the first, joint and head-of-household returns only.",
+          "source": "2025 PIT-1 instructions (https://realfile.tax.newmexico.gov/2025pit-1-ins.pdf) line 13 (NMSA 7-2-39)"
+        },
+        {
+          "state": "NM",
+          "rule": "Exemption for persons 65 or older",
+          "figures": "Per filer 65 or older: $8,000 up to federal AGI $30,000 (MFJ/HoH), $18,000 (single), $15,000 (MFS), $1,000 less for each further $3,000 (MFJ/HoH) or $1,500 band; none above $51,000, $28,500, $25,500. Blind and centenarian exemptions not modeled.",
+          "source": "2025 PIT-ADJ instructions (https://realfile.tax.newmexico.gov/2025pit-adj-ins.pdf) line 13 and Table 1 (NMSA 7-2-5.2)"
+        },
+        {
+          "state": "NY",
+          "rule": "Standard deduction",
+          "figures": "$8,000 single/MFS, $16,050 MFJ, $11,200 HoH; unindexed.",
+          "source": "2026 IT-2105-I (https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf) p.3; 2025 IT-201-I (https://www.tax.ny.gov/pdf/2025/inc/it201i_2025.pdf) line 34"
+        },
+        {
+          "state": "NY",
+          "rule": "Itemized (IT-196), independent of the federal return",
+          "figures": "2017 federal rules: medical over 7.5% of federal AGI, property taxes with no SALT cap, no income taxes, mortgage interest, charity. Line 40 limitation: the smaller of 3% of federal AGI over $340,700 single, $408,850 MFJ, $374,800 HoH, $204,400 MFS (2025, indexed) or 80% of non-medical deductions.",
+          "source": "2025 IT-196 instructions (https://www.tax.ny.gov/pdf/2025/inc/it196i_2025.pdf) pp.3-4, 18 (line 40 worksheet)"
+        },
+        {
+          "state": "NY",
+          "rule": "High-income adjustment (IT-196 lines 46-47)",
+          "figures": "NYAGI over $100,000 single/MFS, $150,000 HoH, $200,000 MFJ: 25% of itemized times (excess, at most $50,000) / $50,000; $475,000-$525,000: 25% plus 25% times (excess over $475,000) / $50,000; $525,000-$1,000,000: 50%; over $1,000,000 only 50% of charity; over $10,000,000 25% of charity.",
+          "source": "2025 IT-196 instructions (https://www.tax.ny.gov/pdf/2025/inc/it196i_2025.pdf) pp.20-21 Worksheets 3-4, line 47"
+        },
+        {
+          "state": "NY",
+          "rule": "Dependent exemption",
+          "figures": "$1,000 per dependent.",
+          "source": "2025 IT-201-I (https://www.tax.ny.gov/pdf/2025/inc/it201i_2025.pdf) p.11 line 36"
+        },
+        {
+          "state": "OK",
+          "rule": "Standard deduction, only with the federal standard deduction",
+          "figures": "$6,350 single/MFS, $12,700 MFJ, $9,350 HoH. Unindexed amounts; the 2026 return forms are not out before the filing season, so the 2025 table stays.",
+          "source": "2025 Form 511 packet (https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf) p.10 line 10"
+        },
+        {
+          "state": "OK",
+          "rule": "Itemized follows the federal choice (Schedule 511-D)",
+          "figures": "Federal Schedule A total less the income tax share of the capped SALT; everything except medical and charity is limited to $17,000.",
+          "source": "2025 Form 511 packet (https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf) p.10 line 10, p.46 Schedule 511-D"
+        },
+        {
+          "state": "OK",
+          "rule": "Exemptions",
+          "figures": "$1,000 per filer, spouse and dependent; $1,000 more per filer 65 or older with federal AGI at most $15,000 single, $25,000 MFJ, $12,500 MFS, $19,000 HoH.",
+          "source": "2025 Form 511 packet (https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf) pp.8-10"
+        },
+        {
+          "state": "RI",
+          "rule": "Standard deduction only (indexed)",
+          "figures": "2026: $11,200 single/MFS, $22,400 MFJ, $16,800 HoH. No itemizing.",
+          "source": "ADV 2025-22 (https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) p.1; R.I. Gen. Laws 44-30-2.6 (https://webserver.rilegislature.gov/Statutes/TITLE44/44-30/44-I/44-30-2.6.htm)(c)(3)(B)"
+        },
+        {
+          "state": "RI",
+          "rule": "Exemptions (indexed)",
+          "figures": "2026: $5,250 per filer, spouse and dependent.",
+          "source": "ADV 2025-22 (https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) p.1; R.I. Gen. Laws 44-30-2.6 (https://webserver.rilegislature.gov/Statutes/TITLE44/44-30/44-I/44-30-2.6.htm)(c)(3)(C)"
+        },
+        {
+          "state": "RI",
+          "rule": "Phase-out of both (indexed)",
+          "figures": "20 percentage points per $7,450 (or part) of modified AGI over $261,000; none above $290,800.",
+          "source": "ADV 2025-22 (https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) p.1; R.I. Gen. Laws 44-30-2.6 (https://webserver.rilegislature.gov/Statutes/TITLE44/44-30/44-I/44-30-2.6.htm)(c)(3)(B)(III), (D)"
+        },
+        {
+          "state": "UT",
+          "rule": "Taxpayer tax credit (nonrefundable, indexed)",
+          "figures": "2026: 6% of ($2,167 per dependent + the federal standard or itemized deduction − state and local income tax in the itemized amount: line 5e less property taxes), less 1.3% of Utah taxable income over $18,696 single/MFS, $37,392 MFJ, $28,045 HoH. From the draft 2026 return.",
+          "source": "2026 TC-40 (draft) (https://files.tax.utah.gov/tax/forms/drafts/tc-40.pdf) lines 9-18; 2025 TC-40 instructions (https://tax.utah.gov/forms/current/tc-40inst.pdf) p.10 lines 11-20"
+        },
+        {
+          "state": "VA",
+          "rule": "Standard deduction by year, only with the federal standard deduction",
+          "figures": "$8,750 single/MFS, $17,500 MFJ (2025-2026); $9,200/$18,400 (2027); $9,300/$18,600 (2028-2029); $3,000/$6,000 from 2030. Head of household uses the single amount. Same figures as the enacted changes.",
+          "source": "Va. Code 58.1-322.03 (https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/)(1)(b)"
+        },
+        {
+          "state": "VA",
+          "rule": "Itemized follows the federal choice",
+          "figures": "Virginia Schedule A: medical over 10% of federal AGI; property taxes with no SALT cap; income taxes removed; mortgage interest; charity. Overall limitation: the smaller of 3% of federal AGI over $332,700 single, $399,200 MFJ, $365,950 HoH, $199,600 MFS (2025, indexed) or 80% of non-medical deductions.",
+          "source": "2025 Schedule A instructions (https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2025-sch-a-instructions.pdf) pp.1-2; Va. Code 58.1-322.03 (https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/)(1)(a)"
+        },
+        {
+          "state": "VA",
+          "rule": "Exemptions",
+          "figures": "$930 per filer, spouse and dependent; $800 more per filer 65 or older.",
+          "source": "Va. Code 58.1-322.03 (https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/)(2); Virginia Tax exemptions (https://www.tax.virginia.gov/exemptions)"
+        },
+        {
+          "state": "WV",
+          "rule": "Personal exemptions",
+          "figures": "$2,000 per filer, spouse and dependent.",
+          "source": "W. Va. Code 11-21-16 (https://code.wvlegislature.gov/11-21-16/)(a)"
+        }
+      ]
+    },
+    {
+      "section": "Built-in enacted law",
+      "content": [
+        {
+          "note": "Enacted later-year changes (`state_tax_enacted_changes.json`) alter two figures these rules own: the Hawaii (Act 46) and Virginia standard deductions. The rules apply them by year through `by_year` entries with the same amounts, and `tests/test_state_deduction_rules_coverage.py` checks that they match. The rules keep them at their nominal statutory amount; the enacted-changes path grows them with inflation after their year. Every other enacted change is to brackets, rates or retirement exclusions, which the rules do not own. Illinois' exemption sunset after 2028 is in its statute (35 ILCS 5/204(b)(7)) and is applied by the rules (`basic_last_tax_year`)."
+        }
+      ]
+    },
+    {
+      "section": "Repealed federal income tax deductions",
+      "content": [
+        {
+          "state": "IA",
+          "last year allowed": "2022",
+          "source": "2024 IA 1040 instructions (https://revenue.iowa.gov/media/4152/download?inline=): federal tax paid is no longer deductible (2023 effective year from SF 2417)"
+        },
+        {
+          "state": "LA",
+          "last year allowed": "2021",
+          "source": "Act 395 (HB 278), 2021 Regular Session (https://www.legis.la.gov/legis/ViewDocument.aspx?d=1235793): repealed for periods beginning on or after 2022-01-01"
+        },
+        {
+          "state": "MT",
+          "last year allowed": "2023",
+          "source": "MT DOR tax simplification (https://revenue.mt.gov/montana-tax-simplification-resource-hub); SB 399 (2021), effective tax year 2024"
+        },
+        {
+          "note": "These states are never given a federal income tax deduction for 2026 or later."
+        }
+      ]
+    },
+    {
+      "section": "All-state coverage matrix",
+      "content": [
+        {
+          "note": "`supported`: implemented above. `legacy`: the existing engine approximation is kept. `unverified`: deduction/exemption rules for this family not verified in this data file. `not_applicable`: no broad income tax or no deduction or exemption family."
+        },
+        {
+          "state": "AK",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "AL",
+          "coverage": "supported",
+          "limitation": "Form 2439 credits, blind/disability items, part-year rules and the joint-federal/separate-state liability ratio are not modeled; payroll tax must be supplied."
+        },
+        {
+          "state": "AR",
+          "coverage": "supported",
+          "limitation": "Low-income tax tables, the 65 special credit, the high-income bracket adjustment and part-year rules are not modeled."
+        },
+        {
+          "state": "AZ",
+          "coverage": "supported",
+          "limitation": "Arizona Schedule A adjustments and the qualifying-parent, blind and other exemptions are not modeled; gifts claimed for Arizona credits are not separated from the charitable standard deduction increase."
+        },
+        {
+          "state": "CA",
+          "coverage": "legacy",
+          "limitation": "Existing standard deduction and exemption credits kept; Schedule CA itemized deductions and the high-income itemized limitation not implemented."
+        },
+        {
+          "state": "CO",
+          "coverage": "legacy",
+          "limitation": "Taxes federal taxable income; the federal itemized result is not passed through."
+        },
+        {
+          "state": "CT",
+          "coverage": "supported",
+          "limitation": "Exemption, 2% phase-out add-back, recapture and personal credit; property tax credit not modeled."
+        },
+        {
+          "state": "DC",
+          "coverage": "supported",
+          "limitation": "Blind amounts and the separate-return rules are not modeled; the 2026 standard deduction follows the decoupling statute rather than OTR's federal-amount worksheet."
+        },
+        {
+          "state": "DE",
+          "coverage": "supported",
+          "limitation": "Delaware-tax credit for other-state taxes, union dues and charitable mileage additions are not modeled."
+        },
+        {
+          "state": "FL",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "GA",
+          "coverage": "supported",
+          "limitation": "The 2025-only eligible itemizer credit and the one-time 2026 surplus credit are not modeled."
+        },
+        {
+          "state": "HI",
+          "coverage": "supported",
+          "limitation": "Blind, deaf and disability exemptions and the dependent standard deduction limit are not modeled."
+        },
+        {
+          "state": "IA",
+          "coverage": "legacy",
+          "limitation": "Taxes federal taxable income from 2023; federal income tax deduction repealed (guarded)."
+        },
+        {
+          "state": "ID",
+          "coverage": "legacy",
+          "limitation": "Federal standard deduction kept; federal itemized result not passed through."
+        },
+        {
+          "state": "IL",
+          "coverage": "supported",
+          "limitation": "Property tax and K-12 education credits are not modeled; no exemption from 2029 (statutory sunset)."
+        },
+        {
+          "state": "IN",
+          "coverage": "supported",
+          "limitation": "First-year child amount, renter's and property tax deductions and county tax are not modeled."
+        },
+        {
+          "state": "KS",
+          "coverage": "supported",
+          "limitation": "Blind amounts, newborn and disabled-veteran exemptions are not modeled."
+        },
+        {
+          "state": "KY",
+          "coverage": "supported",
+          "limitation": "Family size tax credit and blind/National Guard credits are not modeled."
+        },
+        {
+          "state": "LA",
+          "coverage": "legacy",
+          "limitation": "Existing standard deduction kept; federal income tax deduction repealed from 2022 (guarded)."
+        },
+        {
+          "state": "MA",
+          "coverage": "supported",
+          "limitation": "Part B deductions (rent, commuting, student loan), blindness and Part A/C interplay are not modeled."
+        },
+        {
+          "state": "MD",
+          "coverage": "supported",
+          "limitation": "2026 joint and head-of-household standard deduction is computed from the statute (not yet published); dependent 65+ exemptions and the MFS itemizing split are not modeled."
+        },
+        {
+          "state": "ME",
+          "coverage": "supported",
+          "limitation": "2026 head-of-household and exemption phase-out thresholds are derived; the itemized limit is the 2025 amount; the dependent exemption credit and blind amounts are not modeled."
+        },
+        {
+          "state": "MI",
+          "coverage": "supported",
+          "limitation": "Special exemptions and the age-67 deduction election are not modeled."
+        },
+        {
+          "state": "MN",
+          "coverage": "supported",
+          "limitation": "Blind amounts, investment interest and loss exclusions from the limitation, and the MFS both-itemize rule are not modeled."
+        },
+        {
+          "state": "MO",
+          "coverage": "supported",
+          "limitation": "Foreign tax credit add-back, blind amounts and the MFS itemizing requirement are not modeled; payroll tax and pre-exemption MO AGI must be supplied."
+        },
+        {
+          "state": "MS",
+          "coverage": "supported",
+          "limitation": "Blind exemptions and the MFS split of the joint amounts are not modeled."
+        },
+        {
+          "state": "MT",
+          "coverage": "legacy",
+          "limitation": "Taxes federal taxable income from 2024; federal income tax deduction repealed (guarded)."
+        },
+        {
+          "state": "NC",
+          "coverage": "supported",
+          "limitation": "Child deduction uses dependents under 17 by birth year; other NC deductions are outside this module."
+        },
+        {
+          "state": "ND",
+          "coverage": "legacy",
+          "limitation": "Taxes federal taxable income."
+        },
+        {
+          "state": "NE",
+          "coverage": "supported",
+          "limitation": "2026 amounts (indexed in later years); the motor vehicle tax limit on personal property taxes is not modeled."
+        },
+        {
+          "state": "NH",
+          "coverage": "not_applicable",
+          "limitation": "No tax on wages; interest and dividends tax repealed from 2025."
+        },
+        {
+          "state": "NJ",
+          "coverage": "supported",
+          "limitation": "Veteran, blind and college-student exemptions and the $50 property tax credit comparison are not modeled."
+        },
+        {
+          "state": "NM",
+          "coverage": "supported",
+          "limitation": "Blind and centenarian exemptions and the other PIT-ADJ deductions are not modeled; 2026 uses the 2025 forms (unindexed statute)."
+        },
+        {
+          "state": "NV",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "NY",
+          "coverage": "supported",
+          "limitation": "The supplemental tax (tax benefit recapture) is part of the rate schedule, outside this module; college tuition deduction not modeled."
+        },
+        {
+          "state": "OH",
+          "coverage": "legacy",
+          "limitation": "Existing exemption tiers kept (owned by the Ohio rules in the tax engine); Ohio has no itemization."
+        },
+        {
+          "state": "OK",
+          "coverage": "supported",
+          "limitation": "Roth conversion income is not excluded from the age-exemption income test; blind exemptions not modeled."
+        },
+        {
+          "state": "OR",
+          "coverage": "supported",
+          "limitation": "Severe-disability exemptions and prior-year federal tax paid are not modeled."
+        },
+        {
+          "state": "PA",
+          "coverage": "not_applicable",
+          "limitation": "Flat tax on income classes with no standard deduction, itemization or exemptions."
+        },
+        {
+          "state": "RI",
+          "coverage": "supported",
+          "limitation": "Standard deduction only, as the statute requires; dependent-filer limits not modeled."
+        },
+        {
+          "state": "SC",
+          "coverage": "legacy",
+          "limitation": "Taxes federal taxable income."
+        },
+        {
+          "state": "SD",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "TN",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "TX",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        },
+        {
+          "state": "UT",
+          "coverage": "supported",
+          "limitation": "2026 amounts from the draft return (indexed in later years); Utah additions to the phase-out income are not modeled."
+        },
+        {
+          "state": "VA",
+          "coverage": "supported",
+          "limitation": "Spouse tax adjustment, blindness and dependent-care deductions are not modeled."
+        },
+        {
+          "state": "VT",
+          "coverage": "legacy",
+          "limitation": "Existing personal exemption and age additions kept; dependent exemptions not verified."
+        },
+        {
+          "state": "WA",
+          "coverage": "not_applicable",
+          "limitation": "Capital gains excise only; no income deduction family."
+        },
+        {
+          "state": "WI",
+          "coverage": "supported",
+          "limitation": "2026 amounts; casualty losses, the dependent-filer limit and the second-home interest exclusion are not modeled."
+        },
+        {
+          "state": "WV",
+          "coverage": "supported",
+          "limitation": "Surviving-spouse and low-income exclusions are not modeled."
+        },
+        {
+          "state": "WY",
+          "coverage": "not_applicable",
+          "limitation": "No individual income tax."
+        }
+      ]
+    },
+    {
+      "section": "Defaults",
+      "content": [
+        {
+          "note": "The tax engine keeps its existing calculation unless a plan opts in. For an opted-in plan in a supported state, these figures differ from the existing engine because the existing figures are simplifications:"
+        },
+        "AL: the existing $3,000 standard deduction (doubled to $6,000 for joint returns) becomes the chart (for example $8,500 for a joint return with AL AGI below $26,000), exemptions are added and federal tax is deducted.",
+        "MO: the federal income tax deduction is added.",
+        "OR: 2026 indexed standard deduction, the federal tax subtraction and the exemption credit are added.",
+        "CT: the personal exemption, the 2% phase-out add-back, the recapture and the personal tax credit are added.",
+        "WI: the sliding standard deduction replaces the maximum, exemptions and the itemized deduction credit are added.",
+        "The spec-driven states replace the single built-in standard deduction (doubled for joint returns) with their own deduction, exemptions and credits. Notable corrections: Kentucky allows one standard deduction per joint return; Georgia, Oklahoma and Virginia follow the federal standard-or-itemized choice.",
+        "DC, Maine, Minnesota and New Mexico (added 2026-10-10) replace the built-in standard deduction with their own deductions, phase-outs and exemptions. DC and New Mexico follow the federal standard-or-itemized choice; Maine allows itemizing only to federal itemizers.",
+        {
+          "note": "2026 state income tax, flag off and on (`calculate`, wages only, age 45, no itemizable expenses; joint returns with two children born 2016 and 2019):"
+        },
+        {
+          "state": "AR",
+          "single $80,000 off": "2,501",
+          "on": "3,407",
+          "joint $120,000 off": "3,523"
+        },
+        {
+          "state": "AZ",
+          "single $80,000 off": "1,598",
+          "on": "1,995",
+          "joint $120,000 off": "2,195"
+        },
+        {
+          "state": "CT",
+          "single $80,000 off": "3,650",
+          "on": "5,300",
+          "joint $120,000 off": "5,100"
+        },
+        {
+          "state": "DE",
+          "single $80,000 off": "4,049",
+          "on": "5,086",
+          "joint $120,000 off": "5,526"
+        },
+        {
+          "state": "GA",
+          "single $80,000 off": "3,244",
+          "on": "4,092",
+          "joint $120,000 off": "4,491"
+        },
+        {
+          "state": "HI",
+          "single $80,000 off": "4,363",
+          "on": "5,339",
+          "joint $120,000 off": "5,686"
+        },
+        {
+          "state": "IL",
+          "single $80,000 off": "3,960",
+          "on": "5,361",
+          "joint $120,000 off": "5,940"
+        },
+        {
+          "state": "IN",
+          "single $80,000 off": "2,360",
+          "on": "3,334",
+          "joint $120,000 off": "3,540"
+        },
+        {
+          "state": "KS",
+          "single $80,000 off": "4,175",
+          "on": "4,780",
+          "joint $120,000 off": "6,119"
+        },
+        {
+          "state": "KY",
+          "single $80,000 off": "2,682",
+          "on": "4,082",
+          "joint $120,000 off": "3,965"
+        },
+        {
+          "state": "MA",
+          "single $80,000 off": "4,000",
+          "on": "5,460",
+          "joint $120,000 off": "6,000"
+        },
+        {
+          "state": "MD",
+          "single $80,000 off": "3,586",
+          "on": "4,716",
+          "joint $120,000 off": "5,324"
+        },
+        {
+          "state": "MI",
+          "single $80,000 off": "3,400",
+          "on": "4,097",
+          "joint $120,000 off": "5,100"
+        },
+        {
+          "state": "MS",
+          "single $80,000 off": "2,708",
+          "on": "3,216",
+          "joint $120,000 off": "3,816"
+        },
+        {
+          "state": "NC",
+          "single $80,000 off": "2,683",
+          "on": "3,691",
+          "joint $120,000 off": "3,771"
+        },
+        {
+          "state": "NE",
+          "single $80,000 off": "2,956",
+          "on": "3,407",
+          "joint $120,000 off": "4,091"
+        },
+        {
+          "state": "NJ",
+          "single $80,000 off": "2,970",
+          "on": "3,579",
+          "joint $120,000 off": "3,855"
+        },
+        {
+          "state": "NY",
+          "single $80,000 off": "3,723",
+          "on": "5,173",
+          "joint $120,000 off": "5,281"
+        },
+        {
+          "state": "OK",
+          "single $80,000 off": "3,100",
+          "on": "4,219",
+          "joint $120,000 off": "4,399"
+        },
+        {
+          "state": "OR",
+          "single $80,000 off": "6,442",
+          "on": "7,825",
+          "joint $120,000 off": "9,384"
+        },
+        {
+          "state": "RI",
+          "single $80,000 off": "2,580",
+          "on": "2,872",
+          "joint $120,000 off": "3,816"
+        },
+        {
+          "state": "UT",
+          "single $80,000 off": "3,560",
+          "on": "4,241",
+          "joint $120,000 off": "5,340"
+        },
+        {
+          "state": "VA",
+          "single $80,000 off": "3,839",
+          "on": "5,422",
+          "joint $120,000 off": "5,636"
+        },
+        {
+          "state": "WI",
+          "single $80,000 off": "2,935",
+          "on": "5,014",
+          "joint $120,000 off": "4,247"
+        },
+        {
+          "state": "WV",
+          "single $80,000 off": "2,866",
+          "on": "4,332",
+          "joint $120,000 off": "4,698"
+        }
+      ]
+    }
+  ]
+}

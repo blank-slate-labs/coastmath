@@ -1,0 +1,23 @@
+[run]
+source = app, coastmath
+branch = True
+concurrency = multiprocessing
+parallel = True
+relative_files = True
+sigterm = True
+
+[report]
+precision = 2
+show_missing = True
+# Keep all executable application code visible, including defensive branches.
+exclude_lines =
+exclude_also =
+
+[html]
+directory = coverage/html
+
+[json]
+output = coverage/coverage.json
+
+[xml]
+output = coverage/coverage.xml

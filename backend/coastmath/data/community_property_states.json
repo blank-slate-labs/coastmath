@@ -1,0 +1,12 @@
+{
+  "states": ["AZ", "CA", "ID", "LA", "NV", "NM", "TX", "WA", "WI"],
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        "States: Arizona, California, Idaho, Louisiana, Nevada, New Mexico, Texas, Washington and Wisconsin. IRS Pub. 555, \"Community Property\" (https://www.irs.gov/publications/p555). Elective community property regimes (Alaska, Tennessee, South Dakota, Kentucky, Florida trusts) are not included.",
+        "Basis at the first death: both halves of community property take a basis equal to fair market value when at least half was included in the decedent's estate, IRC 1014(b)(6) (https://www.law.cornell.edu/uscode/text/26/1014). A qualified joint interest of spouses outside community property is half included in the decedent's estate, IRC 2040(b) (https://www.law.cornell.edu/uscode/text/26/2040), so only that half steps up under IRC 1014(a), (b)(9)."
+      ]
+    }
+  ]
+}

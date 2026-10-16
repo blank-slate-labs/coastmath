@@ -1,0 +1,1017 @@
+/* Bento Atlas: article prose and the help_kit blocks. Inside the white reading tile every block is a
+   flat sub-tile (18px corners, a pale tint, no border). Prose runs at a 680px measure centred in the
+   tile; wide figures take the tile's full width. Worked examples keep the adding-machine tape:
+   operators in a left gutter, tabular figures at the right, a heavy rule above each result.
+   Callouts carry a coloured kind chip whose label names the kind, so colour is never the only cue. */
+
+/* ---------- Prose ---------- */
+.help-prose {
+  color: var(--c-prose);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.help-prose > *,
+.help-intro > * {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.help-prose > .help-figure.is-wide {
+  max-width: none;
+}
+.help-intro {
+  font-size: 19px;
+  line-height: 1.65;
+}
+.help-prose > * + *,
+.help-intro > * + * {
+  margin-top: 20px;
+}
+.help-part {
+  margin-top: 72px;
+}
+.help-part-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.help-part-num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 12px;
+  background: var(--c-navy);
+  color: #fff;
+  font-family: var(--figure);
+  font-size: 15px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.help-part-head h2 {
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+.help-page .help-heading-link {
+  display: block;
+  margin-block: -6px;
+  padding-block: 6px;
+  transition: color 150ms var(--ease);
+}
+.help-page .help-heading-link:hover {
+  color: var(--c-blue);
+}
+.help-prose h3 {
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.help-prose h3 + * {
+  margin-top: 10px;
+}
+.help-prose strong {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+.help-prose :is(ul, ol):not(.help-steps) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 22px;
+}
+.help-prose li::marker {
+  color: var(--c-blue);
+  font-weight: 600;
+}
+.help-prose a:not(.help-heading-link),
+.help-page .help-inline-link {
+  color: var(--c-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(47, 91, 234, 0.4);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.help-prose a:not(.help-heading-link):hover,
+.help-page .help-inline-link:hover {
+  text-decoration-color: currentColor;
+}
+.help-prose .help-num {
+  font-family: var(--figure);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Steps: big numerals down a gutter ---------- */
+.help-steps {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  counter-reset: help-step;
+}
+.help-steps > li {
+  position: relative;
+  min-height: 56px;
+  padding: 14px 0 14px 60px;
+  counter-increment: help-step;
+}
+.help-steps > li + li {
+  border-top: 1px solid var(--c-rule);
+}
+.help-steps > li::before {
+  content: counter(help-step);
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 44px;
+  color: var(--c-blue);
+  font-family: var(--figure);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Planner path ---------- */
+.help-page .help-ui-path {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px;
+}
+.help-ui-path-step {
+  padding: 2px 9px;
+  border-radius: 8px;
+  background: var(--c-fill-2);
+  color: var(--c-ink);
+  font-size: 0.88em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+:is(.help-callout, .help-pair-side, .help-table, .help-symptoms, .help-ledger, .help-figure)
+  .help-ui-path-step {
+  background: #fff;
+}
+.help-ui-path-sep {
+  margin: 0 4px;
+  color: var(--c-ink-3);
+  font-weight: 500;
+}
+
+/* ---------- Callouts: four kinds, each a tinted tile with a labelled chip ---------- */
+.help-callout {
+  padding: 20px 24px 22px;
+  border-radius: var(--radius-sub);
+  background: var(--c-tint-blue);
+}
+.help-callout.is-boundary {
+  background: var(--c-fill);
+}
+.help-callout.is-consequence {
+  background: var(--c-tint-warm);
+}
+.help-callout.is-where {
+  background: var(--c-tint-teal);
+}
+.help-callout-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 10px;
+}
+.help-callout-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px 0 9px;
+  border-radius: 999px;
+  background: var(--c-blue);
+  color: #fff;
+  font-family: var(--figure);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.help-callout.is-boundary .help-callout-kind {
+  background: var(--c-slate);
+}
+.help-callout.is-consequence .help-callout-kind {
+  background: var(--c-red);
+}
+.help-callout.is-where .help-callout-kind {
+  background: var(--c-teal);
+}
+.help-callout-kind svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.help-callout-title {
+  color: var(--c-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.help-callout-body {
+  color: var(--c-prose);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.help-callout-body > * + * {
+  margin-top: 10px;
+}
+
+/* ---------- Formula: the result as a navy block, operators in blue ---------- */
+.help-formula {
+  padding: 22px 26px;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+}
+.help-formula-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  color: var(--c-ink);
+  font-size: 18px;
+  line-height: 1.45;
+}
+.help-formula-result {
+  padding: 5px 12px;
+  border-radius: 10px;
+  background: var(--c-navy);
+  color: #fff;
+  font-weight: 600;
+}
+.help-formula-expr {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+.help-var {
+  color: var(--c-ink);
+  font-weight: 500;
+}
+.help-op {
+  color: var(--c-blue);
+  font-family: var(--figure);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+.help-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+.help-frac-num {
+  padding: 0 8px 6px;
+  border-bottom: 2px solid var(--c-ink);
+}
+.help-frac-den {
+  padding: 6px 8px 0;
+}
+.help-formula-note {
+  margin-top: 12px;
+  color: var(--c-ink-3);
+  font-size: 14px;
+}
+
+/* ---------- Ledger: an adding-machine tape on a tinted tile ---------- */
+.help-ledger {
+  overflow: hidden;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+}
+.help-ledger-title {
+  padding: 18px 24px 8px;
+  color: var(--c-ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.help-ledger table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.help-ledger td,
+.help-ledger th {
+  padding: 11px 24px 11px 0;
+  vertical-align: baseline;
+}
+.help-ledger .help-ledger-op {
+  width: 50px;
+  padding-right: 0;
+  padding-left: 24px;
+  color: var(--c-blue);
+  font-family: var(--figure);
+  font-size: 19px;
+  font-weight: 400;
+  text-align: left;
+}
+.help-ledger th {
+  color: var(--c-ink-2);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+}
+.help-ledger-detail {
+  display: block;
+  color: var(--c-ink-3);
+  font-size: 13px;
+}
+.help-ledger-value {
+  color: var(--c-ink);
+  font-family: var(--figure);
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.help-ledger tr + tr :is(td, th) {
+  border-top: 1px solid #dde1e8;
+}
+.help-ledger tr.is-result :is(th, td) {
+  border-top: 2.5px solid var(--c-ink);
+}
+.help-ledger tr.is-result .help-ledger-op {
+  border-top-color: transparent;
+}
+.help-ledger tr.is-result th {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+.help-ledger tr.is-result .help-ledger-value {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.help-ledger tbody tr:last-child :is(td, th) {
+  padding-bottom: 18px;
+}
+.help-ledger-note {
+  padding: 14px 24px 18px;
+  border-top: 1px solid #dde1e8;
+  color: var(--c-ink-3);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ---------- Key figures: small tiles led by a big numeral ---------- */
+.help-key-figures figcaption {
+  margin-bottom: 10px;
+  color: var(--c-ink-3);
+  font-family: var(--figure);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.help-key-figures dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.help-key-figures dl > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px 20px;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+  container-type: inline-size;
+}
+.help-key-figures dd:not(.help-key-detail) {
+  order: -1;
+  color: var(--c-navy);
+  font-family: var(--figure);
+  font-size: clamp(22px, 13cqi, 36px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.help-key-figures dt {
+  color: var(--c-ink-2);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.help-key-figures dd.help-key-detail {
+  color: var(--c-ink-3);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* ---------- Data tables: a white table inside a tinted tile ---------- */
+.help-table {
+  padding: 18px 18px 16px;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+}
+.help-table figcaption {
+  margin: 0 4px 12px;
+  color: var(--c-ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+.help-table-scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #fff;
+}
+.help-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.help-table th,
+.help-table td {
+  padding: 11px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+.help-table thead th {
+  border-bottom: 1px solid var(--c-rule);
+  color: var(--c-ink-3);
+  font-family: var(--figure);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.help-table tbody th {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+.help-table tbody td {
+  color: var(--c-prose);
+}
+.help-table tbody tr + tr :is(th, td) {
+  border-top: 1px solid var(--c-rule);
+}
+.help-table .is-end {
+  font-family: var(--figure);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.help-table-note {
+  margin: 10px 4px 0;
+  color: var(--c-ink-3);
+  font-size: 14px;
+}
+
+/* ---------- Symptoms ---------- */
+.help-symptoms {
+  overflow: hidden;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+}
+.help-symptoms-head,
+.help-symptoms-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 20px;
+  padding: 14px 22px;
+}
+.help-symptoms-head {
+  padding-top: 18px;
+  color: var(--c-ink-3);
+  font-family: var(--figure);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.help-symptoms-row {
+  border-top: 1px solid #dde1e8;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.help-symptoms-row:last-child {
+  padding-bottom: 18px;
+}
+.help-symptoms-row > div:first-child {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+.help-symptoms-key {
+  display: none;
+}
+
+/* ---------- Pair ---------- */
+.help-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.help-pair-side {
+  padding: 20px 22px;
+  border-radius: var(--radius-sub);
+  background: var(--c-fill);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+.help-pair-side > div > * + * {
+  margin-top: 8px;
+}
+.help-pair-title {
+  margin-bottom: 8px;
+  color: var(--c-ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Figures and charts ---------- */
+.help-figure {
+  padding: 22px 24px 20px;
+  border-radius: 20px;
+  background: var(--c-fill);
+}
+.help-figure-title {
+  color: var(--c-ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.help-figure-plot {
+  margin-top: 14px;
+}
+.help-figure-caption {
+  margin-top: 12px;
+  color: var(--c-ink-3);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.help-figure-data {
+  margin-top: 14px;
+  font-size: 14px;
+}
+.help-page .help-figure-data summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--c-navy);
+  font-weight: 500;
+  list-style: none;
+  transition:
+    background-color 150ms var(--ease),
+    color 150ms var(--ease);
+}
+.help-figure-data summary::-webkit-details-marker {
+  display: none;
+}
+.help-figure-data summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 180ms var(--ease);
+}
+.help-page .help-figure-data[open] summary {
+  background: var(--c-navy);
+  color: #fff;
+}
+.help-figure-data[open] summary::after {
+  margin-top: 3px;
+  transform: rotate(-135deg);
+}
+.help-figure-data .help-table {
+  margin-top: 12px;
+  padding: 0;
+  background: none;
+}
+.help-figure-data .help-table figcaption {
+  display: none;
+}
+
+.help-chart {
+  position: relative;
+}
+.help-chart-stage {
+  position: relative;
+}
+.help-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--figure);
+  font-variant-numeric: tabular-nums;
+}
+.help-chart svg:focus-visible {
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.help-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 10px;
+  padding: 0;
+  list-style: none;
+  color: var(--c-ink-2);
+  font-size: 13px;
+  font-weight: 600;
+}
+.help-chart-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.help-key {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+.help-key.is-line {
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+}
+.help-key.is-blue {
+  background: var(--h-blue);
+}
+.help-key.is-orange {
+  background: var(--h-orange);
+}
+.help-key.is-cyan {
+  background: var(--h-teal);
+}
+.help-key.is-magenta {
+  background: var(--h-magenta);
+}
+.help-key.is-gray {
+  background: var(--h-gray);
+}
+.help-chart-grid line {
+  stroke: #dde1e8;
+  stroke-width: 1;
+}
+.help-chart-grid.is-zero line {
+  stroke: #8f97a6;
+}
+.help-chart-grid text,
+.help-chart-xtick text,
+text.help-chart-xtick {
+  fill: var(--c-ink-3);
+  font-size: 12px;
+  font-weight: 500;
+}
+.help-chart-xtick line,
+.help-chart-axis {
+  stroke: #b3bac6;
+}
+.help-chart-axis-label {
+  margin-top: -4px;
+  color: var(--c-ink-3);
+  font-family: var(--figure);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right;
+}
+.help-line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.help-line.is-blue {
+  stroke: var(--h-blue);
+}
+.help-line.is-orange {
+  stroke: var(--h-orange);
+}
+.help-line.is-cyan {
+  stroke: var(--h-teal);
+}
+.help-line.is-magenta {
+  stroke: var(--h-magenta);
+}
+.help-line.is-gray {
+  stroke: var(--h-gray);
+}
+.help-area {
+  opacity: 0.12;
+}
+.help-area.is-blue,
+.help-bar.is-blue,
+.help-dot.is-blue {
+  fill: var(--h-blue);
+}
+.help-area.is-orange,
+.help-bar.is-orange,
+.help-dot.is-orange {
+  fill: var(--h-orange);
+}
+.help-area.is-cyan,
+.help-bar.is-cyan,
+.help-dot.is-cyan {
+  fill: var(--h-teal);
+}
+.help-area.is-magenta,
+.help-bar.is-magenta,
+.help-dot.is-magenta {
+  fill: var(--h-magenta);
+}
+.help-area.is-gray,
+.help-bar.is-gray,
+.help-dot.is-gray {
+  fill: var(--h-gray);
+}
+.help-bar.is-quiet {
+  opacity: 0.35;
+}
+.help-dot {
+  stroke: var(--c-fill);
+  stroke-width: 2;
+}
+.help-chart .is-dim {
+  opacity: 0.3;
+  transition: opacity 120ms var(--ease);
+}
+.help-chart-hit {
+  fill: transparent;
+}
+.help-chart-crosshair {
+  stroke: var(--c-ink-3);
+  stroke-width: 1;
+}
+.help-chart-marker line {
+  stroke: var(--c-slate);
+  stroke-width: 1;
+}
+.help-chart-marker text {
+  fill: var(--c-ink-2);
+  font-size: 12px;
+  font-weight: 500;
+}
+.help-chart-band rect {
+  fill: #e2e8fb;
+}
+.help-chart-band text {
+  fill: var(--c-ink-3);
+  font-size: 12px;
+  font-weight: 600;
+}
+.help-chart-connector {
+  stroke: #8f97a6;
+  stroke-width: 1;
+}
+.help-bracket-zone rect {
+  fill: #fff;
+}
+.help-bracket-zone.is-alt rect {
+  fill: #e9ecf2;
+}
+.help-bracket-zone line {
+  stroke: #c3c9d4;
+}
+.help-bracket-zone text {
+  fill: var(--c-ink-3);
+  font-size: 12px;
+  font-weight: 500;
+}
+.help-span {
+  opacity: 0.22;
+}
+.help-span.is-blue {
+  fill: var(--h-blue);
+}
+.help-span.is-orange {
+  fill: var(--h-orange);
+}
+.help-span.is-cyan {
+  fill: var(--h-teal);
+}
+.help-span.is-magenta {
+  fill: var(--h-magenta);
+}
+.help-span.is-gray {
+  fill: var(--h-gray);
+}
+.help-span-label {
+  fill: var(--c-ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+.help-chart-tooltip {
+  position: absolute;
+  z-index: 5;
+  min-width: 190px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--c-navy);
+  color: #fff;
+  font-size: 13px;
+  pointer-events: none;
+}
+.help-chart-tooltip p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-navy-soft);
+  line-height: 1.65;
+}
+.help-chart-tooltip p b {
+  margin-left: auto;
+  padding-left: 14px;
+  color: #fff;
+  font-family: var(--figure);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.help-chart-tooltip .help-chart-tooltip-title {
+  margin-bottom: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+.help-chart-tooltip .help-key {
+  outline: 1.5px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 0;
+}
+
+/* ---------- Tablet and phone ---------- */
+@media (max-width: 699px) {
+  .help-prose {
+    font-size: 16.5px;
+  }
+  .help-intro {
+    font-size: 17.5px;
+  }
+  .help-part {
+    margin-top: 56px;
+  }
+  .help-steps > li {
+    padding-left: 48px;
+  }
+  .help-steps > li::before {
+    width: 36px;
+    font-size: 32px;
+  }
+  .help-callout {
+    padding: 16px 18px 18px;
+  }
+  .help-formula {
+    padding: 18px 18px;
+  }
+  .help-formula-line {
+    font-size: 16px;
+  }
+  .help-ledger-title {
+    padding: 16px 16px 6px;
+  }
+  .help-ledger td,
+  .help-ledger th {
+    padding-right: 16px;
+  }
+  .help-ledger .help-ledger-op {
+    width: 34px;
+    padding-left: 16px;
+  }
+  .help-ledger-note {
+    padding: 12px 16px 16px;
+  }
+  .help-key-figures dl {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .help-key-figures dl > div {
+    padding: 16px;
+  }
+  .help-table {
+    padding: 14px 12px 12px;
+  }
+  .help-table.is-stacked thead {
+    display: none;
+  }
+  .help-table.is-stacked :is(table, tbody, tr, th, td) {
+    display: block;
+  }
+  .help-table.is-stacked tbody tr {
+    padding: 14px;
+  }
+  .help-table.is-stacked tbody :is(th, td) {
+    padding: 0;
+    border: 0;
+  }
+  .help-table.is-stacked tbody tr + tr :is(th, td) {
+    border: 0;
+  }
+  .help-table.is-stacked tbody tr + tr {
+    border-top: 1px solid var(--c-rule);
+  }
+  .help-table.is-stacked tbody th {
+    margin-bottom: 4px;
+  }
+  .help-table.is-stacked tbody td + td {
+    margin-top: 8px;
+  }
+  .help-table.is-stacked td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--c-ink-3);
+    font-family: var(--figure);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .help-table.is-stacked .is-end {
+    text-align: left;
+  }
+  .help-symptoms-head {
+    display: none;
+  }
+  .help-symptoms-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px 18px;
+  }
+  .help-symptoms-head + .help-symptoms-row {
+    border-top: 0;
+  }
+  .help-symptoms-key {
+    display: block;
+    color: var(--c-ink-3);
+    font-family: var(--figure);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .help-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .help-figure {
+    padding: 16px 14px 14px;
+  }
+  .help-page .help-figure-data summary {
+    min-height: 40px;
+  }
+}
+
+/* ---------- Print: light, no tiles ---------- */
+@media print {
+  .help-page
+    :is(
+      .help-callout,
+      .help-formula,
+      .help-ledger,
+      .help-table,
+      .help-symptoms,
+      .help-pair-side,
+      .help-figure,
+      .help-key-figures dl > div
+    ) {
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    background: none;
+    break-inside: avoid;
+  }
+  .help-page :is(.help-part-num, .help-callout-kind, .help-formula-result) {
+    border: 1px solid #000;
+    background: none;
+    color: #000;
+  }
+  .help-page .help-table-scroll {
+    background: none;
+  }
+  .help-reading .help-prose > * {
+    max-width: none;
+  }
+  .help-page .help-figure-data {
+    display: none;
+  }
+}

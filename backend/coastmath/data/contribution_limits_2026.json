@@ -1,0 +1,101 @@
+{
+  "_IRS_LIMITS": {
+    "traditional_401k": 24500,
+    "roth_401k": 24500,
+    "traditional_403b": 24500,
+    "roth_403b": 24500,
+    "traditional_457b": 24500,
+    "roth_457b": 24500,
+    "traditional_ira": 7500,
+    "roth_ira": 7500,
+    "hsa": 4400
+  },
+  "_CATCHUP_50": {
+    "traditional_401k": 8000,
+    "roth_401k": 8000,
+    "traditional_403b": 8000,
+    "roth_403b": 8000,
+    "traditional_457b": 8000,
+    "roth_457b": 8000,
+    "traditional_ira": 1100,
+    "roth_ira": 1100
+  },
+  "_HSA_CATCHUP_55": 1000,
+  "_ROTH_IRA_PHASEOUTS": {
+    "married_filing_jointly": [
+      242000,
+      252000
+    ],
+    "qualifying_surviving_spouse": [
+      242000,
+      252000
+    ],
+    "single": [
+      153000,
+      168000
+    ],
+    "head_of_household": [
+      153000,
+      168000
+    ],
+    "married_filing_separately": [
+      0,
+      10000
+    ]
+  },
+  "_TRADITIONAL_IRA_DEDUCTION_PHASEOUTS": {
+    "covered": {
+      "single": [
+        81000,
+        91000
+      ],
+      "head_of_household": [
+        81000,
+        91000
+      ],
+      "married_filing_jointly": [
+        129000,
+        149000
+      ],
+      "qualifying_surviving_spouse": [
+        129000,
+        149000
+      ],
+      "married_filing_separately": [
+        0,
+        10000
+      ]
+    },
+    "spouse_covered": {
+      "married_filing_jointly": [
+        242000,
+        252000
+      ],
+      "married_filing_separately": [
+        0,
+        10000
+      ]
+    }
+  },
+  "_SUPER_CATCHUP_60_63": {
+    "traditional_401k": 11250,
+    "roth_401k": 11250,
+    "traditional_403b": 11250,
+    "roth_403b": 11250,
+    "traditional_457b": 11250,
+    "roth_457b": 11250
+  },
+  "base_year": 2026,
+  "roth_catchup_wage_threshold": 150000,
+  "defined_contribution_total": 72000,
+  "annual_compensation_limit": 360000,
+  "self_employed_plan_rate": 0.25,
+  "sources": [
+    "https://www.irs.gov/pub/irs-drop/n-25-67.pdf",
+    "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf",
+    "annual_compensation_limit: IRC 401(a)(17) compensation a 401(k) plan may take into account ($360,000 for 2026, Notice 2025-67). https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions",
+    "self_employed_plan_rate: IRC 404(a)(3)(A) 25% limit; Pub. 560 rate table for the self-employed reduces it to 20% of net profit less the deductible half of SE tax. https://www.irs.gov/publications/p560",
+    "403(b) and 457(b): 403(b) deferrals share the IRC 402(g) limit with 401(k) deferrals; governmental 457(b) deferrals have their own IRC 457(e)(15) limit ($24,500 for 2026), age-50 catch-up ($8,000, IRC 414(v)) and age 60-63 catch-up ($11,250), Notice 2025-67. https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-403b-contribution-limits https://www.irs.gov/retirement-plans/irc-457b-deferred-compensation-plans",
+    "_TRADITIONAL_IRA_DEDUCTION_PHASEOUTS: 2026 modified-AGI ranges over which the traditional IRA deduction phases out (IR-2025-111, Notice 2025-67): 'covered' when the contributor is an active participant in a workplace plan (single/HoH $81,000-$91,000; MFJ/QSS $129,000-$149,000; MFS $0-$10,000, not indexed), 'spouse_covered' when only the spouse is ($242,000-$252,000 joint; $0-$10,000 separate). IRC 219(g)(2)-(3), (7), (8): only the starting amount is indexed, the $10,000/$20,000 widths are fixed; spouses filing separately who lived apart all year are treated as unmarried (219(g)(4)); a 457(b) plan does not make someone an active participant (219(g)(5)). Pub. 590-A Worksheets 1-1 and 1-2. https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500 https://www.law.cornell.edu/uscode/text/26/219 https://www.irs.gov/publications/p590a"
+  ]
+}

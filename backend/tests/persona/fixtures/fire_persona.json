@@ -1,0 +1,175 @@
+{
+  "id": "00000000-0000-4000-8000-00000000f000",
+  "user_id": "00000000-0000-4000-8000-00000000f0ff",
+  "name": "Liquid FIRE Optimizer",
+  "plan_type": "FIXED_DATE",
+  "start_date": "2026-01-01",
+  "snapshot_conditions": {},
+  "birth_year": 1994,
+  "birth_month": 6,
+  "filing_status": "single",
+  "state_code": "CA",
+  "life_expectancy": 90,
+  "created_at": "2026-01-01T00:00:00",
+
+  "accounts": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f001",
+      "user_id": "00000000-0000-4000-8000-00000000f0ff",
+      "name": "Cash / HYSA",
+      "account_type": "checking",
+      "balance": 40000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f002",
+      "user_id": "00000000-0000-4000-8000-00000000f0ff",
+      "name": "Taxable Brokerage",
+      "account_type": "taxable_brokerage",
+      "balance": 250000.0,
+      "cost_basis": 150000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f003",
+      "user_id": "00000000-0000-4000-8000-00000000f0ff",
+      "name": "Traditional 401k",
+      "account_type": "traditional_401k",
+      "balance": 180000.0,
+      "owner": "self"
+    }
+  ],
+
+  "milestones": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f010",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "name": "Move CA to NV",
+      "trigger_type": "age",
+      "trigger_value": 35,
+      "trigger_date": null,
+      "sort_order": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f011",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "name": "Retire",
+      "trigger_type": "age",
+      "trigger_value": 45,
+      "trigger_date": null,
+      "sort_order": 1
+    }
+  ],
+
+  "income_streams": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f020",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "name": "W2 Salary",
+      "annual_amount": 180000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-00000000f011",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true
+    }
+  ],
+
+  "expenses": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f030",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "name": "Core Expenses",
+      "annual_amount": 55000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    }
+  ],
+
+  "priorities": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f040",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "priority_rank": 1,
+      "target_account_id": "00000000-0000-4000-8000-00000000f002",
+      "max_annual_amount": null,
+      "priority_type": null
+    }
+  ],
+
+  "drawdown_order": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f050",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "rank": 1,
+      "source_account_id": "00000000-0000-4000-8000-00000000f002"
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f051",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "rank": 2,
+      "source_account_id": "00000000-0000-4000-8000-00000000f003"
+    }
+  ],
+
+  "assumption_curves": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f060",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "curve_type": "inflation",
+      "mode": "fixed",
+      "fixed_rate": 0.03,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f061",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "curve_type": "market_return",
+      "mode": "fixed",
+      "fixed_rate": 0.07,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f062",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "curve_type": "bond_return",
+      "mode": "fixed",
+      "fixed_rate": 0.04,
+      "control_points": []
+    }
+  ],
+
+  "residency_periods": [
+    {
+      "id": "00000000-0000-4000-8000-00000000f070",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "state_code": "CA",
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-00000000f010",
+      "start_year": null,
+      "end_year": null,
+      "rank": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-00000000f071",
+      "plan_id": "00000000-0000-4000-8000-00000000f000",
+      "state_code": "NV",
+      "start_milestone_id": "00000000-0000-4000-8000-00000000f010",
+      "end_milestone_id": null,
+      "start_year": null,
+      "end_year": null,
+      "rank": 1
+    }
+  ],
+
+  "spouse": null
+}

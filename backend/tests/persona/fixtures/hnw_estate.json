@@ -1,0 +1,223 @@
+{
+  "id": "00000000-0000-4000-8000-000000024000",
+  "user_id": "00000000-0000-4000-8000-0000000240ff",
+  "name": "High Net Worth Estate",
+  "plan_type": "FIXED_DATE",
+  "start_date": "2026-01-01",
+  "snapshot_conditions": {},
+  "birth_year": 1966,
+  "birth_month": 5,
+  "filing_status": "married_filing_jointly",
+  "state_code": "WA",
+  "life_expectancy": 90,
+  "created_at": "2026-01-01T00:00:00",
+
+  "accounts": [
+    {
+      "id": "00000000-0000-4000-8000-000000024001",
+      "user_id": "00000000-0000-4000-8000-0000000240ff",
+      "name": "Cash / Checking",
+      "account_type": "checking",
+      "balance": 500000.0,
+      "owner": "joint"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024002",
+      "user_id": "00000000-0000-4000-8000-0000000240ff",
+      "name": "Taxable Brokerage",
+      "account_type": "taxable_brokerage",
+      "balance": 4000000.0,
+      "cost_basis": 2000000.0,
+      "owner": "joint"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024003",
+      "user_id": "00000000-0000-4000-8000-0000000240ff",
+      "name": "Traditional IRA",
+      "account_type": "traditional_ira",
+      "balance": 1500000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024004",
+      "user_id": "00000000-0000-4000-8000-0000000240ff",
+      "name": "Roth IRA",
+      "account_type": "roth_ira",
+      "balance": 1000000.0,
+      "owner": "self"
+    }
+  ],
+
+  "milestones": [
+    {
+      "id": "00000000-0000-4000-8000-000000024010",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "Retire",
+      "trigger_type": "age",
+      "trigger_value": 65,
+      "trigger_date": null,
+      "sort_order": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024011",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "QCD Start",
+      "trigger_type": "age",
+      "trigger_value": 73,
+      "trigger_date": null,
+      "sort_order": 1
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024012",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "First to Die",
+      "trigger_type": "age",
+      "trigger_value": 88,
+      "trigger_date": null,
+      "sort_order": 2
+    }
+  ],
+
+  "income_streams": [
+    {
+      "id": "00000000-0000-4000-8000-000000024020",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "W2 Salary",
+      "annual_amount": 250000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-000000024010",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true
+    }
+  ],
+
+  "expenses": [
+    {
+      "id": "00000000-0000-4000-8000-000000024030",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "Core Expenses",
+      "annual_amount": 250000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    }
+  ],
+
+  "priorities": [
+    {
+      "id": "00000000-0000-4000-8000-000000024040",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "priority_rank": 1,
+      "target_account_id": "00000000-0000-4000-8000-000000024002",
+      "max_annual_amount": null,
+      "priority_type": null
+    }
+  ],
+
+  "drawdown_order": [
+    {
+      "id": "00000000-0000-4000-8000-000000024050",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "rank": 1,
+      "source_account_id": "00000000-0000-4000-8000-000000024001"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024051",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "rank": 2,
+      "source_account_id": "00000000-0000-4000-8000-000000024002"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024052",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "rank": 3,
+      "source_account_id": "00000000-0000-4000-8000-000000024003"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024053",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "rank": 4,
+      "source_account_id": "00000000-0000-4000-8000-000000024004"
+    }
+  ],
+
+  "assumption_curves": [
+    {
+      "id": "00000000-0000-4000-8000-000000024060",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "curve_type": "inflation",
+      "mode": "fixed",
+      "fixed_rate": 0.03,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024061",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "curve_type": "market_return",
+      "mode": "fixed",
+      "fixed_rate": 0.07,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000024062",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "curve_type": "bond_return",
+      "mode": "fixed",
+      "fixed_rate": 0.04,
+      "control_points": []
+    }
+  ],
+
+  "residency_periods": [
+    {
+      "id": "00000000-0000-4000-8000-000000024070",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "state_code": "WA",
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "start_year": null,
+      "end_year": null,
+      "rank": 0
+    }
+  ],
+
+  "charity_entities": [
+    {
+      "id": "00000000-0000-4000-8000-000000024080",
+      "plan_id": "00000000-0000-4000-8000-000000024000",
+      "name": "QCD to Charity",
+      "entity_type": "qcd",
+      "annual_amount": 50000.0,
+      "start_milestone_id": "00000000-0000-4000-8000-000000024011",
+      "end_milestone_id": null
+    }
+  ],
+
+  "estate_settings": {
+    "step_up_basis_on_death": true,
+    "filing_status_after_death": "single",
+    "federal_estate_exemption": 27980000.0,
+    "state_estate_tax_enabled": true,
+    "state_estate_exemption": 2193000.0,
+    "state_estate_tax_rate": 0.20
+  },
+
+  "spouse": {
+    "id": "00000000-0000-4000-8000-000000024090",
+    "plan_id": "00000000-0000-4000-8000-000000024000",
+    "name": "Spouse",
+    "birth_year": 1966,
+    "life_expectancy": 88,
+    "income_streams": [],
+    "retirement_milestone_id": null
+  }
+}

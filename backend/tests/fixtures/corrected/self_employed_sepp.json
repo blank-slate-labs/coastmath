@@ -1,0 +1,174 @@
+{
+  "id": "00000000-0000-4000-8000-000000022000",
+  "user_id": "00000000-0000-4000-8000-0000000220ff",
+  "name": "Self-Employed SEPP 72(t)",
+  "plan_type": "FIXED_DATE",
+  "start_date": "2026-01-01",
+  "snapshot_conditions": {},
+  "birth_year": 1988,
+  "birth_month": 9,
+  "filing_status": "single",
+  "state_code": "FL",
+  "life_expectancy": 88,
+  "created_at": "2026-01-01T00:00:00",
+  "accounts": [
+    {
+      "id": "00000000-0000-4000-8000-000000022001",
+      "user_id": "00000000-0000-4000-8000-0000000220ff",
+      "name": "Checking",
+      "account_type": "checking",
+      "balance": 30000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022002",
+      "user_id": "00000000-0000-4000-8000-0000000220ff",
+      "name": "Taxable Brokerage",
+      "account_type": "taxable_brokerage",
+      "balance": 400000.0,
+      "cost_basis": 300000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022003",
+      "user_id": "00000000-0000-4000-8000-0000000220ff",
+      "name": "Traditional IRA",
+      "account_type": "traditional_ira",
+      "balance": 250000.0,
+      "owner": "self"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "00000000-0000-4000-8000-000000022010",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "name": "Retire (Early, SEPP 72(t))",
+      "trigger_type": "age",
+      "trigger_value": 50,
+      "trigger_date": null,
+      "sort_order": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022011",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "name": "Social Security Begins",
+      "trigger_type": "age",
+      "trigger_value": 67,
+      "trigger_date": null,
+      "sort_order": 1
+    }
+  ],
+  "income_streams": [
+    {
+      "id": "00000000-0000-4000-8000-000000022020",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "name": "Self-Employment Income",
+      "annual_amount": 220000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-000000022010",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true,
+      "is_self_employed": true,
+      "owner": "self",
+      "is_social_security": false
+    }
+  ],
+  "expenses": [
+    {
+      "id": "00000000-0000-4000-8000-000000022030",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "name": "Core Expenses",
+      "annual_amount": 70000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "00000000-0000-4000-8000-000000022040",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "priority_rank": 1,
+      "target_account_id": "00000000-0000-4000-8000-000000022003",
+      "max_annual_amount": 7000.0,
+      "priority_type": null
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022041",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "priority_rank": 2,
+      "target_account_id": "00000000-0000-4000-8000-000000022002",
+      "max_annual_amount": null,
+      "priority_type": null
+    }
+  ],
+  "drawdown_order": [
+    {
+      "id": "00000000-0000-4000-8000-000000022050",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "rank": 1,
+      "source_account_id": "00000000-0000-4000-8000-000000022002"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022051",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "rank": 2,
+      "source_account_id": "00000000-0000-4000-8000-000000022003"
+    }
+  ],
+  "assumption_curves": [
+    {
+      "id": "00000000-0000-4000-8000-000000022060",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "curve_type": "inflation",
+      "mode": "fixed",
+      "fixed_rate": 0.03,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022061",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "curve_type": "market_return",
+      "mode": "fixed",
+      "fixed_rate": 0.07,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000022062",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "curve_type": "bond_return",
+      "mode": "fixed",
+      "fixed_rate": 0.04,
+      "control_points": []
+    }
+  ],
+  "residency_periods": [
+    {
+      "id": "00000000-0000-4000-8000-000000022070",
+      "plan_id": "00000000-0000-4000-8000-000000022000",
+      "state_code": "FL",
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "start_year": null,
+      "end_year": null,
+      "rank": 0
+    }
+  ],
+  "sepp_settings": {
+    "enabled": true,
+    "source_account_id": "00000000-0000-4000-8000-000000022003",
+    "method": "fixed_amortization",
+    "start_age": 50,
+    "interest_rate": 0.05
+  },
+  "spouse": null
+}

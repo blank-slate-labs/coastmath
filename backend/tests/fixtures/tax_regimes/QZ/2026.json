@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "country": "QZ",
+    "name": "Fixture country",
+    "base_year": 2026,
+    "currency": "EUR",
+    "filing_unit": "individual",
+    "regions": [
+      {
+        "code": "N",
+        "name": "North"
+      },
+      {
+        "code": "S",
+        "name": "South"
+      }
+    ],
+    "default_region": "N",
+    "approximations": [
+      "Test-only pack: every figure is invented."
+    ],
+    "default_indexing": "none"
+  },
+  "national": [
+    {
+      "id": "income_tax",
+      "label": "Income tax",
+      "category": "income_national",
+      "allowance": {
+        "amount": 10000,
+        "source": "allowance"
+      },
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 50000,
+          "rate": 0.2
+        },
+        {
+          "lower": 50000,
+          "upper": null,
+          "rate": 0.4
+        }
+      ],
+      "source": "income_tax"
+    }
+  ],
+  "regional": {
+    "N": [
+      {
+        "id": "north_tax",
+        "label": "North tax",
+        "category": "income_regional",
+        "brackets": [
+          {
+            "lower": 0,
+            "upper": null,
+            "rate": 0.05
+          }
+        ],
+        "source": "region_tax"
+      }
+    ],
+    "S": [
+      {
+        "id": "south_tax",
+        "label": "South tax",
+        "category": "income_regional",
+        "brackets": [
+          {
+            "lower": 0,
+            "upper": null,
+            "rate": 0.08
+          }
+        ],
+        "source": "region_tax"
+      }
+    ]
+  },
+  "contributions": [
+    {
+      "id": "social",
+      "label": "Social contribution",
+      "category": "social_contribution",
+      "include": {
+        "employment": 1.0
+      },
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": null,
+          "rate": 0.05
+        }
+      ],
+      "source": "social"
+    }
+  ],
+  "capital_gains": {
+    "mode": "ordinary_inclusion",
+    "inclusion_rate": 0.5,
+    "source": "capital_gains"
+  },
+  "account_kinds": [
+    {
+      "id": "pension_saver",
+      "label": "Pension saver",
+      "category": "tax_deferred",
+      "contribution_deductible": true,
+      "employer_match_allowed": true,
+      "contribution_limit": {
+        "annual_amount": 20000,
+        "percent_of_earned_income": 0.2,
+        "carry_forward": true,
+        "source": "saver_limit"
+      },
+      "minimum_withdrawal": {
+        "start_age": 72,
+        "rates_by_age": {
+          "72": 0.05,
+          "80": 0.07,
+          "90": 0.1
+        },
+        "source": "minimum_withdrawal"
+      },
+      "source": "pension_saver"
+    },
+    {
+      "id": "free_saver",
+      "label": "Free saver",
+      "category": "tax_free",
+      "contribution_limit": {
+        "annual_amount": 7000,
+        "carry_forward": true,
+        "withdrawals_restore_room": true,
+        "source": "free_limit"
+      },
+      "source": "free_saver"
+    },
+    {
+      "id": "general",
+      "label": "General investment account",
+      "category": "taxable",
+      "source": "general"
+    },
+    {
+      "id": "workplace_pension",
+      "label": "Workplace pension",
+      "category": "tax_deferred",
+      "contribution_deductible": true,
+      "employer_match_allowed": true,
+      "contribution_limit": {
+        "annual_amount": 60000,
+        "percent_of_earned_income": 1.0,
+        "shared_group": "allowance",
+        "index": false,
+        "percent_limit_excludes_employer": true,
+        "source": "allowance_limit"
+      },
+      "source": "workplace_pension"
+    },
+    {
+      "id": "private_pension",
+      "label": "Private pension",
+      "category": "tax_deferred",
+      "contribution_deductible": true,
+      "contribution_limit": {
+        "annual_amount": 60000,
+        "percent_of_earned_income": 1.0,
+        "shared_group": "allowance",
+        "index": false,
+        "percent_limit_excludes_employer": true,
+        "source": "allowance_limit"
+      },
+      "source": "private_pension"
+    },
+    {
+      "id": "taxed_pension",
+      "label": "Taxed-contribution pension",
+      "category": "tax_deferred",
+      "contribution_deductible": true,
+      "contribution_tax_rate": 0.15,
+      "employer_match_allowed": true,
+      "contribution_limit": {
+        "annual_amount": 32500,
+        "source": "taxed_limit"
+      },
+      "source": "taxed_pension"
+    },
+    {
+      "id": "after_tax_saver",
+      "label": "After-tax saver",
+      "category": "tax_free",
+      "contribution_limit": {
+        "annual_amount": 130000,
+        "source": "after_tax_limit"
+      },
+      "source": "after_tax_saver"
+    }
+  ],
+  "benefit_rules": [
+    "QZ:basic_pension"
+  ],
+  "sources": {
+    "allowance": {
+      "figure": "Personal allowance",
+      "value": "10,000",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "income_tax": {
+      "figure": "Income tax brackets",
+      "value": "20% to 50,000, then 40%",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "region_tax": {
+      "figure": "Regional income tax",
+      "value": "North 5%, South 8%",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "social": {
+      "figure": "Social contribution on employment income",
+      "value": "5%",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "capital_gains": {
+      "figure": "Capital gains inclusion rate",
+      "value": "50%",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "saver_limit": {
+      "figure": "Pension saver contribution limit",
+      "value": "20,000 or 20% of earned income",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "minimum_withdrawal": {
+      "figure": "Pension saver minimum withdrawals",
+      "value": "5% at 72, 7% at 80, 10% at 90",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "pension_saver": {
+      "figure": "Pension saver treatment",
+      "value": "deductible, taxed on withdrawal",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "free_limit": {
+      "figure": "Free saver contribution limit",
+      "value": "7,000",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "free_saver": {
+      "figure": "Free saver treatment",
+      "value": "tax free",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "general": {
+      "figure": "General investment account",
+      "value": "taxable",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "allowance_limit": {
+      "figure": "Pension allowance shared by workplace and private pensions",
+      "value": "60,000, at most 100% of earnings from the member's own contributions",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "workplace_pension": {
+      "figure": "Workplace pension treatment",
+      "value": "deductible; employer contributions allowed",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "private_pension": {
+      "figure": "Private pension treatment",
+      "value": "deductible; no employer contributions",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "taxed_limit": {
+      "figure": "Taxed-contribution pension limit",
+      "value": "32,500",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "taxed_pension": {
+      "figure": "Taxed-contribution pension treatment",
+      "value": "15% tax on contributions inside the account",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "after_tax_limit": {
+      "figure": "After-tax saver limit",
+      "value": "130,000",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    },
+    "after_tax_saver": {
+      "figure": "After-tax saver treatment",
+      "value": "tax free; no employer contributions",
+      "citation": "Invented for the test suite; not a real law. https://example.org/coastmath-test-pack"
+    }
+  }
+}

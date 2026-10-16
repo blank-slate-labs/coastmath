@@ -1,0 +1,240 @@
+{
+  "description": "120% of the federal mid-term rate (annual compounding) by month, from Table 1 of each month's IRS revenue ruling. Notice 2022-6 caps a 72(t) interest rate at the greater of 5% or this rate for either of the two months before the first distribution.",
+  "version": "2026-10",
+  "floor_rate": 0.05,
+  "rates_120_percent_mid_term": {
+    "2024-01": 0.0525,
+    "2024-02": 0.0479,
+    "2024-03": 0.0497,
+    "2024-04": 0.0517,
+    "2024-05": 0.0531,
+    "2024-06": 0.0561,
+    "2024-07": 0.054,
+    "2024-08": 0.0522,
+    "2024-09": 0.0484,
+    "2024-10": 0.0445,
+    "2024-11": 0.0445,
+    "2024-12": 0.0503,
+    "2025-01": 0.051,
+    "2025-02": 0.0543,
+    "2025-03": 0.0536,
+    "2025-04": 0.0506,
+    "2025-05": 0.0493,
+    "2025-06": 0.049,
+    "2025-07": 0.0504,
+    "2025-08": 0.0488,
+    "2025-09": 0.0486,
+    "2025-10": 0.0465,
+    "2025-11": 0.046,
+    "2025-12": 0.0455,
+    "2026-01": 0.0457,
+    "2026-02": 0.0463,
+    "2026-03": 0.0472,
+    "2026-04": 0.0459,
+    "2026-05": 0.0491,
+    "2026-06": 0.0497,
+    "2026-07": 0.0523,
+    "2026-08": 0.0523,
+    "2026-09": 0.054,
+    "2026-10": 0.0554
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Each month's figure is the annual-compounding \"120% AFR\" in the Mid-term block of Table 1 of that month's revenue ruling, read from the IRS PDF on 2026-10-10. The IRS index of rulings is https://www.irs.gov/applicable-federal-rates ."
+        }
+      ]
+    },
+    {
+      "section": "Rule",
+      "content": [
+        "Notice 2022-6 sec. 2.02(c): the interest rate may be any rate not more than the greater of 5% or 120% of the federal mid-term rate under IRC 1274(d) for either of the two months immediately preceding the month the distribution begins (`floor_rate` 0.05) — https://www.irs.gov/pub/irs-drop/n-22-06.pdf"
+      ]
+    },
+    {
+      "section": "Monthly rates",
+      "content": [
+        {
+          "month": "2024-01",
+          "120% mid-term afr": "5.25%",
+          "revenue ruling": "Rev. Rul. 2024-02 — https://www.irs.gov/pub/irs-drop/rr-24-02.pdf"
+        },
+        {
+          "month": "2024-02",
+          "120% mid-term afr": "4.79%",
+          "revenue ruling": "Rev. Rul. 2024-03 — https://www.irs.gov/pub/irs-drop/rr-24-03.pdf"
+        },
+        {
+          "month": "2024-03",
+          "120% mid-term afr": "4.97%",
+          "revenue ruling": "Rev. Rul. 2024-04 — https://www.irs.gov/pub/irs-drop/rr-24-04.pdf"
+        },
+        {
+          "month": "2024-04",
+          "120% mid-term afr": "5.17%",
+          "revenue ruling": "Rev. Rul. 2024-07 — https://www.irs.gov/pub/irs-drop/rr-24-07.pdf"
+        },
+        {
+          "month": "2024-05",
+          "120% mid-term afr": "5.31%",
+          "revenue ruling": "Rev. Rul. 2024-09 — https://www.irs.gov/pub/irs-drop/rr-24-09.pdf"
+        },
+        {
+          "month": "2024-06",
+          "120% mid-term afr": "5.61%",
+          "revenue ruling": "Rev. Rul. 2024-12 — https://www.irs.gov/pub/irs-drop/rr-24-12.pdf"
+        },
+        {
+          "month": "2024-07",
+          "120% mid-term afr": "5.40%",
+          "revenue ruling": "Rev. Rul. 2024-13 — https://www.irs.gov/pub/irs-drop/rr-24-13.pdf"
+        },
+        {
+          "month": "2024-08",
+          "120% mid-term afr": "5.22%",
+          "revenue ruling": "Rev. Rul. 2024-15 — https://www.irs.gov/pub/irs-drop/rr-24-15.pdf"
+        },
+        {
+          "month": "2024-09",
+          "120% mid-term afr": "4.84%",
+          "revenue ruling": "Rev. Rul. 2024-17 — https://www.irs.gov/pub/irs-drop/rr-24-17.pdf"
+        },
+        {
+          "month": "2024-10",
+          "120% mid-term afr": "4.45%",
+          "revenue ruling": "Rev. Rul. 2024-21 — https://www.irs.gov/pub/irs-drop/rr-24-21.pdf"
+        },
+        {
+          "month": "2024-11",
+          "120% mid-term afr": "4.45%",
+          "revenue ruling": "Rev. Rul. 2024-24 — https://www.irs.gov/pub/irs-drop/rr-24-24.pdf"
+        },
+        {
+          "month": "2024-12",
+          "120% mid-term afr": "5.03%",
+          "revenue ruling": "Rev. Rul. 2024-26 — https://www.irs.gov/pub/irs-drop/rr-24-26.pdf"
+        },
+        {
+          "month": "2025-01",
+          "120% mid-term afr": "5.10%",
+          "revenue ruling": "Rev. Rul. 2025-01 — https://www.irs.gov/pub/irs-drop/rr-25-01.pdf"
+        },
+        {
+          "month": "2025-02",
+          "120% mid-term afr": "5.43%",
+          "revenue ruling": "Rev. Rul. 2025-05 — https://www.irs.gov/pub/irs-drop/rr-25-05.pdf"
+        },
+        {
+          "month": "2025-03",
+          "120% mid-term afr": "5.36%",
+          "revenue ruling": "Rev. Rul. 2025-06 — https://www.irs.gov/pub/irs-drop/rr-25-06.pdf"
+        },
+        {
+          "month": "2025-04",
+          "120% mid-term afr": "5.06%",
+          "revenue ruling": "Rev. Rul. 2025-08 — https://www.irs.gov/pub/irs-drop/rr-25-08.pdf"
+        },
+        {
+          "month": "2025-05",
+          "120% mid-term afr": "4.93%",
+          "revenue ruling": "Rev. Rul. 2025-10 — https://www.irs.gov/pub/irs-drop/rr-25-10.pdf"
+        },
+        {
+          "month": "2025-06",
+          "120% mid-term afr": "4.90%",
+          "revenue ruling": "Rev. Rul. 2025-12 — https://www.irs.gov/pub/irs-drop/rr-25-12.pdf"
+        },
+        {
+          "month": "2025-07",
+          "120% mid-term afr": "5.04%",
+          "revenue ruling": "Rev. Rul. 2025-13 — https://www.irs.gov/pub/irs-drop/rr-25-13.pdf"
+        },
+        {
+          "month": "2025-08",
+          "120% mid-term afr": "4.88%",
+          "revenue ruling": "Rev. Rul. 2025-14 — https://www.irs.gov/pub/irs-drop/rr-25-14.pdf"
+        },
+        {
+          "month": "2025-09",
+          "120% mid-term afr": "4.86%",
+          "revenue ruling": "Rev. Rul. 2025-17 — https://www.irs.gov/pub/irs-drop/rr-25-17.pdf"
+        },
+        {
+          "month": "2025-10",
+          "120% mid-term afr": "4.65%",
+          "revenue ruling": "Rev. Rul. 2025-19 — https://www.irs.gov/pub/irs-drop/rr-25-19.pdf"
+        },
+        {
+          "month": "2025-11",
+          "120% mid-term afr": "4.60%",
+          "revenue ruling": "Rev. Rul. 2025-21 — https://www.irs.gov/pub/irs-drop/rr-25-21.pdf"
+        },
+        {
+          "month": "2025-12",
+          "120% mid-term afr": "4.55%",
+          "revenue ruling": "Rev. Rul. 2025-24 — https://www.irs.gov/pub/irs-drop/rr-25-24.pdf"
+        },
+        {
+          "month": "2026-01",
+          "120% mid-term afr": "4.57%",
+          "revenue ruling": "Rev. Rul. 2026-02 — https://www.irs.gov/pub/irs-drop/rr-26-02.pdf"
+        },
+        {
+          "month": "2026-02",
+          "120% mid-term afr": "4.63%",
+          "revenue ruling": "Rev. Rul. 2026-03 — https://www.irs.gov/pub/irs-drop/rr-26-03.pdf"
+        },
+        {
+          "month": "2026-03",
+          "120% mid-term afr": "4.72%",
+          "revenue ruling": "Rev. Rul. 2026-06 — https://www.irs.gov/pub/irs-drop/rr-26-06.pdf"
+        },
+        {
+          "month": "2026-04",
+          "120% mid-term afr": "4.59%",
+          "revenue ruling": "Rev. Rul. 2026-07 — https://www.irs.gov/pub/irs-drop/rr-26-07.pdf"
+        },
+        {
+          "month": "2026-05",
+          "120% mid-term afr": "4.91%",
+          "revenue ruling": "Rev. Rul. 2026-09 — https://www.irs.gov/pub/irs-drop/rr-26-09.pdf"
+        },
+        {
+          "month": "2026-06",
+          "120% mid-term afr": "4.97%",
+          "revenue ruling": "Rev. Rul. 2026-11 — https://www.irs.gov/pub/irs-drop/rr-26-11.pdf"
+        },
+        {
+          "month": "2026-07",
+          "120% mid-term afr": "5.23%",
+          "revenue ruling": "Rev. Rul. 2026-12 — https://www.irs.gov/pub/irs-drop/rr-26-12.pdf"
+        },
+        {
+          "month": "2026-08",
+          "120% mid-term afr": "5.23%",
+          "revenue ruling": "Rev. Rul. 2026-13 — https://www.irs.gov/pub/irs-drop/rr-26-13.pdf"
+        },
+        {
+          "month": "2026-09",
+          "120% mid-term afr": "5.40%",
+          "revenue ruling": "Rev. Rul. 2026-17 — https://www.irs.gov/pub/irs-drop/rr-26-17.pdf"
+        },
+        {
+          "month": "2026-10",
+          "120% mid-term afr": "5.54%",
+          "revenue ruling": "Rev. Rul. 2026-19 — https://www.irs.gov/pub/irs-drop/rr-26-19.pdf"
+        }
+      ]
+    },
+    {
+      "section": "Updating",
+      "content": [
+        {
+          "note": "Add each new month's ruling as a row here and in `sepp_mid_term_rates.json`. A first distribution whose two preceding months are not in the file is validated at the 5% floor only."
+        }
+      ]
+    }
+  ]
+}

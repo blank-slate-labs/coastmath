@@ -1,0 +1,14 @@
+{
+  "2025": {"hsa_self_only": 4300, "hsa_family": 8550, "hsa_catchup": 1000, "ca_sdi": 0.012, "wa_paid_leave": 0.0092, "wa_employee_share": 0.7152, "wa_wage_cap": 176100, "wa_cares": 0.0058},
+  "2026": {"hsa_self_only": 4400, "hsa_family": 8750, "hsa_catchup": 1000, "ca_sdi": 0.013, "wa_paid_leave": 0.0113, "wa_employee_share": 0.7143, "wa_wage_cap": 184500, "wa_cares": 0.0058},
+  "sources": [
+    "https://www.irs.gov/publications/p969",
+    "https://www.irs.gov/pub/irs-drop/rp-25-19.pdf",
+    "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf",
+    "https://edd.ca.gov/en/payroll_taxes/Determine_Taxable_Wages/",
+    "https://paidleave.wa.gov/app/uploads/2024/10/2025-Premium-Rates-Employer-Mailer.pdf",
+    "https://paidleave.wa.gov/updates/",
+    "https://wacaresfund.wa.gov/news/employers-5-things-you-need-know"
+  ],
+  "projection": "2027 onward freezes 2026 percentage rates; caller inflation factor indexes HSA base and WA Paid Leave wage cap. HSA catchup stays fixed. No future law verification."
+}

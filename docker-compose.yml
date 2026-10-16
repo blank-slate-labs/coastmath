@@ -1,0 +1,35 @@
+# docker compose up --build, then open http://localhost:8000
+# Settings come from .env beside this file (copy .env.example).
+services:
+  coastmath:
+    build:
+      context: .
+      args:
+        VITE_TRANSACTIONS_ENABLED: "true"
+    ports:
+      # Reachable from this machine only. Anyone who can reach the port gets an
+      # account, and over plain HTTP the session cookie travels in clear text, so
+      # open it to a network deliberately: put HTTPS in front (README, "Reaching
+      # it from other machines"), then set COASTMATH_BIND=0.0.0.0 in .env.
+      - "${COASTMATH_BIND:-127.0.0.1}:${COASTMATH_PORT:-8000}:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: sqlite:////data/coastmath.db
+      TRANSACTIONS_ENABLED: ${TRANSACTIONS_ENABLED:-true}
+      SIMPLEFIN_ENABLED: ${SIMPLEFIN_ENABLED:-true}
+      # Plain HTTP needs a cookie without the Secure flag; set true behind HTTPS.
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
+    # host.docker.internal names this machine inside the container on Linux too
+    # (Docker Desktop provides it on its own).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - coastmath_data:/data
+    restart: unless-stopped
+
+# The database and its generated secrets. Compose names it after the project
+# directory: coastmath_coastmath_data. `docker compose down -v` deletes it.
+volumes:
+  coastmath_data:

@@ -1,0 +1,85 @@
+.plan-accuracy {
+  display: grid;
+  gap: var(--space-3);
+}
+.plan-accuracy-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.plan-accuracy-head h3 {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.plan-accuracy-figure {
+  margin: 0;
+  font-family: var(--font-figure);
+  color: var(--text-primary);
+}
+.plan-accuracy-figure strong {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+.plan-accuracy-figure span {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-left: 2px;
+}
+.plan-accuracy-count {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.plan-accuracy-error {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+}
+.plan-accuracy-ring {
+  flex: none;
+}
+.plan-accuracy-ring circle {
+  fill: none;
+  stroke-width: 7;
+}
+.plan-accuracy-ring-track {
+  stroke: var(--surface-border-strong);
+}
+.plan-accuracy-ring-fill {
+  stroke: var(--brand-primary);
+  stroke-linecap: round;
+}
+.plan-accuracy-group h4 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.plan-accuracy-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.plan-accuracy .plan-accuracy-item {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.plan-accuracy[aria-busy="true"] .plan-accuracy-group {
+  opacity: 0.6;
+}

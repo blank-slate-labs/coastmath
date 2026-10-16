@@ -1,0 +1,2821 @@
+{
+  "amt": {
+    "_source": "Rev. Proc. 2025-32 / Pub. L. 119-21 sec. 70107, https://www.irs.gov/irb/2025-45_IRB",
+    "exemption": {"single": 90100, "married_filing_jointly": 140200, "married_filing_separately": 70100},
+    "phaseout_start": {"single": 500000, "married_filing_jointly": 1000000, "married_filing_separately": 500000},
+    "rate_28_threshold": {"single": 244500, "married_filing_jointly": 244500, "married_filing_separately": 122250},
+    "phaseout_rate": 0.5
+  },
+  "payroll_tax": {
+    "_source": "IRS Topic 554 and Schedule SE ordinary method; Form 8959 / Topic 560; SSA 2026 contribution and benefit base (https://www.ssa.gov/oact/cola/cbb.html). SE input is net business profit before the earnings adjustment; optional methods and special occupations are not modeled.",
+    "se_earnings_factor": 0.9235,
+    "se_minimum_earnings": 400,
+    "social_security_wage_base": 184500,
+    "employee_social_security_rate": 0.062,
+    "employee_medicare_rate": 0.0145,
+    "additional_medicare_rate": 0.009,
+    "additional_medicare_thresholds": {
+      "single": 200000,
+      "head_of_household": 200000,
+      "married_filing_jointly": 250000,
+      "married_filing_separately": 125000
+    }
+  },
+  "capital_loss_ordinary_deduction_limit": {
+    "default": 3000,
+    "married_filing_separately": 1500
+  },
+  "standard_deductions": {
+    "single": 16100,
+    "married_filing_jointly": 32200,
+    "married_filing_separately": 16100,
+    "head_of_household": 24150
+  },
+  "additional_standard_deduction_65": {
+    "_source": "IRC 63(f); Rev. Proc. 2025-32 sec. 3.16: $1,650 per aged individual for married/surviving-spouse filers, $2,050 if unmarried and not a surviving spouse. Applies per spouse who is 65 or older; scaled with inflation like the basic standard deduction.",
+    "single": 2050,
+    "head_of_household": 2050,
+    "married_filing_jointly": 1650,
+    "married_filing_separately": 1650
+  },
+  "senior_deduction": {
+    "_source": "IRC 151(d)(5) as added by Pub. L. 119-21 sec. 70103: $6,000 per individual age 65+ for tax years 2025-2028, each individual's amount reduced by 6% of MAGI above $75,000 ($150,000 joint; 2025 Schedule 1-A Part V lines 34-37); married taxpayers must file jointly. Not indexed. Allowed whether or not the taxpayer itemizes.",
+    "amount": 6000,
+    "first_year": 2025,
+    "last_year": 2028,
+    "phaseout_rate": 0.06,
+    "phaseout_threshold": {
+      "single": 75000,
+      "head_of_household": 75000,
+      "married_filing_jointly": 150000
+    }
+  },
+  "child_tax_credit": {
+    "_source": "IRC 24 as amended by Pub. L. 119-21 sec. 70104; Rev. Proc. 2025-32: $2,200 per qualifying child under 17 at year end for 2026 ($1,700 refundable, not modeled), indexed after 2026 from IRC 24(i)(2)'s 2024 base (index_base_cola_2026 is the unrounded 2026 adjustment, C-CPI-U 2025 / 2024; see `_sources`) and rounded down to $100. Reduced by $50 per $1,000 (or fraction) of MAGI above $400,000 joint / $200,000 otherwise; thresholds not indexed.",
+    "amount": 2200,
+    "max_age": 16,
+    "index_base_cola_2026": 1.0234,
+    "index_rounding": 100,
+    "phaseout_step": 1000,
+    "phaseout_per_step": 50,
+    "phaseout_threshold": {
+      "single": 200000,
+      "head_of_household": 200000,
+      "married_filing_separately": 200000,
+      "married_filing_jointly": 400000
+    }
+  },
+  "brackets": {
+    "single": [
+      [
+        12400,
+        0.1
+      ],
+      [
+        50400,
+        0.12
+      ],
+      [
+        105700,
+        0.22
+      ],
+      [
+        201775,
+        0.24
+      ],
+      [
+        256225,
+        0.32
+      ],
+      [
+        640600,
+        0.35
+      ],
+      [
+        999999999,
+        0.37
+      ]
+    ],
+    "married_filing_jointly": [
+      [
+        24800,
+        0.1
+      ],
+      [
+        100800,
+        0.12
+      ],
+      [
+        211400,
+        0.22
+      ],
+      [
+        403550,
+        0.24
+      ],
+      [
+        512450,
+        0.32
+      ],
+      [
+        768700,
+        0.35
+      ],
+      [
+        999999999,
+        0.37
+      ]
+    ],
+    "married_filing_separately": [
+      [
+        12400,
+        0.1
+      ],
+      [
+        50400,
+        0.12
+      ],
+      [
+        105700,
+        0.22
+      ],
+      [
+        201775,
+        0.24
+      ],
+      [
+        256225,
+        0.32
+      ],
+      [
+        384350,
+        0.35
+      ],
+      [
+        999999999,
+        0.37
+      ]
+    ],
+    "head_of_household": [
+      [
+        17700,
+        0.1
+      ],
+      [
+        67450,
+        0.12
+      ],
+      [
+        105700,
+        0.22
+      ],
+      [
+        201775,
+        0.24
+      ],
+      [
+        256200,
+        0.32
+      ],
+      [
+        640600,
+        0.35
+      ],
+      [
+        999999999,
+        0.37
+      ]
+    ]
+  },
+  "long_term_capital_gains": {
+    "single": [
+      [
+        49450,
+        0.0
+      ],
+      [
+        545500,
+        0.15
+      ],
+      [
+        999999999,
+        0.2
+      ]
+    ],
+    "married_filing_jointly": [
+      [
+        98900,
+        0.0
+      ],
+      [
+        613700,
+        0.15
+      ],
+      [
+        999999999,
+        0.2
+      ]
+    ],
+    "married_filing_separately": [
+      [
+        49450,
+        0.0
+      ],
+      [
+        306850,
+        0.15
+      ],
+      [
+        999999999,
+        0.2
+      ]
+    ],
+    "head_of_household": [
+      [
+        66200,
+        0.0
+      ],
+      [
+        579600,
+        0.15
+      ],
+      [
+        999999999,
+        0.2
+      ]
+    ]
+  },
+  "state": {
+    "AL": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 500,
+          "rate": 0.02
+        },
+        {
+          "min": 500,
+          "max": 3000,
+          "rate": 0.04
+        },
+        {
+          "min": 3000,
+          "max": 999999999,
+          "rate": 0.05
+        }
+      ],
+      "standard_deduction": 3000,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension"], "cap": null}, {"sources": ["ira", "employer_plan"], "minimum_age": 65, "cap": 6000}]}
+    },
+    "AK": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "AZ": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.025
+        }
+      ],
+      "standard_deduction": 16100,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 999999999,
+              "rate": 0.025
+            }
+          ],
+          "standard_deduction": 24150
+        }
+      },
+      "aged_exemption": 2100,
+      "_deduction_source": "ARS 43-1041(A), (H): $23,625 head of household indexed like the federal basic standard deduction (2026: $24,150). ARS 43-1023(E): fixed, unindexed $2,100 exemption per taxpayer 65 or older and per 65+ spouse on a joint return. https://www.azleg.gov/ars/43/01041.htm https://www.azleg.gov/ars/43/01023.htm"
+    },
+    "AR": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 5599,
+          "rate": 0.0
+        },
+        {
+          "min": 5599,
+          "max": 11199,
+          "rate": 0.02
+        },
+        {
+          "min": 11199,
+          "max": 15999,
+          "rate": 0.03
+        },
+        {
+          "min": 15999,
+          "max": 26399,
+          "rate": 0.034
+        },
+        {
+          "min": 26399,
+          "max": 999999999,
+          "rate": 0.037
+        }
+      ],
+      "standard_deduction": 2470,
+      "long_term_capital_gain_exclusion": {
+        "rate": 0.5,
+        "full_exemption_above": 10000000
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "source_minimum_age": {"ira": 59.5, "employer_plan": 59.5}, "cap": 6000}]}
+    },
+    "CA": {
+      "social_security_subtraction": {"type": "full", "applies_with_custom_brackets": true},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 11079,
+          "rate": 0.01
+        },
+        {
+          "min": 11079,
+          "max": 26264,
+          "rate": 0.02
+        },
+        {
+          "min": 26264,
+          "max": 41452,
+          "rate": 0.04
+        },
+        {
+          "min": 41452,
+          "max": 57542,
+          "rate": 0.06
+        },
+        {
+          "min": 57542,
+          "max": 72724,
+          "rate": 0.08
+        },
+        {
+          "min": 72724,
+          "max": 371479,
+          "rate": 0.093
+        },
+        {
+          "min": 371479,
+          "max": 445771,
+          "rate": 0.103
+        },
+        {
+          "min": 445771,
+          "max": 742953,
+          "rate": 0.113
+        },
+        {
+          "min": 742953,
+          "max": 999999999,
+          "rate": 0.123
+        }
+      ],
+      "behavioral_health_services_tax": {
+        "threshold": 1000000,
+        "rate": 0.01
+      },
+      "early_distribution_additional_tax": {
+        "rate": 0.025
+      },
+      "standard_deduction": 5706
+    },
+    "CO": {
+      "social_security_subtraction": {"type": "retirement_exclusion"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.044
+        }
+      ],
+      "standard_deduction": 16100,
+      "standard_deduction_source": "federal",
+      "_deduction_source": "C.R.S. 39-22-104(1.7): Colorado taxes modified federal taxable income, so the deduction is the IRC 63 standard deduction (63(c) basic amount for the filing status plus the 63(f) amount per individual 65 or older). https://tax.colorado.gov/individual-income-tax-guide",
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan"], "minimum_age": 55, "age_caps": [[55, 20000], [65, 24000]], "social_security": "colorado", "social_security_full": {"minimum_age": 65, "federal_agi_limit": {"single": 75000, "married_filing_jointly": 95000, "married_filing_separately": 75000, "head_of_household": 75000}}}]}
+    },
+    "CT": {
+      "social_security_subtraction": {"type": "threshold_partial", "threshold": {"single": 75000, "married_filing_separately": 75000, "married_filing_jointly": 100000, "head_of_household": 100000}, "taxable_share_above": 0.25},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 10000,
+          "rate": 0.02
+        },
+        {
+          "min": 10000,
+          "max": 50000,
+          "rate": 0.045
+        },
+        {
+          "min": 50000,
+          "max": 100000,
+          "rate": 0.055
+        },
+        {
+          "min": 100000,
+          "max": 200000,
+          "rate": 0.06
+        },
+        {
+          "min": 200000,
+          "max": 250000,
+          "rate": 0.065
+        },
+        {
+          "min": 250000,
+          "max": 500000,
+          "rate": 0.069
+        },
+        {
+          "min": 500000,
+          "max": 999999999,
+          "rate": 0.0699
+        }
+      ],
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 16000,
+              "rate": 0.02
+            },
+            {
+              "min": 16000,
+              "max": 80000,
+              "rate": 0.045
+            },
+            {
+              "min": 80000,
+              "max": 160000,
+              "rate": 0.055
+            },
+            {
+              "min": 160000,
+              "max": 320000,
+              "rate": 0.06
+            },
+            {
+              "min": 320000,
+              "max": 400000,
+              "rate": 0.065
+            },
+            {
+              "min": 400000,
+              "max": 800000,
+              "rate": 0.069
+            },
+            {
+              "min": 800000,
+              "max": 999999999,
+              "rate": 0.0699
+            }
+          ],
+          "standard_deduction": 0
+        }
+      },
+      "standard_deduction": 0,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan"], "cap": null, "income_limit": {"type": "schedule", "base": "federal_agi", "bands": {"single": [[75000, 1.0], [77500, 0.85], [80000, 0.7], [82500, 0.55], [85000, 0.4], [87500, 0.25], [90000, 0.1], [95000, 0.05], [100000, 0.025]], "married_filing_separately": [[75000, 1.0], [77500, 0.85], [80000, 0.7], [82500, 0.55], [85000, 0.4], [87500, 0.25], [90000, 0.1], [95000, 0.05], [100000, 0.025]], "head_of_household": [[75000, 1.0], [77500, 0.85], [80000, 0.7], [82500, 0.55], [85000, 0.4], [87500, 0.25], [90000, 0.1], [95000, 0.05], [100000, 0.025]], "married_filing_jointly": [[100000, 1.0], [105000, 0.85], [110000, 0.7], [115000, 0.55], [120000, 0.4], [125000, 0.25], [130000, 0.1], [140000, 0.05], [150000, 0.025]]}}}]}
+    },
+    "DE": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 2000,
+          "rate": 0.0
+        },
+        {
+          "min": 2000,
+          "max": 5000,
+          "rate": 0.022
+        },
+        {
+          "min": 5000,
+          "max": 10000,
+          "rate": 0.039
+        },
+        {
+          "min": 10000,
+          "max": 20000,
+          "rate": 0.048
+        },
+        {
+          "min": 20000,
+          "max": 25000,
+          "rate": 0.052
+        },
+        {
+          "min": 25000,
+          "max": 60000,
+          "rate": 0.0555
+        },
+        {
+          "min": 60000,
+          "max": 999999999,
+          "rate": 0.066
+        }
+      ],
+      "standard_deduction": 3250,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "minimum_age": 60, "cap": 12500}, {"sources": ["pension"], "maximum_age": 60, "cap": 2000}]}
+    },
+    "DC": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 10000,
+          "rate": 0.04
+        },
+        {
+          "min": 10000,
+          "max": 40000,
+          "rate": 0.06
+        },
+        {
+          "min": 40000,
+          "max": 60000,
+          "rate": 0.065
+        },
+        {
+          "min": 60000,
+          "max": 250000,
+          "rate": 0.085
+        },
+        {
+          "min": 250000,
+          "max": 500000,
+          "rate": 0.0925
+        },
+        {
+          "min": 500000,
+          "max": 1000000,
+          "rate": 0.0975
+        },
+        {
+          "min": 1000000,
+          "max": 999999999,
+          "rate": 0.1075
+        }
+      ],
+      "joint_bracket_multiplier": 1.0,
+      "standard_deduction": 15000,
+      "filing_status_schedules": {"head_of_household": {"brackets": [{"min": 0, "max": 10000, "rate": 0.04}, {"min": 10000, "max": 40000, "rate": 0.06}, {"min": 40000, "max": 60000, "rate": 0.065}, {"min": 60000, "max": 250000, "rate": 0.085}, {"min": 250000, "max": 500000, "rate": 0.0925}, {"min": 500000, "max": 1000000, "rate": 0.0975}, {"min": 1000000, "max": 999999999, "rate": 0.1075}], "standard_deduction": 22500}},
+      "aged_additional_deduction": {"single": 2000, "head_of_household": 2000, "married_filing_jointly": 1600, "married_filing_separately": 1600}
+    },
+    "FL": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "GA": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0499
+        }
+      ],
+      "standard_deduction": 15000,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan"], "minimum_age": 62, "age_caps": [[62, 35000], [65, 65000]]}]}
+    },
+    "HI": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 9600,
+          "rate": 0.014
+        },
+        {
+          "min": 9600,
+          "max": 14400,
+          "rate": 0.032
+        },
+        {
+          "min": 14400,
+          "max": 19200,
+          "rate": 0.055
+        },
+        {
+          "min": 19200,
+          "max": 24000,
+          "rate": 0.064
+        },
+        {
+          "min": 24000,
+          "max": 36000,
+          "rate": 0.068
+        },
+        {
+          "min": 36000,
+          "max": 48000,
+          "rate": 0.072
+        },
+        {
+          "min": 48000,
+          "max": 125000,
+          "rate": 0.076
+        },
+        {
+          "min": 125000,
+          "max": 175000,
+          "rate": 0.079
+        },
+        {
+          "min": 175000,
+          "max": 225000,
+          "rate": 0.0825
+        },
+        {
+          "min": 225000,
+          "max": 275000,
+          "rate": 0.09
+        },
+        {
+          "min": 275000,
+          "max": 325000,
+          "rate": 0.1
+        },
+        {
+          "min": 325000,
+          "max": 999999999,
+          "rate": 0.11
+        }
+      ],
+      "standard_deduction": 8000,
+      "capital_gain_max_rate": {
+        "rate": 0.0725
+      },
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 14400,
+              "rate": 0.014
+            },
+            {
+              "min": 14400,
+              "max": 21600,
+              "rate": 0.032
+            },
+            {
+              "min": 21600,
+              "max": 28800,
+              "rate": 0.055
+            },
+            {
+              "min": 28800,
+              "max": 36000,
+              "rate": 0.064
+            },
+            {
+              "min": 36000,
+              "max": 54000,
+              "rate": 0.068
+            },
+            {
+              "min": 54000,
+              "max": 72000,
+              "rate": 0.072
+            },
+            {
+              "min": 72000,
+              "max": 187500,
+              "rate": 0.076
+            },
+            {
+              "min": 187500,
+              "max": 262500,
+              "rate": 0.079
+            },
+            {
+              "min": 262500,
+              "max": 337500,
+              "rate": 0.0825
+            },
+            {
+              "min": 337500,
+              "max": 412500,
+              "rate": 0.09
+            },
+            {
+              "min": 412500,
+              "max": 487500,
+              "rate": 0.1
+            },
+            {
+              "min": 487500,
+              "max": 999999999,
+              "rate": 0.11
+            }
+          ],
+          "standard_deduction": 12000
+        }
+      }
+    },
+    "ID": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 4811,
+          "rate": 0.0
+        },
+        {
+          "min": 4811,
+          "max": 999999999,
+          "rate": 0.053
+        }
+      ],
+      "standard_deduction": 16100,
+      "standard_deduction_source": "federal",
+      "head_of_household_schedule": "joint",
+      "_deduction_source": "Idaho Code 63-3022(j)(1): the standard deduction as defined in IRC 63 (63(c) basic amount for the filing status plus the 63(f) amount per individual 65 or older). Idaho Code 63-3024(2)(b): surviving spouse and head of household returns are treated as joint returns (joint 0% band). https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH30/SECT63-3024/"
+    },
+    "IL": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0495
+        }
+      ],
+      "standard_deduction": 0,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan", "roth_conversion"], "cap": null}]}
+    },
+    "IN": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0295
+        }
+      ],
+      "standard_deduction": 0
+    },
+    "IA": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.038
+        }
+      ],
+      "standard_deduction": 16100,
+      "standard_deduction_source": "federal",
+      "includes_federal_senior_deduction": true,
+      "_deduction_source": "Iowa Code 422.7 (https://www.legis.iowa.gov/docs/code/422.7.pdf): Iowa net income is taxable income as computed under IRC 63, and Iowa Code 422.3(5)(b) (https://www.legis.iowa.gov/docs/code/422.3.pdf) conforms to the IRC as amended for tax years from 2020. So the 2026 deduction is the IRC 63(c) standard deduction for the filing status plus the 63(f) amount per individual 65 or older (Rev. Proc. 2025-32), plus the IRC 151(d)(5) senior deduction, which Iowa adopts: IDR 2025 IA 1040 instructions, What's New (https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/whats-new), say the senior deduction is already included in federal taxable income.",
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan", "roth_conversion"], "minimum_age": 55, "cap": null}]}
+    },
+    "KS": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 23000,
+          "rate": 0.052
+        },
+        {
+          "min": 23000,
+          "max": 999999999,
+          "rate": 0.0558
+        }
+      ],
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {"min": 0, "max": 46000, "rate": 0.052},
+            {"min": 46000, "max": 999999999, "rate": 0.0558}
+          ],
+          "standard_deduction": 8240
+        },
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 23000, "rate": 0.052},
+            {"min": 23000, "max": 999999999, "rate": 0.0558}
+          ],
+          "standard_deduction": 6180
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 23000, "rate": 0.052},
+            {"min": 23000, "max": 999999999, "rate": 0.0558}
+          ],
+          "standard_deduction": 4120
+        }
+      },
+      "aged_additional_deduction": {
+        "single": 850,
+        "married_filing_jointly": 700,
+        "married_filing_separately": 700,
+        "head_of_household": 850
+      },
+      "standard_deduction": 3605
+    },
+    "KY": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.035
+        }
+      ],
+      "standard_deduction": 3360,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan", "roth_conversion"], "cap": 31110}]}
+    },
+    "LA": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.03
+        }
+      ],
+      "standard_deduction": 12500,
+      "head_of_household_schedule": "joint",
+      "_deduction_source": "La. R.S. 47:294(A) (https://legis.la.gov/Legis/Law.aspx?d=101761): married-joint, qualified surviving spouse and head of household returns get 200% of the single standard deduction; the flat 3% rate makes the doubled joint brackets harmless.",
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan"], "minimum_age": 65, "cap": 12000, "indexed": true}]}
+    },
+    "ME": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {"min": 0, "max": 27400, "rate": 0.058},
+        {"min": 27400, "max": 64850, "rate": 0.0675},
+        {"min": 64850, "max": 1000000, "rate": 0.0715},
+        {"min": 1000000, "max": 999999999, "rate": 0.0915}
+      ],
+      "joint_brackets": [
+        {"min": 0, "max": 54850, "rate": 0.058},
+        {"min": 54850, "max": 129750, "rate": 0.0675},
+        {"min": 129750, "max": 1500000, "rate": 0.0715},
+        {"min": 1500000, "max": 999999999, "rate": 0.0915}
+      ],
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 41100, "rate": 0.058},
+            {"min": 41100, "max": 97300, "rate": 0.0675},
+            {"min": 97300, "max": 1500000, "rate": 0.0715},
+            {"min": 1500000, "max": 999999999, "rate": 0.0915}
+          ],
+          "standard_deduction": 23550
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 27400, "rate": 0.058},
+            {"min": 27400, "max": 64850, "rate": 0.0675},
+            {"min": 64850, "max": 750000, "rate": 0.0715},
+            {"min": 750000, "max": 999999999, "rate": 0.0915}
+          ],
+          "standard_deduction": 15700
+        }
+      },
+      "standard_deduction": 15700,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "source_minimum_age": {"ira": 59.5, "employer_plan": 59.5}, "cap": 49824, "indexed": true, "social_security": "reduces_cap", "income_limit": {"type": "fraction", "base": "federal_agi", "threshold": {"single": 125000, "married_filing_jointly": 250000, "married_filing_separately": 125000, "head_of_household": 187500}, "denominator": {"single": 100000, "married_filing_jointly": 100000, "married_filing_separately": 50000, "head_of_household": 100000}}}]}
+    },
+    "MD": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 1000,
+          "rate": 0.02
+        },
+        {
+          "min": 1000,
+          "max": 2000,
+          "rate": 0.03
+        },
+        {
+          "min": 2000,
+          "max": 3000,
+          "rate": 0.04
+        },
+        {
+          "min": 3000,
+          "max": 100000,
+          "rate": 0.0475
+        },
+        {
+          "min": 100000,
+          "max": 125000,
+          "rate": 0.05
+        },
+        {
+          "min": 125000,
+          "max": 150000,
+          "rate": 0.0525
+        },
+        {
+          "min": 150000,
+          "max": 250000,
+          "rate": 0.055
+        },
+        {
+          "min": 250000,
+          "max": 500000,
+          "rate": 0.0575
+        },
+        {
+          "min": 500000,
+          "max": 1000000,
+          "rate": 0.0625
+        },
+        {
+          "min": 1000000,
+          "max": 999999999,
+          "rate": 0.065
+        }
+      ],
+      "joint_brackets": [
+        {"min": 0, "max": 1000, "rate": 0.02},
+        {"min": 1000, "max": 2000, "rate": 0.03},
+        {"min": 2000, "max": 3000, "rate": 0.04},
+        {"min": 3000, "max": 150000, "rate": 0.0475},
+        {"min": 150000, "max": 175000, "rate": 0.05},
+        {"min": 175000, "max": 225000, "rate": 0.0525},
+        {"min": 225000, "max": 300000, "rate": 0.055},
+        {"min": 300000, "max": 600000, "rate": 0.0575},
+        {"min": 600000, "max": 1200000, "rate": 0.0625},
+        {"min": 1200000, "max": 999999999, "rate": 0.065}
+      ],
+      "capital_gain_surtax": {"rate": 0.02, "federal_agi_threshold": 350000},
+      "head_of_household_schedule": "joint",
+      "standard_deduction": 3400,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "employer_plan"], "minimum_age": 65, "cap": 41200, "indexed": true, "social_security": "reduces_cap"}]}
+    },
+    "MA": {
+      "social_security_subtraction": {"type": "full"},
+      "contribution_basis_recovery": {"method": "cost_recovery"},
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {
+          "min": 0,
+          "max": 1107750,
+          "rate": 0.05
+        },
+        {
+          "min": 1107750,
+          "max": 999999999,
+          "rate": 0.09
+        }
+      ],
+      "joint_bracket_multiplier": 1.0,
+      "standard_deduction": 0
+    },
+    "MI": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0425
+        }
+      ],
+      "standard_deduction": 0,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "401k", "403b", "401a"], "source_minimum_age": {"ira": 59.5, "401k": 59.5, "403b": 59.5, "401a": 59.5}, "cap": null, "return_cap": {"single": 67610, "married_filing_jointly": 135220, "married_filing_separately": 67610, "head_of_household": 67610}, "indexed": true}]}
+    },
+    "MN": {
+      "social_security_subtraction": {"type": "stepped_phaseout", "threshold": {"single": 86410, "head_of_household": 86410, "married_filing_jointly": 110780, "married_filing_separately": 55390}, "indexed": true, "step": {"default": 4000, "married_filing_separately": 2000}, "step_reduction": 0.1, "alternate": {"maximum": {"single": 4560, "head_of_household": 4560, "married_filing_jointly": 5840, "married_filing_separately": 2920}, "provisional_income_threshold": {"single": 69250, "head_of_household": 69250, "married_filing_jointly": 88630, "married_filing_separately": 44315}, "reduction_rate": 0.2}},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 33310,
+          "rate": 0.0535
+        },
+        {
+          "min": 33310,
+          "max": 109430,
+          "rate": 0.068
+        },
+        {
+          "min": 109430,
+          "max": 203150,
+          "rate": 0.0785
+        },
+        {
+          "min": 203150,
+          "max": 999999999,
+          "rate": 0.0985
+        }
+      ],
+      "standard_deduction": 15300,
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 48700,
+              "rate": 0.0535
+            },
+            {
+              "min": 48700,
+              "max": 193480,
+              "rate": 0.068
+            },
+            {
+              "min": 193480,
+              "max": 337930,
+              "rate": 0.0785
+            },
+            {
+              "min": 337930,
+              "max": 999999999,
+              "rate": 0.0985
+            }
+          ],
+          "standard_deduction": 30600
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 24350,
+              "rate": 0.0535
+            },
+            {
+              "min": 24350,
+              "max": 96740,
+              "rate": 0.068
+            },
+            {
+              "min": 96740,
+              "max": 168965,
+              "rate": 0.0785
+            },
+            {
+              "min": 168965,
+              "max": 999999999,
+              "rate": 0.0985
+            }
+          ],
+          "standard_deduction": 15300
+        },
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 41010,
+              "rate": 0.0535
+            },
+            {
+              "min": 41010,
+              "max": 164800,
+              "rate": 0.068
+            },
+            {
+              "min": 164800,
+              "max": 270060,
+              "rate": 0.0785
+            },
+            {
+              "min": 270060,
+              "max": 999999999,
+              "rate": 0.0985
+            }
+          ],
+          "standard_deduction": 23000
+        }
+      }
+    },
+    "MS": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 10000,
+          "rate": 0.0
+        },
+        {
+          "min": 10000,
+          "max": 999999999,
+          "rate": 0.04
+        }
+      ],
+      "standard_deduction": 2300,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "source_minimum_age": {"ira": 59.5, "employer_plan": 59.5}, "cap": null}]}
+    },
+    "MO": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 1313,
+          "rate": 0.0
+        },
+        {
+          "min": 1313,
+          "max": 2626,
+          "rate": 0.02
+        },
+        {
+          "min": 2626,
+          "max": 3939,
+          "rate": 0.025
+        },
+        {
+          "min": 3939,
+          "max": 5252,
+          "rate": 0.03
+        },
+        {
+          "min": 5252,
+          "max": 6565,
+          "rate": 0.035
+        },
+        {
+          "min": 6565,
+          "max": 7878,
+          "rate": 0.04
+        },
+        {
+          "min": 7878,
+          "max": 9191,
+          "rate": 0.045
+        },
+        {
+          "min": 9191,
+          "max": 999999999,
+          "rate": 0.047
+        }
+      ],
+      "standard_deduction": 16100,
+      "standard_deduction_source": "federal",
+      "head_of_household_exemption": 1400,
+      "long_term_capital_gain_exclusion": {"rate": 1.0, "reduces_state_agi_for_income_limits": true},
+      "_deduction_source": "RSMo 143.131: the Missouri standard deduction is the allowable federal standard deduction (IRC 63(c) for the filing status plus the 63(f) amount per individual 65 or older; 2025 Form MO-1040 instructions line 14). RSMo 143.161.2 and MO-1040 line 15: $1,400 head-of-household exemption, not indexed. https://revisor.mo.gov/main/OneSection.aspx?section=143.131",
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "cap": 6000, "income_limit": {"type": "dollar_phaseout", "base": "federal_agi_less_taxable_social_security", "threshold": {"single": 25000, "married_filing_jointly": 32000, "married_filing_separately": 16000, "head_of_household": 25000}}}]}
+    },
+    "MT": {
+      "social_security_subtraction": {"type": "none"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 47500,
+          "rate": 0.047
+        },
+        {
+          "min": 47500,
+          "max": 999999999,
+          "rate": 0.0565
+        }
+      ],
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 71250,
+              "rate": 0.047
+            },
+            {
+              "min": 71250,
+              "max": 999999999,
+              "rate": 0.0565
+            }
+          ],
+          "standard_deduction": 24150
+        }
+      },
+      "standard_deduction": 16100,
+      "standard_deduction_source": "federal",
+      "aged_additional_deduction": 5810,
+      "net_long_term_capital_gains": {
+        "lower_rate": 0.03,
+        "upper_rate": 0.041,
+        "band": {
+          "single": 47500,
+          "married_filing_separately": 47500,
+          "head_of_household": 71250,
+          "married_filing_jointly": 95000
+        }
+      },
+      "_deduction_source": "MCA 15-30-2101(22): Montana taxable income is federal taxable income adjusted under 15-30-2120, so the deduction is the IRC 63 standard deduction (63(c) for the filing status plus the 63(f) amount per individual 65 or older). MCA 15-30-2120(3)(g) and (7): $5,500 subtraction per taxpayer 65 or older, indexed by CPI-U June 2025 / June 2023 (322.561 / 305.109) and rounded to $10 = $5,810 for 2026. MCA 15-30-2103 (temporary through 2026): 4.7%/5.65% with the break at $47,500 single and MFS, $71,250 head of household, $95,000 joint; net long-term capital gains (IRC 1222) taxed at 3.0% on the band less nonqualified taxable income and 4.1% above. https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0030/0150-0300-0210-0030.html"
+    },
+    "NE": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 4030,
+          "rate": 0.0246
+        },
+        {
+          "min": 4030,
+          "max": 24120,
+          "rate": 0.0351
+        },
+        {
+          "min": 24120,
+          "max": 999999999,
+          "rate": 0.0455
+        }
+      ],
+      "standard_deduction": 8600,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 7510,
+              "rate": 0.0246
+            },
+            {
+              "min": 7510,
+              "max": 38590,
+              "rate": 0.0351
+            },
+            {
+              "min": 38590,
+              "max": 999999999,
+              "rate": 0.0455
+            }
+          ],
+          "standard_deduction": 12600
+        }
+      }
+    },
+    "NV": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "NH": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "NJ": {
+      "social_security_subtraction": {"type": "full"},
+      "contribution_basis_recovery": {"method": "pro_rata"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 20000,
+          "rate": 0.014
+        },
+        {
+          "min": 20000,
+          "max": 35000,
+          "rate": 0.0175
+        },
+        {
+          "min": 35000,
+          "max": 40000,
+          "rate": 0.035
+        },
+        {
+          "min": 40000,
+          "max": 75000,
+          "rate": 0.05525
+        },
+        {
+          "min": 75000,
+          "max": 500000,
+          "rate": 0.0637
+        },
+        {
+          "min": 500000,
+          "max": 1000000,
+          "rate": 0.0897
+        },
+        {
+          "min": 1000000,
+          "max": 999999999,
+          "rate": 0.1075
+        }
+      ],
+      "joint_brackets": [
+        {"min": 0, "max": 20000, "rate": 0.014},
+        {"min": 20000, "max": 50000, "rate": 0.0175},
+        {"min": 50000, "max": 70000, "rate": 0.0245},
+        {"min": 70000, "max": 80000, "rate": 0.035},
+        {"min": 80000, "max": 150000, "rate": 0.05525},
+        {"min": 150000, "max": 500000, "rate": 0.0637},
+        {"min": 500000, "max": 1000000, "rate": 0.0897},
+        {"min": 1000000, "max": 999999999, "rate": 0.1075}
+      ],
+      "head_of_household_schedule": "joint",
+      "standard_deduction": 0,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "ira", "employer_plan"], "minimum_age": 62, "cap": null, "return_cap": {"single": 75000, "married_filing_jointly": 100000, "married_filing_separately": 50000, "head_of_household": 75000}, "return_cap_full_share_only": true, "income_limit": {"type": "schedule", "base": "federal_agi_less_taxable_social_security", "bands": {"single": [[100001, 1.0], [125001, 0.375], [150001, 0.1875]], "head_of_household": [[100001, 1.0], [125001, 0.375], [150001, 0.1875]], "married_filing_jointly": [[100001, 1.0], [125001, 0.5], [150001, 0.25]], "married_filing_separately": [[100001, 1.0], [125001, 0.25], [150001, 0.125]]}}}]}
+    },
+    "NM": {
+      "social_security_subtraction": {"type": "linear_phaseout", "start": {"single": 100000, "married_filing_separately": 75000, "married_filing_jointly": 150000, "head_of_household": 150000}, "width": 0},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 5500,
+          "rate": 0.015
+        },
+        {
+          "min": 5500,
+          "max": 16500,
+          "rate": 0.032
+        },
+        {
+          "min": 16500,
+          "max": 33500,
+          "rate": 0.043
+        },
+        {
+          "min": 33500,
+          "max": 66500,
+          "rate": 0.047
+        },
+        {
+          "min": 66500,
+          "max": 210000,
+          "rate": 0.049
+        },
+        {
+          "min": 210000,
+          "max": 999999999,
+          "rate": 0.059
+        }
+      ],
+      "standard_deduction": 16100,
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 8000,
+              "rate": 0.015
+            },
+            {
+              "min": 8000,
+              "max": 25000,
+              "rate": 0.032
+            },
+            {
+              "min": 25000,
+              "max": 50000,
+              "rate": 0.043
+            },
+            {
+              "min": 50000,
+              "max": 100000,
+              "rate": 0.047
+            },
+            {
+              "min": 100000,
+              "max": 315000,
+              "rate": 0.049
+            },
+            {
+              "min": 315000,
+              "max": 999999999,
+              "rate": 0.059
+            }
+          ],
+          "standard_deduction": 32200
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 4000,
+              "rate": 0.015
+            },
+            {
+              "min": 4000,
+              "max": 12500,
+              "rate": 0.032
+            },
+            {
+              "min": 12500,
+              "max": 25000,
+              "rate": 0.043
+            },
+            {
+              "min": 25000,
+              "max": 50000,
+              "rate": 0.047
+            },
+            {
+              "min": 50000,
+              "max": 157500,
+              "rate": 0.049
+            },
+            {
+              "min": 157500,
+              "max": 999999999,
+              "rate": 0.059
+            }
+          ],
+          "standard_deduction": 16100
+        },
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 8000,
+              "rate": 0.015
+            },
+            {
+              "min": 8000,
+              "max": 25000,
+              "rate": 0.032
+            },
+            {
+              "min": 25000,
+              "max": 50000,
+              "rate": 0.043
+            },
+            {
+              "min": 50000,
+              "max": 100000,
+              "rate": 0.047
+            },
+            {
+              "min": 100000,
+              "max": 315000,
+              "rate": 0.049
+            },
+            {
+              "min": 315000,
+              "max": 999999999,
+              "rate": 0.059
+            }
+          ],
+          "standard_deduction": 24150
+        }
+      }
+    },
+    "NY": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 8500,
+          "rate": 0.039
+        },
+        {
+          "min": 8500,
+          "max": 11700,
+          "rate": 0.044
+        },
+        {
+          "min": 11700,
+          "max": 13900,
+          "rate": 0.0515
+        },
+        {
+          "min": 13900,
+          "max": 80650,
+          "rate": 0.054
+        },
+        {
+          "min": 80650,
+          "max": 215400,
+          "rate": 0.059
+        },
+        {
+          "min": 215400,
+          "max": 1077550,
+          "rate": 0.0685
+        },
+        {
+          "min": 1077550,
+          "max": 5000000,
+          "rate": 0.0965
+        },
+        {
+          "min": 5000000,
+          "max": 25000000,
+          "rate": 0.103
+        },
+        {
+          "min": 25000000,
+          "max": 999999999,
+          "rate": 0.109
+        }
+      ],
+      "standard_deduction": 8000,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 12800,
+              "rate": 0.039
+            },
+            {
+              "min": 12800,
+              "max": 17650,
+              "rate": 0.044
+            },
+            {
+              "min": 17650,
+              "max": 20900,
+              "rate": 0.0515
+            },
+            {
+              "min": 20900,
+              "max": 107650,
+              "rate": 0.054
+            },
+            {
+              "min": 107650,
+              "max": 269300,
+              "rate": 0.059
+            },
+            {
+              "min": 269300,
+              "max": 1616450,
+              "rate": 0.0685
+            },
+            {
+              "min": 1616450,
+              "max": 5000000,
+              "rate": 0.0965
+            },
+            {
+              "min": 5000000,
+              "max": 25000000,
+              "rate": 0.103
+            },
+            {
+              "min": 25000000,
+              "max": 999999999,
+              "rate": 0.109
+            }
+          ],
+          "standard_deduction": 11200
+        },
+        "married_filing_jointly": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 17150,
+              "rate": 0.039
+            },
+            {
+              "min": 17150,
+              "max": 23600,
+              "rate": 0.044
+            },
+            {
+              "min": 23600,
+              "max": 27900,
+              "rate": 0.0515
+            },
+            {
+              "min": 27900,
+              "max": 161550,
+              "rate": 0.054
+            },
+            {
+              "min": 161550,
+              "max": 323200,
+              "rate": 0.059
+            },
+            {
+              "min": 323200,
+              "max": 2155350,
+              "rate": 0.0685
+            },
+            {
+              "min": 2155350,
+              "max": 5000000,
+              "rate": 0.0965
+            },
+            {
+              "min": 5000000,
+              "max": 25000000,
+              "rate": 0.103
+            },
+            {
+              "min": 25000000,
+              "max": 999999999,
+              "rate": 0.109
+            }
+          ],
+          "standard_deduction": 16050
+        }
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "minimum_age": 59.5, "cap": 20000}]}
+    },
+    "NC": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0399
+        }
+      ],
+      "standard_deduction": 12750,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 999999999,
+              "rate": 0.0399
+            }
+          ],
+          "standard_deduction": 19125
+        }
+      }
+    },
+    "ND": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 48475,
+          "rate": 0.0
+        },
+        {
+          "min": 48475,
+          "max": 244825,
+          "rate": 0.0195
+        },
+        {
+          "min": 244825,
+          "max": 999999999,
+          "rate": 0.025
+        }
+      ],
+      "standard_deduction": 16100,
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 80975,
+              "rate": 0.0
+            },
+            {
+              "min": 80975,
+              "max": 298075,
+              "rate": 0.0195
+            },
+            {
+              "min": 298075,
+              "max": 999999999,
+              "rate": 0.025
+            }
+          ],
+          "standard_deduction": 32200
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 40475,
+              "rate": 0.0
+            },
+            {
+              "min": 40475,
+              "max": 149025,
+              "rate": 0.0195
+            },
+            {
+              "min": 149025,
+              "max": 999999999,
+              "rate": 0.025
+            }
+          ],
+          "standard_deduction": 16100
+        },
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 64950,
+              "rate": 0.0
+            },
+            {
+              "min": 64950,
+              "max": 271450,
+              "rate": 0.0195
+            },
+            {
+              "min": 271450,
+              "max": 999999999,
+              "rate": 0.025
+            }
+          ],
+          "standard_deduction": 24150
+        }
+      },
+      "long_term_capital_gain_exclusion": {
+        "rate": 0.4,
+        "includes_qualified_dividends": true
+      }
+    },
+    "OH": {
+      "social_security_subtraction": {"type": "full"},
+      "joint_bracket_multiplier": 1.0,
+      "personal_exemptions": {
+        "base_year": 2026,
+        "maximum_magi": 500000,
+        "rounding_increment": 50,
+        "tiers": [
+          {"maximum_magi": 40000, "amount": 2400},
+          {"maximum_magi": 80000, "amount": 2150},
+          {"maximum_magi": null, "amount": 1900}
+        ]
+      },
+      "base_tax_above_threshold": {
+        "amount": 332.0,
+        "threshold": 26050.0
+      },
+      "brackets": [
+        {
+          "min": 0,
+          "max": 26050,
+          "rate": 0.0
+        },
+        {
+          "min": 26050,
+          "max": 999999999,
+          "rate": 0.0275
+        }
+      ],
+      "standard_deduction": 0
+    },
+    "OK": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 3750,
+          "rate": 0.0
+        },
+        {
+          "min": 3750,
+          "max": 4900,
+          "rate": 0.025
+        },
+        {
+          "min": 4900,
+          "max": 7200,
+          "rate": 0.035
+        },
+        {
+          "min": 7200,
+          "max": 999999999,
+          "rate": 0.045
+        }
+      ],
+      "standard_deduction": 6350,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 7500,
+              "rate": 0.0
+            },
+            {
+              "min": 7500,
+              "max": 9800,
+              "rate": 0.025
+            },
+            {
+              "min": 9800,
+              "max": 14400,
+              "rate": 0.035
+            },
+            {
+              "min": 14400,
+              "max": 999999999,
+              "rate": 0.045
+            }
+          ],
+          "standard_deduction": 9350
+        }
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "cap": 10000}]}
+    },
+    "OR": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 4400,
+          "rate": 0.0475
+        },
+        {
+          "min": 4400,
+          "max": 11100,
+          "rate": 0.0675
+        },
+        {
+          "min": 11100,
+          "max": 125000,
+          "rate": 0.0875
+        },
+        {
+          "min": 125000,
+          "max": 999999999,
+          "rate": 0.099
+        }
+      ],
+      "standard_deduction": 2835,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 8800,
+              "rate": 0.0475
+            },
+            {
+              "min": 8800,
+              "max": 22200,
+              "rate": 0.0675
+            },
+            {
+              "min": 22200,
+              "max": 250000,
+              "rate": 0.0875
+            },
+            {
+              "min": 250000,
+              "max": 999999999,
+              "rate": 0.099
+            }
+          ],
+          "standard_deduction": 4560
+        }
+      }
+    },
+    "PA": {
+      "social_security_subtraction": {"type": "full"},
+      "contribution_basis_recovery": {"method": "cost_recovery"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0307
+        }
+      ],
+      "standard_deduction": 0,
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "source_minimum_age": {"ira": 59.5, "employer_plan": 59.5}, "cap": null}]}
+    },
+    "RI": {
+      "social_security_subtraction": {"type": "linear_phaseout", "start": {"single": 107000, "married_filing_separately": 107000, "married_filing_jointly": 133750, "head_of_household": 107000}, "width": 0, "indexed": true, "minimum_age": 67},
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {
+          "min": 0,
+          "max": 82050,
+          "rate": 0.0375
+        },
+        {
+          "min": 82050,
+          "max": 186450,
+          "rate": 0.0475
+        },
+        {
+          "min": 186450,
+          "max": 999999999,
+          "rate": 0.0599
+        }
+      ],
+      "standard_deduction": 11200,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 82050,
+              "rate": 0.0375
+            },
+            {
+              "min": 82050,
+              "max": 186450,
+              "rate": 0.0475
+            },
+            {
+              "min": 186450,
+              "max": 999999999,
+              "rate": 0.0599
+            }
+          ],
+          "standard_deduction": 16800
+        }
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "annuity", "employer_plan"], "minimum_age": 67, "cap": 50000, "income_limit": {"type": "cliff", "base": "federal_agi", "threshold": {"single": 107000, "married_filing_jointly": 133750, "married_filing_separately": 107000, "head_of_household": 107000}, "indexed": true}}]}
+    },
+    "SC": {
+      "social_security_subtraction": {"type": "full"},
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {
+          "min": 0,
+          "max": 30000,
+          "rate": 0.0199
+        },
+        {
+          "min": 30000,
+          "max": 999999999,
+          "rate": 0.0521
+        }
+      ],
+      "standard_deduction": 15000,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 30000,
+              "rate": 0.0199
+            },
+            {
+              "min": 30000,
+              "max": 999999999,
+              "rate": 0.0521
+            }
+          ],
+          "standard_deduction": 22500
+        }
+      },
+      "long_term_capital_gain_exclusion": {
+        "rate": 0.44
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "source_minimum_age": {"ira": 59.5, "employer_plan": 59.5}, "age_caps": [[0, 3000], [65, 10000]]}, {"any_income": true, "minimum_age": 65, "cap": 15000, "reduced_by_components": [0]}]}
+    },
+    "SD": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "TN": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "TX": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "UT": {
+      "social_security_subtraction": {"type": "credit_phaseout", "threshold": {"single": 54000, "married_filing_separately": 45000, "married_filing_jointly": 90000, "head_of_household": 90000}, "credit_reduction_per_dollar": 0.025},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 999999999,
+          "rate": 0.0445
+        }
+      ],
+      "standard_deduction": 0
+    },
+    "VT": {
+      "social_security_subtraction": {"type": "linear_phaseout", "start": {"single": 55000, "married_filing_separately": 55000, "married_filing_jointly": 70000, "head_of_household": 55000}, "width": 10000},
+      "brackets": [
+        {"min": 0, "max": 50750, "rate": 0.0335},
+        {"min": 50750, "max": 122850, "rate": 0.066},
+        {"min": 122850, "max": 256300, "rate": 0.076},
+        {"min": 256300, "max": 999999999, "rate": 0.0875}
+      ],
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {"min": 0, "max": 84700, "rate": 0.0335},
+            {"min": 84700, "max": 204750, "rate": 0.066},
+            {"min": 204750, "max": 312050, "rate": 0.076},
+            {"min": 312050, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 15300
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 42350, "rate": 0.0335},
+            {"min": 42350, "max": 102375, "rate": 0.066},
+            {"min": 102375, "max": 156025, "rate": 0.076},
+            {"min": 156025, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 7650
+        },
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 68000, "rate": 0.0335},
+            {"min": 68000, "max": 175500, "rate": 0.066},
+            {"min": 175500, "max": 284150, "rate": 0.076},
+            {"min": 284150, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 11450
+        }
+      },
+      "personal_exemption": 5300,
+      "aged_additional_deduction": 1250,
+      "minimum_tax": {"agi_threshold": 150000, "rate": 0.03},
+      "long_term_capital_gain_exclusion": {"flat_amount": 5000, "federal_taxable_income_share_cap": 0.40},
+      "standard_deduction": 7650
+    },
+    "VA": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 3000,
+          "rate": 0.02
+        },
+        {
+          "min": 3000,
+          "max": 5000,
+          "rate": 0.03
+        },
+        {
+          "min": 5000,
+          "max": 17000,
+          "rate": 0.05
+        },
+        {
+          "min": 17000,
+          "max": 999999999,
+          "rate": 0.0575
+        }
+      ],
+      "joint_bracket_multiplier": 1.0,
+      "standard_deduction": 8750,
+      "retirement_income_exclusion": {"components": [{"any_income": true, "minimum_age": 65, "cap": 12000, "income_limit": {"type": "dollar_phaseout", "base": "federal_agi_less_taxable_social_security", "threshold": {"single": 50000, "married_filing_jointly": 75000, "married_filing_separately": 75000, "head_of_household": 50000}}}]}
+    },
+    "WA": {
+      "capital_gains_excise": {"standard_deduction": 278000, "standard_deduction_indexed": true, "rate": 0.07, "additional_rate": 0.029, "additional_threshold": 1000000},
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "WV": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 10000,
+          "rate": 0.0211
+        },
+        {
+          "min": 10000,
+          "max": 25000,
+          "rate": 0.0281
+        },
+        {
+          "min": 25000,
+          "max": 40000,
+          "rate": 0.0316
+        },
+        {
+          "min": 40000,
+          "max": 60000,
+          "rate": 0.0422
+        },
+        {
+          "min": 60000,
+          "max": 999999999,
+          "rate": 0.0458
+        }
+      ],
+      "filing_status_schedules": {
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 5000, "rate": 0.0211},
+            {"min": 5000, "max": 12500, "rate": 0.0281},
+            {"min": 12500, "max": 20000, "rate": 0.0316},
+            {"min": 20000, "max": 30000, "rate": 0.0422},
+            {"min": 30000, "max": 999999999, "rate": 0.0458}
+          ],
+          "standard_deduction": 0
+        }
+      },
+      "joint_bracket_multiplier": 1.0,
+      "standard_deduction": 0
+    },
+    "WI": {
+      "social_security_subtraction": {"type": "full"},
+      "brackets": [
+        {
+          "min": 0,
+          "max": 14680,
+          "rate": 0.035
+        },
+        {
+          "min": 14680,
+          "max": 50480,
+          "rate": 0.044
+        },
+        {
+          "min": 50480,
+          "max": 323290,
+          "rate": 0.053
+        },
+        {
+          "min": 323290,
+          "max": 999999999,
+          "rate": 0.0765
+        }
+      ],
+      "standard_deduction": 13560,
+      "long_term_capital_gain_exclusion": {
+        "rate": 0.30
+      },
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 19580,
+              "rate": 0.035
+            },
+            {
+              "min": 19580,
+              "max": 67300,
+              "rate": 0.044
+            },
+            {
+              "min": 67300,
+              "max": 431060,
+              "rate": 0.053
+            },
+            {
+              "min": 431060,
+              "max": 999999999,
+              "rate": 0.0765
+            }
+          ],
+          "standard_deduction": 25110
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {
+              "min": 0,
+              "max": 9790,
+              "rate": 0.035
+            },
+            {
+              "min": 9790,
+              "max": 33650,
+              "rate": 0.044
+            },
+            {
+              "min": 33650,
+              "max": 215530,
+              "rate": 0.053
+            },
+            {
+              "min": 215530,
+              "max": 999999999,
+              "rate": 0.0765
+            }
+          ],
+          "standard_deduction": 11930
+        }
+      },
+      "retirement_income_exclusion": {"components": [{"sources": ["pension", "ira", "employer_plan"], "minimum_age": 67, "cap": 24000}]}
+    },
+    "WY": {
+      "brackets": [],
+      "standard_deduction": 0
+    }
+  },
+  "charitable": {
+    "_source": "26 USC 170(b)(1)(I) and 170(p) as amended by Pub. L. 119-21 secs. 70424-70425, effective for tax years beginning after 2025",
+    "itemized_floor_rate": 0.005,
+    "non_itemizer_cash_deduction": {
+      "single": 1000,
+      "married_filing_jointly": 2000,
+      "married_filing_separately": 1000,
+      "head_of_household": 1000
+    },
+    "cash_agi_limit": 0.6,
+    "capital_gain_property_agi_limit": 0.3,
+    "public_charity_agi_limit": 0.5
+  },
+  "medical": {
+    "_source": "26 USC 213(a); see `_sources`",
+    "agi_floor_rate": 0.075
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Federal values were reviewed against official IRS sources for tax year 2026. State values were refreshed to tax year 2026."
+        }
+      ]
+    },
+    {
+      "section": "Federal",
+      "content": [
+        "Capital-loss ordinary-income deduction: $3,000, or $1,500 married filing separately; unused losses carry forward. These limits are not inflation-indexed. Source: https://www.irs.gov/taxtopics/tc409 and https://www.irs.gov/publications/p550",
+        "Roth IRA phaseout mechanics: Publication 590-A Worksheet 2-2 rounds the remaining allowance up to $10 and takes the smaller of that allowance and combined IRA room after other IRA contributions. Source: https://www.irs.gov/publications/p590a",
+        "Ordinary income brackets, long-term capital gains brackets, and standard deductions (tax year 2026): IRS Rev. Proc. 2025-32 (first OBBBA-indexed year). Single $16,100 / MFJ $32,200 / MFS $16,100 / HOH $24,150. Sources: https://www.irs.gov/pub/irs-drop/rp-25-32.pdf and https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+        "Additional standard deduction for age 65+ (tax year 2026): $1,650 per aged individual for married filers and surviving spouses; $2,050 if unmarried and not a surviving spouse. IRC 63(f); Rev. Proc. 2025-32 sec. 3.16. The blindness addition is not modeled. Source: https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "Senior deduction (tax years 2025-2028): $6,000 per individual age 65+, reduced by 6% of MAGI above $75,000 ($150,000 joint); married taxpayers must file jointly; not indexed; allowed whether or not the taxpayer itemizes. IRC 151(d)(5) as added by Public Law 119-21 sec. 70103. Sources: https://www.congress.gov/bill/119th-congress/house-bill/1/text and https://www.irs.gov/newsroom/one-big-beautiful-bill-act-tax-deductions-for-working-americans-and-seniors",
+        "Child tax credit (tax year 2026; `child_tax_credit`): $2,200 per qualifying child under 17 at year end (IRC 24(c)(1), 24(h)(2) as amended by Public Law 119-21 sec. 70104; Rev. Proc. 2025-32 sec. 4.05(1)). Reduced by $50 for each $1,000 or fraction of MAGI above $400,000 joint / $200,000 otherwise; thresholds are statutory and not indexed (IRC 24(b)(2), 24(h)(3)). The $1,700 refundable amount (Rev. Proc. 2025-32 sec. 4.05(2)) and the $500 other-dependent credit are not modeled. Sources: https://www.law.cornell.edu/uscode/text/26/24 and https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "Child tax credit indexing (tax years after 2026; `index_base_cola_2026` = 1.0234, approximation): IRC 24(i)(2) increases $2,200 by the IRC 1(f)(3) cost-of-living adjustment with 2024 as the base year, and 24(i)(3) rounds the increase down to $100, so the published 2026 $2,200 is a rounded figure and the unrounded 2026 adjustment carries into later years. The engine uses 2,200 × 1.0234 × the projected federal inflation factor. The IRS does not publish the factor itself. IRC 1(f)(6)(A) uses the C-CPI-U values published as of the August 2025 release, which BLS has since revised (today's series gives 1.0242). The 2026 amounts in Rev. Proc. 2025-32 that use the same 2024 base bound it: sec. 179(b)(2) $4,090,000 (from $4,000,000, nearest $10,000) needs 1.02125–1.02375, sec. 179(b)(1) $2,560,000 (from $2,500,000) needs 1.0220–1.0260, and sec. 23(a)(4) $5,120 (from $5,000, nearest $10) needs 1.0230–1.0250. 1.0234 is the middle of the overlap, 1.0230–1.02375. Sources: https://www.law.cornell.edu/uscode/text/26/24 (24(i)), https://www.law.cornell.edu/uscode/text/26/1 (1(f)(3), (6)), https://www.law.cornell.edu/uscode/text/26/179 (179(b)(6)), https://www.law.cornell.edu/uscode/text/26/23 (23(h)(2)-(3)), https://www.irs.gov/pub/irs-drop/rp-25-32.pdf (secs. 4.04(3), 4.05(1), 4.24), and https://data.bls.gov/timeseries/SUUR0000SA0",
+        "SALT itemized deduction cap: 26 USC 164(b)(6)-(7), as amended by Public Law 119-21. Source: https://uscode.house.gov/view.xhtml?req=(title:26%20section:164%20edition:prelim)",
+        "FICA wage base/rates and maximum Social Security benefit: SSA Fast Facts 2025 and SSA contribution base table. Sources: https://www.ssa.gov/policy/docs/chartbooks/fast_facts/2025/fast_facts25.html and https://www.ssa.gov/oact/cola/cbb.html",
+        "Additional Medicare Tax: IRS Topic 560. Source: https://www.irs.gov/taxtopics/tc560",
+        "Ordinary self-employment calculation (verified September 7, 2026): net business profit × 92.35%; no SE tax below $400 adjusted earnings; wages consume each worker's Social Security base first; half of regular SE tax reduces AGI and QBI, excluding Additional Medicare. Sources: https://www.irs.gov/taxtopics/tc554, https://www.irs.gov/pub/irs-pdf/f1040sse.pdf (lines 4a–4c, 8–13), https://www.irs.gov/instructions/i8959 (household Additional Medicare). The currently published Schedule SE is for 2025; its ordinary formula is retained with SSA's independently verified 2026 $184,500 wage base. Optional methods and special occupations remain unsupported.",
+        "NIIT: IRS Topic 559. Source: https://www.irs.gov/taxtopics/tc559",
+        "Retirement contribution limits live in `contribution_limits_2026.json` (2026: 401(k)/403(b)/457(b) $24,500, IRA $7,500, catch-up $8,000, IRA catch-up $1,100, ages 60-63 $11,250, 415(c) $72,000, 401(a)(17) $360,000), from IRS Notice 2025-67. Source: https://www.irs.gov/pub/irs-drop/n-25-67.pdf. HSA limits ($4,400 self-only for 2026) come from Rev. Proc. 2025-19. Source: https://www.irs.gov/pub/irs-drop/rp-25-19.pdf",
+        "RMD and life expectancy tables: IRS Pub. 590-B and 26 CFR 1.401(a)(9)-9. Sources: https://www.irs.gov/publications/p590b and https://www.ecfr.gov/current/title-26/section-1.401(a)(9)-9",
+        "SEPP methods: IRS Notice 2022-6. Source: https://www.irs.gov/pub/irs-drop/n-22-06.pdf",
+        "Estate and gift exclusion/rate: IRS estate/gift updates and 26 USC 2001. Sources: https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax and https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title26-section2001"
+      ]
+    },
+    {
+      "section": "State Ordinary Income Tax Entries",
+      "content": [
+        {
+          "note": "Enacted changes for tax years 2027 and later (rate phase-downs, new brackets and deductions, sunsets) are applied on top of these 2026 entries from `state_tax_enacted_changes.json`; see `_sources` in `state_tax_enacted_changes.json`."
+        },
+        {
+          "note": "The engine currently represents state tax as `AGI - standard_deduction`, then applies one bracket table. That is insufficient for states that start from federal taxable income, use personal exemption credits, local income taxes, tax-benefit recapture, or separate capital-gains/payroll regimes. The entries below document both the sourced fields and the known limitations."
+        },
+        {
+          "state": "AK",
+          "source": "https://tax.alaska.gov/programs/index.aspx",
+          "2026 json status / limitation": "No broad individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "AL",
+          "source": "https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/ and https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25stddeduction40.pdf",
+          "2026 json status / limitation": "Rates unchanged (2%/4%/5%). Single standard deduction phases from $3,000 to $2,500 by AGI; JSON uses $3,000 as a simplified starting point. Omits personal/dependent exemptions and federal income tax deduction."
+        },
+        {
+          "state": "AR",
+          "source": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+          "2026 json status / limitation": "2026 top rate reduced from 3.9% to 3.7% (retroactive to Jan 1, 2026 per special legislative session). $2,470 standard deduction retained (HB 1066 to raise it did not pass). Omits high-income adjustment/phaseout, low-income tables, and credits. Ark. Code Ann. 26-51-815(b) exemption of 50% of net capital gain, and of all net capital gain above an unindexed $10,000,000 (Act 1488 of 2013), is under `long_term_capital_gain_exclusion` per Form AR1000D lines 7a-8 (https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000D_CapitalGains.pdf); the engine applies the $10M cap to household gain, not per spouse column."
+        },
+        {
+          "state": "AZ",
+          "source": "https://azdor.gov/forms/individual-income-tax-highlights and https://azdor.gov/individuals/income-tax-filing-assistance/deductions-and-exemptions and https://www.azleg.gov/ars/43/01041.htm, https://www.azleg.gov/ars/43/01023.htm",
+          "2026 json status / limitation": "2.5% flat rate unchanged. Standard deduction $16,100 single/MFS, $24,150 head of household (`filing_status_schedules`), doubled for MFJ ($32,200): ARS 43-1041(A) $15,750/$23,625/$31,500 indexed per 43-1041(H) like the federal basic standard deduction. `aged_exemption`: fixed, unindexed $2,100 per taxpayer 65+ and per 65+ spouse on a joint return (ARS 43-1023(E)). Not modelled: blind, qualifying-parent and other 43-1023 exemptions. Omits charitable standard-deduction increase and credits."
+        },
+        {
+          "state": "CA",
+          "source": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf and https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.pdf",
+          "2026 json status / limitation": "XXX FTB 2026 rate-schedule PDF could not be retrieved; brackets retain 2025 thresholds which are expected to shift by a low single-digit CCPI adjustment. $5,706 standard deduction is the latest published figure. The extra 1% over $1M is the separate Behavioral Health Services Tax (R&TC 17043; Form 540 line 62), stored as `behavioral_health_services_tax`: $1,000,000 for every filing status, never doubled or indexed, not reduced by exemption credits (October 5, 2026). Exemption credits are omitted unless eligibility is entered. `early_distribution_additional_tax` is California's 2½% additional tax on the part of a pre-59½ qualified-plan/IRA distribution included in income (R&TC 17085(c); FTB 3805P line 4, https://www.ftb.ca.gov/forms/2024/2024-3805p-instructions.html): same base and exceptions as IRC 72(t) except the rate, on top of the federal 10%; charged for months of CA residency (October 9, 2026)."
+        },
+        {
+          "state": "CO",
+          "source": "https://tax.colorado.gov/individual-income-tax-guide and https://tax.colorado.gov/sites/tax/files/documents/Individual_Income_Tax_Guide_January_2026.pdf",
+          "2026 json status / limitation": "4.4% rate unchanged. Colorado starts from modified federal taxable income (C.R.S. 39-22-104(1.7)), so the deduction is the IRC 63 standard deduction: the federal amount for the filing status plus the IRC 63(f) aged addition, read from the federal table (`standard_deduction_source: \"federal\"`). Custom brackets keep the $16,100 table deduction. Omits the AGI > $300,000 deduction addback, the 151(d)(5) senior deduction, and pension/Social Security subtractions."
+        },
+        {
+          "state": "CT",
+          "source": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf and https://portal.ct.gov/DRS/Withholding-Taxes/Tax-Information",
+          "2026 json status / limitation": "CGS 12-700(a)(10) (PA 23-204, taxable years from 2024; https://www.cga.ct.gov/current/pub/chap_229.htm): 2.0% / 4.5% bottom rates (the 3%/5% (a)(9) schedule ended with 2023), unchanged for 2025 and 2026. Joint (C) thresholds are twice the single ones; head of household (B) has its own $16K/$80K/$160K/$320K/$400K/$800K schedule; MFS (D) matches single. CT requires personal exemption, 2% phase-out add-back, recapture, and credits. JSON cannot represent those."
+        },
+        {
+          "state": "DC",
+          "source": "https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/TY%202026%20Pertinent%20Data%20Book.pdf",
+          "2026 json status / limitation": "Brackets and $15,000 single standard deduction unchanged for 2026. DC does not conform to the OBBBA higher federal standard deduction. One schedule for every filing status (OTR rate table for tax years after 2021; `joint_bracket_multiplier` 1.0, October 5, 2026); the $15,000 deduction is doubled for joint filers. D.C. Code 47-1801.04(44)(A)-(C)(iv) (https://code.dccouncil.gov/us/dc/council/code/sections/47-1801.04, verified 2026-10-09) makes the DC standard deduction for every filing status the IRC 63(c) amount, which includes the 63(c)(3)/63(f) additional amount for age 65+. With the $15,000 single figure, that is the Rev. Proc. 2024-40 sec. 3.15 table: $22,500 head of household (`filing_status_schedules`, same brackets) and $2,000 per aged unmarried filer or $1,600 per aged spouse (`aged_additional_deduction` keyed by filing status), kept unchanged for 2026 like the single amount. Blind additional amounts are not modelled."
+        },
+        {
+          "state": "DE",
+          "source": "https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-RES_Instructions_2025-01.pdf and https://revenue.delaware.gov/software-developer/tax-rate-changes/",
+          "2026 json status / limitation": "Brackets and $3,250 standard deduction unchanged for 2026. Omits personal credits and exclusions."
+        },
+        {
+          "state": "FL",
+          "source": "https://www.floridarevenue.com/taxes/compliance/Pages/violations.aspx",
+          "2026 json status / limitation": "No individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "GA",
+          "source": "https://dor.georgia.gov/taxes/important-tax-updates and https://www.legis.ga.gov/api/legislation/document/20252026/236780",
+          "2026 json status / limitation": "2026 flat rate reduced to 4.99% (from 5.19%) per HB 463, signed May 2026, retroactive to Jan 1, 2026. Standard deduction increased to $15,000 (from $12,000). Omits dependent exemption."
+        },
+        {
+          "state": "HI",
+          "source": "https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "2026 json status / limitation": "Act 46, SLH 2024 (DOTAX Ann. 2024-03, p. 3): 2026 brackets are the 2025 schedules; 2026 standard deduction is $8,000 single/MFS, $16,000 joint (the doubled single amount) and $12,000 head of household (October 9, 2026). Heads of household use 2025 Schedule III (1.5x the single bands, 1.4% to $14,400 ... 11% over $487,500) under `filing_status_schedules`. Act 46's later steps (wider brackets in 2027 and 2029, higher deductions in 2028, 2030 and 2031) are applied from `state_tax_enacted_changes.json`. Omits $1,144 personal exemption. HRS 235-51(f) caps the rate on net capital gain at 7.25% (`capital_gain_max_rate`; Form N-11 Tax on Capital Gains Worksheet); qualified dividends stay ordinary."
+        },
+        {
+          "state": "IA",
+          "source": "https://revenue.iowa.gov/press-release/2025-10-21/idr-announces-2026-individual-income-tax-and-interest-rates and https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/individual-income-tax-provisions",
+          "2026 json status / limitation": "3.8% flat rate unchanged. Iowa Code 422.7 starts from federal taxable income (IRC 63) with rolling conformity (422.3(5)(b)), so the deduction is the federal standard deduction for the filing status plus the IRC 63(f) aged addition (`standard_deduction_source: \"federal\"`) plus the IRC 151(d)(5) senior deduction for 2025-2028 (`includes_federal_senior_deduction`; IDR 2025 IA 1040 instructions, What's New, https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/1040-expanded-instructions/whats-new). Custom brackets keep the $16,100 table deduction. Omits federal itemized and QBI deductions, the exemption credit, the alternate tax and the low-income exemption."
+        },
+        {
+          "state": "ID",
+          "source": "https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/",
+          "2026 json status / limitation": "0% through $4,811 and 5.3% above unchanged for 2026. Standard deduction is the IRC 63 standard deduction (Idaho Code 63-3022(j)(1)): the federal amount for the filing status plus the IRC 63(f) aged addition, read from the federal table (`standard_deduction_source: \"federal\"`). Heads of household use the joint 0% band (Idaho Code 63-3024(2)(b), `head_of_household_schedule: \"joint\"`). Custom brackets keep the $16,100 table deduction."
+        },
+        {
+          "state": "IL",
+          "source": "https://tax.illinois.gov/research/taxrates/income.html and https://tax.illinois.gov/research/publications/bulletins/fy-2026-15.html",
+          "2026 json status / limitation": "4.95% rate unchanged. No standard deduction; JSON omits $2,925 personal exemption allowance (increased from $2,850) and phaseout."
+        },
+        {
+          "state": "IN",
+          "source": "https://www.in.gov/dor/resources/tax-rates-and-reports/rates-fees-and-penalties/",
+          "2026 json status / limitation": "2026 state rate reduced to 2.95% (from 3.00%). Omits exemptions and county income tax."
+        },
+        {
+          "state": "KS",
+          "source": "https://www.ksrevenue.gov/taxrates.html; standard deductions: K.S.A. 79-32,119 as amended by 2024 SB 1 (https://www.kslegislature.gov/li_2024s/b2023_24/measures/sb1/), 2025 Kansas booklet IP25 (https://www.ksrevenue.gov/pdf/ip25.pdf) p.6 line 4 and the 65-or-older worksheet, p.34 tax computation worksheet; 2026 K-40ES (https://www.ksrevenue.gov/pdf/k-40es26.pdf)",
+          "2026 json status / limitation": "2026 brackets consolidated from three to two per 2024 reform: 5.2% up to $23,000 ($46,000 married filing joint) and 5.58% above; head of household and married filing separate use the single schedule. Standard deduction (unindexed, unchanged for 2026): $3,605 single, $8,240 married filing joint, $6,180 head of household, $4,120 married filing separate; plus $850 (single, head of household) or $700 (married) per filer 65 or older. Blindness and the married-filing-separate spouse box on the age worksheet are not modeled. Like every built-in state table, amounts follow the engine's inflation factor after 2026 although Kansas does not index them. Omits $9,160 exemption allowance and dependent/HOH allowances."
+        },
+        {
+          "state": "KY",
+          "source": "https://revenue.ky.gov/News/Pages/Kentucky-DOR-Announces-2026-Standard-Deduction.aspx and https://taxnews.ey.com/news/2025-0543-kentucky-lowers-personal-income-tax-rate-effective-january-1-2026",
+          "2026 json status / limitation": "2026 rate reduced to 3.5% (from 4.0%) per H.B. 1 trigger. Standard deduction increased to $3,360 (from $3,270). Omits family size tax credit and age/blind credits."
+        },
+        {
+          "state": "LA",
+          "source": "https://revenue.louisiana.gov/individuals/general-resources/individual-income-tax/ and https://revenue.louisiana.gov/tax-education-and-faqs/faqs/income-tax-reform/what-are-the-individual-income-tax-rates-and-brackets/",
+          "2026 json status / limitation": "3% flat rate and $12,500 single deduction unchanged. Head of household (like married-joint) gets 200% of the single deduction, $25,000, under La. R.S. 47:294(A) (https://legis.la.gov/Legis/Law.aspx?d=101761); the CPI-U indexing in 47:294(B) is not applied. Omits additions/subtractions and credits."
+        },
+        {
+          "state": "MA",
+          "source": "https://www.mass.gov/info-details/massachusetts-4-surtax-on-taxable-income and https://www.mass.gov/guides/personal-income-tax-for-residents",
+          "2026 json status / limitation": "5% base rate unchanged; 4% surtax threshold indexed to $1,107,750 (from $1,083,150). The threshold applies per return (Mass. Const. Amend. Art. XLIV as amended by Art. CXXI, https://malegislature.gov/Laws/Constitution), so `joint_bracket_multiplier: 1.0` keeps it undoubled for joint filers. JSON omits $4,400 personal exemption. Traditional IRA contributions are added back to the base (M.G.L. c.62 §2(d)(1)(F) disallows the IRC 219 deduction; 401(k) deferrals stay excluded because §2(a) starts from federal gross income); MA's later recovery of that taxed basis on IRA withdrawals is not modeled, so MA tax on those withdrawals is overstated by the contributed share."
+        },
+        {
+          "state": "MD",
+          "source": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/resident-booklet.pdf and https://services.marylandcomptroller.gov/taxes/en/maryland-income-tax-rates-and-brackets?id=kb_article_view&sysparm_article=KB0010014 and https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/withholding/2026/pm330.pdf",
+          "2026 json status / limitation": "Brackets unchanged for 2026. The flat standard deduction is indexed from 2026 (TG §10-217(c)): $3,400 single per the 2026 withholding tables (verified September 24, 2026); MFJ doubling gives $6,800 against a statutory $6,850 not yet published. Omits personal exemptions ($3,200 with FAGI phase-down), the Social Security subtraction and the pension exclusion. County and Baltimore City taxes: `_sources` in `local_income_tax_2026.json`. Schedule II (`joint_brackets`) applies to joint, head-of-household and surviving-spouse filers: 4.75% to $150,000, 5% to $175,000, 5.25% to $225,000, 5.5% to $300,000, 5.75% to $600,000, 6.25% to $1,200,000, 6.5% above (Comptroller tax alert on the 2025 legislative session, which gives the $6,700 2025 joint/HoH deduction; heads of household use the joint deduction). TG §10-105(a)(3)(i) (2025 act; Technical Bulletin No. 58, https://www.marylandcomptroller.gov/legal-library/tb-58-dec-29-2025.html): an additional 2% of the whole IRC 1222(11) net capital gain when federal AGI exceeds $350,000, for every filing status and unindexed (`capital_gain_surtax`, verified October 10, 2026). Not modeled: its exclusions for a principal residence sold for under $1.5M, section 179 property, easement land, farm livestock and nonprofit affordable housing. Local income taxes use the unchanged state taxable income."
+        },
+        {
+          "state": "ME",
+          "source": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/2026-05/ind_tax_rate_sched_2026_rev.pdf",
+          "2026 json status / limitation": "MRS 2026 schedules revised May 20, 2026 (October 9, 2026): single/MFS 5.8% below $27,400, 6.75% to $64,850, 7.15% above; heads of household $41,100 / $97,300 under `filing_status_schedules`; joint $54,850 / $129,750 in `joint_brackets`. Note (1) surcharge: 2% of Maine taxable income above $1,000,000 single, $750,000 MFS (its own `filing_status_schedules` entry) and $1,500,000 joint or head of household, modeled as a 9.15% top band (7.15% + 2%); thresholds are indexed from 2027, which the projection's inflation scaling approximates. Standard deduction $15,700 single/MFS, $31,400 joint, $23,550 head of household (supersedes the earlier $15,300 schedule). Omits $5,300 personal exemption, the deduction/exemption phaseouts and the $2,050/$1,650 age-65 or blind additions."
+        },
+        {
+          "state": "MI",
+          "source": "https://www.michigan.gov/treasury/news/2026/04/15/state-individual-income-tax-rate-for-2026-tax-year-determined",
+          "2026 json status / limitation": "4.25% rate unchanged for 2026 (growth did not exceed inflation, no trigger). No standard deduction; JSON omits $5,800 personal exemption."
+        },
+        {
+          "state": "MN",
+          "source": "https://www.revenue.state.mn.us/press-release/2025-12-16/minnesota-income-tax-brackets-standard-deduction-and-dependent-exemption",
+          "2026 json status / limitation": "2026 brackets indexed: $33,310 / $109,430 / $203,150 (from $32,570 / $106,990 / $198,630). Standard deduction indexed to $15,300 (from $14,950). `filing_status_schedules` carries the separately published 2026 schedules and deductions from the same release, applied as published rather than doubling single: MFJ $48,700 / $193,480 / $337,930, deduction $30,600; MFS $24,350 / $96,740 / $168,965, deduction $15,300; HoH $41,010 / $164,800 / $270,060, deduction $23,000. Omits dependent exemption."
+        },
+        {
+          "state": "MO",
+          "source": "https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/",
+          "2026 json status / limitation": "Brackets unchanged, 4.7% top rate. Standard deduction is the allowable federal standard deduction (RSMo 143.131): the federal amount for the filing status plus the IRC 63(f) aged addition, read from the federal table (`standard_deduction_source: \"federal\"`); $1,400 head-of-household exemption (RSMo 143.161.2, MO-1040 line 15). Custom brackets keep the $16,100 table deduction. RSMo 143.121.3(14)(a) subtraction of 100% of income reported as a federal capital gain, for tax years beginning on or after January 1, 2025 (https://revisor.mo.gov/main/OneSection.aspx?section=143.121, verified 2026-10-11; DOR year-changes page above), is under `long_term_capital_gain_exclusion` at rate 1.0; sales gains are treated as long-term (short-term gains qualify too) and qualified dividends are not capital gain. `reduces_state_agi_for_income_limits` also removes the gain from the Missouri AGI that the RSMo 143.124 private-pension phase-out (https://revisor.mo.gov/main/OneSection.aspx?section=143.124) and the RSMo 143.171 federal-tax deduction tiers key on."
+        },
+        {
+          "state": "MS",
+          "source": "https://www.dor.ms.gov/general-information and https://news.bloombergtax.com/payroll/mississippi-decreases-income-tax-rate-for-2025",
+          "2026 json status / limitation": "2026 rate reduced to 4.0% (from 4.4%) per Build-Up Mississippi Act; the phase-down to 3% by 2030 is applied from `state_tax_enacted_changes.json`. $2,300 standard deduction unchanged. Omits personal/dependent exemptions."
+        },
+        {
+          "state": "MT",
+          "source": "https://revenue.mt.gov/news/recent-news/HB-337; https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0030/0150-0300-0210-0030.html",
+          "2026 json status / limitation": "2026 HB-337 / MCA 15-30-2103 (temporary through 2026): 4.7% / 5.65% with the break at $47,500 single and MFS, $71,250 head of household, $95,000 joint. Net long-term capital gains (IRC 1222; qualified dividends excluded) are the top layer of taxable income, taxed at 3.0% on the band less nonqualified taxable income and 4.1% above. MCA 15-30-2101(22): the base is federal taxable income, so the deduction is the federal standard deduction for the filing status plus the 63(f) aged amount; MCA 15-30-2120(3)(g): $5,810 (2026, $5,500 indexed by CPI-U June 2025 / June 2023) subtraction per taxpayer 65+. Limits: federal itemized, QBI and OBBBA senior deductions are not carried into the MT base; the 2027 statute (bands $65,000 / $97,500 / $130,000, 5.4% top rate) is applied from `state_tax_enacted_changes.json`."
+        },
+        {
+          "state": "NC",
+          "source": "https://www.ncdor.gov/taxes-forms/individual-income-tax/tax-rate-schedules and https://www.ncdor.gov/taxes-forms/individual-income-tax/filing-topics/north-carolina-standard-deduction-or-north-carolina-itemized-deductions",
+          "2026 json status / limitation": "2026 rate reduced to 3.99% (from 4.25%), final step of phasedown. G.S. 105-153.5(a)(1) (https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.5.html) standard deduction: $12,750 single/MFS, $25,500 MFJ (doubled single), $19,125 head of household (`filing_status_schedules`, same flat rate, also in the 2025 data). No NC age-65+/blind amount. Omits state additions/subtractions and itemized rules."
+        },
+        {
+          "state": "ND",
+          "source": "https://www.tax.nd.gov/individual-income-tax and https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2026-iit/2026-income-tax-withholding-rates-booklet.pdf",
+          "2026 json status / limitation": "Rates unchanged (0% / 1.95% / 2.5%). Standard deduction updated to $16,100 (federal single approximation). `filing_status_schedules` carry the published 2025 MFJ ($80,975 / $298,075), MFS ($40,475 / $149,025) and HoH ($64,950 / $271,450) thresholds with federal standard deductions per status (ND-1 starts from federal taxable income); 2026 indexed thresholds are not yet published, so 2025 amounts are kept as for single. N.D.C.C. 57-38-30.3(2)(d) reduction by 40% of net long-term capital gain over net short-term loss and of IRC 1(h)(11) qualified dividends (https://ndlegis.gov/cencode/t57c38.pdf) is under `long_term_capital_gain_exclusion` with `includes_qualified_dividends`; sales gains are treated as long-term, and the 30%-of-all-dividends fallback for years when qualified dividends are taxed at ordinary rates is not modelled."
+        },
+        {
+          "state": "NE",
+          "source": "https://www.nebraskalegislature.gov/laws/statutes.php?statute=77-2715.03 and https://revenue.nebraska.gov/businesses/circular-en-nebraska-income-tax-withholding-wages-pensions-and-annuities-and-gambling",
+          "2026 json status / limitation": "2026 top two brackets (5.01% and 5.2%) collapsed to a single 4.55% rate per LB 754 phasedown; the 3.99% rate from 2027 is applied from `state_tax_enacted_changes.json`. Bracket thresholds retained from 2025 ($4,030 / $24,120); exact 2026 indexed thresholds could not be confirmed from official NE DOR. $8,600 standard deduction retained. Head of household has its own schedule (77-2715.03(2)(a) column): 2.46% to $7,510, 3.51% to $38,590, 4.55% above, per the 2025 Tax Calculation Schedule 8-460-2025 (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/2025_Tax_Calculation_Schedule.pdf) with the top two bands merged, and the $12,600 HoH deduction from Form 1040N line 6 (https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/f_1040N.pdf). Omits $171 personal exemption credit and itemized alternative."
+        },
+        {
+          "state": "NH",
+          "source": "https://gc.nh.gov/rsa/html/V/77/77-mrg.htm",
+          "2026 json status / limitation": "Interest/dividends tax repealed for periods beginning after 2024; no broad individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "NJ",
+          "source": "https://www.nj.gov/treasury/taxation/pdf/current/1040i.pdf and https://www.nj.gov/treasury/taxation/git_over.shtml",
+          "2026 json status / limitation": "Brackets unchanged for 2026 (NJ does not index). No standard deduction. Omits $1,000 regular exemption and other exemption categories. Traditional IRA contributions are added back to the base (GIT-2: no NJ IRA deduction; 401(k) deferrals stay excluded, N.J.S.A. 54A:6-21); the later exclusion of that taxed basis from IRA withdrawals (GIT-2 IRA Worksheet) is not modeled, so NJ tax on those withdrawals is overstated by the contributed share. Table B (`joint_brackets`) applies to joint filers, heads of household and surviving spouses: 1.4% to $20,000, 1.75% to $50,000, 2.45% to $70,000, 3.5% to $80,000, 5.525% to $150,000, 6.37% to $500,000, 8.97% to $1,000,000, 10.75% above (NJ-1040 2025 instructions, verified October 5, 2026)."
+        },
+        {
+          "state": "NM",
+          "source": "https://www.tax.newmexico.gov/all-nm-taxes/current-historic-tax-rates-overview/personal-income-tax-rates/ and HB 252 (Laws 2024, Ch. 67, Sec. 5)",
+          "2026 json status / limitation": "2026 brackets restructured per HB 252 (effective Jan 1, 2025): 6 brackets (1.5% / 3.2% / 4.3% / 4.7% / 4.9% / 5.9%) replacing the prior 5-bracket table. Standard deduction updated to $16,100 (federal-conforming). Omits $4,000 personal exemption and 50% NM-source capital-gains deduction. `filing_status_schedules` carry NMSA 7-2-7(A) for MFJ and head of household ($8,000 / $25,000 / $50,000 / $100,000 / $315,000) and 7-2-7(C) for MFS ($4,000 / $12,500 / $25,000 / $50,000 / $157,500), statutory and unindexed, with federal standard deductions per status (NM taxable income starts from federal AGI less the federal standard deduction)."
+        },
+        {
+          "state": "NV",
+          "source": "https://tax.nv.gov/about-nevada-department-of-taxation/income-tax-in-nevada/",
+          "2026 json status / limitation": "No individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "NY",
+          "source": "https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf and https://www.tax.ny.gov/pdf/2025/inc/it201i_2025.pdf and https://www.tax.ny.gov/bus/wt/rate.htm",
+          "2026 json status / limitation": "2026 first five brackets reduced (3.9% / 4.4% / 5.15% / 5.4% / 5.9%, from 4% / 4.5% / 5.25% / 5.5% / 6%); upper brackets unchanged. Standard deduction $8,000 single (MFJ $16,050, HoH $11,200; not indexed), verified in IT-2105-I (2026) on September 24, 2026. Heads of household use the IT-2105-I (2026) p. 3 $11,200 deduction and the p. 10 head-of-household schedule (`filing_status_schedules`: 3.9% to $12,800, 4.4% to $17,650, 5.15% to $20,900, 5.4% to $107,650, 5.9% to $269,300, 6.85% to $1,616,450, then 9.65% / 10.3% / 10.9% at $5M / $25M), verified October 9, 2026; NYC's base follows. The prior $15,750 was the federal 2025 amount from a secondary source. Joint filers use the IT-2105-I (2026) married-filing-jointly schedule and $16,050 deduction (`filing_status_schedules`: 3.9% to $17,150, 4.4% to $23,600, 5.15% to $27,900, 5.4% to $161,550, 5.9% to $323,200, 6.85% to $2,155,350, then 9.65% / 10.3% / 10.9% at $5M / $25M), verified October 10, 2026. Omits the Social Security subtraction, the $20,000 pension and annuity exclusion, and tax benefit recapture. NYC and Yonkers taxes: `_sources` in `local_income_tax_2026.json`."
+        },
+        {
+          "state": "OH",
+          "source": "https://codes.ohio.gov/ohio-revised-code/section-5747.02 ; https://codes.ohio.gov/ohio-revised-code/section-5747.01 ; https://codes.ohio.gov/ohio-revised-code/section-5747.025 ; Ohio DOR 2025 IT1040 booklet (https://dam.assets.ohio.gov/image/upload/v1767095693/tax.ohio.gov/forms/ohio_individual/individual/2025/it1040-booklet.pdf) pp.17,20,40 ; LSC HB96 enacted analysis (https://www.lsc.ohio.gov/assets/legislation/136/hb96/en0/files/hb96-bill-analysis-as-enacted-136th-general-assembly.pdf) p.457",
+          "2026 json status / limitation": "ORC 5747.02(A)(3)(c): 2026 nonbusiness tax is zero through $26,050, then $332 plus 2.75% of the excess, shared by all filing statuses. Ohio AGI subtracts federal taxable Social Security (1040 line6b), not gross benefits, under 5747.01(A)(5). For 2026+, explicitly eligible taxpayer/spouse (spouse only MFJ) and explicitly declared annual federal dependents receive $2,400 at MAGI <=$40,000, $2,150 at <=$80,000, or $1,900 at <$500,000; none at >=$500,000. The DOR indexed 2025 amounts carry into 2026 because HB96 section757.120(A) freezes 2025/2026 indexing. Missing eligibility/counts create no claim; birth years create no Ohio dependent claim. Death-year joint returns retain eligible owners; the next January removes the deceased. Future exemption amounts use the engine's approximate calendar inflation factor (no decrease; rounded upward to $50 per 5747.025(C)); $40k/$80k tier cutoffs and the $500k cap stay unindexed. Existing bracket/base future indexing remains approximate. New exemption deductions are not applied to the 2025 selector, whose prior state assumptions remain unchanged. Custom Ohio brackets retain prior AGI-based semantics without statutory subtraction/exemptions/base amount. Business-income deduction/tax separation, other Ohio adjustments and credits, school-district taxes and part-year sourcing are not modeled; Ohio MAGI therefore equals modeled Ohio AGI before exemptions. This is not a complete Ohio return worksheet."
+        },
+        {
+          "state": "OK",
+          "source": "https://www.oklegislature.gov/cf_pdf/2025-26%20ENR/hB/HB2764%20ENR.PDF (enrolled HB 2764, 68 O.S. 2355(D)) and https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/past-year/2024/511-Pkt-2024.pdf (standard deduction)",
+          "2026 json status / limitation": "2355(D), tax year 2026 and later: single/MFS 0% to $3,750, 2.5% to $4,900, 3.5% to $7,200, 4.5% above; joint, surviving spouse and head of household 0% to $7,500, 2.5% to $9,800, 3.5% to $14,400, 4.5% above (joint = default ×2; HoH via `filing_status_schedules`). Standard deduction $6,350 single/MFS, $12,700 MFJ, $9,350 HoH. Omits subsection E trigger-based 0.25-point cuts, $1,000 exemptions and age/blind exemptions."
+        },
+        {
+          "state": "OR",
+          "source": "https://www.oregon.gov/dor/programs/individuals/pages/pit.aspx and https://www.oregon.gov/dor/forms/FormsPubs/publication-or-17_101-431_2025.pdf",
+          "2026 json status / limitation": "XXX exact 2026 OR DOR rate schedule could not be retrieved; brackets retain 2025 thresholds ($4,400 / $11,100 / $125,000) and $2,835 standard deduction. Heads of household use Chart J and the $4,560 standard deduction (`filing_status_schedules`: 4.75% to $8,800, 6.75% to $22,200, 8.75% to $250,000, 9.9% above), per the 2025 Form OR-40 instructions (150-101-040-1, Rev. 01-29-26) line 17 Table 5 and line 20 tax rate charts, verified October 9, 2026; the doubled bands give $3,755 at $50,000 against Chart J's $3,756. Omits exemption credit."
+        },
+        {
+          "state": "PA",
+          "source": "https://www.pa.gov/agencies/revenue/resources/tax-rates",
+          "2026 json status / limitation": "3.07% flat rate unchanged. No standard deduction/personal exemption. Omits class-specific income rules and local earned income taxes."
+        },
+        {
+          "state": "RI",
+          "source": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf",
+          "2026 json status / limitation": "2026 brackets indexed to $82,050 / $186,450 (from $79,900 / $181,650). The PDF (p. 2) calls this the \"uniform tax rate schedule, which is used by all filers\", so `joint_bracket_multiplier: 1.0` keeps it undoubled for joint filers. 2026 standard deduction (p. 1): $11,200 single/MFS, $22,400 MFJ (doubled), $16,800 head of household via `filing_status_schedules` (verified 2026-10-09). Omits $5,250 personal exemption and the $261,000-$290,800 deduction/exemption phaseout."
+        },
+        {
+          "state": "SC",
+          "source": "https://dor.sc.gov/news/information-about-h-4216 and https://www.policyengine.org/us/south-carolina-2026-tax-changes",
+          "2026 json status / limitation": "2026 complete overhaul per H.4216 (signed Mar 30, 2026): two brackets (1.99% under $30,000, 5.21% above). Amended SC Code 12-6-510 applies the schedule to all individuals regardless of filing status, so `joint_bracket_multiplier: 1.0` keeps it undoubled for joint filers (https://www.scstatehouse.gov/sess126_2025-2026/bills/4216.htm, verified 2026-10-09). New SC Income Adjusted Deduction (SCIAD, 12-6-1140(15)) replaces federal standard deduction: $15,000 single/MFS, $30,000 MFJ (doubled), $22,500 head of household via `filing_status_schedules`. Omits SCIAD income-based phasedown and $200 EITC cap. S.C. Code 12-6-1150 deduction of 44% of IRC 1222 net capital gain (https://www.scstatehouse.gov/code/t12c006.php; untouched by H.4216) is under `long_term_capital_gain_exclusion` for 2025 and 2026; sales gains are treated as long-term and qualified dividends do not qualify."
+        },
+        {
+          "state": "SD",
+          "source": "https://dor.sd.gov/individuals/taxes/",
+          "2026 json status / limitation": "No individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "TN",
+          "source": "https://revenue.support.tn.gov/hc/en-us/articles/360057371832-HIT-18-Pension-Income-Social-Security-401-k-and-IRA-Distributions",
+          "2026 json status / limitation": "Hall income tax repealed; no broad individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "TX",
+          "source": "https://gov.texas.gov/business/page/business-climate and https://comptroller.texas.gov/taxes/a-to-z.php",
+          "2026 json status / limitation": "No individual income tax. Empty bracket table is intentional."
+        },
+        {
+          "state": "UT",
+          "source": "https://incometax.utah.gov/paying/tax-rates and https://atr.org/utah-enacts-6th-income-tax-cut-in-6-years-and-shaves-6-cents-off-gas-tax/",
+          "2026 json status / limitation": "2026 rate reduced to 4.45% (from 4.5%) per SB 60. Utah taxpayer tax credit and dependent exemption are not modeled."
+        },
+        {
+          "state": "VA",
+          "source": "https://www.tax.virginia.gov/deductions and https://www.tax.virginia.gov/exemptions",
+          "2026 json status / limitation": "Rates and $8,750 standard deduction unchanged for 2026. Omits personal/dependent and age/blind exemptions. One schedule for every filing status (`joint_bracket_multiplier` 1.0, October 5, 2026); the joint deduction is $17,500."
+        },
+        {
+          "state": "VT",
+          "source": "https://tax.vermont.gov/sites/tax/files/documents/IN-114-Instr-2026.pdf, https://tax.vermont.gov/sites/tax/files/documents/IN-111-Instr-2025.pdf and https://legislature.vermont.gov/statutes/section/32/151/05822",
+          "2026 json status / limitation": "Brackets are the 2026 preliminary rate schedules from the IN-114 instructions (3.35/6.6/7.6/8.75%): Schedule X single 50,750 / 122,850 / 256,300 as `brackets`; `filing_status_schedules` hold Y-1 MFJ (84,700 / 204,750 / 312,050), Y-2 MFS (42,350 / 102,375 / 156,025) and Z head of household (68,000 / 175,500 / 284,150). The 2026 standard deduction and exemption are not yet published, so the 2025 IN-111 line 4-5e amounts are kept: $7,650 single and MFS, $15,300 MFJ, $11,450 HoH, +$1,250 per individual 65 or older (`aged_additional_deduction`), and a $5,300 `personal_exemption` for the filer and a joint spouse. `minimum_tax`: above $150,000 federal AGI (unindexed), tax is at least 3% of federal AGI (32 V.S.A. 5822(a)(6); IN-111 line 8). The 32 V.S.A. 5811(21)(B)(ii) flat exclusion of the first $5,000 (unindexed) of net capital gain, capped at 40% of federal taxable income (Schedule IN-153 lines 9 and 20-21; https://legislature.vermont.gov/statutes/section/32/151/05811, verified 2026-10-09), is under `long_term_capital_gain_exclusion` for 2025 and 2026; qualified dividends get none. Not modelled: the alternative 40% exclusion for non-traded assets held over three years (publicly traded securities are ineligible), dependent exemptions, the blind addition, the U.S.-obligation interest subtraction from the minimum-tax base, and IN-119 credits and adjustments."
+        },
+        {
+          "state": "WA",
+          "source": "https://dor.wa.gov/taxes-rates/other-taxes/capital-gains-tax/do-you-owe-capital-gains-tax and https://dor.wa.gov/forms-publications/publications-subject/special-notices/new-tiered-rates-washingtons-capital-gains-tax",
+          "2026 json status / limitation": "No broad ordinary income tax, so empty bracket table is intentional. The separate capital gains excise (7% / 9.9%) is modeled; see \"Washington capital gains excise\". Paid Leave and WA Cares payroll premiums are not represented."
+        },
+        {
+          "state": "WI",
+          "source": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx and https://www.revenue.wi.gov/Pages/Individuals/income.aspx",
+          "2026 json status / limitation": "Exact 2026 WI DOR bracket thresholds could not be confirmed; JSON retains 2025 rates and thresholds. Separate 2025 schedules per Wis. Stat. 71.06(1q): single/HoH (14,680 / 50,480 / 323,290), MFJ (19,580 / 67,300 / 431,060) and MFS (9,790 / 33,650 / 215,530) under `filing_status_schedules`. Wisconsin standard deduction phases down by income; JSON uses the 2025 maximum only ($13,560 single and HoH, $25,110 MFJ, $11,930 MFS per the 2025 Form 1 instructions; the $17,520 HoH maximum is not modelled). Wis. Stat. 71.05(6)(b)9 30% subtraction of net long-term capital gain is under `long_term_capital_gain_exclusion`; the 60% farm-asset subtraction (9m) is not modelled."
+        },
+        {
+          "state": "WV",
+          "source": "https://tax.wv.gov/Individuals/Pages/PersonalIncomeTaxReductionBill.aspx",
+          "2026 json status / limitation": "2026 rates reduced ~5% across the board (retroactive to Jan 1, 2026): 2.11% / 2.81% / 3.16% / 4.22% / 4.58%. Same bracket thresholds ($10k / $25k / $40k / $60k) for single, joint, head of household (W. Va. Code §11-21-4e Schedule A, so `joint_bracket_multiplier: 1.0`); married filing separately uses Schedule B's halved thresholds ($5k / $12.5k / $20k / $30k) in `filing_status_schedules`. No standard deduction; personal exemptions omitted."
+        },
+        {
+          "state": "WY",
+          "source": "https://www.wyo.gov/about-wyoming",
+          "2026 json status / limitation": "No individual income tax. Empty bracket table is intentional."
+        }
+      ]
+    },
+    {
+      "section": "State retirement-income exclusions",
+      "content": [
+        {
+          "note": "`retirement_income_exclusion` blocks in `tax_brackets_2026.json`, evaluated by `coastmath/engine/state_retirement_exclusion.py` (the module docstring defines the schema) and subtracted from state AGI after the state Social Security subtraction (next section). Rules are verified for tax year 2026 (retrieved 2026-10-09) and are applied to every projected year; 2025 opening years use them too (known 2025 differences: Michigan's 75% phase-in with birth-year limits, Connecticut's 75% IRA share, Maine's $48,216 amount). Covered income is each person's federally taxable pension (`qualified_pension` streams), annuity (`nonqualified_annuity` streams), traditional IRA and 401(k)/403(b)/457(b)/401(a) distributions (withdrawals, RMDs net of QCDs, SEPP; inherited accounts by the beneficiary's age) and, where listed, Roth conversions. Ages are year-end ages; a 59 1/2 minimum is met in the year the person turns 60. Not modeled anywhere: government and military pension rules (the income model cannot identify those pensions), disability-based eligibility and beneficiary/decedent-age rules. Social Security treatment is in the next section; Colorado's subtraction stays in its rule below."
+        },
+        {
+          "state": "AL",
+          "rule": "Defined-benefit pensions exempt; $6,000 per person 65+ of other taxable retirement income (IRA, employer plans). Pension streams are treated as defined-benefit.",
+          "source": "Schedule RS instructions line 10 (https://www.revenue.alabama.gov/wp-content/uploads/2024/01/23schrsinstr.pdf); Ala. Admin. Code r. 810-3-19-.01 (https://www.revenue.alabama.gov/wp-content/uploads/2021/12/810-3-19-.013.pdf)",
+          "modeled": "y"
+        },
+        {
+          "state": "AR",
+          "rule": "$6,000 per taxpayer of employer pensions and IRA distributions after 59 1/2; unindexed.",
+          "source": "DFA Subject 206, Pensions and Annuities (https://www.dfa.arkansas.gov/wp-content/uploads/206-PensionsAnnuities.pdf)",
+          "modeled": "y"
+        },
+        {
+          "state": "CO",
+          "rule": "Pension/annuity subtraction (IRAs included) $20,000 at 55-64, $24,000 at 65+, per spouse; taxable Social Security subtracted in full at 65+ and at 55-64 with federal AGI <= $75,000 single / $95,000 joint (2025+), otherwise within the cap; any Social Security subtraction reduces the pension cap. Unindexed.",
+          "source": "C.R.S. 39-22-104(4)(f); DOR Income Tax Topics: Social Security, Pensions and Annuities (https://tax.colorado.gov/income-tax-topics-social-security-pensions-and-annuities)",
+          "modeled": "y"
+        },
+        {
+          "state": "CT",
+          "rule": "Pension and annuity income and (2026+, 100%) traditional IRA distributions, by federal AGI: 100% below $75,000 single/MFS/HoH or $100,000 joint, stepping to 0% at $100,000 / $150,000 per the statutory tables. No age test.",
+          "source": "Conn. Gen. Stat. 12-701(a)(20)(B)(xxi), (xxii), (xxviii), (xxix) (https://www.cga.ct.gov/current/pub/chap_229.htm)",
+          "modeled": "y"
+        },
+        {
+          "state": "DE",
+          "rule": "$12,500 per person 60+ of pension and eligible retirement income; $2,000 of pension under 60. Dividends, interest, gains and rent also count but are not modeled per person.",
+          "source": "Division of Revenue Personal Income Tax FAQs (https://revenue.delaware.gov/frequently-asked-questions/personal-income-tax-faqs/)",
+          "modeled": "y (partial)"
+        },
+        {
+          "state": "GA",
+          "rule": "$35,000 per person 62-64, $65,000 65+. Retirement income also includes interest, dividends, rent, gains, royalties and up to $5,000 of earned income; those are not modeled (understates the exclusion). Roth conversions excluded pending guidance.",
+          "source": "DOR Retirees FAQ (https://dor.georgia.gov/retirees-faq) and Retirement Income Exclusion (https://dor.georgia.gov/retirement-income-exclusion)",
+          "modeled": "y (partial)"
+        },
+        {
+          "state": "IA",
+          "rule": "All retirement income (pensions, IRAs, Roth conversion income, 401(k), 457(b)) excluded for individuals 55+ on December 31; nonqualified annuities excluded from the exclusion.",
+          "source": "DOR Retirement Income Tax Guidance (https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/retirement-income-tax-guidance)",
+          "modeled": "y"
+        },
+        {
+          "state": "IL",
+          "rule": "Federally taxed IRA (including Roth conversions), qualified employee plan, 457 and government retirement income fully subtracted; no age or income limit; nonqualified annuities not subtracted.",
+          "source": "IDOR Pub-120 (https://tax.illinois.gov/research/publications/pubs/retirement-income.html); IL-1040 Schedule M instructions (https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-schedule-m-instr.html)",
+          "modeled": "y"
+        },
+        {
+          "state": "KY",
+          "rule": "Pension income exclusion: the lesser of taxable retirement benefits or $31,110 per person (pensions, annuities, IRAs, 401(k), Roth conversions); unindexed. Pre-1998 government service credit not modeled.",
+          "source": "Schedule P (2025) (https://revenue.ky.gov/Forms/Schedule%20P%20(2025).pdf); KRS 141.019",
+          "modeled": "y"
+        },
+        {
+          "state": "LA",
+          "rule": "$12,000 per person 65+ of pension and annuity income (LDR includes IRAs), CPI-U indexed from 2026. XXX: the 2026 CPI-adjusted amount is not yet published; $12,000 is used for 2026 and indexed after.",
+          "source": "La. R.S. 47:44.1 (https://www.legis.la.gov/legis/LawPrint.aspx?d=102133); LDR FAQ (https://revenue.louisiana.gov/tax-education-and-faqs/faqs/income-tax-reform/did-the-annual-retirement-exemption-change/)",
+          "modeled": "y"
+        },
+        {
+          "state": "MD",
+          "rule": "Pension exclusion 65+: $41,200 less the person's Social Security/railroad benefits; employer plans (pension, 401(k), 403(b), 457(b), 401(a)) only, not IRAs. XXX: $41,200 is the 2025 maximum; 2026 is indexed from it.",
+          "source": "Comptroller pension exclusion guidance and worksheet 13A (https://www.marylandtaxes.gov/forms/worksheets/Pension-Exclusion-Worksheet.pdf); Tax-General 10-209",
+          "modeled": "y"
+        },
+        {
+          "state": "ME",
+          "rule": "Per person, pension deduction amount (maximum SSA benefit at full retirement age: $4,152 x 12 = $49,824 for 2026) less the person's Social Security/railroad benefits; employer plans and IRAs, excluding 72(t)-penalty distributions; reduced by (federal AGI - $125,000 single/MFS, $187,500 HoH, $250,000 joint) / $100,000 ($50,000 MFS), thresholds indexed from 2025.",
+          "source": "36 M.R.S. 5122(2)(M-2), (M-3) (https://legislature.maine.gov/statutes/36/title36sec5122.html); SSA FAQ KA-01897 (https://www.ssa.gov/faqs/en/questions/KA-01897.html)",
+          "modeled": "y"
+        },
+        {
+          "state": "MI",
+          "rule": "2026+: regardless of birth year, public and private retirement benefits up to $67,610 single/MFS or $135,220 joint per return (indexed); IRA distributions qualify from 59 1/2 (applied to employer DC plans too); 457 deferred compensation does not. Unlimited public pensions for those born before 1946 not modeled.",
+          "source": "RAB 2026-1 (https://www.michigan.gov/taxes/rep-legal/rab/2026-revenue-administrative-bulletins/revenue-administrative-bulletin-2026-1); RAB 2017-21 (IRAs); 2026 Form 446 Withholding Guide",
+          "modeled": "y"
+        },
+        {
+          "state": "MO",
+          "rule": "Private pension (401(k), IRA, deferred compensation, defined pension annuities; not Roth) $6,000 per taxpayer, reduced by each dollar of Missouri AGI above $25,000 single/HoH, $32,000 MFJ, $16,000 MFS (base approximated as federal AGI less taxable Social Security). Public pension exemption not modeled.",
+          "source": "RSMo 143.124 (https://revisor.mo.gov/main/OneSection.aspx?section=143.124)",
+          "modeled": "y"
+        },
+        {
+          "state": "MS",
+          "rule": "Retirement income (pensions, IRAs, qualified plans) exempt once plan requirements are met; early distributions (59 1/2 proxy) taxable.",
+          "source": "DOR Individual Income Tax FAQ (https://www.dor.ms.gov/individual/individual-income-tax-frequently-asked-questions)",
+          "modeled": "y"
+        },
+        {
+          "state": "NJ",
+          "rule": "62+: pension, annuity and IRA withdrawals of the qualifying spouse; total income <= $100,000: up to $75,000 single/HoH, $100,000 MFJ, $50,000 MFS; $100,001-$125,000: 37.5% / 50% / 25% of the income; $125,001-$150,000: 18.75% / 25% / 12.5%; above $150,000 none. NJ income approximated as federal AGI less taxable Social Security. Other retirement income exclusion not modeled.",
+          "source": "Division of Taxation, Retirement Income Exclusions (https://www.nj.gov/treasury/taxation/njit7.shtml)",
+          "modeled": "y"
+        },
+        {
+          "state": "NY",
+          "rule": "$20,000 per person from 59 1/2 of pension, IRA and 401(k)/403(b)/457 income; annuities purchased with personal funds excluded. NY/federal government pensions (fully exempt) not identifiable. Roth conversions excluded pending guidance.",
+          "source": "Tax Law 612(c)(3-a); IT-201-I 2025 line 29 (https://www.tax.ny.gov/forms/html-instructions/2025/it/it201i-2025.htm); TSB-M-02(9)I (https://www.tax.ny.gov/pdf/memos/income/m02_9i.pdf)",
+          "modeled": "y"
+        },
+        {
+          "state": "OK",
+          "rule": "$10,000 per individual of retirement benefits (401, 457, 408 IRA, 403 plans). Separate $10,000 government and 100% military exclusions not modeled.",
+          "source": "68 O.S. 2358; Form 511 instructions (https://oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf)",
+          "modeled": "y"
+        },
+        {
+          "state": "PA",
+          "rule": "Eligible employer pension income after retirement exempt; IRA (and, as modeled, employer-plan) distributions exempt when no early-withdrawal penalty applies (59 1/2). Commercial annuities taxable. Cost recovery of PA-taxed contributions for early distributions is modeled (State-taxed retirement contribution basis section); for Roth conversions it is not.",
+          "source": "PA PIT Guide, Gross Compensation (https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/gross-compensation)",
+          "modeled": "y"
+        },
+        {
+          "state": "RI",
+          "rule": "$50,000 per person at Social Security full retirement age (67 for 1960+ births) of pensions, 401(k)s and annuities; IRAs excluded; none above federal AGI $107,000 single/HoH/MFS / $133,750 joint (2025, indexed). The income limits equal the Social Security modification limits by statute (44-30-12(c)(9)(vi)); ADV 2025-22 publishes $133,750 joint for both, and $133,750 is the only joint figure consistent with indexing the $100,000 base by the factor that turns $80,000 into $107,000 (the Retirement Income Guide 2026-01's $133,500 is not). The 2026 limits are published only in the following year's advisory, so the 2025 limits are used for 2026 and indexed after.",
+          "source": "R.I. Gen. Laws 44-30-12 (https://webserver.rilegislature.gov/Statutes/TITLE44/44-30/44-II/44-30-12.htm) (c)(8)-(9); ADV 2025-22 (https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) p.4",
+          "modeled": "y"
+        },
+        {
+          "state": "SC",
+          "rule": "12-6-1170(A): $3,000 of retirement income (401, 403, 408, 457 plans and pensions) not subject to an early-distribution penalty, $10,000 from 65, per person; (B): from 65, $15,000 against any income less the person's (A) deduction. H.4216 retains both; its new $6,000 senior deduction is not modeled.",
+          "source": "S.C. Code 12-6-1170 (https://www.scstatehouse.gov/code/t12c006.php); SCDOR H.4216 (https://dor.sc.gov/news/information-about-h-4216)",
+          "modeled": "y"
+        },
+        {
+          "state": "VA",
+          "rule": "Age deduction $12,000 per person 65+, against any income, reduced $1 per $1 of federal AGI less taxable Social Security above $50,000 single / $75,000 married (MFS uses the return's AGI, not combined).",
+          "source": "Va. Code 58.1-322.03(5) (https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/)",
+          "modeled": "y"
+        },
+        {
+          "state": "WI",
+          "rule": "2025 Act 15: $24,000 per person 67+ of qualified-plan and IRA income ($48,000 joint when both qualify). Claimants may not take Wisconsin credits that year (none are modeled).",
+          "source": "DOR Retired Persons FAQ (https://www.revenue.wi.gov/Pages/FAQS/pcs-retired.aspx); WTB 230 (https://www.revenue.wi.gov/WisconsinTaxBulletin/230-07-31-WTB.pdf)",
+          "modeled": "y"
+        },
+        {
+          "note": "Not modeled, so no figure in the data: Hawaii's pension exclusion (HRS 235-7; the statute page returned HTTP 403, so the rule was not verified); the Ohio, Utah and Oregon retirement income credits, which are credits rather than exclusions while the engine has no state-credit hook (ORC 5747.055, https://codes.ohio.gov/ohio-revised-code/section-5747.055; Utah Code 59-10-1019, https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1019.html; ORS 316.157, https://www.oregonlegislature.gov/bills_laws/ors/ors316.html; not separately researched); and government- or military-only pension rules, age deductions or the absence of an exclusion in AZ, DC, ID, IN, KS, MA, MN, MT, NC, ND, NE, NM, VT and WV, which were not researched in this change."
+        }
+      ]
+    },
+    {
+      "section": "State Social Security treatment",
+      "content": [
+        {
+          "note": "`social_security_subtraction` blocks in `tax_brackets_2026.json`, evaluated by `coastmath/engine/state_social_security.py` (the module docstring defines the schema). Every rule subtracts from state AGI part or all of the federally taxable benefits (IRC 86) already in federal AGI, before the retirement-income exclusion above. With custom state brackets only California's rule applies (preserving the earlier custom-bracket behavior). Reviewed 2026-10-10 for tax year 2026 and applied to every projected year. \"Fetched\" rows were checked against the primary source on that date; \"Not re-fetched\" rows are long-standing full exemptions whose source is the state's return instructions (Social Security subtraction line) and were not re-read in this change."
+        },
+        {
+          "state": "AL, AR, AZ, DC, DE, GA, HI, IA, ID, IL, IN, KY, LA, MA, MI, MS, NC, ND, NJ, NY, OK, OR, SC, VA, WI",
+          "2026 rule": "Benefits fully exempt (`full`).",
+          "source": "State individual income tax instructions, Social Security subtraction line (e.g. 35 ILCS 5/203(a)(2)(H); N.Y. Tax Law 612(c)(3-c); N.J.S.A. 54A:6-2; ORS 316.054; ARS 43-1022); https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=003500050K203, https://www.nysenate.gov/legislation/laws/TAX/612, https://www.oregonlegislature.gov/bills_laws/ors/ors316.html, https://www.azleg.gov/ars/43/01022.htm",
+          "verified": "Not re-fetched"
+        },
+        {
+          "state": "CA",
+          "2026 rule": "Fully exempt (`full`, also with custom brackets).",
+          "source": "R&TC 17087; Schedule CA (540) line 6b (https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html)",
+          "verified": "Unchanged from prior engine"
+        },
+        {
+          "state": "OH",
+          "2026 rule": "Fully exempt (`full`).",
+          "source": "ORC 5747.01(A); Ohio Schedule of Adjustments line 16 (https://codes.ohio.gov/ohio-revised-code/section-5747.01)",
+          "verified": "Unchanged from prior engine"
+        },
+        {
+          "state": "MD, ME",
+          "2026 rule": "Fully exempt (`full`); their pension exclusions still reduce each person's cap by gross benefits (retirement-exclusion section).",
+          "source": "Tax-General 10-207; 36 M.R.S. 5122(2) (https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtg&section=10-207, https://legislature.maine.gov/statutes/36/title36sec5122.html)",
+          "verified": "Not re-fetched"
+        },
+        {
+          "state": "PA",
+          "2026 rule": "Fully exempt (`full`): Social Security is not a taxable class of income.",
+          "source": "PA PIT Guide, Gross Compensation, nontaxable retirement income (https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/gross-compensation)",
+          "verified": "Not re-fetched"
+        },
+        {
+          "state": "KS",
+          "2026 rule": "Fully exempt from 2024 (`full`).",
+          "source": "K.S.A. 79-32,117(c)(xviii) as amended by 2024 SB 1 (https://www.kslegislature.gov/li_2024s/b2023_24/measures/sb1/)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "MO",
+          "2026 rule": "Fully exempt from 2024 (`full`).",
+          "source": "RSMo 143.124 as amended by SB 190 (2023) (https://revisor.mo.gov/main/OneSection.aspx?section=143.124; https://dor.mo.gov/faq/taxation/individual/pension-tax-year-2024.html)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "NE",
+          "2026 rule": "Fully exempt from 2024 (`full`).",
+          "source": "LB 873 (2024), accelerated by LB 754; Governor's office release (https://governor.nebraska.gov/press/governor-pillen-signs-historic-tax-cuts-package)",
+          "verified": "Fetched (secondary for the acceleration)"
+        },
+        {
+          "state": "WV",
+          "2026 rule": "Fully exempt from 2026: 100% of benefits in federal AGI (`full`).",
+          "source": "W. Va. Code 11-21-12(c)(8)(E) (https://code.wvlegislature.gov/11-21-12/)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "CO",
+          "2026 rule": "Subtraction lives in the retirement-income rule (`retirement_exclusion`); single source of truth.",
+          "source": "C.R.S. 39-22-104(4)(f) (see retirement-exclusion section); DOR Income Tax Topics: Social Security, Pensions and Annuities (https://tax.colorado.gov/income-tax-topics-social-security-pensions-and-annuities)",
+          "verified": "Unchanged"
+        },
+        {
+          "state": "MT",
+          "2026 rule": "Taxed as federally (`none`): Montana starts from federal taxable income since 2024 (SB 399); the 65+ subtraction is the existing `aged_additional_deduction`.",
+          "source": "MCA 15-30-2101 (https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0010/0150-0300-0210-0010.html)",
+          "verified": "Not re-fetched"
+        },
+        {
+          "state": "CT",
+          "2026 rule": "Below federal AGI $75,000 single/MFS, $100,000 MFJ/HoH: all taxable benefits subtracted. At or above: taxable benefits less the smaller of 25% of benefits or 25% of the IRC 86(b)(1) excess (`threshold_partial`). Unindexed.",
+          "source": "CGS 12-701(a)(20)(B)(x)(III)-(IV) (https://www.cga.ct.gov/current/pub/chap_229.htm)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "MN",
+          "2026 rule": "Greater of (1) simplified: taxable benefits, less 10% per $4,000 ($2,000 MFS) of AGI or fraction above $110,780 MFJ / $86,410 single and HoH / $55,390 MFS (2026, indexed); (2) alternate: $5,840 MFJ / $4,560 single and HoH / $2,920 MFS less 20% of provisional income above $88,630 / $69,250 / $44,315 (unindexed), at most the taxable benefits (`stepped_phaseout`). Provisional income is IRC 86(b)(2) modified AGI plus half the taxable benefits, as the statute words it. Surviving spouses use the joint amounts (no separate status in the engine).",
+          "source": "Minn. Stat. 290.0132 subd. 26 (https://www.revisor.mn.gov/statutes/cite/290.0132); MN DOR 2026 inflation-adjusted amounts (https://www.revenue.state.mn.us/sites/default/files/2025-12/inflation-adjusted-amounts-2026.pdf)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "NM",
+          "2026 rule": "Fully exempt at or below federal AGI $100,000 single, $150,000 MFJ/HoH/surviving spouse, $75,000 MFS; fully taxable above (cliff, `linear_phaseout` with width 0). Unindexed. 2025 HB 293/SB 184 and 2026 HB 92 (phased removal of the cap) did not pass.",
+          "source": "NMSA 7-2-5.14; TRD (https://www.tax.newmexico.gov/social-security-income-tax-exemption/); HB 92 status (https://www.nmlegis.gov/Sessions/26%20Regular/bills/house/HB0092.html)",
+          "verified": "Fetched. The engine treats AGI equal to the threshold as qualifying."
+        },
+        {
+          "state": "RI",
+          "2026 rule": "Taxable benefits of a person at Social Security full retirement age subtracted when federal AGI is at most $107,000 single/HoH/MFS or $133,750 MFJ (2025, indexed); none above (`linear_phaseout` width 0, `minimum_age` 67). Each person's share of taxable benefits follows their share of gross benefits. The 2026 limits are not yet published (the Division sets each year's modification limits in the following November's advisory; checked 2026-10-10), so the 2025 limits are used for 2026 and indexed after. Full retirement age is approximated as 67 (1960+ births), as in the pension rule.",
+          "source": "R.I. Gen. Laws 44-30-12 (https://webserver.rilegislature.gov/Statutes/TITLE44/44-30/44-II/44-30-12.htm) (c)(8); Division of Taxation ADV 2025-22 (https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) p.3",
+          "verified": "Fetched. The pension rule now uses the same $133,750 joint limit (statute 44-30-12(c)(9)(vi)); the Retirement Income Guide 2026-01's $133,500 is treated as an error."
+        },
+        {
+          "state": "UT",
+          "2026 rule": "Nonrefundable credit of the flat rate times taxable benefits, reduced 2.5 cents per dollar of modified AGI (AGI plus non-AGI interest plus Utah additions) above $54,000 single, $45,000 MFS, $90,000 MFJ/HoH (`credit_phaseout`). Unindexed. The engine has no state-credit hook, so it subtracts credit / rate, which is exact for Utah's flat rate except that the credit cannot be carried and Utah additions are not modeled; the retirement credit (59-10-1019) exclusivity is not modeled.",
+          "source": "Utah Code 59-10-1042 effective 2026-01-01 (https://le.utah.gov/xcode/Title59/Chapter10/59-10-S1042.html)",
+          "verified": "Fetched"
+        },
+        {
+          "state": "VT",
+          "2026 rule": "Full at or below federal AGI $55,000 (single, MFS, HoH, surviving spouse) or $70,000 (MFJ); proportional to ($65,000 / $80,000 - AGI) / $10,000 between; none above (`linear_phaseout`). Unindexed.",
+          "source": "32 V.S.A. 5830e(a) (https://legislature.vermont.gov/statutes/section/32/151/05830e); Department of Taxes (https://tax.vermont.gov/individuals/income-tax-returns/social-security-exemption)",
+          "verified": "Fetched"
+        }
+      ]
+    },
+    {
+      "section": "Washington capital gains excise",
+      "content": [
+        {
+          "note": "`capital_gains_excise` in the WA block, computed by `tax_engine.state_capital_gains_excise` and included in state tax (and so in the SALT estimate). Retrieved 2026-10-10."
+        },
+        "Rate 7% of Washington capital gains; additional 2.9% (9.9% total) on the part above $1,000,000 from tax year 2025. The $1,000,000 threshold is not in the RCW 82.87.150 indexing list. Sources: RCW 82.87.040 (https://app.leg.wa.gov/RCW/default.aspx?cite=82.87.040); DOR special notice (https://dor.wa.gov/forms-publications/publications-subject/special-notices/new-tiered-rates-washingtons-capital-gains-tax).",
+        "Standard deduction $250,000 (2022), $262,000, $270,000, $278,000 (2025), one per individual or per married couple/domestic partnership whether they file jointly or separately; indexed to the Seattle CPI-U, rounded to $1,000. The DOR's \"Updated Amounts\" table still ends at 2025 (re-checked 2026-10-10 on the capital gains tax page and its \"Do you owe\" page; no special notice for 2026), so $278,000 is used for 2026 and indexed after with the built-in state factor. The statute sets the October adjustment from the Seattle CPI-U, so the 2026 amount should be replaced once the DOR posts it. Sources: RCW 82.87.060 and 82.87.150; DOR (https://dor.wa.gov/taxes-rates/other-taxes/capital-gains-tax/do-you-owe-capital-gains-tax).",
+        "Base: the engine's net long-term sales gains after federal loss carryforward (all modeled sales gains are long-term; RCW 82.87.020, https://app.leg.wa.gov/RCW/default.aspx?cite=82.87.020), less gains and losses on real asset sales (every real asset is treated as excluded real estate). Retirement accounts realize no gains. Not modeled: the charitable deduction, the qualified family-owned small business deduction, and the excise's separate loss rules."
+      ]
+    },
+    {
+      "section": "State-taxed retirement contribution basis",
+      "content": [
+        {
+          "note": "`contribution_basis_recovery` blocks, used by `coastmath/engine/state_taxed_basis.py`. The simulator already adds back to state income the retirement contributions these states tax when made (PA: every employee plan contribution; NJ: IRA contributions, 403(b)/457 deferrals and W-2 employer 403(b) money; MA: IRA contributions). The same amounts are now kept per account with the taxing state, plus an optional opening amount on the account (`state_taxed_basis`, attributed to the state of residence in the first projected year), and recovered from that account's taxable withdrawals, RMDs and SEPP payments while the person resides in that state. Retrieved 2026-10-10."
+        },
+        {
+          "state": "PA",
+          "method": "`cost_recovery`: distributions are untaxed until previously taxed contributions are recovered. Applies to early distributions; after 59 1/2 the retirement exclusion already exempts them.",
+          "source": "PA PIT Guide and PA-40 instructions (cost recovery method for IRA and employer plan distributions) (https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/gross-compensation)",
+          "modeled": "y"
+        },
+        {
+          "state": "MA",
+          "method": "`cost_recovery`: IRA distributions are excluded until the Massachusetts-taxed contributions are recovered.",
+          "source": "Directive 86-9 (https://www.mass.gov/directive/directive-86-9-individual-retirement-accounts-contributions-and-distributions)",
+          "modeled": "y"
+        },
+        {
+          "state": "NJ",
+          "method": "`pro_rata`: IRA worksheet, excludable share = unrecovered contributions / (December 31 value + the year's distributions). The account balance when the tax is computed stands in for the December 31 value. 403(b)/457 distributions use the same pro-rata share as an approximation of the General Rule; the Three-Year Rule is not modeled.",
+          "source": "GIT-2 IRA Withdrawals and GIT-1 Pensions and Annuities (https://www.nj.gov/treasury/taxation/pdf/pubs/tgi-ee/git2.pdf)",
+          "modeled": "y (approximation for 403(b)/457)"
+        },
+        {
+          "note": "No double exclusion: the recovery is limited to the part of the basis accounts' distributions the state retirement exclusion left taxable (the exclusion is attributed to them by their share of covered retirement income). Basis is still consumed by distributions the exclusion covered, matching the order in which these states compute the taxable amount. Taxable Roth conversions and QCD offsets do not recover or reduce basis. Basis is committed once per year from the final tax computation."
+        }
+      ]
+    },
+    {
+      "section": "Charitable contributions (2026+)",
+      "content": [
+        "`charitable.itemized_floor_rate` = 0.5% of the contribution base (AGI): 26 USC 170(b)(1)(I) (https://www.law.cornell.edu/uscode/text/26/170), added by Pub. L. 119-21 sec. 70425. Itemized charitable deductions are allowed only to the extent they exceed this floor.",
+        "`charitable.non_itemizer_cash_deduction` = $1,000 ($2,000 MFJ): 26 USC 170(p) (https://www.law.cornell.edu/uscode/text/26/170), amended by sec. 70424. Cash gifts to public charities only; contributions to donor-advised funds and supporting organizations are excluded. Not inflation-indexed.",
+        "`charitable.cash_agi_limit` = 60% of the contribution base for cash gifts to public charities: 26 USC 170(b)(1)(G) (https://www.law.cornell.edu/uscode/text/26/170), made permanent by sec. 70425.",
+        "`charitable.capital_gain_property_agi_limit` = 30% of the contribution base for gifts of long-term capital gain property (appreciated shares) to public charities and donor-advised fund sponsors, deducted at fair market value: 26 USC 170(b)(1)(C)(i) (https://www.law.cornell.edu/uscode/text/26/170); excess carries forward 5 years under 170(b)(1)(C)(ii) and keeps its 30% character.",
+        "`charitable.public_charity_agi_limit` = 50%: 26 USC 170(b)(1)(A), which also bounds capital gain property gifts. Ordering follows IRS Pub. 526, \"How To Figure Your Deduction When Limits Apply\" and Worksheet 2 (https://www.irs.gov/publications/p526): capital gain property is figured first (smaller of the gift, 30% and 50% of AGI); cash is then limited to 60% of AGI minus the deductions for all other contributions. Current-year gifts in each category are used before carryovers of that category, oldest first.",
+        "Not modeled: the 35% ceiling on the value of itemized deductions for 37%-bracket taxpayers (26 USC 68 as amended, https://www.law.cornell.edu/uscode/text/26/68), carryforward of amounts disallowed by the 0.5% floor, the 170(b)(1)(C)(iii) election to deduct capital gain property at basis under the 50% limit, gifts to private foundations, and holding periods (gifted shares are assumed held more than one year)."
+      ]
+    },
+    {
+      "section": "Medical expenses",
+      "content": [
+        "`medical.agi_floor_rate` = 7.5%: qualified medical expenses are deductible as an itemized deduction to the extent they exceed 7.5% of AGI, 26 USC 213(a) (made permanent by the Consolidated Appropriations Act, 2021, Div. EE sec. 101). Insurance premiums count as medical care, 213(d)(1)(D), including Medicare Parts B and D and Medigap; qualified long-term care services count under 213(d)(1)(C). IRS Pub. 502 (https://www.irs.gov/publications/p502). Not an AMT preference since 2019 (26 USC 56(b)(1)(B) as amended).",
+        "Self-employed health insurance: premiums for the taxpayer, spouse and dependents are an above-the-line deduction limited to net earnings from the trade or business (net profit less the deductible half of SE tax and SE retirement contributions), and not for months the taxpayer could join an employer-subsidized plan, 26 USC 162(l)(1)-(2). Medicare premiums qualify. Premiums deducted here are not also itemized, 162(l)(3). Interaction with the premium tax credit: IRS Pub. 974, sec. 2 \"iterative calculation\" (https://www.irs.gov/publications/p974)."
+      ]
+    }
+  ]
+}

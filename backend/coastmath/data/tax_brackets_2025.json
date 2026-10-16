@@ -1,0 +1,681 @@
+{
+  "additional_standard_deduction_65": {
+    "_source": "IRS Topic 551 (tax year 2025), https://www.irs.gov/taxtopics/tc551",
+    "single": 2000,
+    "head_of_household": 2000,
+    "married_filing_jointly": 1600,
+    "married_filing_separately": 1600
+  },
+  "amt": {
+    "_source": "2025 Form 6251 instructions, https://www.irs.gov/pub/irs-prior/i6251--2025.pdf",
+    "exemption": {"single": 88100, "married_filing_jointly": 137000, "married_filing_separately": 68500},
+    "phaseout_start": {"single": 626350, "married_filing_jointly": 1252700, "married_filing_separately": 626350},
+    "rate_28_threshold": {"single": 239100, "married_filing_jointly": 239100, "married_filing_separately": 119550},
+    "phaseout_rate": 0.25
+  },
+  "standard_deductions": {
+    "single": 15750,
+    "married_filing_jointly": 31500,
+    "married_filing_separately": 15750,
+    "head_of_household": 23625
+  },
+  "brackets": {
+    "single": [
+      [11925, 0.10],
+      [48475, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250525, 0.32],
+      [626350, 0.35],
+      [999999999, 0.37]
+    ],
+    "married_filing_jointly": [
+      [23850, 0.10],
+      [96950, 0.12],
+      [206700, 0.22],
+      [394600, 0.24],
+      [501050, 0.32],
+      [751600, 0.35],
+      [999999999, 0.37]
+    ],
+    "married_filing_separately": [
+      [11925, 0.10],
+      [48475, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250525, 0.32],
+      [375800, 0.35],
+      [999999999, 0.37]
+    ],
+    "head_of_household": [
+      [17000, 0.10],
+      [64850, 0.12],
+      [103350, 0.22],
+      [197300, 0.24],
+      [250500, 0.32],
+      [626350, 0.35],
+      [999999999, 0.37]
+    ]
+  },
+  "long_term_capital_gains": {
+    "single": [
+      [48350, 0.00],
+      [533400, 0.15],
+      [999999999, 0.20]
+    ],
+    "married_filing_jointly": [
+      [96700, 0.00],
+      [600050, 0.15],
+      [999999999, 0.20]
+    ],
+    "married_filing_separately": [
+      [48350, 0.00],
+      [300000, 0.15],
+      [999999999, 0.20]
+    ],
+    "head_of_household": [
+      [64750, 0.00],
+      [566700, 0.15],
+      [999999999, 0.20]
+    ]
+  },
+  "state": {
+    "AL": {
+      "brackets": [
+        {"min": 0, "max": 500, "rate": 0.02},
+        {"min": 500, "max": 3000, "rate": 0.04},
+        {"min": 3000, "max": 999999999, "rate": 0.05}
+      ],
+      "standard_deduction": 3000
+    },
+    "AK": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "AZ": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.025}
+      ],
+      "standard_deduction": 15000
+    },
+    "AR": {
+      "brackets": [
+        {"min": 0, "max": 5599, "rate": 0.0},
+        {"min": 5599, "max": 11199, "rate": 0.02},
+        {"min": 11199, "max": 15999, "rate": 0.03},
+        {"min": 15999, "max": 26399, "rate": 0.034},
+        {"min": 26399, "max": 999999999, "rate": 0.039}
+      ],
+      "standard_deduction": 2470,
+      "long_term_capital_gain_exclusion": {"rate": 0.50, "full_exemption_above": 10000000}
+    },
+    "CA": {
+      "brackets": [
+        {"min": 0, "max": 11079, "rate": 0.01},
+        {"min": 11079, "max": 26264, "rate": 0.02},
+        {"min": 26264, "max": 41452, "rate": 0.04},
+        {"min": 41452, "max": 57542, "rate": 0.06},
+        {"min": 57542, "max": 72724, "rate": 0.08},
+        {"min": 72724, "max": 371479, "rate": 0.093},
+        {"min": 371479, "max": 445771, "rate": 0.103},
+        {"min": 445771, "max": 742953, "rate": 0.113},
+        {"min": 742953, "max": 1000000, "rate": 0.123},
+        {"min": 1000000, "max": 999999999, "rate": 0.133}
+      ],
+      "standard_deduction": 5706
+    },
+    "CO": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.044}
+      ],
+      "standard_deduction": 15750
+    },
+    "CT": {
+      "brackets": [
+        {"min": 0, "max": 10000, "rate": 0.02},
+        {"min": 10000, "max": 50000, "rate": 0.045},
+        {"min": 50000, "max": 100000, "rate": 0.055},
+        {"min": 100000, "max": 200000, "rate": 0.06},
+        {"min": 200000, "max": 250000, "rate": 0.065},
+        {"min": 250000, "max": 500000, "rate": 0.069},
+        {"min": 500000, "max": 999999999, "rate": 0.0699}
+      ],
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 16000, "rate": 0.02},
+            {"min": 16000, "max": 80000, "rate": 0.045},
+            {"min": 80000, "max": 160000, "rate": 0.055},
+            {"min": 160000, "max": 320000, "rate": 0.06},
+            {"min": 320000, "max": 400000, "rate": 0.065},
+            {"min": 400000, "max": 800000, "rate": 0.069},
+            {"min": 800000, "max": 999999999, "rate": 0.0699}
+          ],
+          "standard_deduction": 0
+        }
+      },
+      "standard_deduction": 0
+    },
+    "DE": {
+      "brackets": [
+        {"min": 0, "max": 2000, "rate": 0.0},
+        {"min": 2000, "max": 5000, "rate": 0.022},
+        {"min": 5000, "max": 10000, "rate": 0.039},
+        {"min": 10000, "max": 20000, "rate": 0.048},
+        {"min": 20000, "max": 25000, "rate": 0.052},
+        {"min": 25000, "max": 60000, "rate": 0.0555},
+        {"min": 60000, "max": 999999999, "rate": 0.066}
+      ],
+      "standard_deduction": 3250
+    },
+    "DC": {
+      "brackets": [
+        {"min": 0, "max": 10000, "rate": 0.04},
+        {"min": 10000, "max": 40000, "rate": 0.06},
+        {"min": 40000, "max": 60000, "rate": 0.065},
+        {"min": 60000, "max": 250000, "rate": 0.085},
+        {"min": 250000, "max": 500000, "rate": 0.0925},
+        {"min": 500000, "max": 1000000, "rate": 0.0975},
+        {"min": 1000000, "max": 999999999, "rate": 0.1075}
+      ],
+      "standard_deduction": 15000,
+      "filing_status_schedules": {"head_of_household": {"brackets": [{"min": 0, "max": 10000, "rate": 0.04}, {"min": 10000, "max": 40000, "rate": 0.06}, {"min": 40000, "max": 60000, "rate": 0.065}, {"min": 60000, "max": 250000, "rate": 0.085}, {"min": 250000, "max": 500000, "rate": 0.0925}, {"min": 500000, "max": 1000000, "rate": 0.0975}, {"min": 1000000, "max": 999999999, "rate": 0.1075}], "standard_deduction": 22500}},
+      "aged_additional_deduction": {"single": 2000, "head_of_household": 2000, "married_filing_jointly": 1600, "married_filing_separately": 1600}
+    },
+    "FL": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "GA": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.0519}
+      ],
+      "standard_deduction": 12000
+    },
+    "HI": {
+      "brackets": [
+        {"min": 0, "max": 9600, "rate": 0.014},
+        {"min": 9600, "max": 14400, "rate": 0.032},
+        {"min": 14400, "max": 19200, "rate": 0.055},
+        {"min": 19200, "max": 24000, "rate": 0.064},
+        {"min": 24000, "max": 36000, "rate": 0.068},
+        {"min": 36000, "max": 48000, "rate": 0.072},
+        {"min": 48000, "max": 125000, "rate": 0.076},
+        {"min": 125000, "max": 175000, "rate": 0.079},
+        {"min": 175000, "max": 225000, "rate": 0.0825},
+        {"min": 225000, "max": 275000, "rate": 0.09},
+        {"min": 275000, "max": 325000, "rate": 0.10},
+        {"min": 325000, "max": 999999999, "rate": 0.11}
+      ],
+      "standard_deduction": 4400,
+      "capital_gain_max_rate": {
+        "rate": 0.0725
+      }
+    },
+    "ID": {
+      "brackets": [
+        {"min": 0, "max": 4811, "rate": 0.0},
+        {"min": 4811, "max": 999999999, "rate": 0.053}
+      ],
+      "standard_deduction": 15750
+    },
+    "IL": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.0495}
+      ],
+      "standard_deduction": 0
+    },
+    "IN": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.03}
+      ],
+      "standard_deduction": 0
+    },
+    "IA": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.038}
+      ],
+      "standard_deduction": 15750
+    },
+    "KS": {
+      "brackets": [
+        {"min": 0, "max": 15000, "rate": 0.031},
+        {"min": 15000, "max": 30000, "rate": 0.0525},
+        {"min": 30000, "max": 999999999, "rate": 0.057}
+      ],
+      "standard_deduction": 3605
+    },
+    "KY": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.04}
+      ],
+      "standard_deduction": 3270
+    },
+    "LA": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.03}
+      ],
+      "standard_deduction": 12500,
+      "head_of_household_schedule": "joint",
+      "_deduction_source": "La. R.S. 47:294(A) (https://legis.la.gov/Legis/Law.aspx?d=101761): married-joint, qualified surviving spouse and head of household returns get 200% of the single standard deduction; the flat 3% rate makes the doubled joint brackets harmless."
+    },
+    "ME": {
+      "brackets": [
+        {"min": 0, "max": 26800, "rate": 0.058},
+        {"min": 26800, "max": 63450, "rate": 0.0675},
+        {"min": 63450, "max": 999999999, "rate": 0.0715}
+      ],
+      "standard_deduction": 15000
+    },
+    "MD": {
+      "brackets": [
+        {"min": 0, "max": 1000, "rate": 0.02},
+        {"min": 1000, "max": 2000, "rate": 0.03},
+        {"min": 2000, "max": 3000, "rate": 0.04},
+        {"min": 3000, "max": 100000, "rate": 0.0475},
+        {"min": 100000, "max": 125000, "rate": 0.05},
+        {"min": 125000, "max": 150000, "rate": 0.0525},
+        {"min": 150000, "max": 250000, "rate": 0.055},
+        {"min": 250000, "max": 500000, "rate": 0.0575},
+        {"min": 500000, "max": 1000000, "rate": 0.0625},
+        {"min": 1000000, "max": 999999999, "rate": 0.065}
+      ],
+      "standard_deduction": 3350
+    },
+    "MA": {
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {"min": 0, "max": 1083150, "rate": 0.05},
+        {"min": 1083150, "max": 999999999, "rate": 0.09}
+      ],
+      "standard_deduction": 0
+    },
+    "MI": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.0425}
+      ],
+      "standard_deduction": 0
+    },
+    "MN": {
+      "brackets": [
+        {"min": 0, "max": 32570, "rate": 0.0535},
+        {"min": 32570, "max": 106990, "rate": 0.068},
+        {"min": 106990, "max": 198630, "rate": 0.0785},
+        {"min": 198630, "max": 999999999, "rate": 0.0985}
+      ],
+      "standard_deduction": 14950
+    },
+    "MS": {
+      "brackets": [
+        {"min": 0, "max": 10000, "rate": 0.0},
+        {"min": 10000, "max": 999999999, "rate": 0.044}
+      ],
+      "standard_deduction": 2300
+    },
+    "MO": {
+      "brackets": [
+        {"min": 0, "max": 1313, "rate": 0.0},
+        {"min": 1313, "max": 2626, "rate": 0.02},
+        {"min": 2626, "max": 3939, "rate": 0.025},
+        {"min": 3939, "max": 5252, "rate": 0.03},
+        {"min": 5252, "max": 6565, "rate": 0.035},
+        {"min": 6565, "max": 7878, "rate": 0.04},
+        {"min": 7878, "max": 9191, "rate": 0.045},
+        {"min": 9191, "max": 999999999, "rate": 0.047}
+      ],
+      "standard_deduction": 15750,
+      "long_term_capital_gain_exclusion": {"rate": 1.0, "reduces_state_agi_for_income_limits": true}
+    },
+    "MT": {
+      "brackets": [
+        {"min": 0, "max": 20500, "rate": 0.047},
+        {"min": 20500, "max": 999999999, "rate": 0.059}
+      ],
+      "standard_deduction": 15750
+    },
+    "NE": {
+      "brackets": [
+        {"min": 0, "max": 4030, "rate": 0.0246},
+        {"min": 4030, "max": 24120, "rate": 0.0351},
+        {"min": 24120, "max": 38870, "rate": 0.0501},
+        {"min": 38870, "max": 999999999, "rate": 0.052}
+      ],
+      "standard_deduction": 8600,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 7510, "rate": 0.0246},
+            {"min": 7510, "max": 38590, "rate": 0.0351},
+            {"min": 38590, "max": 57630, "rate": 0.0501},
+            {"min": 57630, "max": 999999999, "rate": 0.052}
+          ],
+          "standard_deduction": 12600
+        }
+      }
+    },
+    "NV": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "NH": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "NJ": {
+      "brackets": [
+        {"min": 0, "max": 20000, "rate": 0.014},
+        {"min": 20000, "max": 35000, "rate": 0.0175},
+        {"min": 35000, "max": 40000, "rate": 0.035},
+        {"min": 40000, "max": 75000, "rate": 0.05525},
+        {"min": 75000, "max": 500000, "rate": 0.0637},
+        {"min": 500000, "max": 1000000, "rate": 0.0897},
+        {"min": 1000000, "max": 999999999, "rate": 0.1075}
+      ],
+      "standard_deduction": 0
+    },
+    "NM": {
+      "brackets": [
+        {"min": 0, "max": 5500, "rate": 0.017},
+        {"min": 5500, "max": 11000, "rate": 0.032},
+        {"min": 11000, "max": 16000, "rate": 0.047},
+        {"min": 16000, "max": 210000, "rate": 0.049},
+        {"min": 210000, "max": 999999999, "rate": 0.059}
+      ],
+      "standard_deduction": 15750
+    },
+    "NY": {
+      "brackets": [
+        {"min": 0, "max": 8500, "rate": 0.04},
+        {"min": 8500, "max": 11700, "rate": 0.045},
+        {"min": 11700, "max": 13900, "rate": 0.0525},
+        {"min": 13900, "max": 80650, "rate": 0.0585},
+        {"min": 80650, "max": 215400, "rate": 0.06},
+        {"min": 215400, "max": 1077550, "rate": 0.0685},
+        {"min": 1077550, "max": 5000000, "rate": 0.0965},
+        {"min": 5000000, "max": 25000000, "rate": 0.103},
+        {"min": 25000000, "max": 999999999, "rate": 0.109}
+      ],
+      "standard_deduction": 8000
+    },
+    "NC": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.0425}
+      ],
+      "standard_deduction": 12750,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 999999999, "rate": 0.0425}
+          ],
+          "standard_deduction": 19125
+        }
+      }
+    },
+    "ND": {
+      "brackets": [
+        {"min": 0, "max": 48475, "rate": 0.0},
+        {"min": 48475, "max": 244825, "rate": 0.0195},
+        {"min": 244825, "max": 999999999, "rate": 0.025}
+      ],
+      "standard_deduction": 15750,
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {"min": 0, "max": 80975, "rate": 0.0},
+            {"min": 80975, "max": 298075, "rate": 0.0195},
+            {"min": 298075, "max": 999999999, "rate": 0.025}
+          ],
+          "standard_deduction": 31500
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 40475, "rate": 0.0},
+            {"min": 40475, "max": 149025, "rate": 0.0195},
+            {"min": 149025, "max": 999999999, "rate": 0.025}
+          ],
+          "standard_deduction": 15750
+        },
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 64950, "rate": 0.0},
+            {"min": 64950, "max": 271450, "rate": 0.0195},
+            {"min": 271450, "max": 999999999, "rate": 0.025}
+          ],
+          "standard_deduction": 23625
+        }
+      },
+      "long_term_capital_gain_exclusion": {"rate": 0.40, "includes_qualified_dividends": true}
+    },
+    "OH": {
+      "brackets": [
+        {"min": 0, "max": 26050, "rate": 0.0},
+        {"min": 26050, "max": 100000, "rate": 0.0275},
+        {"min": 100000, "max": 999999999, "rate": 0.03125}
+      ],
+      "standard_deduction": 0
+    },
+    "OK": {
+      "brackets": [
+        {"min": 0, "max": 1000, "rate": 0.0025},
+        {"min": 1000, "max": 2500, "rate": 0.0075},
+        {"min": 2500, "max": 3750, "rate": 0.0175},
+        {"min": 3750, "max": 4900, "rate": 0.0275},
+        {"min": 4900, "max": 7200, "rate": 0.0375},
+        {"min": 7200, "max": 999999999, "rate": 0.0475}
+      ],
+      "standard_deduction": 6350,
+      "filing_status_schedules": {
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 2000, "rate": 0.0025},
+            {"min": 2000, "max": 5000, "rate": 0.0075},
+            {"min": 5000, "max": 7500, "rate": 0.0175},
+            {"min": 7500, "max": 9800, "rate": 0.0275},
+            {"min": 9800, "max": 14400, "rate": 0.0375},
+            {"min": 14400, "max": 999999999, "rate": 0.0475}
+          ],
+          "standard_deduction": 9350
+        }
+      }
+    },
+    "OR": {
+      "brackets": [
+        {"min": 0, "max": 4400, "rate": 0.0475},
+        {"min": 4400, "max": 11100, "rate": 0.0675},
+        {"min": 11100, "max": 125000, "rate": 0.0875},
+        {"min": 125000, "max": 999999999, "rate": 0.099}
+      ],
+      "standard_deduction": 2835
+    },
+    "PA": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.0307}
+      ],
+      "standard_deduction": 0
+    },
+    "RI": {
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {"min": 0, "max": 79900, "rate": 0.0375},
+        {"min": 79900, "max": 181650, "rate": 0.0475},
+        {"min": 181650, "max": 999999999, "rate": 0.0599}
+      ],
+      "standard_deduction": 10900
+    },
+    "SC": {
+      "joint_bracket_multiplier": 1.0,
+      "brackets": [
+        {"min": 0, "max": 3560, "rate": 0.0},
+        {"min": 3560, "max": 17830, "rate": 0.03},
+        {"min": 17830, "max": 999999999, "rate": 0.06}
+      ],
+      "standard_deduction": 15750,
+      "long_term_capital_gain_exclusion": {"rate": 0.44}
+    },
+    "SD": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "TN": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "TX": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "UT": {
+      "brackets": [
+        {"min": 0, "max": 999999999, "rate": 0.045}
+      ],
+      "standard_deduction": 0
+    },
+    "VT": {
+      "brackets": [
+        {"min": 0, "max": 49400, "rate": 0.0335},
+        {"min": 49400, "max": 119700, "rate": 0.066},
+        {"min": 119700, "max": 249700, "rate": 0.076},
+        {"min": 249700, "max": 999999999, "rate": 0.0875}
+      ],
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {"min": 0, "max": 82500, "rate": 0.0335},
+            {"min": 82500, "max": 199450, "rate": 0.066},
+            {"min": 199450, "max": 304000, "rate": 0.076},
+            {"min": 304000, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 15300
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 41250, "rate": 0.0335},
+            {"min": 41250, "max": 99725, "rate": 0.066},
+            {"min": 99725, "max": 152000, "rate": 0.076},
+            {"min": 152000, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 7650
+        },
+        "head_of_household": {
+          "brackets": [
+            {"min": 0, "max": 66200, "rate": 0.0335},
+            {"min": 66200, "max": 171000, "rate": 0.066},
+            {"min": 171000, "max": 276850, "rate": 0.076},
+            {"min": 276850, "max": 999999999, "rate": 0.0875}
+          ],
+          "standard_deduction": 11450
+        }
+      },
+      "personal_exemption": 5300,
+      "aged_additional_deduction": 1250,
+      "minimum_tax": {"agi_threshold": 150000, "rate": 0.03},
+      "long_term_capital_gain_exclusion": {"flat_amount": 5000, "federal_taxable_income_share_cap": 0.40},
+      "standard_deduction": 7650
+    },
+    "VA": {
+      "brackets": [
+        {"min": 0, "max": 3000, "rate": 0.02},
+        {"min": 3000, "max": 5000, "rate": 0.03},
+        {"min": 5000, "max": 17000, "rate": 0.05},
+        {"min": 17000, "max": 999999999, "rate": 0.0575}
+      ],
+      "standard_deduction": 8750
+    },
+    "WA": {
+      "brackets": [],
+      "standard_deduction": 0
+    },
+    "WV": {
+      "brackets": [
+        {"min": 0, "max": 10000, "rate": 0.0222},
+        {"min": 10000, "max": 25000, "rate": 0.0296},
+        {"min": 25000, "max": 40000, "rate": 0.0333},
+        {"min": 40000, "max": 60000, "rate": 0.0444},
+        {"min": 60000, "max": 999999999, "rate": 0.0482}
+      ],
+      "filing_status_schedules": {
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 5000, "rate": 0.0222},
+            {"min": 5000, "max": 12500, "rate": 0.0296},
+            {"min": 12500, "max": 20000, "rate": 0.0333},
+            {"min": 20000, "max": 30000, "rate": 0.0444},
+            {"min": 30000, "max": 999999999, "rate": 0.0482}
+          ],
+          "standard_deduction": 0
+        }
+      },
+      "joint_bracket_multiplier": 1.0,
+      "standard_deduction": 0
+    },
+    "WI": {
+      "brackets": [
+        {"min": 0, "max": 14680, "rate": 0.035},
+        {"min": 14680, "max": 50480, "rate": 0.044},
+        {"min": 50480, "max": 323290, "rate": 0.053},
+        {"min": 323290, "max": 999999999, "rate": 0.0765}
+      ],
+      "standard_deduction": 13560,
+      "long_term_capital_gain_exclusion": {
+        "rate": 0.30
+      },
+      "filing_status_schedules": {
+        "married_filing_jointly": {
+          "brackets": [
+            {"min": 0, "max": 19580, "rate": 0.035},
+            {"min": 19580, "max": 67300, "rate": 0.044},
+            {"min": 67300, "max": 431060, "rate": 0.053},
+            {"min": 431060, "max": 999999999, "rate": 0.0765}
+          ],
+          "standard_deduction": 25110
+        },
+        "married_filing_separately": {
+          "brackets": [
+            {"min": 0, "max": 9790, "rate": 0.035},
+            {"min": 9790, "max": 33650, "rate": 0.044},
+            {"min": 33650, "max": 215530, "rate": 0.053},
+            {"min": 215530, "max": 999999999, "rate": 0.0765}
+          ],
+          "standard_deduction": 11930
+        }
+      }
+    },
+    "WY": {
+      "brackets": [],
+      "standard_deduction": 0
+    }
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Verified September 8, 2026."
+        }
+      ]
+    },
+    {
+      "section": "Sources",
+      "content": [
+        "IRS 2025 Form 1040 instructions (https://www.irs.gov/instructions/i1040gi): amended basic standard deductions are $15,750 single/MFS, $31,500 MFJ, and $23,625 head of household. The pre-amendment $30,000 MFJ amount is obsolete.",
+        "Rev. Proc. 2024-40, 2024-45 IRB (https://www.irs.gov/irb/2024-45_IRB): 2025 ordinary brackets and preferential capital-gain thresholds. MFJ ordinary boundaries begin at $23,850 and $96,950; the zero-rate capital-gain ceiling is $96,700. Existing 2025 bracket/deduction data is selected rather than copied.",
+        "IRS Topic 551 (https://www.irs.gov/taxtopics/tc551): tax year 2025 aged additional standard deduction is $1,600 for married filers, $2,000 unmarried.",
+        "2025 Form 6251 instructions (https://www.irs.gov/pub/irs-prior/i6251--2025.pdf): MFJ AMT exemption $137,000; phaseout begins $1,252,700 at 25%; 28% rate begins above $239,100 of taxable excess. Corresponding single/MFS data is included.",
+        "IRS 2026 adjustments (https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill): MFJ deduction $32,200 and first ordinary bracket $24,800. Existing 2026 AMT behavior is moved from engine literals into data without changing values.",
+        "RSMo 143.121.3(14)(a) (https://revisor.mo.gov/main/OneSection.aspx?section=143.121, verified 2026-10-11): for tax years beginning on or after January 1, 2025, Missouri subtracts 100% of income reported as a federal capital gain in computing Missouri AGI (Missouri DOR year changes, https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/). `state.MO.long_term_capital_gain_exclusion` rate 1.0.",
+        "IRS Publication 501 (2025), death of spouse (https://www.irs.gov/publications/p501): a spouse's death during the year preserves married status for that year. IRS final-return guidance (https://www.irs.gov/newsroom/how-to-file-a-final-tax-return-for-someone-who-has-passed-away) confirms joint or separate filing remains available if the survivor does not remarry. This model has no remarriage event; it preserves the entered filing status for the death year, then applies the configured survivor status."
+      ]
+    },
+    {
+      "section": "Implementation boundaries",
+      "content": [
+        {
+          "note": "The federal ordinary, capital-gain, basic/aged deduction and AMT tables now select 2025 for that tax year. From 2026 they use the latest published table. For projections starting in 2025, future federal indexing starts after 2026; the known 2026 table must not receive a second assumed inflation increase. The same table/factor is supplied to Roth conversion bracket-fill calculations. California's published 2025 table also governs 2026 estimates; CA standard tables and exemptions use no assumed indexing through 2026, then the same calendar-year multiplier. Other states and custom brackets preserve their existing multipliers. Federal history before 2025 is not implemented and retains the legacy latest-table fallback; those years are not certified. The federal/coverage multiplier follows complete calendar years after 2026, even for a partial opening projection year. A future-start plan projects the intervening years using its entered inflation curve/default, so the same calendar year's projected thresholds do not depend on the simulation start."
+        },
+        {
+          "note": "Death-year step-up and account inheritance still occur immediately. Spouse age is retained for a final joint return's applicable aged deductions, then removed from subsequent single returns. A spouse who died before projection start does not receive a new final-joint year. Qualifying-surviving-spouse eligibility and remarriage remain outside the existing input model."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+.scenario-badge {
+  margin-inline-start: 6px;
+  padding: 2px 8px;
+  font-size: 10px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.scenario-banner {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--brand-primary);
+  border-radius: var(--radius-sm);
+  background: var(--brand-primary-light);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.scenario-banner p,
+.scenario-banner ul {
+  margin: 0;
+}
+
+.scenario-banner-row,
+.scenario-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.scenario-review {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--surface-border);
+}
+
+.scenario-changes {
+  display: grid;
+  gap: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.scenario-changes h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.scenario-changes ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-change {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+}
+
+.scenario-change-name {
+  font-weight: 600;
+}
+
+.scenario-change-state {
+  color: var(--text-secondary);
+}
+
+.scenario-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 10px;
+}
+
+.scenario-field-values {
+  color: var(--text-secondary);
+}
+
+.scenario-detach {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--surface-border);
+}

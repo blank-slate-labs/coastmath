@@ -1,0 +1,46 @@
+{
+  "published_tax_year": 2025,
+  "estimate_tax_year": 2026,
+  "personal_credit": 153,
+  "senior_credit": 153,
+  "dependent_credit": 475,
+  "phaseout_threshold": {
+    "single": 252203,
+    "married_filing_jointly": 504411,
+    "married_filing_separately": 252203,
+    "head_of_household": 378310
+  },
+  "phaseout_step": 2500,
+  "phaseout_step_mfs": 1250,
+  "reduction_per_exemption_per_step": 6,
+  "sources": [
+    "https://www.ftb.ca.gov/forms/2025/2025-540.pdf",
+    "https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html",
+    "https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.pdf"
+  ],
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Verified 2026-09-08 against:"
+        },
+        "2025 Form 540 (https://www.ftb.ca.gov/forms/2025/2025-540.pdf), lines 7 and 9: $153 per personal/senior exemption; line 33 floors remaining tax at zero.",
+        "2025 Form 540 instructions (https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html), lines 6–9 and 32: personal/senior exemptions are unavailable to an owner who can be claimed by someone else. Federal AGI limits are $252,203 single/MFS, $504,411 joint, $378,310 head of household. Above the threshold, each exemption is reduced $6 for every $2,500 or fraction thereof ($1,250 MFS). The worksheet uses whole dollars; this implementation rounds AGI to the nearest whole dollar before the upward step calculation.",
+        "2026 Form 540-ES instructions (https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.pdf), worksheet lines 4 and 6a: 2026 estimated tax uses 2025 tables and exemptions.",
+        {
+          "note": "The optional `tax_settings.ca_exemption_eligible_owners` records which owners are eligible for their own personal and senior exemption. `null`/omitted means unknown and no credit is claimed; `[]` explicitly means none are eligible. The engine counts self on supported statuses and spouse only on joint returns. It does not infer eligibility from income labels, balances, age, or marital status. Senior eligibility additionally requires the supplied tax-year age to be at least 65. The engine has no birth-day information for the special January 1 birthday convention; that existing date-precision limit remains."
+        },
+        {
+          "note": "This implements personal/senior exemptions only: no dependent/blind credits, CA AMT credit limitations, nonresident/part-year credit proration or custom state-bracket credit calculation. California income adjustments, head-of- household brackets, other credits and state tax forms remain separate limits of the existing state engine. It is not a complete Form 540 implementation."
+        },
+        {
+          "note": "2025 and 2026 use the published $153 credit. Later years project the credit and phaseout threshold using complete calendar years after 2026, rounded to whole dollars. The same multiplier governs the standard CA table; partial opening years do not shorten statutory indexing, and future-start plans project the intervening years with the entered inflation curve/default. The statutory $6 reduction and $2,500/$1,250 steps remain fixed. Those future-year values are assumptions, not published schedules."
+        },
+        {
+          "note": "At $180,000 single wages, under 65, the state bracket computation is $12,647.98; explicit personal-exemption eligibility reduces it to $12,494.98, the $153 credit."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "source": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html",
+  "estimate_source": "https://www.ftb.ca.gov/forms/2026/2026-540-es-instructions.pdf",
+  "standard_deduction": 11412,
+  "head_of_household_brackets": [[22173, 0.01], [52530, 0.02], [67716, 0.04], [83805, 0.06], [98990, 0.08], [505208, 0.093], [606251, 0.103], [1010417, 0.113], [null, 0.123]]
+}

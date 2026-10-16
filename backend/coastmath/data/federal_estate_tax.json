@@ -1,0 +1,16 @@
+{
+  "_sources": [
+    "26 USC 2010(c)(3) as amended by Pub. L. 119-21 sec. 70106 (basic exclusion amount $15,000,000 for 2026, indexed for inflation after 2026)",
+    "26 USC 2001(c) (top marginal rate 40 percent above $1,000,000 taxable; the unified credit offsets tax up to the basic exclusion, so each dollar above the exclusion is taxed at 40 percent)",
+    "26 USC 2010(c)(4) (deceased spousal unused exclusion, not indexed after the first death)",
+    "Rev. Proc. 2022-38 (2023: $12,920,000), Rev. Proc. 2023-34 (2024: $13,610,000), Rev. Proc. 2024-40 (2025: $13,990,000)"
+  ],
+  "basic_exclusion_by_year": {
+    "2023": 12920000,
+    "2024": 13610000,
+    "2025": 13990000,
+    "2026": 15000000
+  },
+  "indexing_base_year": 2026,
+  "top_rate": 0.40
+}

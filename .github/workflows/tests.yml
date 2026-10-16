@@ -1,0 +1,69 @@
+name: Tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - name: Install
+        run: |
+          python -m venv backend/venv
+          backend/venv/bin/pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+      - name: Lint
+        working-directory: backend
+        run: venv/bin/python -m ruff check .
+      - name: Tests on SQLite database files
+        working-directory: backend
+        env:
+          PYTEST_ADDOPTS: -n auto --dist loadfile
+          TEST_SQLITE_DIR: ${{ runner.temp }}
+          DATABASE_URL: ''
+        run: venv/bin/python -m pytest tests/ -q -ra -k 'not test_100_trials_under_5s'
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        working-directory: frontend
+        run: npm ci --legacy-peer-deps
+      - name: Lint, typecheck, test and build
+        working-directory: frontend
+        run: |
+          npm run lint
+          npm run typecheck
+          npm test
+          npx vite build
+  docker:
+    # The README's first path: the image builds and the server answers.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the image
+        run: docker build --build-arg VITE_TRANSACTIONS_ENABLED=true -t coastmath:ci .
+      - name: Start it and wait for readiness
+        run: |
+          docker run -d --name coastmath -p 127.0.0.1:8000:8000 -e SESSION_COOKIE_SECURE=false coastmath:ci
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8000/api/ready; then echo; exit 0; fi
+            sleep 2
+          done
+          docker logs coastmath
+          exit 1

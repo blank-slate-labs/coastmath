@@ -1,0 +1,2406 @@
+{
+  "tax_year": 2026,
+  "jurisdictions": {
+    "de_wilmington": {
+      "name": "Wilmington",
+      "state_code": "DE",
+      "components": [
+        {
+          "label": "Wilmington wage tax",
+          "base": "gross_wages",
+          "rate": 0.0125
+        },
+        {
+          "label": "Wilmington net profits tax",
+          "base": "self_employment",
+          "rate": 0.0125
+        }
+      ]
+    },
+    "in_adams_county": {
+      "name": "Adams County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Adams County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.016
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_allen_county": {
+      "name": "Allen County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Allen County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0159
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_bartholomew_county": {
+      "name": "Bartholomew County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Bartholomew County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0175
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_benton_county": {
+      "name": "Benton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Benton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0179
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_blackford_county": {
+      "name": "Blackford County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Blackford County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_boone_county": {
+      "name": "Boone County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Boone County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_brown_county": {
+      "name": "Brown County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Brown County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025234
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_carroll_county": {
+      "name": "Carroll County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Carroll County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.024733
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_cass_county": {
+      "name": "Cass County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Cass County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0295
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_clark_county": {
+      "name": "Clark County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Clark County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_clay_county": {
+      "name": "Clay County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Clay County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0235
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_clinton_county": {
+      "name": "Clinton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Clinton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0265
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_crawford_county": {
+      "name": "Crawford County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Crawford County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0165
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_daviess_county": {
+      "name": "Daviess County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Daviess County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.015
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_dearborn_county": {
+      "name": "Dearborn County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Dearborn County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.014
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_decatur_county": {
+      "name": "Decatur County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Decatur County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0245
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_dekalb_county": {
+      "name": "DeKalb County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "DeKalb County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0213
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_delaware_county": {
+      "name": "Delaware County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Delaware County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.015
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_dubois_county": {
+      "name": "Dubois County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Dubois County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.012
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_elkhart_county": {
+      "name": "Elkhart County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Elkhart County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_fayette_county": {
+      "name": "Fayette County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Fayette County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0282
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_floyd_county": {
+      "name": "Floyd County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Floyd County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0189
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_fountain_county": {
+      "name": "Fountain County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Fountain County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.021
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_franklin_county": {
+      "name": "Franklin County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Franklin County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_fulton_county": {
+      "name": "Fulton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Fulton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0288
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_gibson_county": {
+      "name": "Gibson County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Gibson County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.013
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_grant_county": {
+      "name": "Grant County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Grant County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0275
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_greene_county": {
+      "name": "Greene County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Greene County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0235
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_hamilton_county": {
+      "name": "Hamilton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Hamilton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.011
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_hancock_county": {
+      "name": "Hancock County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Hancock County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0194
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_harrison_county": {
+      "name": "Harrison County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Harrison County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.01
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_hendricks_county": {
+      "name": "Hendricks County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Hendricks County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_henry_county": {
+      "name": "Henry County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Henry County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0202
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_howard_county": {
+      "name": "Howard County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Howard County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0235
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_huntington_county": {
+      "name": "Huntington County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Huntington County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0195
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_jackson_county": {
+      "name": "Jackson County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Jackson County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.021
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_jasper_county": {
+      "name": "Jasper County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Jasper County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02864
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_jay_county": {
+      "name": "Jay County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Jay County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_jefferson_county": {
+      "name": "Jefferson County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Jefferson County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0103
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_jennings_county": {
+      "name": "Jennings County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Jennings County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_johnson_county": {
+      "name": "Johnson County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Johnson County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.014
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_knox_county": {
+      "name": "Knox County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Knox County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_kosciusko_county": {
+      "name": "Kosciusko County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Kosciusko County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.01
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_lagrange_county": {
+      "name": "LaGrange County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "LaGrange County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0165
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_lake_county": {
+      "name": "Lake County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Lake County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.015
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_laporte_county": {
+      "name": "LaPorte County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "LaPorte County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0145
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_lawrence_county": {
+      "name": "Lawrence County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Lawrence County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0175
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_madison_county": {
+      "name": "Madison County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Madison County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0225
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_marion_county": {
+      "name": "Marion County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Marion County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0202
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_marshall_county": {
+      "name": "Marshall County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Marshall County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0125
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_martin_county": {
+      "name": "Martin County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Martin County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_miami_county": {
+      "name": "Miami County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Miami County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0254
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_monroe_county": {
+      "name": "Monroe County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Monroe County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0214
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_montgomery_county": {
+      "name": "Montgomery County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Montgomery County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0265
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_morgan_county": {
+      "name": "Morgan County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Morgan County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0272
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_newton_county": {
+      "name": "Newton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Newton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.01
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_noble_county": {
+      "name": "Noble County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Noble County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0175
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_ohio_county": {
+      "name": "Ohio County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Ohio County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_orange_county": {
+      "name": "Orange County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Orange County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0175
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_owen_county": {
+      "name": "Owen County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Owen County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_parke_county": {
+      "name": "Parke County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Parke County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0265
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_perry_county": {
+      "name": "Perry County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Perry County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.014
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_pike_county": {
+      "name": "Pike County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Pike County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.012
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_porter_county": {
+      "name": "Porter County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Porter County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.005
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_posey_county": {
+      "name": "Posey County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Posey County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0145
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_pulaski_county": {
+      "name": "Pulaski County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Pulaski County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0285
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_putnam_county": {
+      "name": "Putnam County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Putnam County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.023
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_randolph_county": {
+      "name": "Randolph County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Randolph County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.03
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_ripley_county": {
+      "name": "Ripley County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Ripley County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0238
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_rush_county": {
+      "name": "Rush County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Rush County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0215
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_scott_county": {
+      "name": "Scott County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Scott County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0216
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_shelby_county": {
+      "name": "Shelby County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Shelby County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_spencer_county": {
+      "name": "Spencer County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Spencer County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.008
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_st_joseph_county": {
+      "name": "St. Joseph County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "St. Joseph County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0175
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_starke_county": {
+      "name": "Starke County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Starke County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0171
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_steuben_county": {
+      "name": "Steuben County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Steuben County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0199
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_sullivan_county": {
+      "name": "Sullivan County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Sullivan County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.017
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_switzerland_county": {
+      "name": "Switzerland County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Switzerland County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0145
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_tippecanoe_county": {
+      "name": "Tippecanoe County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Tippecanoe County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0128
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_tipton_county": {
+      "name": "Tipton County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Tipton County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.026
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_union_county": {
+      "name": "Union County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Union County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0275
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_vanderburgh_county": {
+      "name": "Vanderburgh County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Vanderburgh County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0125
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_vermillion_county": {
+      "name": "Vermillion County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Vermillion County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.015
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_vigo_county": {
+      "name": "Vigo County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Vigo County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_wabash_county": {
+      "name": "Wabash County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Wabash County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.029
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_warren_county": {
+      "name": "Warren County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Warren County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0212
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_warrick_county": {
+      "name": "Warrick County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Warrick County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.01
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_washington_county": {
+      "name": "Washington County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Washington County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_wayne_county": {
+      "name": "Wayne County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Wayne County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0125
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_wells_county": {
+      "name": "Wells County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Wells County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.021
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_white_county": {
+      "name": "White County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "White County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0232
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "in_whitley_county": {
+      "name": "Whitley County",
+      "state_code": "IN",
+      "components": [
+        {
+          "label": "Whitley County local income tax",
+          "base": "state_taxable_income",
+          "rate": 0.016829
+        }
+      ],
+      "limitations": ["Indiana county tax uses Indiana income as modeled here, without exemptions or the Social Security subtraction."]
+    },
+    "md_allegany_county": {
+      "name": "Allegany County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Allegany County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_anne_arundel_county": {
+      "name": "Anne Arundel County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Anne Arundel County income tax",
+          "base": "state_taxable_income",
+          "brackets": {
+            "single": [[50000, 0.027], [400000, 0.0294], [null, 0.032]],
+            "married_filing_separately": [[50000, 0.027], [400000, 0.0294], [null, 0.032]],
+            "married_filing_jointly": [[75000, 0.027], [480000, 0.0294], [null, 0.032]],
+            "head_of_household": [[75000, 0.027], [480000, 0.0294], [null, 0.032]]
+          }
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_baltimore_city": {
+      "name": "Baltimore City",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Baltimore City income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_baltimore_county": {
+      "name": "Baltimore County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Baltimore County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_calvert_county": {
+      "name": "Calvert County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Calvert County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_caroline_county": {
+      "name": "Caroline County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Caroline County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_carroll_county": {
+      "name": "Carroll County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Carroll County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0303
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_cecil_county": {
+      "name": "Cecil County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Cecil County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0274
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_charles_county": {
+      "name": "Charles County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Charles County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0303
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_dorchester_county": {
+      "name": "Dorchester County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Dorchester County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.033
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_frederick_county": {
+      "name": "Frederick County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Frederick County income tax",
+          "base": "state_taxable_income",
+          "method": "tiered",
+          "brackets": {
+            "single": [[25000, 0.0225], [50000, 0.0275], [150000, 0.0296], [null, 0.032]],
+            "married_filing_separately": [[25000, 0.0225], [50000, 0.0275], [150000, 0.0296], [null, 0.032]],
+            "married_filing_jointly": [[25000, 0.0225], [100000, 0.0275], [250000, 0.0296], [null, 0.032]],
+            "head_of_household": [[25000, 0.0225], [100000, 0.0275], [250000, 0.0296], [null, 0.032]]
+          }
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_garrett_county": {
+      "name": "Garrett County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Garrett County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0265
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_harford_county": {
+      "name": "Harford County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Harford County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0306
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_howard_county": {
+      "name": "Howard County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Howard County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_kent_county": {
+      "name": "Kent County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Kent County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.033
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_montgomery_county": {
+      "name": "Montgomery County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Montgomery County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_prince_georges_county": {
+      "name": "Prince George's County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Prince George's County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_queen_annes_county": {
+      "name": "Queen Anne's County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Queen Anne's County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_somerset_county": {
+      "name": "Somerset County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Somerset County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_st_marys_county": {
+      "name": "St. Mary's County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "St. Mary's County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_talbot_county": {
+      "name": "Talbot County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Talbot County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.024
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_washington_county": {
+      "name": "Washington County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Washington County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0295
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_wicomico_county": {
+      "name": "Wicomico County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Wicomico County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.032
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "md_worcester_county": {
+      "name": "Worcester County",
+      "state_code": "MD",
+      "components": [
+        {
+          "label": "Worcester County income tax",
+          "base": "state_taxable_income",
+          "rate": 0.0225
+        }
+      ],
+      "limitations": ["Maryland county tax uses Maryland taxable income as modeled here, without personal exemptions or retirement subtractions."]
+    },
+    "mi_albion": {
+      "name": "Albion",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Albion resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_battle_creek": {
+      "name": "Battle Creek",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Battle Creek resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 750,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_benton_harbor": {
+      "name": "Benton Harbor",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Benton Harbor resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 750,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_big_rapids": {
+      "name": "Big Rapids",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Big Rapids resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_detroit": {
+      "name": "Detroit",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Detroit resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.024,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_east_lansing": {
+      "name": "East Lansing",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "East Lansing resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true,
+          "through_year": 2030
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted.", "East Lansing's income tax is modeled through 2030, when it expires unless renewed."]
+    },
+    "mi_flint": {
+      "name": "Flint",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Flint resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_grand_rapids": {
+      "name": "Grand Rapids",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Grand Rapids resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.015,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_grayling": {
+      "name": "Grayling",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Grayling resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 3000,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_hamtramck": {
+      "name": "Hamtramck",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Hamtramck resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_highland_park": {
+      "name": "Highland Park",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Highland Park resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.02,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_hudson": {
+      "name": "Hudson",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Hudson resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 1000,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_ionia": {
+      "name": "Ionia",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Ionia resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 700,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_jackson": {
+      "name": "Jackson",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Jackson resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_lansing": {
+      "name": "Lansing",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Lansing resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_lapeer": {
+      "name": "Lapeer",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Lapeer resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_muskegon": {
+      "name": "Muskegon",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Muskegon resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_muskegon_heights": {
+      "name": "Muskegon Heights",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Muskegon Heights resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_pontiac": {
+      "name": "Pontiac",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Pontiac resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_port_huron": {
+      "name": "Port Huron",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Port Huron resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_portland": {
+      "name": "Portland",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Portland resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 1000,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_saginaw": {
+      "name": "Saginaw",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Saginaw resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.015,
+          "exemption_per_person": 750,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_springfield": {
+      "name": "Springfield",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Springfield resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 750,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mi_walker": {
+      "name": "Walker",
+      "state_code": "MI",
+      "components": [
+        {
+          "label": "Walker resident income tax",
+          "base": "michigan_city_income",
+          "rate": 0.01,
+          "exemption_per_person": 600,
+          "aged_exemption": true
+        }
+      ],
+      "limitations": ["Michigan city tax excludes all retirement-plan withdrawals, as Detroit does; some cities tax early or deferred-compensation withdrawals. Dependent exemptions are not counted."]
+    },
+    "mo_kansas_city": {
+      "name": "Kansas City",
+      "state_code": "MO",
+      "components": [
+        {
+          "label": "Kansas City earnings tax",
+          "base": "taxable_earned_income",
+          "rate": 0.01
+        }
+      ]
+    },
+    "mo_st_louis": {
+      "name": "St. Louis",
+      "state_code": "MO",
+      "components": [
+        {
+          "label": "St. Louis earnings tax",
+          "base": "taxable_earned_income",
+          "rate": 0.01
+        }
+      ]
+    },
+    "ny_new_york_city": {
+      "name": "New York City",
+      "state_code": "NY",
+      "components": [
+        {
+          "label": "New York City resident income tax",
+          "base": "state_taxable_income",
+          "brackets": {
+            "single": [[12000, 0.03078], [25000, 0.03762], [50000, 0.03819], [null, 0.03876]],
+            "married_filing_separately": [[12000, 0.03078], [25000, 0.03762], [50000, 0.03819], [null, 0.03876]],
+            "married_filing_jointly": [[21600, 0.03078], [45000, 0.03762], [90000, 0.03819], [null, 0.03876]],
+            "head_of_household": [[14400, 0.03078], [30000, 0.03762], [60000, 0.03819], [null, 0.03876]]
+          }
+        },
+        {
+          "label": "NYC school tax credit (rate reduction amount)",
+          "kind": "credit",
+          "base": "state_taxable_income",
+          "income_limit": 500000,
+          "brackets": {
+            "single": [[12000, 0.00171], [null, 0.00228]],
+            "married_filing_separately": [[12000, 0.00171], [null, 0.00228]],
+            "married_filing_jointly": [[21600, 0.00171], [null, 0.00228]],
+            "head_of_household": [[14400, 0.00171], [null, 0.00228]]
+          }
+        },
+        {
+          "label": "NYC school tax credit (fixed amount)",
+          "kind": "credit",
+          "base": "federal_agi",
+          "income_limit": 250000,
+          "amount": {
+            "single": 63,
+            "married_filing_separately": 63,
+            "married_filing_jointly": 125,
+            "head_of_household": 63
+          }
+        }
+      ],
+      "limitations": ["New York City tax uses New York taxable income as modeled here, which does not yet subtract Social Security or the $20,000 pension and annuity exclusion.", "NYC household credit, other NYC credits and the Unincorporated Business Tax are not modeled."]
+    },
+    "ny_yonkers": {
+      "name": "Yonkers",
+      "state_code": "NY",
+      "components": [
+        {
+          "label": "Yonkers resident income tax surcharge",
+          "base": "state_income_tax",
+          "rate": 0.1675
+        }
+      ]
+    },
+    "oh_akron": {
+      "name": "Akron",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Akron municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_canton": {
+      "name": "Canton",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Canton municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_cincinnati": {
+      "name": "Cincinnati",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Cincinnati municipal income tax",
+          "base": "earned_income",
+          "rate": 0.018
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_cleveland": {
+      "name": "Cleveland",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Cleveland municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_columbus": {
+      "name": "Columbus",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Columbus municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_dayton": {
+      "name": "Dayton",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Dayton municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_lorain": {
+      "name": "Lorain",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Lorain municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Lorain credits tax paid to a work city only up to 2.0%; tax paid to a work city is not modeled.", "School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_parma": {
+      "name": "Parma",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Parma municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["Parma credits tax paid to a work city only up to 2.0%; tax paid to a work city is not modeled.", "School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_toledo": {
+      "name": "Toledo",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Toledo municipal income tax",
+          "base": "earned_income",
+          "rate": 0.025
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "oh_youngstown": {
+      "name": "Youngstown",
+      "state_code": "OH",
+      "components": [
+        {
+          "label": "Youngstown municipal income tax",
+          "base": "earned_income",
+          "rate": 0.0275
+        }
+      ],
+      "limitations": ["School district income tax is not included; custom rates can combine it with the city rate."]
+    },
+    "or_metro_clackamas_washington": {
+      "name": "Metro district in Clackamas or Washington County",
+      "state_code": "OR",
+      "components": [
+        {
+          "label": "Metro Supportive Housing Services tax",
+          "base": "state_taxable_income",
+          "indexed": true,
+          "through_year": 2030,
+          "brackets": {
+            "single": [[128000, 0.0], [null, 0.01]],
+            "married_filing_separately": [[128000, 0.0], [null, 0.01]],
+            "married_filing_jointly": [[205000, 0.0], [null, 0.01]],
+            "head_of_household": [[205000, 0.0], [null, 0.01]]
+          }
+        }
+      ],
+      "limitations": ["Portland-area taxes use Oregon taxable income as modeled here; the PERS and federal pension subtractions are not modeled.", "Metro's housing tax ends after 2030 as enacted; the preschool tax rate rises in 2028."]
+    },
+    "or_multnomah_county_metro": {
+      "name": "Multnomah County inside Metro (e.g. Gresham)",
+      "state_code": "OR",
+      "components": [
+        {
+          "label": "Metro Supportive Housing Services tax",
+          "base": "state_taxable_income",
+          "indexed": true,
+          "through_year": 2030,
+          "brackets": {
+            "single": [[128000, 0.0], [null, 0.01]],
+            "married_filing_separately": [[128000, 0.0], [null, 0.01]],
+            "married_filing_jointly": [[205000, 0.0], [null, 0.01]],
+            "head_of_household": [[205000, 0.0], [null, 0.01]]
+          }
+        },
+        {
+          "label": "Multnomah County Preschool for All tax",
+          "base": "state_taxable_income",
+          "brackets": {
+            "single": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_separately": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_jointly": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            },
+            "head_of_household": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            }
+          }
+        }
+      ],
+      "limitations": ["Portland-area taxes use Oregon taxable income as modeled here; the PERS and federal pension subtractions are not modeled.", "Metro's housing tax ends after 2030 as enacted; the preschool tax rate rises in 2028."]
+    },
+    "or_multnomah_county_outside_metro": {
+      "name": "Multnomah County outside Metro",
+      "state_code": "OR",
+      "components": [
+        {
+          "label": "Multnomah County Preschool for All tax",
+          "base": "state_taxable_income",
+          "brackets": {
+            "single": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_separately": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_jointly": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            },
+            "head_of_household": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            }
+          }
+        }
+      ],
+      "limitations": ["Portland-area taxes use Oregon taxable income as modeled here; the PERS and federal pension subtractions are not modeled.", "Metro's housing tax ends after 2030 as enacted; the preschool tax rate rises in 2028."]
+    },
+    "or_portland": {
+      "name": "Portland",
+      "state_code": "OR",
+      "components": [
+        {
+          "label": "Metro Supportive Housing Services tax",
+          "base": "state_taxable_income",
+          "indexed": true,
+          "through_year": 2030,
+          "brackets": {
+            "single": [[128000, 0.0], [null, 0.01]],
+            "married_filing_separately": [[128000, 0.0], [null, 0.01]],
+            "married_filing_jointly": [[205000, 0.0], [null, 0.01]],
+            "head_of_household": [[205000, 0.0], [null, 0.01]]
+          }
+        },
+        {
+          "label": "Multnomah County Preschool for All tax",
+          "base": "state_taxable_income",
+          "brackets": {
+            "single": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_separately": {
+              "2026": [[125000, 0.0], [250000, 0.015], [null, 0.03]],
+              "2028": [[125000, 0.0], [250000, 0.023], [null, 0.038]]
+            },
+            "married_filing_jointly": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            },
+            "head_of_household": {
+              "2026": [[200000, 0.0], [400000, 0.015], [null, 0.03]],
+              "2028": [[200000, 0.0], [400000, 0.023], [null, 0.038]]
+            }
+          }
+        },
+        {
+          "label": "Portland Arts Tax",
+          "base": "state_taxable_income",
+          "indexed": true,
+          "amount": {
+            "single": 50,
+            "married_filing_separately": 50,
+            "married_filing_jointly": 100,
+            "head_of_household": 50
+          },
+          "minimum_base": {
+            "single": 20000,
+            "married_filing_separately": 20000,
+            "married_filing_jointly": 40000,
+            "head_of_household": 40000
+          }
+        }
+      ],
+      "limitations": ["Portland-area taxes use Oregon taxable income as modeled here; the PERS and federal pension subtractions are not modeled.", "Metro's housing tax ends after 2030 as enacted; the preschool tax rate rises in 2028."]
+    },
+    "pa_allentown": {
+      "name": "Allentown",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.01975
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_bethlehem": {
+      "name": "Bethlehem",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.01
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_chester": {
+      "name": "Chester",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.0375
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_erie": {
+      "name": "Erie",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.0165
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_harrisburg": {
+      "name": "Harrisburg",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.02
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_lancaster": {
+      "name": "Lancaster",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.016
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_philadelphia": {
+      "name": "Philadelphia",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Wage and Earnings Tax (resident)",
+          "base": "gross_wages",
+          "rate": {
+            "2026": 0.037375,
+            "2027": 0.037325,
+            "2028": 0.03725,
+            "2029": 0.0371,
+            "2030": 0.037
+          }
+        },
+        {
+          "label": "Net Profits Tax (resident)",
+          "base": "self_employment",
+          "rate": {
+            "2026": 0.03735,
+            "2027": 0.0373,
+            "2028": 0.0372,
+            "2029": 0.037
+          }
+        },
+        {
+          "label": "School Income Tax",
+          "base": "philadelphia_unearned_income",
+          "rate": {
+            "2026": 0.03735,
+            "2027": 0.0373,
+            "2028": 0.0372,
+            "2029": 0.037
+          }
+        }
+      ],
+      "limitations": ["Philadelphia's income-based 1.5% rate and tax on gains held six months or less are not modeled.", "Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_pittsburgh": {
+      "name": "Pittsburgh",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.03
+        }
+      ],
+      "limitations": ["Pittsburgh uses the Pittsburgh School District rate; the Baldwin-Whitehall area pays 1.5%.", "Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_reading": {
+      "name": "Reading",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.036
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_scranton": {
+      "name": "Scranton",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.034
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_wilkes_barre": {
+      "name": "Wilkes-Barre",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.03
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    },
+    "pa_york": {
+      "name": "York",
+      "state_code": "PA",
+      "components": [
+        {
+          "label": "Earned income tax (municipal and school district)",
+          "base": "earned_income",
+          "rate": 0.0125
+        }
+      ],
+      "limitations": ["Local tax on early retirement-plan withdrawals is not modeled."]
+    }
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Figures were verified on September 24, 2026 against official city, county and state publications unless marked otherwise. The engine module docstring defines each base (`state_taxable_income`, `earned_income`, and so on)."
+        }
+      ]
+    },
+    {
+      "section": "Scope",
+      "content": [
+        {
+          "note": "The catalog covers taxes a resident owes because of where they live. A plan default or residency period selects one jurisdiction, or custom rates on earned income, state taxable income or state income tax. Custom rates cover localities outside the catalog, for example other Pennsylvania and Ohio municipalities, Ohio school districts and Iowa school district surtaxes."
+        },
+        {
+          "note": "Not modeled, because they follow work location rather than residence: nonresident wage taxes (Philadelphia, Yonkers, Michigan cities, Ohio work cities), Kentucky occupational license taxes (Louisville, Lexington and others tax only work performed in the jurisdiction), Alabama occupational taxes, Colorado occupational privilege taxes, West Virginia city service fees, the Pennsylvania Local Services Tax, and New York's MCTMT on self-employment earnings. Also not modeled: the NYC Unincorporated Business Tax and its credit, Kansas local intangibles taxes (interest and dividends), and credits for tax paid to a work city."
+        },
+        {
+          "note": "The residence resolved for a year applies to the whole year, as the state layer does; a move year warns that part-year local tax is not modeled. Taxes on a state-income base inherit the state layer's simplifications, which each entry's limitation text names. Statutory sunsets that are routinely renewed (NYC rates through 2029, the Yonkers surcharge through 2027) are assumed to continue. Voter-approved sunsets are followed (Metro SHS after 2030; East Lansing after 2030)."
+        }
+      ]
+    },
+    {
+      "section": "New York",
+      "content": [
+        {
+          "jurisdiction": "New York City",
+          "rule": "3.078% / 3.762% / 3.819% / 3.876% on NY taxable income. Thresholds: single and MFS 12,000 / 25,000 / 50,000; MFJ 21,600 / 45,000 / 90,000; HoH 14,400 / 30,000 / 60,000. Not indexed. School tax credits: rate reduction 0.171% to the first threshold and 0.228% above it, only if NYC taxable income is $500,000 or less; fixed $63 ($125 MFJ) if income is $250,000 or less (federal AGI stands in for AGI less IRA distributions). Credits are applied as nonrefundable. The proposed millionaire rate increase was not enacted.",
+          "sources": "https://www.tax.ny.gov/pdf/2026/inc/it2105i_2026.pdf, https://www.tax.ny.gov/pdf/2025/inc/it201i_2025.pdf, Ch. 127 of 2026 (https://www.nysenate.gov/legislation/bills/2025/A11561), https://tax.ny.gov/pit/credits/new_york_city_credits.htm"
+        },
+        {
+          "jurisdiction": "Yonkers",
+          "rule": "Resident surcharge of 16.75% of net New York State tax.",
+          "sources": "IT-2105-I (2026); https://www.nysenate.gov/legislation/laws/TAX/1321; Ch. 159 of 2025"
+        },
+        {
+          "note": "The NY state standard deduction was corrected to $8,000 in the same change; see `_sources` in `tax_brackets_2026.json`."
+        }
+      ]
+    },
+    {
+      "section": "Pennsylvania",
+      "content": [
+        {
+          "jurisdiction": "Philadelphia",
+          "rule": "Wage and Earnings Tax on gross compensation before employee pre-tax deductions: 3.74% through June 30, 2026 and 3.735% after, so 3.7375% for calendar 2026 wages paid evenly. Net Profits Tax and School Income Tax use the July 1 rate: 3.735% (2026), 3.73% (2027), 3.72% (2028), 3.70% (2029 on), enacted by Bill 250195. School Income Tax base: dividends, investment income streams and non-employer annuities; bank interest, gains held over six months and retirement income are exempt.",
+          "sources": "https://www.phila.gov/documents/tax-rate-schedule/, https://phila.legistar.com/View.ashx?M=F&ID=14294954&GUID=B846C487-DCA7-410F-A728-DCE2EC76AF77, https://www.phila.gov/media/20230926111713/Updated-School-Income-Tax-SIT-regulations.pdf, https://www.phila.gov/media/20260112135700/2025-Earnings-Tax-return-instructions-general-information.pdf"
+        },
+        {
+          "jurisdiction": "Pittsburgh 3.0%, Scranton 3.4%, Reading 3.6%, Harrisburg 2.0%, Allentown 1.975%, Erie 1.65%, Lancaster 1.6%, Bethlehem 1.0%, Wilkes-Barre 3.0%, York 1.25%, Chester 3.75%",
+          "rule": "Combined municipal and school district resident earned income tax on PA compensation (401(k) deferrals included, section 125 excluded) plus net profits. Pittsburgh uses the Pittsburgh School District rate. No 2026 changes.",
+          "sources": "DCED official register (https://apps.dced.pa.gov/munstats-public/ReportInformation2.aspx?report=EitWithCollector_Dyn_Excel&type=O), Local Tax Enabling Act (https://www.legis.state.pa.us/WU01/LI/LI/US/HTM/1965/0/0511..HTM)"
+        }
+      ]
+    },
+    {
+      "section": "Maryland",
+      "content": [
+        {
+          "note": "Every county and Baltimore City taxes Maryland taxable income. 2026 rates: 3.20% in Allegany, Baltimore City, Baltimore, Calvert, Caroline, Howard, Montgomery, Prince George's, Queen Anne's, St. Mary's, Somerset and Wicomico; 3.30% in Dorchester and Kent; 3.06% Harford; 3.03% Carroll and Charles; 2.95% Washington; 2.74% Cecil; 2.65% Garrett; 2.40% Talbot; 2.25% Worcester. Anne Arundel is marginal (2.70% / 2.94% / 3.20% with breaks at 50,000 and 400,000; 75,000 and 480,000 joint). Frederick applies one tier rate to all taxable income (2.25% / 2.75% / 2.96% / 3.20%; breaks 25,000, 50,000, 150,000 single and 25,000, 100,000, 250,000 joint). Sources: https://services.marylandcomptroller.gov/taxes/en/maryland-income-tax-rates-and-brackets?id=kb_article_view&sysparm_article=KB0010014, https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/withholding-tax-facts-2026.pdf."
+        }
+      ]
+    },
+    {
+      "section": "Indiana",
+      "content": [
+        {
+          "note": "All 92 county rates from Departmental Notice #1, effective January 1, 2026 (https://www.in.gov/dor/files/dn01.pdf), applied to Indiana taxable income. The county of residence on January 1 governs. Re-check after October 1, 2026: a county adopting a new rate then pays three quarters of the old rate and one quarter of the new one for 2026. SEA 1 (2025) lets cities levy their own rates from 2028."
+        }
+      ]
+    },
+    {
+      "section": "Michigan",
+      "content": [
+        {
+          "note": "All 24 taxing cities (https://www.michigan.gov/taxes/citytax/what-cities-impose-an-income-tax). Resident rates: Detroit 2.4%, Highland Park 2.0%, Grand Rapids and Saginaw 1.5%, the others 1.0%. Exemption per person: $600, except Ionia $700; Battle Creek, Saginaw, Benton Harbor and Springfield $750; Hudson and Portland $1,000; Grayling $3,000. Taxpayer and spouse exemptions plus one more for each person 65 or older. The base follows the Detroit resident return (Form 5118): federal AGI less taxable Social Security, pensions, annuities and retirement-plan distributions. Detroit: https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/City-IIT/TY2026/5123_2026.pdf. Benton Harbor and Springfield figures come from Grand Rapids' table of other cities, because both city sites blocked retrieval."
+        }
+      ]
+    },
+    {
+      "section": "Oregon",
+      "content": [
+        {
+          "tax": "Metro Supportive Housing Services",
+          "rule": "1% of Oregon taxable income above $128,000 (single, MFS) or $205,000 (MFJ, HoH, QSS) in 2026; thresholds indexed (Ordinance 25-1531); tax ends after 2030.",
+          "sources": "https://www.portland.gov/revenue/personal-tax, https://www.oregonmetro.gov/what-metro-does/housing-and-homelessness/supportive-housing-services/pay-my-shs-taxes/shs-taxes-faq"
+        },
+        {
+          "tax": "Multnomah County Preschool for All",
+          "rule": "1.5% above $125,000 / $200,000 plus 1.5% above $250,000 / $400,000; not indexed. The 0.8-point increase to the first tier (2.3%) is scheduled for 2028 after the August 27, 2026 delay.",
+          "sources": "https://multco.us/info/multnomah-county-preschool-all-personal-income-tax, https://www.portland.gov/revenue/personal-tax"
+        },
+        {
+          "tax": "Portland Arts Tax",
+          "rule": "From 2026: $50 per return ($100 MFJ) when Oregon taxable income exceeds $20,000 ($40,000 MFJ, HoH, QSS); indexed from 2027.",
+          "sources": "https://www.portland.gov/code/6/10, https://www.portland.gov/revenue/arts-tax"
+        },
+        {
+          "note": "The Portland entry combines all three; other entries cover Multnomah County inside or outside Metro and the Metro district in Clackamas or Washington County."
+        }
+      ]
+    },
+    {
+      "section": "Ohio, Missouri and Delaware",
+      "content": [
+        {
+          "jurisdiction": "Ohio cities",
+          "rule": "Resident rate on Medicare wages plus net profits (ORC 718): Columbus, Cleveland, Toledo, Akron, Dayton, Canton, Parma, Lorain 2.5%; Youngstown 2.75%; Cincinnati 1.8%. Parma and Lorain credit tax paid to a work city only up to 2.0%.",
+          "sources": "https://www.ritaohio.com/TaxRatesTable, https://municipalities.columbus.gov/PrintAllMunis.aspx, https://www.columbus.gov/Government/City-Auditor/Income-Tax-Division/General-Income-Tax-Information, https://www.cincinnati-oh.gov/finance/frequently-asked-questions/"
+        },
+        {
+          "jurisdiction": "Kansas City, St. Louis",
+          "rule": "1% earnings tax on W-2 box 1 wages plus net profits; deferred-compensation and cafeteria contributions are excluded (RSMo 92.113). Renewed April 7, 2026.",
+          "sources": "https://revisor.mo.gov/main/OneSection.aspx?section=92.113, https://www.stlouis-mo.gov/government/departments/collector/earnings-tax/individual-earnings-tax-info.cfm"
+        },
+        {
+          "jurisdiction": "Wilmington",
+          "rule": "1.25% on residents' gross earned income and on net profits (22 Del. C. §§901–902). Whether 401(k) deferrals are included is not published; gross wages are used.",
+          "sources": "https://delcode.delaware.gov/title22/c009/index.html, https://wilmdebudget.org/wp-content/uploads/2026/03/fy27-tax-rates.pdf"
+        }
+      ]
+    },
+    {
+      "section": "Open items to re-check",
+      "content": [
+        "Indiana Departmental Notice #1 after October 1, 2026 (https://www.in.gov/dor/files/dn01.pdf).",
+        "Maryland's 2026 joint standard deduction (state layer uses 2 × $3,400; https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/withholding-tax-facts-2026.pdf).",
+        "Multnomah County's 2028 rate increase, which the board may delay again (https://multco.us/info/multnomah-county-preschool-all-personal-income-tax).",
+        "Toledo's November 3, 2026 vote on an additional 0.25% for 2027–2030.",
+        "Metro's published 2027 thresholds ($132,000 / $211,000) against the engine's indexed projection (https://www.oregonmetro.gov/what-metro-does/housing-and-homelessness/supportive-housing-services/pay-my-shs-taxes/shs-taxes-faq)."
+      ]
+    }
+  ]
+}

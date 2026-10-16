@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "base_tax_year": 2026,
+  "verified": "2026-10-10",
+  "_note": "Enacted, dated and unconditional changes to the 2026 state tables in tax_brackets_2026.json. For tax year Y each state's changes with year <= Y apply in ascending order; a change replaces only the fields it sets (nested objects merge key by key, lists and numbers are replaced). Bracket bounds, standard deductions and capital-gain bands in a change are in dollar_year dollars and grow with the projection's inflation after that year, as the 2026 tables grow after 2026. Sources: `_sources`.",
+  "states": {
+    "NE": {
+      "indexing": "Brackets indexed annually by CPI-U (77-2715.03(3)); the engine indexes the 2026 thresholds.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2026,
+          "source": "Neb. Rev. Stat. 77-2715.03(1)-(2) (LB 754, 2023)",
+          "summary": "Top rate 4.55% to 3.99%; lower rates and indexed thresholds unchanged.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 4030,
+                "rate": 0.0246
+              },
+              {
+                "min": 4030,
+                "max": 24120,
+                "rate": 0.0351
+              },
+              {
+                "min": 24120,
+                "max": 999999999,
+                "rate": 0.0399
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 7510,
+                    "rate": 0.0246
+                  },
+                  {
+                    "min": 7510,
+                    "max": 38590,
+                    "rate": 0.0351
+                  },
+                  {
+                    "min": 38590,
+                    "max": 999999999,
+                    "rate": 0.0399
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MS": {
+      "indexing": "The $10,000 zero-rate band is statutory and unindexed; the engine keeps its existing convention of growing it with inflation after 2026.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2026,
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)4.-7. as amended by 2025 Reg. Sess. HB 1",
+          "summary": "Rate above $10,000 3.75%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 10000,
+                "rate": 0.0
+              },
+              {
+                "min": 10000,
+                "max": 999999999,
+                "rate": 0.0375
+              }
+            ]
+          }
+        },
+        {
+          "year": 2028,
+          "dollar_year": 2026,
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)4.-7. as amended by 2025 Reg. Sess. HB 1",
+          "summary": "Rate above $10,000 3.5%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 10000,
+                "rate": 0.0
+              },
+              {
+                "min": 10000,
+                "max": 999999999,
+                "rate": 0.035
+              }
+            ]
+          }
+        },
+        {
+          "year": 2029,
+          "dollar_year": 2026,
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)4.-7. as amended by 2025 Reg. Sess. HB 1",
+          "summary": "Rate above $10,000 3.25%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 10000,
+                "rate": 0.0
+              },
+              {
+                "min": 10000,
+                "max": 999999999,
+                "rate": 0.0325
+              }
+            ]
+          }
+        },
+        {
+          "year": 2030,
+          "dollar_year": 2026,
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)4.-7. as amended by 2025 Reg. Sess. HB 1",
+          "summary": "Rate above $10,000 3%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 10000,
+                "rate": 0.0
+              },
+              {
+                "min": 10000,
+                "max": 999999999,
+                "rate": 0.03
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "MT": {
+      "indexing": "From 2028 the bands are multiplied by CPI-U (June of the prior year / June 2026) under 15-30-2103(3); the engine grows the 2027 amounts with inflation after 2027.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2027,
+          "source": "MCA 15-30-2103(1)-(3) as amended by 2025 HB 337 (version effective January 1, 2027)",
+          "summary": "Break at $65,000 single/MFS, $97,500 head of household, $130,000 joint; top rate 5.65% to 5.4%; net long-term capital gain bands move with it (3.0%/4.1%).",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 65000,
+                "rate": 0.047
+              },
+              {
+                "min": 65000,
+                "max": 999999999,
+                "rate": 0.054
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 97500,
+                    "rate": 0.047
+                  },
+                  {
+                    "min": 97500,
+                    "max": 999999999,
+                    "rate": 0.054
+                  }
+                ]
+              }
+            },
+            "net_long_term_capital_gains": {
+              "band": {
+                "single": 65000,
+                "married_filing_separately": 65000,
+                "head_of_household": 97500,
+                "married_filing_jointly": 130000
+              }
+            }
+          }
+        }
+      ]
+    },
+    "NY": {
+      "indexing": "Statutory thresholds are not indexed; the engine keeps its existing convention of growing the 2026 thresholds with inflation.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2026,
+          "source": "N.Y. Tax Law 601(a)(1)(B)(viii), (b)(1)(B)(viii), (c)(1)(B)(viii) (taxable years 2027 through 2032)",
+          "summary": "First five rates cut 0.1 point again: 3.8%, 4.3%, 5.05%, 5.3%, 5.8%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 8500,
+                "rate": 0.038
+              },
+              {
+                "min": 8500,
+                "max": 11700,
+                "rate": 0.043
+              },
+              {
+                "min": 11700,
+                "max": 13900,
+                "rate": 0.0505
+              },
+              {
+                "min": 13900,
+                "max": 80650,
+                "rate": 0.053
+              },
+              {
+                "min": 80650,
+                "max": 215400,
+                "rate": 0.058
+              },
+              {
+                "min": 215400,
+                "max": 1077550,
+                "rate": 0.0685
+              },
+              {
+                "min": 1077550,
+                "max": 5000000,
+                "rate": 0.0965
+              },
+              {
+                "min": 5000000,
+                "max": 25000000,
+                "rate": 0.103
+              },
+              {
+                "min": 25000000,
+                "max": 999999999,
+                "rate": 0.109
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 12800,
+                    "rate": 0.038
+                  },
+                  {
+                    "min": 12800,
+                    "max": 17650,
+                    "rate": 0.043
+                  },
+                  {
+                    "min": 17650,
+                    "max": 20900,
+                    "rate": 0.0505
+                  },
+                  {
+                    "min": 20900,
+                    "max": 107650,
+                    "rate": 0.053
+                  },
+                  {
+                    "min": 107650,
+                    "max": 269300,
+                    "rate": 0.058
+                  },
+                  {
+                    "min": 269300,
+                    "max": 1616450,
+                    "rate": 0.0685
+                  },
+                  {
+                    "min": 1616450,
+                    "max": 5000000,
+                    "rate": 0.0965
+                  },
+                  {
+                    "min": 5000000,
+                    "max": 25000000,
+                    "rate": 0.103
+                  },
+                  {
+                    "min": 25000000,
+                    "max": 999999999,
+                    "rate": 0.109
+                  }
+                ]
+              },
+              "married_filing_jointly": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 17150,
+                    "rate": 0.038
+                  },
+                  {
+                    "min": 17150,
+                    "max": 23600,
+                    "rate": 0.043
+                  },
+                  {
+                    "min": 23600,
+                    "max": 27900,
+                    "rate": 0.0505
+                  },
+                  {
+                    "min": 27900,
+                    "max": 161550,
+                    "rate": 0.053
+                  },
+                  {
+                    "min": 161550,
+                    "max": 323200,
+                    "rate": 0.058
+                  },
+                  {
+                    "min": 323200,
+                    "max": 2155350,
+                    "rate": 0.0685
+                  },
+                  {
+                    "min": 2155350,
+                    "max": 5000000,
+                    "rate": 0.0965
+                  },
+                  {
+                    "min": 5000000,
+                    "max": 25000000,
+                    "rate": 0.103
+                  },
+                  {
+                    "min": 25000000,
+                    "max": 999999999,
+                    "rate": 0.109
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "year": 2033,
+          "dollar_year": 2026,
+          "source": "N.Y. Tax Law 601(a)(1)(B)(ix), (b)(1)(B)(ix), (c)(1)(B)(ix) (taxable years after 2032)",
+          "summary": "The 9.65%, 10.3% and 10.9% high-income rates expire; 6.85% to $1,077,550 single ($1,616,450 head of household, $2,155,350 joint), then 8.82%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 8500,
+                "rate": 0.038
+              },
+              {
+                "min": 8500,
+                "max": 11700,
+                "rate": 0.043
+              },
+              {
+                "min": 11700,
+                "max": 13900,
+                "rate": 0.0505
+              },
+              {
+                "min": 13900,
+                "max": 80650,
+                "rate": 0.053
+              },
+              {
+                "min": 80650,
+                "max": 215400,
+                "rate": 0.058
+              },
+              {
+                "min": 215400,
+                "max": 1077550,
+                "rate": 0.0685
+              },
+              {
+                "min": 1077550,
+                "max": 999999999,
+                "rate": 0.0882
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 12800,
+                    "rate": 0.038
+                  },
+                  {
+                    "min": 12800,
+                    "max": 17650,
+                    "rate": 0.043
+                  },
+                  {
+                    "min": 17650,
+                    "max": 20900,
+                    "rate": 0.0505
+                  },
+                  {
+                    "min": 20900,
+                    "max": 107650,
+                    "rate": 0.053
+                  },
+                  {
+                    "min": 107650,
+                    "max": 269300,
+                    "rate": 0.058
+                  },
+                  {
+                    "min": 269300,
+                    "max": 1616450,
+                    "rate": 0.0685
+                  },
+                  {
+                    "min": 1616450,
+                    "max": 999999999,
+                    "rate": 0.0882
+                  }
+                ]
+              },
+              "married_filing_jointly": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 17150,
+                    "rate": 0.038
+                  },
+                  {
+                    "min": 17150,
+                    "max": 23600,
+                    "rate": 0.043
+                  },
+                  {
+                    "min": 23600,
+                    "max": 27900,
+                    "rate": 0.0505
+                  },
+                  {
+                    "min": 27900,
+                    "max": 161550,
+                    "rate": 0.053
+                  },
+                  {
+                    "min": 161550,
+                    "max": 323200,
+                    "rate": 0.058
+                  },
+                  {
+                    "min": 323200,
+                    "max": 2155350,
+                    "rate": 0.0685
+                  },
+                  {
+                    "min": 2155350,
+                    "max": 999999999,
+                    "rate": 0.0882
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HI": {
+      "indexing": "Hawaii does not index; each Act 46 amount is grown with inflation only after its own year, the engine's convention for fixed-dollar amounts.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2027,
+          "source": "HRS 235-51 as amended by Act 46, SLH 2024; DOTAX Announcement 2024-03 pp. 4-5",
+          "summary": "Wider brackets (single 1.4% to $14,400 ... 11% over $400,000; joint doubled; head of household 11% over $600,000).",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 14400,
+                "rate": 0.014
+              },
+              {
+                "min": 14400,
+                "max": 19200,
+                "rate": 0.032
+              },
+              {
+                "min": 19200,
+                "max": 24000,
+                "rate": 0.055
+              },
+              {
+                "min": 24000,
+                "max": 36000,
+                "rate": 0.064
+              },
+              {
+                "min": 36000,
+                "max": 48000,
+                "rate": 0.068
+              },
+              {
+                "min": 48000,
+                "max": 125000,
+                "rate": 0.072
+              },
+              {
+                "min": 125000,
+                "max": 175000,
+                "rate": 0.076
+              },
+              {
+                "min": 175000,
+                "max": 225000,
+                "rate": 0.079
+              },
+              {
+                "min": 225000,
+                "max": 275000,
+                "rate": 0.0825
+              },
+              {
+                "min": 275000,
+                "max": 325000,
+                "rate": 0.09
+              },
+              {
+                "min": 325000,
+                "max": 400000,
+                "rate": 0.1
+              },
+              {
+                "min": 400000,
+                "max": 999999999,
+                "rate": 0.11
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 21600,
+                    "rate": 0.014
+                  },
+                  {
+                    "min": 21600,
+                    "max": 28800,
+                    "rate": 0.032
+                  },
+                  {
+                    "min": 28800,
+                    "max": 36000,
+                    "rate": 0.055
+                  },
+                  {
+                    "min": 36000,
+                    "max": 54000,
+                    "rate": 0.064
+                  },
+                  {
+                    "min": 54000,
+                    "max": 72000,
+                    "rate": 0.068
+                  },
+                  {
+                    "min": 72000,
+                    "max": 187500,
+                    "rate": 0.072
+                  },
+                  {
+                    "min": 187500,
+                    "max": 262500,
+                    "rate": 0.076
+                  },
+                  {
+                    "min": 262500,
+                    "max": 337500,
+                    "rate": 0.079
+                  },
+                  {
+                    "min": 337500,
+                    "max": 412500,
+                    "rate": 0.0825
+                  },
+                  {
+                    "min": 412500,
+                    "max": 487500,
+                    "rate": 0.09
+                  },
+                  {
+                    "min": 487500,
+                    "max": 600000,
+                    "rate": 0.1
+                  },
+                  {
+                    "min": 600000,
+                    "max": 999999999,
+                    "rate": 0.11
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "year": 2028,
+          "dollar_year": 2028,
+          "source": "HRS 235-2.4 as amended by Act 46, SLH 2024; DOTAX Announcement 2024-03 p. 5",
+          "summary": "Standard deduction $9,000 single/MFS, $18,000 joint, $13,500 head of household.",
+          "set": {
+            "standard_deduction": 9000,
+            "filing_status_schedules": {
+              "head_of_household": {
+                "standard_deduction": 13500
+              }
+            }
+          }
+        },
+        {
+          "year": 2029,
+          "dollar_year": 2029,
+          "source": "HRS 235-51 as amended by Act 46, SLH 2024; DOTAX Announcement 2024-03 pp. 6-7",
+          "summary": "Wider brackets (single 1.4% to $19,200 ... 11% over $475,000; joint doubled; head of household 11% over $712,500).",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 19200,
+                "rate": 0.014
+              },
+              {
+                "min": 19200,
+                "max": 24000,
+                "rate": 0.032
+              },
+              {
+                "min": 24000,
+                "max": 36000,
+                "rate": 0.055
+              },
+              {
+                "min": 36000,
+                "max": 48000,
+                "rate": 0.064
+              },
+              {
+                "min": 48000,
+                "max": 125000,
+                "rate": 0.068
+              },
+              {
+                "min": 125000,
+                "max": 175000,
+                "rate": 0.072
+              },
+              {
+                "min": 175000,
+                "max": 225000,
+                "rate": 0.076
+              },
+              {
+                "min": 225000,
+                "max": 275000,
+                "rate": 0.079
+              },
+              {
+                "min": 275000,
+                "max": 325000,
+                "rate": 0.0825
+              },
+              {
+                "min": 325000,
+                "max": 400000,
+                "rate": 0.09
+              },
+              {
+                "min": 400000,
+                "max": 475000,
+                "rate": 0.1
+              },
+              {
+                "min": 475000,
+                "max": 999999999,
+                "rate": 0.11
+              }
+            ],
+            "filing_status_schedules": {
+              "head_of_household": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 28800,
+                    "rate": 0.014
+                  },
+                  {
+                    "min": 28800,
+                    "max": 36000,
+                    "rate": 0.032
+                  },
+                  {
+                    "min": 36000,
+                    "max": 54000,
+                    "rate": 0.055
+                  },
+                  {
+                    "min": 54000,
+                    "max": 72000,
+                    "rate": 0.064
+                  },
+                  {
+                    "min": 72000,
+                    "max": 187500,
+                    "rate": 0.068
+                  },
+                  {
+                    "min": 187500,
+                    "max": 262500,
+                    "rate": 0.072
+                  },
+                  {
+                    "min": 262500,
+                    "max": 337500,
+                    "rate": 0.076
+                  },
+                  {
+                    "min": 337500,
+                    "max": 412500,
+                    "rate": 0.079
+                  },
+                  {
+                    "min": 412500,
+                    "max": 487500,
+                    "rate": 0.0825
+                  },
+                  {
+                    "min": 487500,
+                    "max": 600000,
+                    "rate": 0.09
+                  },
+                  {
+                    "min": 600000,
+                    "max": 712500,
+                    "rate": 0.1
+                  },
+                  {
+                    "min": 712500,
+                    "max": 999999999,
+                    "rate": 0.11
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "year": 2030,
+          "dollar_year": 2030,
+          "source": "HRS 235-2.4 as amended by Act 46, SLH 2024; DOTAX Announcement 2024-03 p. 7",
+          "summary": "Standard deduction $10,000 single/MFS, $20,000 joint, $15,000 head of household.",
+          "set": {
+            "standard_deduction": 10000,
+            "filing_status_schedules": {
+              "head_of_household": {
+                "standard_deduction": 15000
+              }
+            }
+          }
+        },
+        {
+          "year": 2031,
+          "dollar_year": 2031,
+          "source": "HRS 235-2.4 as amended by Act 46, SLH 2024; DOTAX Announcement 2024-03 p. 7",
+          "summary": "Standard deduction $12,000 single/MFS, $24,000 joint, $18,000 head of household.",
+          "set": {
+            "standard_deduction": 12000,
+            "filing_status_schedules": {
+              "head_of_household": {
+                "standard_deduction": 18000
+              }
+            }
+          }
+        }
+      ]
+    },
+    "VA": {
+      "indexing": "Virginia does not index; each amount is grown with inflation only after its own year.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2027,
+          "source": "Va. Code 58.1-322.03(1)(b)(vi)",
+          "summary": "Standard deduction $9,200 single, $18,400 married.",
+          "set": {
+            "standard_deduction": 9200
+          }
+        },
+        {
+          "year": 2028,
+          "dollar_year": 2028,
+          "source": "Va. Code 58.1-322.03(1)(b)(vii)",
+          "summary": "Standard deduction $9,300 single, $18,600 married (2028-2029).",
+          "set": {
+            "standard_deduction": 9300
+          }
+        },
+        {
+          "year": 2030,
+          "dollar_year": 2030,
+          "source": "Va. Code 58.1-322.03(1)(b)(i)",
+          "summary": "Standard deduction reverts to $3,000 single, $6,000 married.",
+          "set": {
+            "standard_deduction": 3000
+          }
+        }
+      ]
+    },
+    "IN": {
+      "indexing": "Flat rate; no thresholds.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2026,
+          "source": "IC 6-3-2-1(b) as amended by HEA 1001-2023; Indiana DOR rates page (2.95% for 2026, 2.90% for 2027)",
+          "summary": "Rate 2.95% to 2.9%.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 999999999,
+                "rate": 0.029
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "GA": {
+      "indexing": "The retirement exclusion caps are statutory and unindexed.",
+      "changes": [
+        {
+          "year": 2027,
+          "dollar_year": 2026,
+          "source": "O.C.G.A. 48-7-27(a)(5)(A)(xiv) as added by 2026 HB 463, sec. 2-3",
+          "summary": "Retirement income exclusion at 65 or older rises from $65,000 to $70,000 per person ($35,000 at 62-64 unchanged).",
+          "set": {
+            "retirement_income_exclusion": {
+              "components": [
+                {
+                  "sources": [
+                    "pension",
+                    "annuity",
+                    "ira",
+                    "employer_plan"
+                  ],
+                  "minimum_age": 62,
+                  "age_caps": [
+                    [
+                      62,
+                      35000
+                    ],
+                    [
+                      65,
+                      70000
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "WA": {
+      "indexing": "The $1,000,000 deduction is inflation-adjusted from returns filed in 2030; the engine grows it with inflation after 2028.",
+      "changes": [
+        {
+          "year": 2028,
+          "dollar_year": 2028,
+          "source": "ESSB 6346, chapter 238, Laws of 2026 (final bill report, synopsis as enacted)",
+          "summary": "New 9.9% tax on Washington taxable income above a $1,000,000 standard deduction per individual or married couple; long-term capital gains other than those the capital gains excise taxes are excluded, and that excise is credited.",
+          "set": {
+            "brackets": [
+              {
+                "min": 0,
+                "max": 1000000,
+                "rate": 0.0
+              },
+              {
+                "min": 1000000,
+                "max": 999999999,
+                "rate": 0.099
+              }
+            ],
+            "joint_bracket_multiplier": 1.0,
+            "filing_status_schedules": {
+              "married_filing_separately": {
+                "brackets": [
+                  {
+                    "min": 0,
+                    "max": 500000,
+                    "rate": 0.0
+                  },
+                  {
+                    "min": 500000,
+                    "max": 999999999,
+                    "rate": 0.099
+                  }
+                ],
+                "standard_deduction": 0
+              }
+            },
+            "excludes_real_estate_capital_gains": true,
+            "capital_gains_excise_credit": true
+          }
+        }
+      ]
+    }
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Verified October 10, 2026 against statutes, session laws and revenue-agency schedules."
+        }
+      ]
+    },
+    {
+      "section": "Scope and rules",
+      "content": [
+        "Included: changes in signed law that take effect on a stated date for tax years 2027 and later without any further determination: rate and bracket changes, phase-downs written as a series of years, statutory deductions and exclusions, sunsets of temporary rates, and a new tax.",
+        "Excluded: reductions that wait on a revenue trigger or another future determination. They are listed under \"Not modeled\" with the statute and the trigger. A trigger is modeled only once it is certified for a specific year.",
+        "For tax year Y, every change of the state with `year <= Y` applies in ascending order and replaces only the fields it sets.",
+        "Indexing: the state layer grows built-in amounts with the projection's calendar inflation factor (1.0 in 2026). Amounts a change keeps from 2026 (`dollar_year` 2026) keep growing from 2026. Amounts a statute sets in dollars for a later year (`dollar_year` = that year) equal the statutory amount in that year and grow afterwards. Nebraska and Montana index by statute; Mississippi, New York, Hawaii, Virginia and Washington's deduction before 2029 are not indexed by statute, and the engine keeps its existing convention of growing them.",
+        "User scheduled `state_brackets` and custom state brackets replace built-in law in the years they cover; with custom brackets the 2026 entry (no enacted changes) supplies the remaining built-in figures.",
+        "Opt-in statutory deduction rules (`state_deduction_rules_2026.json`) cover AL, MO, OR, CT and WI. None of those states has an enacted dated change for 2027 and later, so the rules stay 2026-based without conflict.",
+        "Part-year residency selects the year's state; that state's tables for the year include its enacted changes."
+      ]
+    },
+    {
+      "section": "Modeled changes",
+      "content": [
+        {
+          "state": "NE",
+          "year": "2027",
+          "change": "Top rate 4.55% to 3.99% (rates three and four), all filing statuses",
+          "source": "Neb. Rev. Stat. 77-2715.03(1)-(2) as amended by LB 754 (2023): \"3.99% for taxable years beginning or deemed to begin on or after January 1, 2027\"; no condition. https://www.nebraskalegislature.gov/laws/statutes.php?statute=77-2715.03",
+          "indexing": "Brackets CPI-indexed under 77-2715.03(3); 2026 thresholds keep growing"
+        },
+        {
+          "state": "MS",
+          "year": "2027",
+          "change": "Rate on taxable income over $10,000: 3.75%",
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)4. as amended by HB 1, 2025 Reg. Sess. (Build Up Mississippi Act). https://billstatus.ls.state.ms.us/documents/2025/html/HB/0001-0099/HB0001SG.htm",
+          "indexing": "$10,000 band statutory, unindexed"
+        },
+        {
+          "state": "MS",
+          "year": "2028",
+          "change": "3.5%",
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)5. as amended by HB 1, 2025 Reg. Sess. https://billstatus.ls.state.ms.us/documents/2025/html/HB/0001-0099/HB0001SG.htm",
+          "indexing": "Same"
+        },
+        {
+          "state": "MS",
+          "year": "2029",
+          "change": "3.25%",
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)6. as amended by HB 1, 2025 Reg. Sess. https://billstatus.ls.state.ms.us/documents/2025/html/HB/0001-0099/HB0001SG.htm",
+          "indexing": "Same"
+        },
+        {
+          "state": "MS",
+          "year": "2030",
+          "change": "3% \"for calendar year 2030 and all calendar years thereafter, except as otherwise provided in Section 2\"",
+          "source": "Miss. Code Ann. 27-7-5(1)(b)(ii)7. as amended by HB 1, 2025 Reg. Sess. https://billstatus.ls.state.ms.us/documents/2025/html/HB/0001-0099/HB0001SG.htm",
+          "indexing": "Same"
+        },
+        {
+          "state": "MT",
+          "year": "2027",
+          "change": "4.7% to $65,000 single/MFS, $97,500 head of household, $130,000 joint; 5.4% above (from 5.65%). Net long-term capital gain bands $65,000 / $97,500 / $130,000 at 3.0% / 4.1%",
+          "source": "MCA 15-30-2103(1)-(2), version effective January 1, 2027 (2025 HB 337). https://mca.legmt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0030/0150-0300-0210-0030.html",
+          "indexing": "15-30-2103(3): bands multiplied by the modified inflation factor (CPI June 2026 base), so 2027 amounts are exact and grow from 2028"
+        },
+        {
+          "state": "NY",
+          "year": "2027",
+          "change": "First five rates 3.8% / 4.3% / 5.05% / 5.3% / 5.8% (from 3.9% / 4.4% / 5.15% / 5.4% / 5.9%); thresholds and upper rates unchanged, for single/MFS, head of household and joint schedules",
+          "source": "N.Y. Tax Law 601(a)(1)(B)(viii), (b)(1)(B)(viii), (c)(1)(B)(viii), \"taxable years beginning after 2026 and before 2033\". https://www.nysenate.gov/legislation/laws/TAX/601",
+          "indexing": "Not indexed by statute"
+        },
+        {
+          "state": "NY",
+          "year": "2033",
+          "change": "The 9.65% / 10.3% / 10.9% high-income rates end: 6.85% to $1,077,550 single ($1,616,450 head of household, $2,155,350 joint), 8.82% above",
+          "source": "N.Y. Tax Law 601(a)-(c)(1)(B)(ix), \"taxable years beginning after 2032\" (single: $70,983 plus 8.82% of excess over $1,077,550). https://www.nysenate.gov/legislation/laws/TAX/601",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "HI",
+          "year": "2027",
+          "change": "Wider brackets: single/MFS 1.4% to $14,400 ... 10% to $400,000, 11% above; joint doubled; head of household 1.4% to $21,600 ... 11% over $600,000",
+          "source": "HRS 235-51 as amended by Act 46, SLH 2024 (HB 2404 CD1; no revenue condition in the Act). DOTAX Announcement 2024-03 pp. 4-5. https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "indexing": "Not indexed; grows only after 2027"
+        },
+        {
+          "state": "HI",
+          "year": "2028",
+          "change": "Standard deduction $9,000 single/MFS, $18,000 joint, $13,500 head of household",
+          "source": "HRS 235-2.4 as amended by Act 46; Announcement 2024-03 p. 5. https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "indexing": "Not indexed; grows only after 2028"
+        },
+        {
+          "state": "HI",
+          "year": "2029",
+          "change": "Brackets for 2029 and after: single/MFS 1.4% to $19,200 ... 10% to $475,000, 11% above; joint doubled; head of household 11% over $712,500",
+          "source": "HRS 235-51 as amended by Act 46; Announcement 2024-03 pp. 6-7. https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "HI",
+          "year": "2030",
+          "change": "Standard deduction $10,000 / $20,000 / $15,000",
+          "source": "HRS 235-2.4; Announcement 2024-03 p. 7. https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "HI",
+          "year": "2031",
+          "change": "Standard deduction $12,000 / $24,000 / $18,000 for 2031 and after",
+          "source": "HRS 235-2.4; Announcement 2024-03 p. 7. https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "VA",
+          "year": "2027",
+          "change": "Standard deduction $9,200 single, $18,400 married (half for separate returns)",
+          "source": "Va. Code 58.1-322.03(1)(b)(vi) (2026 Acts c. 7 and Sp. Sess. I c. 1). https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "VA",
+          "year": "2028",
+          "change": "$9,300 / $18,600 for 2028 and 2029",
+          "source": "Va. Code 58.1-322.03(1)(b)(vii). https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "VA",
+          "year": "2030",
+          "change": "Reverts to $3,000 / $6,000 (\"on and after January 1, 2030\")",
+          "source": "Va. Code 58.1-322.03(1)(b)(i). https://law.lis.virginia.gov/vacode/title58.1/chapter3/section58.1-322.03/",
+          "indexing": "Not indexed"
+        },
+        {
+          "state": "IN",
+          "year": "2027",
+          "change": "Rate 2.95% to 2.9%",
+          "source": "IC 6-3-2-1(b) as amended by HEA 1001-2023; Indiana DOR: \"The Indiana individual adjusted gross income tax rate for 2026 is 2.95% and will adjust in 2027 to 2.90%.\" https://www.in.gov/dor/resources/tax-rates-and-reports/rates-fees-and-penalties/",
+          "indexing": "Flat rate"
+        },
+        {
+          "state": "GA",
+          "year": "2027",
+          "change": "Retirement income exclusion at 65 or older $70,000 per person (from $65,000); $35,000 at 62-64 unchanged",
+          "source": "O.C.G.A. 48-7-27(a)(5)(A)(xiv) as added by HB 463 (2026), sec. 2-3, \"taxable years beginning on or after January 1, 2027\"; unconditional. https://gov.georgia.gov/document/2026-signed-legislation/hb-463/download",
+          "indexing": "Statutory, unindexed"
+        },
+        {
+          "state": "WA",
+          "year": "2028",
+          "change": "New 9.9% tax on Washington taxable income: federal AGI with long-term capital gains replaced by those the capital gains excise taxes (real property gains leave the base), less a $1,000,000 standard deduction per individual or married couple (modeled as $500,000 per separate return); credit for capital gains excise paid on gains it taxes",
+          "source": "ESSB 6346, chapter 238, Laws of 2026 (effective June 11, 2026; tax from January 1, 2028). Final bill report, synopsis as enacted: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/Senate/6346-S.E%20SBR%20FBR%2026.pdf",
+          "indexing": "Deduction inflation-adjusted from returns filed in 2030 (every second year); engine grows it annually after 2028"
+        },
+        {
+          "note": "Washington modeling limits: the $100,000 in-state charitable deduction, pass-through entity election, wagering and capital construction fund items, nonresident apportionment and the credit for income tax paid to other states are not modeled. The excise credit is limited to the income tax on the gains, taken as the top layer of taxable income. The act is void if a court of final jurisdiction invalidates the tax; litigation status is not tracked here."
+        }
+      ]
+    },
+    {
+      "section": "Not modeled: contingent or undetermined",
+      "content": [
+        {
+          "state": "NC",
+          "statute": "G.S. 105-153.7(a1) (S.L. 2023-134)",
+          "condition": "Rate falls 0.5 point per year (3.49% for 2027, 2.99% for 2028, floor 2.49%) only when General Fund revenue for the prior fiscal year exceeds the trigger ($33.042B for FY 2025-26 → tax year 2027), as reported in the State Controller's final accounting. The May 2026 consensus forecast projects the 2027 and 2028 triggers will be met; no certified determination was found. https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.7.html"
+        },
+        {
+          "state": "GA",
+          "statute": "O.C.G.A. 48-7-20(a.1), 48-7-26(b), 48-7-27(a)(1)-(1.1) (HB 463, 2026) (https://www.legis.ga.gov/api/legislation/document/20252026/236780)",
+          "condition": "From 2027: rate −0.125 point a year to 3.99%; standard deduction +$375 single / +$750 joint a year to $18,000 / $36,000; dependent exemption +$125 to $6,000. Each step is delayed a year whenever the Office of Planning and Budget finds by December 1 that the revenue-estimate, collections or reserve tests fail."
+        },
+        {
+          "state": "MS",
+          "statute": "HB 1 (2025) sec. 2 (https://billstatus.ls.state.ms.us/documents/2025/html/HB/0001-0099/HB0001SG.htm)",
+          "condition": "From 2031, further 0.2-0.3 point cuts when the reserve fund is full and adjusted revenue exceeds appropriations by set margins."
+        },
+        {
+          "state": "SC",
+          "statute": "S.C. Code 12-6-510 as amended by H.4216 (2026)",
+          "condition": "Top rate falls further only if the Board of Economic Advisors projects revenue growth of at least 5% (determined by February 15). https://dor.sc.gov/news/information-about-h-4216"
+        },
+        {
+          "state": "OK",
+          "statute": "68 O.S. 2355(E) (HB 2764, 2025) (https://www.oklegislature.gov/cf_pdf/2025-26%20ENR/hB/HB2764%20ENR.PDF)",
+          "condition": "0.25-point cuts when the State Board of Equalization certifies revenue growth."
+        },
+        {
+          "state": "KY",
+          "statute": "KRS 141.020 (https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56346)",
+          "condition": "Each further cut needs the statutory fiscal tests and an act of the General Assembly; the 2026 session enacted none (2026 HB 13, graduated rates, died in committee)."
+        },
+        {
+          "state": "MO",
+          "statute": "RSMo 143.011 (https://revisor.mo.gov/main/OneSection.aspx?section=143.011)",
+          "condition": "0.1-point cuts when net general revenue beats the prior three years by $200M and the inflation test."
+        },
+        {
+          "state": "MI",
+          "statute": "MCL 206.51 (https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-206-51)",
+          "condition": "Annual rate reduction only when general fund growth exceeds inflation; determined each year."
+        },
+        {
+          "state": "CO",
+          "statute": "C.R.S. 39-22-627 (TABOR); Legislative Council Staff, history of TABOR refund mechanisms (https://content.leg.colorado.gov/sites/default/files/r21-97_history_of_tabor_refund_mechanisms-accessible.pdf)",
+          "condition": "Temporary rate reductions depend on each year's TABOR surplus."
+        },
+        {
+          "note": "Checked with no enacted dated change for 2027 and later (2026 tables apply, with existing indexing): AZ, AR, CT, DE, ID (Idaho Code 63-3024, last amended 2025 ch. 13), IA, KS, LA, MA, OH, UT, WV (W. Va. Code 11-21-4j applies to taxable years on and after January 1, 2026), and the remaining states in the 2026 tables. Georgia's 2026-2028 overtime and cash-tip exclusions are not modeled because the engine has no tip or overtime income input."
+        }
+      ]
+    },
+    {
+      "section": "Federal dated provisions (checked, no change needed)",
+      "content": [
+        {
+          "provision": "SALT cap (IRC 164(b)(6)-(7), Pub. L. 119-21): $40,000 / $500,000 MAGI threshold for 2025, $40,400 / $505,000 for 2026, 101% of the prior year for 2027-2029, $10,000 ($5,000 MFS) from 2030; 30% phasedown, never below $10,000 (https://www.law.cornell.edu/uscode/text/26/164)",
+          "engine": "`_salt_cap_for_year`; `state_deduction_rules_2026.json` `federal_salt_cap`",
+          "status": "Already correct, including the 2030 reversion; regression in `tests/test_state_enacted_changes.py`"
+        },
+        {
+          "provision": "Senior deduction (IRC 151(d)(5)): $6,000 per individual 65+, 2025-2028 (https://www.law.cornell.edu/uscode/text/26/151)",
+          "engine": "`senior_deduction` data `first_year`/`last_year`",
+          "status": "Already correct"
+        },
+        {
+          "provision": "Charitable rules from 2026 (IRC 170(b)(1)(I), 170(p)): 0.5% of AGI floor for itemizers; $1,000 / $2,000 non-itemizer cash deduction (https://www.law.cornell.edu/uscode/text/26/170)",
+          "engine": "`charitable` data, applied when `tax_year >= 2026`",
+          "status": "Already correct"
+        },
+        {
+          "provision": "Qualified tips and overtime deductions (IRC 224, 225), 2025-2028; car loan interest (IRC 163(h)(4)), 2025-2028 (https://www.law.cornell.edu/uscode/text/26/224, https://www.law.cornell.edu/uscode/text/26/225, https://www.law.cornell.edu/uscode/text/26/163)",
+          "engine": "Not modeled (no tip, overtime or vehicle-loan input)",
+          "status": "Not modeled; follow-up if those inputs are added"
+        },
+        {
+          "provision": "2/37 limitation on itemized deductions for the 37% bracket (IRC 68 as amended, from 2026) (https://www.law.cornell.edu/uscode/text/26/68)",
+          "engine": "Not modeled",
+          "status": "Follow-up; not a dated sunset"
+        }
+      ]
+    },
+    {
+      "section": "Stale figures reviewed",
+      "content": [
+        "Washington capital gains excise standard deduction: the Department of Revenue publishes $278,000 for 2025 and had not published the 2026 amount (https://dor.wa.gov/taxes-rates/other-taxes/capital-gains-tax, checked October 10, 2026). The 2025 amount stays, grown with inflation after 2026.",
+        "Rhode Island Social Security modification thresholds: ADV 2025-22 (November 3, 2025; https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf) publishes the 2025 limits ($107,000; $133,750 joint) and sets 2026 brackets and deductions, but the 2026 modification limits appear only in the following year's advisory. The 2025 limits stay, grown with inflation after 2026. The same advisory gives $133,750 for the joint pension modification; the pension rule now uses it too (R.I. Gen. Laws 44-30-12(c)(9)(vi) ties the pension limits to the Social Security limits)."
+      ]
+    }
+  ]
+}

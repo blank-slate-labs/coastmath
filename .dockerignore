@@ -1,0 +1,20 @@
+.git
+.github
+.env
+**/.env
+**/node_modules
+**/venv
+**/__pycache__
+**/*.pyc
+# A database and its secrets from a run without Docker never belong in the image.
+**/*.db
+**/*.db-*
+**/*.secrets.json
+**/.pytest_cache
+**/.ruff_cache
+.coverage
+.coverage.*
+backend/static
+backend/coverage
+backend/tests
+frontend/coverage

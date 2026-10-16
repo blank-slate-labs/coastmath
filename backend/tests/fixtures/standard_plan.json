@@ -1,0 +1,266 @@
+{
+  "id": "00000000-0000-4000-8000-000000000001",
+  "user_id": "00000000-0000-4000-8000-000000000000",
+  "name": "Median Household",
+  "plan_type": "FIXED_DATE",
+  "start_date": "2025-01-01",
+  "snapshot_conditions": {},
+  "birth_year": 1990,
+  "filing_status": "married_filing_jointly",
+  "life_expectancy": 90,
+  "created_at": "2025-01-01T00:00:00",
+
+  "accounts": [
+    {
+      "id": "00000000-0000-4000-8000-000000000010",
+      "user_id": "00000000-0000-4000-8000-000000000000",
+      "name": "Emergency Fund",
+      "account_type": "savings",
+      "balance": 20000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000011",
+      "user_id": "00000000-0000-4000-8000-000000000000",
+      "name": "Brokerage",
+      "account_type": "taxable_brokerage",
+      "balance": 50000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000012",
+      "user_id": "00000000-0000-4000-8000-000000000000",
+      "name": "401k (self)",
+      "account_type": "traditional_401k",
+      "balance": 150000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000013",
+      "user_id": "00000000-0000-4000-8000-000000000000",
+      "name": "Roth IRA (spouse)",
+      "account_type": "roth_ira",
+      "balance": 40000.0,
+      "owner": "spouse"
+    }
+  ],
+
+  "milestones": [
+    {
+      "id": "00000000-0000-4000-8000-000000000020",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Retirement",
+      "trigger_type": "age",
+      "trigger_value": 65,
+      "trigger_date": null,
+      "sort_order": 0
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000021",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Spouse Retirement",
+      "trigger_type": "age",
+      "trigger_value": 63,
+      "trigger_date": null,
+      "sort_order": 1
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000022",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Social Security Start",
+      "trigger_type": "age",
+      "trigger_value": 67,
+      "trigger_date": null,
+      "sort_order": 2
+    }
+  ],
+
+  "income_streams": [
+    {
+      "id": "00000000-0000-4000-8000-000000000030",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Salary",
+      "annual_amount": 100000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-000000000020",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000031",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Spouse Salary",
+      "annual_amount": 60000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-000000000021",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000032",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Social Security",
+      "annual_amount": 30000.0,
+      "start_milestone_id": "00000000-0000-4000-8000-000000000022",
+      "end_milestone_id": null,
+      "growth_rate": 0.02,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true
+    }
+  ],
+
+  "expenses": [
+    {
+      "id": "00000000-0000-4000-8000-000000000040",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Housing",
+      "annual_amount": 24000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000041",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Living",
+      "annual_amount": 36000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "discretionary"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000042",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Healthcare",
+      "annual_amount": 6000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    }
+  ],
+
+  "priorities": [
+    {
+      "id": "00000000-0000-4000-8000-000000000050",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "priority_rank": 1,
+      "target_account_id": "00000000-0000-4000-8000-000000000010",
+      "max_annual_amount": 20000.0,
+      "priority_type": null
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000051",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "priority_rank": 2,
+      "target_account_id": "00000000-0000-4000-8000-000000000012",
+      "max_annual_amount": 23500.0,
+      "priority_type": null
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000052",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "priority_rank": 3,
+      "target_account_id": "00000000-0000-4000-8000-000000000013",
+      "max_annual_amount": 7000.0,
+      "priority_type": null
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000053",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "priority_rank": 4,
+      "target_account_id": "00000000-0000-4000-8000-000000000011",
+      "max_annual_amount": null,
+      "priority_type": null
+    }
+  ],
+
+  "drawdown_order": [
+    {
+      "id": "00000000-0000-4000-8000-000000000060",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "rank": 1,
+      "source_account_id": "00000000-0000-4000-8000-000000000010"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000061",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "rank": 2,
+      "source_account_id": "00000000-0000-4000-8000-000000000011"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000062",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "rank": 3,
+      "source_account_id": "00000000-0000-4000-8000-000000000012"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000063",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "rank": 4,
+      "source_account_id": "00000000-0000-4000-8000-000000000013"
+    }
+  ],
+
+  "assumption_curves": [
+    {
+      "id": "00000000-0000-4000-8000-000000000070",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "curve_type": "inflation",
+      "mode": "fixed",
+      "fixed_rate": 0.03,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000071",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "curve_type": "market_return",
+      "mode": "fixed",
+      "fixed_rate": 0.07,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000072",
+      "plan_id": "00000000-0000-4000-8000-000000000001",
+      "curve_type": "bond_return",
+      "mode": "fixed",
+      "fixed_rate": 0.04,
+      "control_points": []
+    }
+  ],
+
+  "spouse": {
+    "id": "00000000-0000-4000-8000-000000000080",
+    "plan_id": "00000000-0000-4000-8000-000000000001",
+    "name": "Spouse",
+    "birth_year": 1992,
+    "life_expectancy": 90,
+    "income_streams": [],
+    "retirement_milestone_id": "00000000-0000-4000-8000-000000000021"
+  }
+}

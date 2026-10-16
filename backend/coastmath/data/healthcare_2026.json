@@ -1,0 +1,107 @@
+{
+  "_sources": [
+    {
+      "section": "Other figures",
+      "content": [
+        {
+          "note": "poverty_guidelines: HHS 2025 Poverty Guidelines (90 FR 5917, Jan 17 2025); the guidelines in effect at open enrollment govern 2026 coverage-year premium tax credits (26 CFR 1.36B-1(h))."
+        },
+        {
+          "note": "applicable_percentages: Rev. Proc. 2025-25 (2026 applicable percentage table under IRC 36B(b)(3)(A)); enhanced ARPA/IRA percentages expired after 2025, so credits end above 400% of the poverty line."
+        },
+        {
+          "note": "age_curve: Federal default standard age curve, 45 CFR 147.102(e) and CMS Final Guidance Regarding Age Curves and State Reporting (Dec 16 2016, effective 2018). Transcribed from that guidance; verify_against_cms_appendix_i=true means the table was not re-checked against the published PDF for this release."
+        },
+        {
+          "note": "medicare: CMS 2026 Medicare Parts A & B premiums and deductibles and Part D IRMAA (CMS-8089-N, CMS-8090-N, CMS-8091-N, Nov 2025). IRMAA uses MAGI from two years prior; the top tier thresholds ($500,000/$750,000) are frozen through 2027 by 42 USC 1395r(i)(6)."
+        }
+      ]
+    },
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Checked on October 10, 2026."
+        }
+      ]
+    },
+    {
+      "section": "Medicare Part A premium (2026)",
+      "content": [
+        {
+          "figure": "Full monthly premium, fewer than 30 quarters of coverage",
+          "value": "$565",
+          "source": "CMS fact sheet, 2026 Medicare Parts A & B premiums and deductibles (https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles); the CY 2026 Part A premium notice is CMS-8089-N"
+        },
+        {
+          "figure": "Reduced monthly premium, 30 to 39 quarters of coverage",
+          "value": "$311",
+          "source": "Same CMS fact sheet (https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles); the reduction is 45% of the full premium under 42 USC 1395i-2(d)(4) (https://www.law.cornell.edu/uscode/text/42/1395i-2)"
+        },
+        {
+          "figure": "Quarters for premium-free Part A",
+          "value": "40 or more (own or a qualifying spouse's record)",
+          "source": "42 USC 1395i-2(a), 1395c (https://www.law.cornell.edu/uscode/text/42/1395i-2); SSA, Medicare premiums (https://www.ssa.gov/benefits/medicare/medicare-premiums.html)"
+        },
+        {
+          "figure": "Quarters for the reduced premium",
+          "value": "30 or more",
+          "source": "42 USC 1395i-2(d)(4)(A) (https://www.law.cornell.edu/uscode/text/42/1395i-2)"
+        },
+        {
+          "note": "Cross-check: 55% of $565 is $310.75, which CMS rounds to $311."
+        }
+      ]
+    }
+  ],
+  "poverty_guidelines_2025": {
+    "contiguous": {"first_person": 15650, "each_additional": 5500},
+    "alaska": {"first_person": 19550, "each_additional": 6880},
+    "hawaii": {"first_person": 17990, "each_additional": 6325}
+  },
+  "applicable_percentage_bands": [
+    {"lower": 0.0, "upper": 1.33, "initial": 0.0210, "final": 0.0210},
+    {"lower": 1.33, "upper": 1.50, "initial": 0.0314, "final": 0.0419},
+    {"lower": 1.50, "upper": 2.00, "initial": 0.0419, "final": 0.0660},
+    {"lower": 2.00, "upper": 2.50, "initial": 0.0660, "final": 0.0844},
+    {"lower": 2.50, "upper": 3.00, "initial": 0.0844, "final": 0.0996},
+    {"lower": 3.00, "upper": 4.00, "initial": 0.0996, "final": 0.0996}
+  ],
+  "ptc_minimum_fpl_ratio": 1.00,
+  "ptc_maximum_fpl_ratio": 4.00,
+  "age_curve": {
+    "verify_against_cms_appendix_i": true,
+    "factors": {
+      "0": 0.765, "15": 0.833, "16": 0.859, "17": 0.885, "18": 0.913, "19": 0.941, "20": 0.970,
+      "21": 1.000, "22": 1.000, "23": 1.000, "24": 1.000, "25": 1.004, "26": 1.024, "27": 1.048,
+      "28": 1.087, "29": 1.119, "30": 1.135, "31": 1.159, "32": 1.183, "33": 1.198, "34": 1.214,
+      "35": 1.222, "36": 1.230, "37": 1.238, "38": 1.246, "39": 1.262, "40": 1.278, "41": 1.302,
+      "42": 1.325, "43": 1.357, "44": 1.397, "45": 1.444, "46": 1.500, "47": 1.563, "48": 1.635,
+      "49": 1.706, "50": 1.786, "51": 1.865, "52": 1.952, "53": 2.040, "54": 2.135, "55": 2.230,
+      "56": 2.333, "57": 2.437, "58": 2.548, "59": 2.603, "60": 2.714, "61": 2.810, "62": 2.873,
+      "63": 2.952, "64": 3.000
+    }
+  },
+  "medicare_2026": {
+    "base_year": 2026,
+    "part_b_standard_monthly": 202.90,
+    "part_b_deductible": 283,
+    "part_a_premium_monthly": {"reduced": 311, "full": 565},
+    "part_a_quarters": {"premium_free": 40, "reduced": 30},
+    "irmaa_tiers": [
+      {"single_upper": 109000, "joint_upper": 218000, "part_b_add": 0.00, "part_d_add": 0.00},
+      {"single_upper": 137000, "joint_upper": 274000, "part_b_add": 81.20, "part_d_add": 14.50},
+      {"single_upper": 171000, "joint_upper": 342000, "part_b_add": 202.90, "part_d_add": 37.50},
+      {"single_upper": 205000, "joint_upper": 410000, "part_b_add": 324.60, "part_d_add": 60.40},
+      {"single_upper": 500000, "joint_upper": 750000, "part_b_add": 446.30, "part_d_add": 83.30},
+      {"single_upper": null, "joint_upper": null, "part_b_add": 487.00, "part_d_add": 91.00}
+    ],
+    "separate_tiers": [
+      {"upper": 109000, "part_b_add": 0.00, "part_d_add": 0.00},
+      {"upper": 391000, "part_b_add": 446.30, "part_d_add": 83.30},
+      {"upper": null, "part_b_add": 487.00, "part_d_add": 91.00}
+    ],
+    "top_tier_frozen_through": 2027,
+    "lookback_years": 2
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "00000000-0000-4000-8000-000000023000",
+  "user_id": "00000000-0000-4000-8000-0000000230ff",
+  "name": "Inherited IRA 10-Year Rule",
+  "plan_type": "FIXED_DATE",
+  "start_date": "2026-01-01",
+  "snapshot_conditions": {},
+  "birth_year": 1971,
+  "birth_month": 1,
+  "filing_status": "single",
+  "state_code": "CA",
+  "life_expectancy": 88,
+  "created_at": "2026-01-01T00:00:00",
+  "accounts": [
+    {
+      "id": "00000000-0000-4000-8000-000000023001",
+      "user_id": "00000000-0000-4000-8000-0000000230ff",
+      "name": "Checking",
+      "account_type": "checking",
+      "balance": 60000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023002",
+      "user_id": "00000000-0000-4000-8000-0000000230ff",
+      "name": "Taxable Brokerage",
+      "account_type": "taxable_brokerage",
+      "balance": 200000.0,
+      "cost_basis": 200000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023003",
+      "user_id": "00000000-0000-4000-8000-0000000230ff",
+      "name": "Traditional 401k",
+      "account_type": "traditional_401k",
+      "balance": 150000.0,
+      "owner": "self"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023004",
+      "user_id": "00000000-0000-4000-8000-0000000230ff",
+      "name": "Inherited Traditional IRA",
+      "account_type": "traditional_ira",
+      "balance": 500000.0,
+      "owner": "self",
+      "inherited_year": 2026,
+      "beneficiary_type": "non_edb"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "00000000-0000-4000-8000-000000023010",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "name": "Retire",
+      "trigger_type": "age",
+      "trigger_value": 65,
+      "trigger_date": null,
+      "sort_order": 0
+    }
+  ],
+  "income_streams": [
+    {
+      "id": "00000000-0000-4000-8000-000000023020",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "name": "W2 Salary",
+      "annual_amount": 140000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": "00000000-0000-4000-8000-000000023010",
+      "growth_rate": 0.03,
+      "withholding_percent": null,
+      "start_month": null,
+      "end_month": null,
+      "is_active": true,
+      "owner": "self",
+      "is_social_security": false
+    }
+  ],
+  "expenses": [
+    {
+      "id": "00000000-0000-4000-8000-000000023030",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "name": "Core Expenses",
+      "annual_amount": 80000.0,
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "inflation_linked": true,
+      "is_payroll_deduction": false,
+      "tied_income_id": null,
+      "specific_funding_source_id": null,
+      "start_month": null,
+      "end_month": null,
+      "category": "essential"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "00000000-0000-4000-8000-000000023040",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "priority_rank": 1,
+      "target_account_id": "00000000-0000-4000-8000-000000023002",
+      "max_annual_amount": null,
+      "priority_type": null
+    }
+  ],
+  "drawdown_order": [
+    {
+      "id": "00000000-0000-4000-8000-000000023050",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "rank": 1,
+      "source_account_id": "00000000-0000-4000-8000-000000023002"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023051",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "rank": 2,
+      "source_account_id": "00000000-0000-4000-8000-000000023003"
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023052",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "rank": 3,
+      "source_account_id": "00000000-0000-4000-8000-000000023004"
+    }
+  ],
+  "assumption_curves": [
+    {
+      "id": "00000000-0000-4000-8000-000000023060",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "curve_type": "inflation",
+      "mode": "fixed",
+      "fixed_rate": 0.03,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023061",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "curve_type": "market_return",
+      "mode": "fixed",
+      "fixed_rate": 0.07,
+      "control_points": []
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000023062",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "curve_type": "bond_return",
+      "mode": "fixed",
+      "fixed_rate": 0.04,
+      "control_points": []
+    }
+  ],
+  "residency_periods": [
+    {
+      "id": "00000000-0000-4000-8000-000000023070",
+      "plan_id": "00000000-0000-4000-8000-000000023000",
+      "state_code": "CA",
+      "start_milestone_id": null,
+      "end_milestone_id": null,
+      "start_year": null,
+      "end_year": null,
+      "rank": 0
+    }
+  ],
+  "spouse": null
+}

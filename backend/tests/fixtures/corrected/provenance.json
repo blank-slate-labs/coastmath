@@ -1,0 +1,148 @@
+{
+  "fire_persona": {
+    "original_path": "backend/tests/persona/fixtures/fire_persona.json",
+    "original_sha256": "468574a711817a753d676bd0cd310e03411856d03a54ef3f185e299c1d8f4966",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-00000000f020/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-00000000f020/is_social_security",
+        "before": null,
+        "after": false
+      }
+    ]
+  },
+  "high_earner_late_saver": {
+    "original_path": "backend/tests/persona/fixtures/high_earner_late_saver.json",
+    "original_sha256": "ecb63a752d0c6b297e7adf8d6a2e78d039d2897770c6a0ec4e7eea55d654839d",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000021020/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000021020/is_social_security",
+        "before": null,
+        "after": false
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000021021/owner",
+        "before": null,
+        "after": "spouse"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000021021/is_social_security",
+        "before": null,
+        "after": false
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000021022/owner",
+        "before": null,
+        "after": "self"
+      }
+    ]
+  },
+  "self_employed_sepp": {
+    "original_path": "backend/tests/persona/fixtures/self_employed_sepp.json",
+    "original_sha256": "9a8c488a013374384d587cad655bdc546c7996ad534c9bc7011a0b9588a4ea63",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000022020/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000022020/is_social_security",
+        "before": null,
+        "after": false
+      }
+    ]
+  },
+  "inherited_ira": {
+    "original_path": "backend/tests/persona/fixtures/inherited_ira.json",
+    "original_sha256": "d1e22d4ffe073d62157198cea8360f96a4c21c12403cf5594997f6ea67eed65b",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000023020/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000023020/is_social_security",
+        "before": null,
+        "after": false
+      }
+    ]
+  },
+  "hnw_estate": {
+    "original_path": "backend/tests/persona/fixtures/hnw_estate.json",
+    "original_sha256": "89b202f43a5b070cb2ffc64d74f9ed0c603bb287a3428d007c3b267eea2f61bb",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000024020/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000024020/is_social_security",
+        "before": null,
+        "after": false
+      }
+    ]
+  },
+  "standard_plan": {
+    "original_path": "backend/tests/fixtures/standard_plan.json",
+    "original_sha256": "0410f55cdbee842f3b723ba6841143ddb70656a75cca48ef1531ea4820abc1ec",
+    "changes": [
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000030/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000030/is_social_security",
+        "before": null,
+        "after": false
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000031/owner",
+        "before": null,
+        "after": "spouse"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000031/is_social_security",
+        "before": null,
+        "after": false
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000032/owner",
+        "before": null,
+        "after": "self"
+      },
+      {
+        "path": "income_streams/00000000-0000-4000-8000-000000000032/is_social_security",
+        "before": null,
+        "after": true
+      },
+      {
+        "path": "milestones/00000000-0000-4000-8000-000000000021/trigger_type",
+        "before": "age",
+        "after": "date"
+      },
+      {
+        "path": "milestones/00000000-0000-4000-8000-000000000021/trigger_value",
+        "before": 63,
+        "after": null
+      },
+      {
+        "path": "milestones/00000000-0000-4000-8000-000000000021/trigger_date",
+        "before": null,
+        "after": "2055-01-01"
+      }
+    ]
+  }
+}

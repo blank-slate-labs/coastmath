@@ -1,0 +1,136 @@
+{
+  "spousal": {
+    "worker_pia_share": 0.5,
+    "earliest_age_months": 744,
+    "reduction_per_month_first_36": 0.006944444444444444,
+    "reduction_per_month_beyond_36": 0.004166666666666667
+  },
+  "survivor": {
+    "earliest_age_months": 720,
+    "total_reduction_at_earliest_age": 0.285,
+    "reduced_worker_limit_pia_share": 0.825
+  },
+  "divorced": {
+    "minimum_marriage_years": 10,
+    "independent_entitlement_months": 24,
+    "worker_earliest_age_months": 744,
+    "survivor_remarriage_age_months": 720
+  },
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Checked on October 10, 2026 against the Social Security Act and SSA's published explanations. Fractions are stored as decimals (25/36 of 1% = 0.0069444…, 5/12 of 1% = 0.0041666…)."
+        },
+        {
+          "rule": "Spouse's benefit",
+          "value": "One-half of the worker's primary insurance amount (PIA)",
+          "source": "Social Security Act §202(b)(2), (c)(2) (42 U.S.C. 402(b)(2), (c)(2)); https://www.ssa.gov/benefits/retirement/planner/applying7.html"
+        },
+        {
+          "rule": "Dual entitlement",
+          "value": "A spouse entitled to their own retirement benefit receives only the excess of the spouse's benefit over their own PIA",
+          "source": "Act §202(k)(3)(A); POMS RS 00615.020; https://www.law.cornell.edu/uscode/text/42/402; https://secure.ssa.gov/poms.nsf/lnx/0300615020"
+        },
+        {
+          "rule": "Spouse's early reduction",
+          "value": "25/36 of 1% for each of the first 36 months before full retirement age, 5/12 of 1% for each further month; no delayed retirement credits",
+          "source": "Act §202(q)(1)(B)–(C), §202(w); https://www.ssa.gov/oact/quickcalc/spouse.html"
+        },
+        {
+          "rule": "Earliest spouse's age without a child in care",
+          "value": "62 (744 months)",
+          "source": "Act §202(b)(1)(B), (c)(1)(B) (42 U.S.C. 402(b)(1)(B), (c)(1)(B)); https://www.law.cornell.edu/uscode/text/42/402"
+        },
+        {
+          "rule": "Deemed filing",
+          "value": "Filing for either benefit is filing for both; spouse's benefits cannot begin before the worker is entitled",
+          "source": "Act §202(r) as amended by the Bipartisan Budget Act of 2015 §831; https://www.ssa.gov/benefits/retirement/planner/claiming.html"
+        },
+        {
+          "rule": "Widow(er)'s benefit",
+          "value": "100% of the deceased worker's PIA, deemed to include delayed retirement credits for the month before the month of death",
+          "source": "Act §202(e)(2)(A), (e)(2)(C), (f)(3) (42 U.S.C. 402(e), (f)); https://www.law.cornell.edu/uscode/text/42/402"
+        },
+        {
+          "rule": "Reduced-worker limit",
+          "value": "When the deceased received a reduced retirement benefit, the widow(er)'s benefit is limited to the larger of the benefit the deceased would receive if living and 82.5% of the PIA",
+          "source": "Act §202(e)(2)(D), (f)(3)(D); https://www.ssa.gov/OP_Home/handbook/handbook.04/handbook-0407.html"
+        },
+        {
+          "rule": "Widow(er)'s early reduction",
+          "value": "28.5% at age 60 (720 months), prorated monthly over the months from 60 to survivor full retirement age",
+          "source": "Act §202(q)(1)(A); https://www.ssa.gov/benefits/survivors/survivorchartred.html"
+        },
+        {
+          "rule": "Survivor full retirement age",
+          "value": "Birth-year cohort table (`survivor_fra_months`)",
+          "source": "POMS RS 00615.004; https://www.ssa.gov/benefits/retirement/planner/survivors.html"
+        },
+        {
+          "rule": "Divorced spouse's benefit",
+          "value": "Marriage of at least 10 years immediately before the divorce; claimant unmarried and at least 62; the worker entitled, or at least 62 and divorced for 2 continuous years (independent entitlement). Same one-half PIA, dual-entitlement excess and early reduction as a spouse's benefit",
+          "source": "Act §202(b)(1), (b)(5), (c)(1), (c)(5), §216(d)(1), (d)(4) (42 U.S.C. 402(b), 402(c), 416(d)); 20 CFR 404.331; https://www.ssa.gov/benefits/retirement/planner/applying7.html"
+        },
+        {
+          "rule": "Surviving divorced spouse",
+          "value": "Marriage of at least 10 years; payable from 60 with the widow(er)'s reduction; remarriage at 60 or later does not end eligibility, an earlier remarriage bars it while that marriage lasts",
+          "source": "Act §202(e)(1), (e)(3), (f)(1), §216(d)(2); 20 CFR 404.336; https://www.ssa.gov/survivor/eligibility"
+        },
+        {
+          "rule": "One auxiliary benefit at a time",
+          "value": "When spouse's, divorced spouse's and survivor's benefits overlap, only the largest is paid (in addition to the claimant's own benefit)",
+          "source": "Act §202(k)(2)(A), (k)(3)(A); 20 CFR 404.407; POMS RS 00615.020; https://www.law.cornell.edu/uscode/text/42/402; https://www.ecfr.gov/current/title-20/section-404.407; https://secure.ssa.gov/poms.nsf/lnx/0300615020"
+        },
+        {
+          "rule": "Larger benefit only",
+          "value": "A survivor entitled to a retirement benefit receives the larger of the two, not both",
+          "source": "Act §202(k)(3)(A); https://www.ssa.gov/survivor/amount"
+        }
+      ]
+    },
+    {
+      "section": "Covered earnings and retirement earnings test (2026 edition)",
+      "content": [
+        {
+          "note": "Verified 2026-10-10. `social_security_earnings_2026.json` contains:"
+        },
+        {
+          "data/rule": "1979–2026 eligibility-year PIA bend points; 90%, 32%, 15% formula",
+          "official source": "https://www.ssa.gov/oact/cola/bendpoints.html and https://www.ssa.gov/oact/cola/piaformula.html"
+        },
+        {
+          "data/rule": "2000–2026 lower/higher annual exempt amounts; $1/$2 and $1/$3 deductions; FRA month exclusion",
+          "official source": "https://www.ssa.gov/oact/cola/rtea.html"
+        },
+        {
+          "data/rule": "2026 covered earnings cap $184,500",
+          "official source": "https://www.ssa.gov/oact/cola/cbb.html"
+        },
+        {
+          "data/rule": "1951–2024 national average wage index; age-60 wage indexing; later earnings at face value",
+          "official source": "https://www.ssa.gov/oact/cola/AWI.html and https://www.ssa.gov/oact/cola/awifactors.html"
+        },
+        {
+          "data/rule": "Highest 35 years (420 months), annual recomputations",
+          "official source": "https://www.ssa.gov/benefits/retirement/planner/stopwork.html and https://secure.ssa.gov/poms.nsf/lnx/0300605401"
+        },
+        {
+          "data/rule": "Net self-employment covered earnings factor 92.35%",
+          "official source": "https://www.irs.gov/instructions/i1040sse"
+        },
+        {
+          "data/rule": "Reduction-factor credit at FRA",
+          "official source": "https://secure.ssa.gov/poms.nsf/lnx/0302501021"
+        },
+        {
+          "note": "Unpublished wage-index values follow the plan's wage growth curve (fallback: inflation), a planning assumption rather than an SSA forecast. Exempt amounts project from the 2024 wage-index anchor and round to $120. The estimated historical record uses equal positive years and zero years, preserving the entered PIA; it is not an SSA record. Payments are modeled annually, with fully withheld months credited and a proportional worker/spousal allocation. The first claim year approximates the grace rule by protecting benefit months after earned streams stop; substantial self-employment services and SSA payment administration are not modeled."
+        },
+        {
+          "note": "Survivor reduction-factor adjustment: https://www.ssa.gov/OP_Home/cfr20/404/404-0412.htm and https://www.ssa.gov/OP_Home/handbook/handbook.07/handbook-0728.html. For supported PIA survivors, fully withheld entitled months credit the survivor's age reduction at survivor FRA; recomputation reuses the reduced-worker limit. The earnings test continues until retirement FRA, including any intervening months after survivor FRA. Own retirement ARF increases reduce the survivor top-up in the same month, preserving the combined entitlement."
+        }
+      ]
+    }
+  ]
+}

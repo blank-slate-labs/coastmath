@@ -1,0 +1,191 @@
+{
+  "required_annual_payment": {
+    "current_year_share": 0.9,
+    "prior_year_share": 1.0,
+    "high_income_prior_year_share": 1.1,
+    "high_income_agi_threshold": 150000,
+    "high_income_agi_threshold_married_filing_separately": 75000
+  },
+  "minimum_balance_due": 1000,
+  "installment_share": 0.25,
+  "installment_due_dates": [
+    {"month": 4, "day": 15, "year_offset": 0},
+    {"month": 6, "day": 15, "year_offset": 0},
+    {"month": 9, "day": 15, "year_offset": 0},
+    {"month": 1, "day": 15, "year_offset": 1}
+  ],
+  "period_end": {"month": 4, "day": 15, "year_offset": 1},
+  "underpayment_rates": [
+    {"start": "2024-01-01", "rate": 0.08, "source": "IRB 2023-49"},
+    {"start": "2024-04-01", "rate": 0.08, "source": "IRB 2024-10"},
+    {"start": "2024-07-01", "rate": 0.08, "source": "IRB 2024-24"},
+    {"start": "2024-10-01", "rate": 0.08, "source": "IRB 2024-37"},
+    {"start": "2025-01-01", "rate": 0.07, "source": "IRB 2024-49"},
+    {"start": "2025-04-01", "rate": 0.07, "source": "IRB 2025-13"},
+    {"start": "2025-07-01", "rate": 0.07, "source": "IRB 2025-23"},
+    {"start": "2025-10-01", "rate": 0.07, "source": "IRB 2025-37"},
+    {"start": "2026-01-01", "rate": 0.07, "source": "IR-2025-112; Rev. Rul. 2025-22, IRB 2025-48"},
+    {"start": "2026-04-01", "rate": 0.06, "source": "Rev. Rul. 2026-5, IRB 2026-8"},
+    {"start": "2026-07-01", "rate": 0.07, "source": "Rev. Rul. 2026-10, IRB 2026-22"},
+    {"start": "2026-10-01", "rate": 0.07, "source": "IR-2026-98; Rev. Rul. 2026-15, IRB 2026-36"}
+  ],
+  "projection": "Dates after the last published quarter use the last published rate; dates before the first entry use the first. The percentages and the $150,000/$75,000 AGI thresholds are statutory and not inflation-indexed.",
+  "_sources": [
+    {
+      "section": null,
+      "content": [
+        {
+          "note": "Figures were checked on October 9, 2026 against the IRS quarterly interest rate page, the Internal Revenue Bulletins it links, the IRS news releases and the statute. The engine module docstring maps these rules to engine fields."
+        }
+      ]
+    },
+    {
+      "section": "Statute",
+      "content": [
+        {
+          "rule": "Required annual payment",
+          "value": "Lesser of 90% of the current year's tax or 100% of the prior year's tax",
+          "source": "IRC §6654(d)(1)(B) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "High-income prior-year share",
+          "value": "110% when prior-year AGI exceeds $150,000 ($75,000 married filing separately). Not inflation-indexed",
+          "source": "IRC §6654(d)(1)(C)(i), (iii) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Required installments",
+          "value": "25% of the required annual payment each",
+          "source": "IRC §6654(d)(1)(A) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Due dates",
+          "value": "April 15, June 15 and September 15 of the tax year; January 15 of the next year",
+          "source": "IRC §6654(c)(2) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Period of underpayment",
+          "value": "From each due date to the earlier of April 15 of the next year or the date paid",
+          "source": "IRC §6654(b)(2) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Order of crediting",
+          "value": "Payments are credited against unpaid installments in due-date order",
+          "source": "IRC §6654(b)(3) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Withholding",
+          "value": "Deemed paid in equal parts on each due date",
+          "source": "IRC §6654(g)(1) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Small balance",
+          "value": "No addition when the tax shown, less withholding, is under $1,000",
+          "source": "IRC §6654(e)(1) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "No prior-year liability",
+          "value": "No addition when the prior year was a 12-month year with no tax liability and the individual was a citizen or resident all year",
+          "source": "IRC §6654(e)(2) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "\"Tax\"",
+          "value": "Chapter 1 tax (income tax, including AMT and the §72(t) additional tax), chapter 2 (self-employment tax), chapter 2A (net investment income tax), less part IV credits other than withholding",
+          "source": "IRC §6654(f) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Additional Medicare Tax",
+          "value": "The §3101(b)(2) tax not withheld counts as chapter 2 tax",
+          "source": "IRC §6654(m) (https://www.law.cornell.edu/uscode/text/26/6654)"
+        },
+        {
+          "rule": "Rate",
+          "value": "The §6621(a)(2) underpayment rate: federal short-term rate plus 3 percentage points, set quarterly",
+          "source": "IRC §6654(a), §6621(a)(2), (b) (https://www.law.cornell.edu/uscode/text/26/6654, https://www.law.cornell.edu/uscode/text/26/6621)"
+        },
+        {
+          "note": "Statute text: https://www.law.cornell.edu/uscode/text/26/6654 and https://www.law.cornell.edu/uscode/text/26/6621. Practical worksheet: Form 2210 and its instructions (https://www.irs.gov/forms-pubs/about-form-2210) and Publication 505 (https://www.irs.gov/publications/p505)."
+        }
+      ]
+    },
+    {
+      "section": "Underpayment rates (noncorporate)",
+      "content": [
+        {
+          "note": "Index page: https://www.irs.gov/payments/quarterly-interest-rates"
+        },
+        {
+          "quarter starting": "2024-01-01",
+          "rate": "8%",
+          "source": "IRB 2023-49 (https://www.irs.gov/irb/2023-49_IRB)"
+        },
+        {
+          "quarter starting": "2024-04-01",
+          "rate": "8%",
+          "source": "IRB 2024-10 (https://www.irs.gov/irb/2024-10_IRB)"
+        },
+        {
+          "quarter starting": "2024-07-01",
+          "rate": "8%",
+          "source": "IRB 2024-24 (https://www.irs.gov/irb/2024-24_IRB)"
+        },
+        {
+          "quarter starting": "2024-10-01",
+          "rate": "8%",
+          "source": "IRB 2024-37 (https://www.irs.gov/irb/2024-37_IRB)"
+        },
+        {
+          "quarter starting": "2025-01-01",
+          "rate": "7%",
+          "source": "IRB 2024-49 (https://www.irs.gov/irb/2024-49_IRB)"
+        },
+        {
+          "quarter starting": "2025-04-01",
+          "rate": "7%",
+          "source": "IRB 2025-13 (https://www.irs.gov/irb/2025-13_IRB)"
+        },
+        {
+          "quarter starting": "2025-07-01",
+          "rate": "7%",
+          "source": "IRB 2025-23 (https://www.irs.gov/irb/2025-23_IRB)"
+        },
+        {
+          "quarter starting": "2025-10-01",
+          "rate": "7%",
+          "source": "IRB 2025-37 (https://www.irs.gov/irb/2025-37_IRB)"
+        },
+        {
+          "quarter starting": "2026-01-01",
+          "rate": "7%",
+          "source": "IR-2025-112, November 13, 2025 (https://www.irs.gov/newsroom/interest-rates-remain-the-same-for-the-first-quarter-of-2026); Rev. Rul. 2025-22, IRB 2025-48 (https://www.irs.gov/irb/2025-48_IRB)"
+        },
+        {
+          "quarter starting": "2026-04-01",
+          "rate": "6%",
+          "source": "Rev. Rul. 2026-5, IRB 2026-8 (https://www.irs.gov/irb/2026-08_IRB); federal short-term rate 3%"
+        },
+        {
+          "quarter starting": "2026-07-01",
+          "rate": "7%",
+          "source": "Rev. Rul. 2026-10, IRB 2026-22 (https://www.irs.gov/irb/2026-22_IRB); federal short-term rate 4%"
+        },
+        {
+          "quarter starting": "2026-10-01",
+          "rate": "7%",
+          "source": "IR-2026-98, August 21, 2026 (https://www.irs.gov/newsroom/interest-rates-remain-the-same-for-the-fourth-quarter-of-2026); Rev. Rul. 2026-15, IRB 2026-36 (https://www.irs.gov/irb/2026-36_irb)"
+        },
+        {
+          "note": "The 2024 and 2025 rows cite the bulletins the IRS index page links for each quarter. Add a row each quarter as the IRS publishes the next rate."
+        }
+      ]
+    },
+    {
+      "section": "Projection and limits",
+      "content": [
+        "Dates after the last published quarter use the last published rate (7%). Dates before 2024 use the first row.",
+        "Interest is simple, computed per day with 365 or 366 days in each calendar year. §6622 daily compounding does not apply to the §6654 addition.",
+        "Due dates are the statutory dates. Weekend and holiday shifts (§7503) are not applied.",
+        "Not modeled: state estimated-tax penalties, the annualized income installment method (Form 2210 Schedule AI), waivers (§6654(e)(3)), farmer and fisher rules, interest or failure-to-pay penalties after April 15, and interest on refunds."
+      ]
+    }
+  ]
+}
